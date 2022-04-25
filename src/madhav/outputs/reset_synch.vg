@@ -1,0 +1,16 @@
+/////////////////////////////////////////////////////////////
+// Created by: Synopsys DC Expert(TM) in wire load mode
+// Version   : S-2021.06
+// Date      : Mon Apr 25 16:16:19 2022
+/////////////////////////////////////////////////////////////
+
+
+module reset_synch ( RST_n, clk, rst_n );
+  input RST_n, clk;
+  output rst_n;
+  wire   rst_n_t;
+
+  DFFNARX1_LVT rst_n_t_reg ( .D(1'b1), .CLK(clk), .RSTB(RST_n), .Q(rst_n_t) );
+  DFFNARX1_LVT rst_n_reg ( .D(rst_n_t), .CLK(clk), .RSTB(RST_n), .Q(rst_n) );
+endmodule
+

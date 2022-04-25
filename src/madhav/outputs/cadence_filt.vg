@@ -1,0 +1,87 @@
+/////////////////////////////////////////////////////////////
+// Created by: Synopsys DC Expert(TM) in wire load mode
+// Version   : S-2021.06
+// Date      : Mon Apr 25 16:03:36 2022
+/////////////////////////////////////////////////////////////
+
+
+module cadence_filt_DW01_inc_0 ( A, SUM );
+  input [15:0] A;
+  output [15:0] SUM;
+
+  wire   [15:2] carry;
+
+  HADDX1_LVT U1_1_14 ( .A0(A[14]), .B0(carry[14]), .C1(carry[15]), .SO(SUM[14]) );
+  HADDX1_LVT U1_1_13 ( .A0(A[13]), .B0(carry[13]), .C1(carry[14]), .SO(SUM[13]) );
+  HADDX1_LVT U1_1_12 ( .A0(A[12]), .B0(carry[12]), .C1(carry[13]), .SO(SUM[12]) );
+  HADDX1_LVT U1_1_11 ( .A0(A[11]), .B0(carry[11]), .C1(carry[12]), .SO(SUM[11]) );
+  HADDX1_LVT U1_1_10 ( .A0(A[10]), .B0(carry[10]), .C1(carry[11]), .SO(SUM[10]) );
+  HADDX1_LVT U1_1_9 ( .A0(A[9]), .B0(carry[9]), .C1(carry[10]), .SO(SUM[9]) );
+  HADDX1_LVT U1_1_8 ( .A0(A[8]), .B0(carry[8]), .C1(carry[9]), .SO(SUM[8]) );
+  HADDX1_LVT U1_1_7 ( .A0(A[7]), .B0(carry[7]), .C1(carry[8]), .SO(SUM[7]) );
+  HADDX1_LVT U1_1_6 ( .A0(A[6]), .B0(carry[6]), .C1(carry[7]), .SO(SUM[6]) );
+  HADDX1_LVT U1_1_5 ( .A0(A[5]), .B0(carry[5]), .C1(carry[6]), .SO(SUM[5]) );
+  HADDX1_LVT U1_1_4 ( .A0(A[4]), .B0(carry[4]), .C1(carry[5]), .SO(SUM[4]) );
+  HADDX1_LVT U1_1_3 ( .A0(A[3]), .B0(carry[3]), .C1(carry[4]), .SO(SUM[3]) );
+  HADDX1_LVT U1_1_2 ( .A0(A[2]), .B0(carry[2]), .C1(carry[3]), .SO(SUM[2]) );
+  HADDX1_LVT U1_1_1 ( .A0(A[1]), .B0(A[0]), .C1(carry[2]), .SO(SUM[1]) );
+  XOR2X1_LVT U1 ( .A1(carry[15]), .A2(A[15]), .Y(SUM[15]) );
+  INVX0_LVT U2 ( .A(A[0]), .Y(SUM[0]) );
+endmodule
+
+
+module cadence_filt ( clk, rst_n, cadence, cadence_filt, cadence_rise );
+  input clk, rst_n, cadence;
+  output cadence_filt, cadence_rise;
+  wire   cadence_sync_intermediate, cadence_sync, N3, N4, N5, N6, N7, N8, N9,
+         N10, N11, N12, N13, N14, N15, N16, N17, N18, n1, n2, n4, n6, n7, n9,
+         n26, n27, n28, n29;
+  wire   [15:0] stbl_cnt;
+
+  DFFX1_LVT cadence_sync_intermediate_reg ( .D(cadence), .CLK(clk), .Q(
+        cadence_sync_intermediate) );
+  DFFX1_LVT cadence_sync_reg ( .D(cadence_sync_intermediate), .CLK(clk), .Q(
+        cadence_sync), .QN(n26) );
+  DFFX1_LVT cadence_sync_delayed_reg ( .D(cadence_sync), .CLK(clk), .Q(n28) );
+  DFFSSRX1_LVT \stbl_cnt_reg[0]  ( .D(N3), .SETB(1'b1), .RSTB(n27), .CLK(clk), 
+        .Q(stbl_cnt[0]) );
+  DFFSSRX1_LVT \stbl_cnt_reg[1]  ( .D(N4), .SETB(1'b1), .RSTB(n27), .CLK(clk), 
+        .Q(stbl_cnt[1]) );
+  DFFSSRX1_LVT \stbl_cnt_reg[2]  ( .D(N5), .SETB(1'b1), .RSTB(n27), .CLK(clk), 
+        .Q(stbl_cnt[2]) );
+  DFFSSRX1_LVT \stbl_cnt_reg[3]  ( .D(N6), .SETB(1'b1), .RSTB(n27), .CLK(clk), 
+        .Q(stbl_cnt[3]) );
+  DFFSSRX1_LVT \stbl_cnt_reg[4]  ( .D(N7), .SETB(1'b1), .RSTB(n27), .CLK(clk), 
+        .Q(stbl_cnt[4]) );
+  DFFSSRX1_LVT \stbl_cnt_reg[5]  ( .D(N8), .SETB(1'b1), .RSTB(n27), .CLK(clk), 
+        .Q(stbl_cnt[5]) );
+  DFFSSRX1_LVT \stbl_cnt_reg[6]  ( .D(N9), .SETB(1'b1), .RSTB(n27), .CLK(clk), 
+        .Q(stbl_cnt[6]) );
+  DFFSSRX1_LVT \stbl_cnt_reg[7]  ( .D(N10), .SETB(1'b1), .RSTB(n27), .CLK(clk), 
+        .Q(stbl_cnt[7]) );
+  DFFSSRX1_LVT \stbl_cnt_reg[8]  ( .D(N11), .SETB(1'b1), .RSTB(n27), .CLK(clk), 
+        .Q(stbl_cnt[8]) );
+  DFFSSRX1_LVT \stbl_cnt_reg[9]  ( .D(N12), .SETB(1'b1), .RSTB(n27), .CLK(clk), 
+        .Q(stbl_cnt[9]) );
+  DFFSSRX1_LVT \stbl_cnt_reg[10]  ( .D(N13), .SETB(1'b1), .RSTB(n27), .CLK(clk), .Q(stbl_cnt[10]) );
+  DFFSSRX1_LVT \stbl_cnt_reg[11]  ( .D(N14), .SETB(1'b1), .RSTB(n27), .CLK(clk), .Q(stbl_cnt[11]) );
+  DFFSSRX1_LVT \stbl_cnt_reg[12]  ( .D(N15), .SETB(1'b1), .RSTB(n27), .CLK(clk), .Q(stbl_cnt[12]) );
+  DFFSSRX1_LVT \stbl_cnt_reg[13]  ( .D(N16), .SETB(1'b1), .RSTB(n27), .CLK(clk), .Q(stbl_cnt[13]) );
+  DFFSSRX1_LVT \stbl_cnt_reg[14]  ( .D(N17), .SETB(1'b1), .RSTB(n27), .CLK(clk), .Q(stbl_cnt[14]) );
+  DFFSSRX1_LVT \stbl_cnt_reg[15]  ( .D(N18), .SETB(1'b1), .RSTB(n27), .CLK(clk), .Q(stbl_cnt[15]) );
+  DFFX1_LVT cadence_filt_reg ( .D(n9), .CLK(clk), .Q(cadence_filt) );
+  NAND2X0_LVT U4 ( .A1(n26), .A2(n28), .Y(n1) );
+  AO22X1_LVT U5 ( .A1(n4), .A2(cadence_filt), .A3(n29), .A4(n28), .Y(n9) );
+  NAND4X0_LVT U7 ( .A1(stbl_cnt[4]), .A2(stbl_cnt[3]), .A3(n6), .A4(n7), .Y(n4) );
+  AND4X1_LVT U8 ( .A1(stbl_cnt[8]), .A2(stbl_cnt[7]), .A3(stbl_cnt[6]), .A4(
+        stbl_cnt[5]), .Y(n7) );
+  AND3X1_LVT U9 ( .A1(stbl_cnt[1]), .A2(stbl_cnt[0]), .A3(stbl_cnt[2]), .Y(n6)
+         );
+  OR2X1_LVT U11 ( .A1(n28), .A2(n26), .Y(n2) );
+  cadence_filt_DW01_inc_0 add_35 ( .A(stbl_cnt), .SUM({N18, N17, N16, N15, N14, 
+        N13, N12, N11, N10, N9, N8, N7, N6, N5, N4, N3}) );
+  INVX1_LVT U29 ( .A(n2), .Y(cadence_rise) );
+  INVX1_LVT U30 ( .A(n4), .Y(n29) );
+  AND3X2_LVT U31 ( .A1(n1), .A2(n2), .A3(rst_n), .Y(n27) );
+endmodule
+

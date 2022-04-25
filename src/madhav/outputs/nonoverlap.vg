@@ -1,0 +1,52 @@
+/////////////////////////////////////////////////////////////
+// Created by: Synopsys DC Expert(TM) in wire load mode
+// Version   : S-2021.06
+// Date      : Mon Apr 25 16:13:44 2022
+/////////////////////////////////////////////////////////////
+
+
+module nonoverlap ( clk, rst_n, highIn, lowIn, highOut, lowOut );
+  input clk, rst_n, highIn, lowIn;
+  output highOut, lowOut;
+  wire   highIn_dly, lowIn_dly, deadTimeFSM_next, N9, N10, deadTimeFSM, N18,
+         N19, N20, N21, n7, n8, n9, n10, n11, n12, n13, n14, n15;
+  wire   [4:0] deadTime;
+  wire   [4:2] \add_66/carry ;
+
+  DFFX1_LVT highIn_dly_reg ( .D(highIn), .CLK(clk), .Q(highIn_dly) );
+  DFFX1_LVT lowIn_dly_reg ( .D(lowIn), .CLK(clk), .Q(lowIn_dly) );
+  DFFSSRX1_LVT \deadTime_reg[0]  ( .D(n14), .SETB(1'b1), .RSTB(n8), .CLK(clk), 
+        .Q(deadTime[0]), .QN(n14) );
+  DFFARX1_LVT deadTimeFSM_reg ( .D(deadTimeFSM_next), .CLK(clk), .RSTB(rst_n), 
+        .Q(deadTimeFSM), .QN(n7) );
+  DFFARX1_LVT lowOut_reg ( .D(N10), .CLK(clk), .RSTB(rst_n), .Q(lowOut) );
+  DFFSSRX1_LVT \deadTime_reg[1]  ( .D(N18), .SETB(1'b1), .RSTB(n8), .CLK(clk), 
+        .Q(deadTime[1]) );
+  DFFSSRX1_LVT \deadTime_reg[2]  ( .D(N19), .SETB(1'b1), .RSTB(n8), .CLK(clk), 
+        .Q(deadTime[2]) );
+  DFFSSRX1_LVT \deadTime_reg[3]  ( .D(N20), .SETB(1'b1), .RSTB(n8), .CLK(clk), 
+        .Q(deadTime[3]) );
+  DFFSSRX1_LVT \deadTime_reg[4]  ( .D(N21), .SETB(1'b1), .RSTB(n8), .CLK(clk), 
+        .Q(deadTime[4]) );
+  DFFARX1_LVT highOut_reg ( .D(N9), .CLK(clk), .RSTB(rst_n), .Q(highOut) );
+  AND2X1_LVT U11 ( .A1(highIn), .A2(n15), .Y(N9) );
+  NOR2X0_LVT U12 ( .A1(n9), .A2(n15), .Y(n8) );
+  AND2X1_LVT U13 ( .A1(lowIn), .A2(n15), .Y(N10) );
+  AO22X1_LVT U14 ( .A1(n9), .A2(n7), .A3(deadTimeFSM), .A4(n10), .Y(
+        deadTimeFSM_next) );
+  NAND4X0_LVT U15 ( .A1(deadTime[4]), .A2(deadTime[3]), .A3(n11), .A4(
+        deadTime[2]), .Y(n10) );
+  AND2X1_LVT U16 ( .A1(deadTime[1]), .A2(deadTime[0]), .Y(n11) );
+  NAND2X0_LVT U17 ( .A1(n12), .A2(n13), .Y(n9) );
+  HADDX1_LVT \add_66/U1_1_1  ( .A0(deadTime[1]), .B0(deadTime[0]), .C1(
+        \add_66/carry [2]), .SO(N18) );
+  HADDX1_LVT \add_66/U1_1_2  ( .A0(deadTime[2]), .B0(\add_66/carry [2]), .C1(
+        \add_66/carry [3]), .SO(N19) );
+  HADDX1_LVT \add_66/U1_1_3  ( .A0(deadTime[3]), .B0(\add_66/carry [3]), .C1(
+        \add_66/carry [4]), .SO(N20) );
+  INVX1_LVT U18 ( .A(deadTimeFSM_next), .Y(n15) );
+  XNOR2X1_LVT U19 ( .A1(highIn), .A2(highIn_dly), .Y(n13) );
+  XNOR2X1_LVT U20 ( .A1(lowIn), .A2(lowIn_dly), .Y(n12) );
+  XOR2X1_LVT U21 ( .A1(\add_66/carry [4]), .A2(deadTime[4]), .Y(N21) );
+endmodule
+

@@ -1,0 +1,262 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -nworst 3
+        -max_paths 3
+Design : desiredDrive
+Version: S-2021.06
+Date   : Mon Apr 25 16:02:38 2022
+****************************************
+
+Operating Conditions: tt0p85v25c   Library: saed32lvt_tt0p85v25c
+Wire Load Model Mode: enclosed
+
+  Startpoint: incline[10]
+              (input port)
+  Endpoint: target_curr[11]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  desiredDrive       16000                 saed32lvt_tt0p85v25c
+  desiredDrive_DW02_mult_2
+                     8000                  saed32lvt_tt0p85v25c
+  desiredDrive_DW01_add_2
+                     ForQA                 saed32lvt_tt0p85v25c
+  desiredDrive_DW02_mult_1
+                     8000                  saed32lvt_tt0p85v25c
+  desiredDrive_DW02_mult_0
+                     8000                  saed32lvt_tt0p85v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  input external delay                                    0.00       0.00 f
+  incline[10] (in)                                        0.00       0.00 f
+  U130/Y (NAND3X0_LVT)                                    0.03       0.04 r
+  U129/Y (NAND2X0_LVT)                                    0.03       0.06 f
+  U128/Y (AO22X1_LVT)                                     0.04       0.11 f
+  U127/Y (INVX0_LVT)                                      0.03       0.14 r
+  U126/Y (NAND2X0_LVT)                                    0.06       0.20 f
+  U117/Y (AO21X1_LVT)                                     0.10       0.31 f
+  mult_36/B[7] (desiredDrive_DW02_mult_2)                 0.00       0.31 f
+  mult_36/U108/Y (AND2X1_LVT)                             0.07       0.38 f
+  mult_36/U17/Y (XOR2X1_LVT)                              0.10       0.47 r
+  mult_36/S2_2_6/CO (FADDX1_LVT)                          0.09       0.56 r
+  mult_36/S2_3_6/S (FADDX1_LVT)                           0.12       0.69 f
+  mult_36/S2_4_5/S (FADDX1_LVT)                           0.12       0.80 r
+  mult_36/S2_5_4/CO (FADDX1_LVT)                          0.09       0.89 r
+  mult_36/S2_6_4/S (FADDX1_LVT)                           0.12       1.02 f
+  mult_36/S2_7_3/S (FADDX1_LVT)                           0.12       1.13 r
+  mult_36/S2_8_2/CO (FADDX1_LVT)                          0.09       1.22 r
+  mult_36/S2_9_2/CO (FADDX1_LVT)                          0.10       1.32 r
+  mult_36/S2_10_2/S (FADDX1_LVT)                          0.12       1.44 f
+  mult_36/S4_1/S (FADDX1_LVT)                             0.12       1.56 r
+  mult_36/U10/Y (XOR2X1_LVT)                              0.09       1.65 f
+  mult_36/FS_1/A[10] (desiredDrive_DW01_add_2)            0.00       1.65 f
+  mult_36/FS_1/U14/Y (INVX1_LVT)                          0.03       1.69 r
+  mult_36/FS_1/U13/Y (INVX1_LVT)                          0.04       1.73 f
+  mult_36/FS_1/SUM[10] (desiredDrive_DW01_add_2)          0.00       1.73 f
+  mult_36/PRODUCT[12] (desiredDrive_DW02_mult_2)          0.00       1.73 f
+  mult_36_2/A[12] (desiredDrive_DW02_mult_1)              0.00       1.73 f
+  mult_36_2/U147/Y (AND2X1_LVT)                           0.06       1.78 f
+  mult_36_2/S3_12_4/S (FADDX1_LVT)                        0.13       1.91 r
+  mult_36_2/S2_13_3/CO (FADDX1_LVT)                       0.09       2.00 r
+  mult_36_2/S2_14_3/S (FADDX1_LVT)                        0.12       2.12 f
+  mult_36_2/S2_15_2/S (FADDX1_LVT)                        0.12       2.24 r
+  mult_36_2/S2_16_1/CO (FADDX1_LVT)                       0.09       2.33 r
+  mult_36_2/S2_17_1/S (FADDX1_LVT)                        0.12       2.45 f
+  mult_36_2/S1_18_0/S (FADDX1_LVT)                        0.12       2.57 r
+  mult_36_2/PRODUCT[18] (desiredDrive_DW02_mult_1)        0.00       2.57 r
+  mult_36_3/A[18] (desiredDrive_DW02_mult_0)              0.00       2.57 r
+  mult_36_3/U62/Y (AND2X1_LVT)                            0.05       2.62 r
+  mult_36_3/S3_18_1/CO (FADDX1_LVT)                       0.10       2.73 r
+  mult_36_3/S3_19_1/CO (FADDX1_LVT)                       0.10       2.83 r
+  mult_36_3/S3_20_1/CO (FADDX1_LVT)                       0.10       2.93 r
+  mult_36_3/S3_21_1/CO (FADDX1_LVT)                       0.10       3.02 r
+  mult_36_3/S3_22_1/CO (FADDX1_LVT)                       0.10       3.12 r
+  mult_36_3/S3_23_1/CO (FADDX1_LVT)                       0.10       3.22 r
+  mult_36_3/S3_24_1/CO (FADDX1_LVT)                       0.10       3.32 r
+  mult_36_3/S3_25_1/CO (FADDX1_LVT)                       0.10       3.42 r
+  mult_36_3/S5_1/CO (FADDX1_LVT)                          0.10       3.52 r
+  mult_36_3/U5/Y (XOR2X1_LVT)                             0.09       3.61 f
+  mult_36_3/U11/Y (NAND2X0_LVT)                           0.05       3.65 r
+  mult_36_3/U3/Y (XNOR2X1_LVT)                            0.09       3.74 r
+  mult_36_3/PRODUCT[29] (desiredDrive_DW02_mult_0)        0.00       3.74 r
+  U114/Y (OR3X1_LVT)                                      0.05       3.80 r
+  U113/Y (AND2X1_LVT)                                     0.06       3.86 r
+  U110/Y (AO21X1_LVT)                                     0.05       3.91 r
+  target_curr[11] (out)                                   0.00       3.91 r
+  data arrival time                                                  3.91
+  --------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: incline[10]
+              (input port)
+  Endpoint: target_curr[10]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  desiredDrive       16000                 saed32lvt_tt0p85v25c
+  desiredDrive_DW02_mult_2
+                     8000                  saed32lvt_tt0p85v25c
+  desiredDrive_DW01_add_2
+                     ForQA                 saed32lvt_tt0p85v25c
+  desiredDrive_DW02_mult_1
+                     8000                  saed32lvt_tt0p85v25c
+  desiredDrive_DW02_mult_0
+                     8000                  saed32lvt_tt0p85v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  input external delay                                    0.00       0.00 f
+  incline[10] (in)                                        0.00       0.00 f
+  U130/Y (NAND3X0_LVT)                                    0.03       0.04 r
+  U129/Y (NAND2X0_LVT)                                    0.03       0.06 f
+  U128/Y (AO22X1_LVT)                                     0.04       0.11 f
+  U127/Y (INVX0_LVT)                                      0.03       0.14 r
+  U126/Y (NAND2X0_LVT)                                    0.06       0.20 f
+  U117/Y (AO21X1_LVT)                                     0.10       0.31 f
+  mult_36/B[7] (desiredDrive_DW02_mult_2)                 0.00       0.31 f
+  mult_36/U108/Y (AND2X1_LVT)                             0.07       0.38 f
+  mult_36/U17/Y (XOR2X1_LVT)                              0.10       0.47 r
+  mult_36/S2_2_6/CO (FADDX1_LVT)                          0.09       0.56 r
+  mult_36/S2_3_6/S (FADDX1_LVT)                           0.12       0.69 f
+  mult_36/S2_4_5/S (FADDX1_LVT)                           0.12       0.80 r
+  mult_36/S2_5_4/CO (FADDX1_LVT)                          0.09       0.89 r
+  mult_36/S2_6_4/S (FADDX1_LVT)                           0.12       1.02 f
+  mult_36/S2_7_3/S (FADDX1_LVT)                           0.12       1.13 r
+  mult_36/S2_8_2/CO (FADDX1_LVT)                          0.09       1.22 r
+  mult_36/S2_9_2/CO (FADDX1_LVT)                          0.10       1.32 r
+  mult_36/S2_10_2/S (FADDX1_LVT)                          0.12       1.44 f
+  mult_36/S4_1/S (FADDX1_LVT)                             0.12       1.56 r
+  mult_36/U10/Y (XOR2X1_LVT)                              0.09       1.65 f
+  mult_36/FS_1/A[10] (desiredDrive_DW01_add_2)            0.00       1.65 f
+  mult_36/FS_1/U14/Y (INVX1_LVT)                          0.03       1.69 r
+  mult_36/FS_1/U13/Y (INVX1_LVT)                          0.04       1.73 f
+  mult_36/FS_1/SUM[10] (desiredDrive_DW01_add_2)          0.00       1.73 f
+  mult_36/PRODUCT[12] (desiredDrive_DW02_mult_2)          0.00       1.73 f
+  mult_36_2/A[12] (desiredDrive_DW02_mult_1)              0.00       1.73 f
+  mult_36_2/U147/Y (AND2X1_LVT)                           0.06       1.78 f
+  mult_36_2/S3_12_4/S (FADDX1_LVT)                        0.13       1.91 r
+  mult_36_2/S2_13_3/CO (FADDX1_LVT)                       0.09       2.00 r
+  mult_36_2/S2_14_3/S (FADDX1_LVT)                        0.12       2.12 f
+  mult_36_2/S2_15_2/S (FADDX1_LVT)                        0.12       2.24 r
+  mult_36_2/S2_16_1/CO (FADDX1_LVT)                       0.09       2.33 r
+  mult_36_2/S2_17_1/S (FADDX1_LVT)                        0.12       2.45 f
+  mult_36_2/S1_18_0/S (FADDX1_LVT)                        0.12       2.57 r
+  mult_36_2/PRODUCT[18] (desiredDrive_DW02_mult_1)        0.00       2.57 r
+  mult_36_3/A[18] (desiredDrive_DW02_mult_0)              0.00       2.57 r
+  mult_36_3/U62/Y (AND2X1_LVT)                            0.05       2.62 r
+  mult_36_3/S3_18_1/CO (FADDX1_LVT)                       0.10       2.73 r
+  mult_36_3/S3_19_1/CO (FADDX1_LVT)                       0.10       2.83 r
+  mult_36_3/S3_20_1/CO (FADDX1_LVT)                       0.10       2.93 r
+  mult_36_3/S3_21_1/CO (FADDX1_LVT)                       0.10       3.02 r
+  mult_36_3/S3_22_1/CO (FADDX1_LVT)                       0.10       3.12 r
+  mult_36_3/S3_23_1/CO (FADDX1_LVT)                       0.10       3.22 r
+  mult_36_3/S3_24_1/CO (FADDX1_LVT)                       0.10       3.32 r
+  mult_36_3/S3_25_1/CO (FADDX1_LVT)                       0.10       3.42 r
+  mult_36_3/S5_1/CO (FADDX1_LVT)                          0.10       3.52 r
+  mult_36_3/U5/Y (XOR2X1_LVT)                             0.09       3.61 f
+  mult_36_3/U11/Y (NAND2X0_LVT)                           0.05       3.65 r
+  mult_36_3/U3/Y (XNOR2X1_LVT)                            0.09       3.74 r
+  mult_36_3/PRODUCT[29] (desiredDrive_DW02_mult_0)        0.00       3.74 r
+  U114/Y (OR3X1_LVT)                                      0.05       3.80 r
+  U113/Y (AND2X1_LVT)                                     0.06       3.86 r
+  U111/Y (AO21X1_LVT)                                     0.05       3.91 r
+  target_curr[10] (out)                                   0.00       3.91 r
+  data arrival time                                                  3.91
+  --------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: incline[10]
+              (input port)
+  Endpoint: target_curr[9]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  desiredDrive       16000                 saed32lvt_tt0p85v25c
+  desiredDrive_DW02_mult_2
+                     8000                  saed32lvt_tt0p85v25c
+  desiredDrive_DW01_add_2
+                     ForQA                 saed32lvt_tt0p85v25c
+  desiredDrive_DW02_mult_1
+                     8000                  saed32lvt_tt0p85v25c
+  desiredDrive_DW02_mult_0
+                     8000                  saed32lvt_tt0p85v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  input external delay                                    0.00       0.00 f
+  incline[10] (in)                                        0.00       0.00 f
+  U130/Y (NAND3X0_LVT)                                    0.03       0.04 r
+  U129/Y (NAND2X0_LVT)                                    0.03       0.06 f
+  U128/Y (AO22X1_LVT)                                     0.04       0.11 f
+  U127/Y (INVX0_LVT)                                      0.03       0.14 r
+  U126/Y (NAND2X0_LVT)                                    0.06       0.20 f
+  U117/Y (AO21X1_LVT)                                     0.10       0.31 f
+  mult_36/B[7] (desiredDrive_DW02_mult_2)                 0.00       0.31 f
+  mult_36/U108/Y (AND2X1_LVT)                             0.07       0.38 f
+  mult_36/U17/Y (XOR2X1_LVT)                              0.10       0.47 r
+  mult_36/S2_2_6/CO (FADDX1_LVT)                          0.09       0.56 r
+  mult_36/S2_3_6/S (FADDX1_LVT)                           0.12       0.69 f
+  mult_36/S2_4_5/S (FADDX1_LVT)                           0.12       0.80 r
+  mult_36/S2_5_4/CO (FADDX1_LVT)                          0.09       0.89 r
+  mult_36/S2_6_4/S (FADDX1_LVT)                           0.12       1.02 f
+  mult_36/S2_7_3/S (FADDX1_LVT)                           0.12       1.13 r
+  mult_36/S2_8_2/CO (FADDX1_LVT)                          0.09       1.22 r
+  mult_36/S2_9_2/CO (FADDX1_LVT)                          0.10       1.32 r
+  mult_36/S2_10_2/S (FADDX1_LVT)                          0.12       1.44 f
+  mult_36/S4_1/S (FADDX1_LVT)                             0.12       1.56 r
+  mult_36/U10/Y (XOR2X1_LVT)                              0.09       1.65 f
+  mult_36/FS_1/A[10] (desiredDrive_DW01_add_2)            0.00       1.65 f
+  mult_36/FS_1/U14/Y (INVX1_LVT)                          0.03       1.69 r
+  mult_36/FS_1/U13/Y (INVX1_LVT)                          0.04       1.73 f
+  mult_36/FS_1/SUM[10] (desiredDrive_DW01_add_2)          0.00       1.73 f
+  mult_36/PRODUCT[12] (desiredDrive_DW02_mult_2)          0.00       1.73 f
+  mult_36_2/A[12] (desiredDrive_DW02_mult_1)              0.00       1.73 f
+  mult_36_2/U147/Y (AND2X1_LVT)                           0.06       1.78 f
+  mult_36_2/S3_12_4/S (FADDX1_LVT)                        0.13       1.91 r
+  mult_36_2/S2_13_3/CO (FADDX1_LVT)                       0.09       2.00 r
+  mult_36_2/S2_14_3/S (FADDX1_LVT)                        0.12       2.12 f
+  mult_36_2/S2_15_2/S (FADDX1_LVT)                        0.12       2.24 r
+  mult_36_2/S2_16_1/CO (FADDX1_LVT)                       0.09       2.33 r
+  mult_36_2/S2_17_1/S (FADDX1_LVT)                        0.12       2.45 f
+  mult_36_2/S1_18_0/S (FADDX1_LVT)                        0.12       2.57 r
+  mult_36_2/PRODUCT[18] (desiredDrive_DW02_mult_1)        0.00       2.57 r
+  mult_36_3/A[18] (desiredDrive_DW02_mult_0)              0.00       2.57 r
+  mult_36_3/U62/Y (AND2X1_LVT)                            0.05       2.62 r
+  mult_36_3/S3_18_1/CO (FADDX1_LVT)                       0.10       2.73 r
+  mult_36_3/S3_19_1/CO (FADDX1_LVT)                       0.10       2.83 r
+  mult_36_3/S3_20_1/CO (FADDX1_LVT)                       0.10       2.93 r
+  mult_36_3/S3_21_1/CO (FADDX1_LVT)                       0.10       3.02 r
+  mult_36_3/S3_22_1/CO (FADDX1_LVT)                       0.10       3.12 r
+  mult_36_3/S3_23_1/CO (FADDX1_LVT)                       0.10       3.22 r
+  mult_36_3/S3_24_1/CO (FADDX1_LVT)                       0.10       3.32 r
+  mult_36_3/S3_25_1/CO (FADDX1_LVT)                       0.10       3.42 r
+  mult_36_3/S5_1/CO (FADDX1_LVT)                          0.10       3.52 r
+  mult_36_3/U5/Y (XOR2X1_LVT)                             0.09       3.61 f
+  mult_36_3/U11/Y (NAND2X0_LVT)                           0.05       3.65 r
+  mult_36_3/U3/Y (XNOR2X1_LVT)                            0.09       3.74 r
+  mult_36_3/PRODUCT[29] (desiredDrive_DW02_mult_0)        0.00       3.74 r
+  U114/Y (OR3X1_LVT)                                      0.05       3.80 r
+  U113/Y (AND2X1_LVT)                                     0.06       3.86 r
+  U101/Y (AO21X1_LVT)                                     0.05       3.91 r
+  target_curr[9] (out)                                    0.00       3.91 r
+  data arrival time                                                  3.91
+  --------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+1

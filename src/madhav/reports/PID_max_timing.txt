@@ -1,0 +1,256 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -nworst 3
+        -max_paths 3
+Design : PID
+Version: S-2021.06
+Date   : Mon Apr 25 16:07:51 2022
+****************************************
+
+Operating Conditions: tt0p85v25c   Library: saed32lvt_tt0p85v25c
+Wire Load Model Mode: enclosed
+
+  Startpoint: error[0] (input port clocked by clk)
+  Endpoint: drv_mag[4] (output port clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  PID                16000                 saed32lvt_tt0p85v25c
+  PID_DW01_sub_0     ForQA                 saed32lvt_tt0p85v25c
+  PID_DW01_add_1     ForQA                 saed32lvt_tt0p85v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    0.30       0.30 r
+  error[0] (in)                                           0.01       0.31 r
+  sub_89/A[0] (PID_DW01_sub_0)                            0.00       0.31 r
+  sub_89/U1/Y (OR2X2_LVT)                                 0.05       0.35 r
+  sub_89/U2_1/CO (FADDX1_LVT)                             0.08       0.44 r
+  sub_89/U2_2/CO (FADDX1_LVT)                             0.08       0.52 r
+  sub_89/U2_3/CO (FADDX1_LVT)                             0.08       0.60 r
+  sub_89/U2_4/CO (FADDX1_LVT)                             0.08       0.69 r
+  sub_89/U2_5/CO (FADDX1_LVT)                             0.08       0.77 r
+  sub_89/U2_6/CO (FADDX1_LVT)                             0.08       0.85 r
+  sub_89/U2_7/CO (FADDX1_LVT)                             0.08       0.94 r
+  sub_89/U2_8/CO (FADDX1_LVT)                             0.08       1.02 r
+  sub_89/U2_9/CO (FADDX1_LVT)                             0.08       1.10 r
+  sub_89/U2_10/CO (FADDX1_LVT)                            0.08       1.18 r
+  sub_89/U2_11/CO (FADDX1_LVT)                            0.08       1.26 r
+  sub_89/U2_12/Y (XOR3X2_LVT)                             0.06       1.32 f
+  sub_89/DIFF[12] (PID_DW01_sub_0)                        0.00       1.32 f
+  U164/Y (NAND2X4_LVT)                                    0.07       1.39 r
+  U123/Y (AO21X1_LVT)                                     0.06       1.45 r
+  add_0_root_add_0_root_add_100_2/B[1] (PID_DW01_add_1)
+                                                          0.00       1.45 r
+  add_0_root_add_0_root_add_100_2/U7/Y (AND2X1_LVT)       0.04       1.49 r
+  add_0_root_add_0_root_add_100_2/U1_2/CO (FADDX1_LVT)
+                                                          0.08       1.57 r
+  add_0_root_add_0_root_add_100_2/U1_3/CO (FADDX1_LVT)
+                                                          0.08       1.66 r
+  add_0_root_add_0_root_add_100_2/U1_4/CO (FADDX1_LVT)
+                                                          0.08       1.74 r
+  add_0_root_add_0_root_add_100_2/U1_5/CO (FADDX1_LVT)
+                                                          0.08       1.82 r
+  add_0_root_add_0_root_add_100_2/U1_6/CO (FADDX1_LVT)
+                                                          0.08       1.91 r
+  add_0_root_add_0_root_add_100_2/U1_7/CO (FADDX1_LVT)
+                                                          0.08       1.99 r
+  add_0_root_add_0_root_add_100_2/U1_8/CO (FADDX1_LVT)
+                                                          0.08       2.07 r
+  add_0_root_add_0_root_add_100_2/U1_9/CO (FADDX1_LVT)
+                                                          0.08       2.16 r
+  add_0_root_add_0_root_add_100_2/U1_10/CO (FADDX1_LVT)
+                                                          0.08       2.24 r
+  add_0_root_add_0_root_add_100_2/U1_11/CO (FADDX1_LVT)
+                                                          0.08       2.32 r
+  add_0_root_add_0_root_add_100_2/U1_12/CO (FADDX1_LVT)
+                                                          0.08       2.40 r
+  add_0_root_add_0_root_add_100_2/U3/Y (XOR3X2_LVT)       0.06       2.46 f
+  add_0_root_add_0_root_add_100_2/SUM[13] (PID_DW01_add_1)
+                                                          0.00       2.46 f
+  U161/Y (INVX0_LVT)                                      0.04       2.50 r
+  U159/Y (AND2X1_LVT)                                     0.05       2.55 r
+  U107/Y (AO21X1_LVT)                                     0.04       2.59 r
+  drv_mag[4] (out)                                        0.00       2.59 r
+  data arrival time                                                  2.59
+
+  clock clk (rise edge)                                   2.50       2.50
+  clock network delay (ideal)                             0.00       2.50
+  clock uncertainty                                      -0.15       2.35
+  output external delay                                  -0.50       1.85
+  data required time                                                 1.85
+  --------------------------------------------------------------------------
+  data required time                                                 1.85
+  data arrival time                                                 -2.59
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -0.74
+
+
+  Startpoint: error[0] (input port clocked by clk)
+  Endpoint: drv_mag[3] (output port clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  PID                16000                 saed32lvt_tt0p85v25c
+  PID_DW01_sub_0     ForQA                 saed32lvt_tt0p85v25c
+  PID_DW01_add_1     ForQA                 saed32lvt_tt0p85v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    0.30       0.30 r
+  error[0] (in)                                           0.01       0.31 r
+  sub_89/A[0] (PID_DW01_sub_0)                            0.00       0.31 r
+  sub_89/U1/Y (OR2X2_LVT)                                 0.05       0.35 r
+  sub_89/U2_1/CO (FADDX1_LVT)                             0.08       0.44 r
+  sub_89/U2_2/CO (FADDX1_LVT)                             0.08       0.52 r
+  sub_89/U2_3/CO (FADDX1_LVT)                             0.08       0.60 r
+  sub_89/U2_4/CO (FADDX1_LVT)                             0.08       0.69 r
+  sub_89/U2_5/CO (FADDX1_LVT)                             0.08       0.77 r
+  sub_89/U2_6/CO (FADDX1_LVT)                             0.08       0.85 r
+  sub_89/U2_7/CO (FADDX1_LVT)                             0.08       0.94 r
+  sub_89/U2_8/CO (FADDX1_LVT)                             0.08       1.02 r
+  sub_89/U2_9/CO (FADDX1_LVT)                             0.08       1.10 r
+  sub_89/U2_10/CO (FADDX1_LVT)                            0.08       1.18 r
+  sub_89/U2_11/CO (FADDX1_LVT)                            0.08       1.26 r
+  sub_89/U2_12/Y (XOR3X2_LVT)                             0.06       1.32 f
+  sub_89/DIFF[12] (PID_DW01_sub_0)                        0.00       1.32 f
+  U164/Y (NAND2X4_LVT)                                    0.07       1.39 r
+  U123/Y (AO21X1_LVT)                                     0.06       1.45 r
+  add_0_root_add_0_root_add_100_2/B[1] (PID_DW01_add_1)
+                                                          0.00       1.45 r
+  add_0_root_add_0_root_add_100_2/U7/Y (AND2X1_LVT)       0.04       1.49 r
+  add_0_root_add_0_root_add_100_2/U1_2/CO (FADDX1_LVT)
+                                                          0.08       1.57 r
+  add_0_root_add_0_root_add_100_2/U1_3/CO (FADDX1_LVT)
+                                                          0.08       1.66 r
+  add_0_root_add_0_root_add_100_2/U1_4/CO (FADDX1_LVT)
+                                                          0.08       1.74 r
+  add_0_root_add_0_root_add_100_2/U1_5/CO (FADDX1_LVT)
+                                                          0.08       1.82 r
+  add_0_root_add_0_root_add_100_2/U1_6/CO (FADDX1_LVT)
+                                                          0.08       1.91 r
+  add_0_root_add_0_root_add_100_2/U1_7/CO (FADDX1_LVT)
+                                                          0.08       1.99 r
+  add_0_root_add_0_root_add_100_2/U1_8/CO (FADDX1_LVT)
+                                                          0.08       2.07 r
+  add_0_root_add_0_root_add_100_2/U1_9/CO (FADDX1_LVT)
+                                                          0.08       2.16 r
+  add_0_root_add_0_root_add_100_2/U1_10/CO (FADDX1_LVT)
+                                                          0.08       2.24 r
+  add_0_root_add_0_root_add_100_2/U1_11/CO (FADDX1_LVT)
+                                                          0.08       2.32 r
+  add_0_root_add_0_root_add_100_2/U1_12/CO (FADDX1_LVT)
+                                                          0.08       2.40 r
+  add_0_root_add_0_root_add_100_2/U3/Y (XOR3X2_LVT)       0.06       2.46 f
+  add_0_root_add_0_root_add_100_2/SUM[13] (PID_DW01_add_1)
+                                                          0.00       2.46 f
+  U161/Y (INVX0_LVT)                                      0.04       2.50 r
+  U158/Y (AND2X1_LVT)                                     0.05       2.55 r
+  U108/Y (AO21X1_LVT)                                     0.04       2.59 r
+  drv_mag[3] (out)                                        0.00       2.59 r
+  data arrival time                                                  2.59
+
+  clock clk (rise edge)                                   2.50       2.50
+  clock network delay (ideal)                             0.00       2.50
+  clock uncertainty                                      -0.15       2.35
+  output external delay                                  -0.50       1.85
+  data required time                                                 1.85
+  --------------------------------------------------------------------------
+  data required time                                                 1.85
+  data arrival time                                                 -2.59
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -0.74
+
+
+  Startpoint: error[0] (input port clocked by clk)
+  Endpoint: drv_mag[2] (output port clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  PID                16000                 saed32lvt_tt0p85v25c
+  PID_DW01_sub_0     ForQA                 saed32lvt_tt0p85v25c
+  PID_DW01_add_1     ForQA                 saed32lvt_tt0p85v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    0.30       0.30 r
+  error[0] (in)                                           0.01       0.31 r
+  sub_89/A[0] (PID_DW01_sub_0)                            0.00       0.31 r
+  sub_89/U1/Y (OR2X2_LVT)                                 0.05       0.35 r
+  sub_89/U2_1/CO (FADDX1_LVT)                             0.08       0.44 r
+  sub_89/U2_2/CO (FADDX1_LVT)                             0.08       0.52 r
+  sub_89/U2_3/CO (FADDX1_LVT)                             0.08       0.60 r
+  sub_89/U2_4/CO (FADDX1_LVT)                             0.08       0.69 r
+  sub_89/U2_5/CO (FADDX1_LVT)                             0.08       0.77 r
+  sub_89/U2_6/CO (FADDX1_LVT)                             0.08       0.85 r
+  sub_89/U2_7/CO (FADDX1_LVT)                             0.08       0.94 r
+  sub_89/U2_8/CO (FADDX1_LVT)                             0.08       1.02 r
+  sub_89/U2_9/CO (FADDX1_LVT)                             0.08       1.10 r
+  sub_89/U2_10/CO (FADDX1_LVT)                            0.08       1.18 r
+  sub_89/U2_11/CO (FADDX1_LVT)                            0.08       1.26 r
+  sub_89/U2_12/Y (XOR3X2_LVT)                             0.06       1.32 f
+  sub_89/DIFF[12] (PID_DW01_sub_0)                        0.00       1.32 f
+  U164/Y (NAND2X4_LVT)                                    0.07       1.39 r
+  U123/Y (AO21X1_LVT)                                     0.06       1.45 r
+  add_0_root_add_0_root_add_100_2/B[1] (PID_DW01_add_1)
+                                                          0.00       1.45 r
+  add_0_root_add_0_root_add_100_2/U7/Y (AND2X1_LVT)       0.04       1.49 r
+  add_0_root_add_0_root_add_100_2/U1_2/CO (FADDX1_LVT)
+                                                          0.08       1.57 r
+  add_0_root_add_0_root_add_100_2/U1_3/CO (FADDX1_LVT)
+                                                          0.08       1.66 r
+  add_0_root_add_0_root_add_100_2/U1_4/CO (FADDX1_LVT)
+                                                          0.08       1.74 r
+  add_0_root_add_0_root_add_100_2/U1_5/CO (FADDX1_LVT)
+                                                          0.08       1.82 r
+  add_0_root_add_0_root_add_100_2/U1_6/CO (FADDX1_LVT)
+                                                          0.08       1.91 r
+  add_0_root_add_0_root_add_100_2/U1_7/CO (FADDX1_LVT)
+                                                          0.08       1.99 r
+  add_0_root_add_0_root_add_100_2/U1_8/CO (FADDX1_LVT)
+                                                          0.08       2.07 r
+  add_0_root_add_0_root_add_100_2/U1_9/CO (FADDX1_LVT)
+                                                          0.08       2.16 r
+  add_0_root_add_0_root_add_100_2/U1_10/CO (FADDX1_LVT)
+                                                          0.08       2.24 r
+  add_0_root_add_0_root_add_100_2/U1_11/CO (FADDX1_LVT)
+                                                          0.08       2.32 r
+  add_0_root_add_0_root_add_100_2/U1_12/CO (FADDX1_LVT)
+                                                          0.08       2.40 r
+  add_0_root_add_0_root_add_100_2/U3/Y (XOR3X2_LVT)       0.06       2.46 f
+  add_0_root_add_0_root_add_100_2/SUM[13] (PID_DW01_add_1)
+                                                          0.00       2.46 f
+  U161/Y (INVX0_LVT)                                      0.04       2.50 r
+  U159/Y (AND2X1_LVT)                                     0.05       2.55 r
+  U109/Y (AO21X1_LVT)                                     0.04       2.59 r
+  drv_mag[2] (out)                                        0.00       2.59 r
+  data arrival time                                                  2.59
+
+  clock clk (rise edge)                                   2.50       2.50
+  clock network delay (ideal)                             0.00       2.50
+  clock uncertainty                                      -0.15       2.35
+  output external delay                                  -0.50       1.85
+  data required time                                                 1.85
+  --------------------------------------------------------------------------
+  data required time                                                 1.85
+  data arrival time                                                 -2.59
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -0.74
+
+
+1

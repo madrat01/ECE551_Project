@@ -1,0 +1,85 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay min
+        -nworst 3
+        -max_paths 3
+Design : desiredDrive
+Version: S-2021.06
+Date   : Mon Apr 25 16:02:38 2022
+****************************************
+
+Operating Conditions: tt0p85v25c   Library: saed32lvt_tt0p85v25c
+Wire Load Model Mode: enclosed
+
+  Startpoint: not_pedaling
+              (input port)
+  Endpoint: target_curr[11]
+            (output port)
+  Path Group: (none)
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  desiredDrive       16000                 saed32lvt_tt0p85v25c
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                     0.00       0.00 f
+  not_pedaling (in)                        0.00       0.00 f
+  U115/Y (INVX0_LVT)                       0.05       0.05 r
+  U110/Y (AO21X1_LVT)                      0.06       0.11 r
+  target_curr[11] (out)                    0.00       0.11 r
+  data arrival time                                   0.11
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: not_pedaling
+              (input port)
+  Endpoint: target_curr[10]
+            (output port)
+  Path Group: (none)
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  desiredDrive       16000                 saed32lvt_tt0p85v25c
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                     0.00       0.00 f
+  not_pedaling (in)                        0.00       0.00 f
+  U115/Y (INVX0_LVT)                       0.05       0.05 r
+  U111/Y (AO21X1_LVT)                      0.06       0.11 r
+  target_curr[10] (out)                    0.00       0.11 r
+  data arrival time                                   0.11
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: not_pedaling
+              (input port)
+  Endpoint: target_curr[9]
+            (output port)
+  Path Group: (none)
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  desiredDrive       16000                 saed32lvt_tt0p85v25c
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                     0.00       0.00 f
+  not_pedaling (in)                        0.00       0.00 f
+  U115/Y (INVX0_LVT)                       0.05       0.05 r
+  U101/Y (AO21X1_LVT)                      0.06       0.11 r
+  target_curr[9] (out)                     0.00       0.11 r
+  data arrival time                                   0.11
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+1

@@ -1,0 +1,112 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -nworst 3
+        -max_paths 3
+Design : brushless
+Version: S-2021.06
+Date   : Mon Apr 25 16:14:45 2022
+****************************************
+
+Operating Conditions: tt0p85v25c   Library: saed32lvt_tt0p85v25c
+Wire Load Model Mode: enclosed
+
+  Startpoint: brake_n (input port clocked by clk)
+  Endpoint: duty[9] (output port clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  brushless          16000                 saed32lvt_tt0p85v25c
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     0.30       0.30 f
+  brake_n (in)                             0.01       0.31 f
+  U29/Y (INVX1_LVT)                        0.06       0.37 r
+  U17/Y (OR2X1_LVT)                        0.05       0.42 r
+  duty[9] (out)                            0.00       0.42 r
+  data arrival time                                   0.42
+
+  clock clk (rise edge)                    2.50       2.50
+  clock network delay (ideal)              0.00       2.50
+  clock uncertainty                       -0.15       2.35
+  output external delay                   -0.50       1.85
+  data required time                                  1.85
+  -----------------------------------------------------------
+  data required time                                  1.85
+  data arrival time                                  -0.42
+  -----------------------------------------------------------
+  slack (MET)                                         1.43
+
+
+  Startpoint: brake_n (input port clocked by clk)
+  Endpoint: duty[9] (output port clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  brushless          16000                 saed32lvt_tt0p85v25c
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     0.30       0.30 r
+  brake_n (in)                             0.01       0.31 r
+  U29/Y (INVX1_LVT)                        0.05       0.37 f
+  U17/Y (OR2X1_LVT)                        0.05       0.42 f
+  duty[9] (out)                            0.00       0.42 f
+  data arrival time                                   0.42
+
+  clock clk (rise edge)                    2.50       2.50
+  clock network delay (ideal)              0.00       2.50
+  clock uncertainty                       -0.15       2.35
+  output external delay                   -0.50       1.85
+  data required time                                  1.85
+  -----------------------------------------------------------
+  data required time                                  1.85
+  data arrival time                                  -0.42
+  -----------------------------------------------------------
+  slack (MET)                                         1.43
+
+
+  Startpoint: brake_n (input port clocked by clk)
+  Endpoint: selBlu[0] (output port clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  brushless          16000                 saed32lvt_tt0p85v25c
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     0.30       0.30 f
+  brake_n (in)                             0.01       0.31 f
+  U29/Y (INVX1_LVT)                        0.06       0.37 r
+  U11/Y (AO21X1_LVT)                       0.04       0.42 r
+  selBlu[0] (out)                          0.00       0.42 r
+  data arrival time                                   0.42
+
+  clock clk (rise edge)                    2.50       2.50
+  clock network delay (ideal)              0.00       2.50
+  clock uncertainty                       -0.15       2.35
+  output external delay                   -0.50       1.85
+  data required time                                  1.85
+  -----------------------------------------------------------
+  data required time                                  1.85
+  data arrival time                                  -0.42
+  -----------------------------------------------------------
+  slack (MET)                                         1.43
+
+
+1
