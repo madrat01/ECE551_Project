@@ -7,7 +7,7 @@ Report : timing
         -max_paths 3
 Design : nonoverlap
 Version: S-2021.06
-Date   : Mon Apr 25 16:13:44 2022
+Date   : Mon Apr 25 23:23:53 2022
 ****************************************
 
 Operating Conditions: tt0p85v25c   Library: saed32lvt_tt0p85v25c
@@ -29,10 +29,10 @@ Wire Load Model Mode: enclosed
   clock network delay (ideal)              0.00       0.00
   input external delay                     0.30       0.30 r
   lowIn (in)                               0.01       0.31 r
-  U20/Y (XNOR2X1_LVT)                      0.08       0.38 f
+  U24/Y (XNOR2X1_LVT)                      0.08       0.38 f
   U17/Y (NAND2X0_LVT)                      0.04       0.43 r
-  U14/Y (AO22X1_LVT)                       0.06       0.49 r
-  U18/Y (INVX1_LVT)                        0.03       0.52 f
+  U18/Y (AO22X1_LVT)                       0.06       0.49 r
+  U22/Y (INVX1_LVT)                        0.03       0.52 f
   U12/Y (NOR2X0_LVT)                       0.07       0.59 r
   deadTime_reg[0]/RSTB (DFFSSRX1_LVT)      0.02       0.61 r
   data arrival time                                   0.61
@@ -66,10 +66,10 @@ Wire Load Model Mode: enclosed
   clock network delay (ideal)              0.00       0.00
   input external delay                     0.30       0.30 r
   lowIn (in)                               0.01       0.31 r
-  U20/Y (XNOR2X1_LVT)                      0.08       0.38 f
+  U24/Y (XNOR2X1_LVT)                      0.08       0.38 f
   U17/Y (NAND2X0_LVT)                      0.04       0.43 r
-  U14/Y (AO22X1_LVT)                       0.06       0.49 r
-  U18/Y (INVX1_LVT)                        0.03       0.52 f
+  U18/Y (AO22X1_LVT)                       0.06       0.49 r
+  U22/Y (INVX1_LVT)                        0.03       0.52 f
   U12/Y (NOR2X0_LVT)                       0.07       0.59 r
   deadTime_reg[1]/RSTB (DFFSSRX1_LVT)      0.02       0.61 r
   data arrival time                                   0.61
@@ -103,10 +103,10 @@ Wire Load Model Mode: enclosed
   clock network delay (ideal)              0.00       0.00
   input external delay                     0.30       0.30 r
   lowIn (in)                               0.01       0.31 r
-  U20/Y (XNOR2X1_LVT)                      0.08       0.38 f
+  U24/Y (XNOR2X1_LVT)                      0.08       0.38 f
   U17/Y (NAND2X0_LVT)                      0.04       0.43 r
-  U14/Y (AO22X1_LVT)                       0.06       0.49 r
-  U18/Y (INVX1_LVT)                        0.03       0.52 f
+  U18/Y (AO22X1_LVT)                       0.06       0.49 r
+  U22/Y (INVX1_LVT)                        0.03       0.52 f
   U12/Y (NOR2X0_LVT)                       0.07       0.59 r
   deadTime_reg[2]/RSTB (DFFSSRX1_LVT)      0.02       0.61 r
   data arrival time                                   0.61

@@ -7,15 +7,15 @@ Report : timing
         -max_paths 3
 Design : mtr_drv
 Version: S-2021.06
-Date   : Mon Apr 25 16:12:36 2022
+Date   : Mon Apr 25 23:23:18 2022
 ****************************************
 
 Operating Conditions: tt0p85v25c   Library: saed32lvt_tt0p85v25c
 Wire Load Model Mode: enclosed
 
-  Startpoint: nonoverlap_grn/deadTime_reg[0]
+  Startpoint: pwm/PWM_sig_reg
               (rising edge-triggered flip-flop clocked by clk)
-  Endpoint: nonoverlap_grn/deadTime_reg[0]
+  Endpoint: nonoverlap_grn/lowIn_dly_reg
             (rising edge-triggered flip-flop clocked by clk)
   Path Group: clk
   Path Type: min
@@ -28,27 +28,29 @@ Wire Load Model Mode: enclosed
   --------------------------------------------------------------------------
   clock clk (rise edge)                                   0.00       0.00
   clock network delay (ideal)                             0.00       0.00
-  nonoverlap_grn/deadTime_reg[0]/CLK (DFFSSRX1_LVT)       0.00       0.00 r
-  nonoverlap_grn/deadTime_reg[0]/QN (DFFSSRX1_LVT)        0.06       0.06 f
-  nonoverlap_grn/deadTime_reg[0]/D (DFFSSRX1_LVT)         0.01       0.06 f
-  data arrival time                                                  0.06
+  pwm/PWM_sig_reg/CLK (DFFARX1_LVT)                       0.00       0.00 r
+  pwm/PWM_sig_reg/QN (DFFARX1_LVT)                        0.06       0.06 f
+  U56/Y (AND2X1_LVT)                                      0.04       0.10 f
+  U55/Y (AO22X1_LVT)                                      0.04       0.13 f
+  nonoverlap_grn/lowIn_dly_reg/D (DFFX1_LVT)              0.01       0.14 f
+  data arrival time                                                  0.14
 
   clock clk (rise edge)                                   0.00       0.00
   clock network delay (ideal)                             0.00       0.00
   clock uncertainty                                       0.15       0.15
-  nonoverlap_grn/deadTime_reg[0]/CLK (DFFSSRX1_LVT)       0.00       0.15 r
-  library hold time                                      -0.03       0.12
-  data required time                                                 0.12
+  nonoverlap_grn/lowIn_dly_reg/CLK (DFFX1_LVT)            0.00       0.15 r
+  library hold time                                      -0.01       0.14
+  data required time                                                 0.14
   --------------------------------------------------------------------------
-  data required time                                                 0.12
-  data arrival time                                                 -0.06
+  data required time                                                 0.14
+  data arrival time                                                 -0.14
   --------------------------------------------------------------------------
-  slack (VIOLATED)                                                  -0.06
+  slack (MET)                                                        0.00
 
 
-  Startpoint: nonoverlap_ylw/deadTime_reg[0]
+  Startpoint: pwm/PWM_sig_reg
               (rising edge-triggered flip-flop clocked by clk)
-  Endpoint: nonoverlap_ylw/deadTime_reg[0]
+  Endpoint: nonoverlap_blu/lowIn_dly_reg
             (rising edge-triggered flip-flop clocked by clk)
   Path Group: clk
   Path Type: min
@@ -61,27 +63,29 @@ Wire Load Model Mode: enclosed
   --------------------------------------------------------------------------
   clock clk (rise edge)                                   0.00       0.00
   clock network delay (ideal)                             0.00       0.00
-  nonoverlap_ylw/deadTime_reg[0]/CLK (DFFSSRX1_LVT)       0.00       0.00 r
-  nonoverlap_ylw/deadTime_reg[0]/QN (DFFSSRX1_LVT)        0.06       0.06 f
-  nonoverlap_ylw/deadTime_reg[0]/D (DFFSSRX1_LVT)         0.01       0.06 f
-  data arrival time                                                  0.06
+  pwm/PWM_sig_reg/CLK (DFFARX1_LVT)                       0.00       0.00 r
+  pwm/PWM_sig_reg/QN (DFFARX1_LVT)                        0.06       0.06 f
+  U58/Y (AND2X1_LVT)                                      0.04       0.10 f
+  U57/Y (AO22X1_LVT)                                      0.04       0.13 f
+  nonoverlap_blu/lowIn_dly_reg/D (DFFX1_LVT)              0.01       0.14 f
+  data arrival time                                                  0.14
 
   clock clk (rise edge)                                   0.00       0.00
   clock network delay (ideal)                             0.00       0.00
   clock uncertainty                                       0.15       0.15
-  nonoverlap_ylw/deadTime_reg[0]/CLK (DFFSSRX1_LVT)       0.00       0.15 r
-  library hold time                                      -0.03       0.12
-  data required time                                                 0.12
+  nonoverlap_blu/lowIn_dly_reg/CLK (DFFX1_LVT)            0.00       0.15 r
+  library hold time                                      -0.01       0.14
+  data required time                                                 0.14
   --------------------------------------------------------------------------
-  data required time                                                 0.12
-  data arrival time                                                 -0.06
+  data required time                                                 0.14
+  data arrival time                                                 -0.14
   --------------------------------------------------------------------------
-  slack (VIOLATED)                                                  -0.06
+  slack (MET)                                                        0.00
 
 
-  Startpoint: nonoverlap_blu/deadTime_reg[0]
+  Startpoint: pwm/PWM_sig_reg
               (rising edge-triggered flip-flop clocked by clk)
-  Endpoint: nonoverlap_blu/deadTime_reg[0]
+  Endpoint: nonoverlap_ylw/lowIn_dly_reg
             (rising edge-triggered flip-flop clocked by clk)
   Path Group: clk
   Path Type: min
@@ -94,22 +98,24 @@ Wire Load Model Mode: enclosed
   --------------------------------------------------------------------------
   clock clk (rise edge)                                   0.00       0.00
   clock network delay (ideal)                             0.00       0.00
-  nonoverlap_blu/deadTime_reg[0]/CLK (DFFSSRX1_LVT)       0.00       0.00 r
-  nonoverlap_blu/deadTime_reg[0]/QN (DFFSSRX1_LVT)        0.06       0.06 f
-  nonoverlap_blu/deadTime_reg[0]/D (DFFSSRX1_LVT)         0.01       0.06 f
-  data arrival time                                                  0.06
+  pwm/PWM_sig_reg/CLK (DFFARX1_LVT)                       0.00       0.00 r
+  pwm/PWM_sig_reg/QN (DFFARX1_LVT)                        0.06       0.06 f
+  U54/Y (AND2X1_LVT)                                      0.04       0.10 f
+  U53/Y (AO22X1_LVT)                                      0.04       0.13 f
+  nonoverlap_ylw/lowIn_dly_reg/D (DFFX1_LVT)              0.01       0.14 f
+  data arrival time                                                  0.14
 
   clock clk (rise edge)                                   0.00       0.00
   clock network delay (ideal)                             0.00       0.00
   clock uncertainty                                       0.15       0.15
-  nonoverlap_blu/deadTime_reg[0]/CLK (DFFSSRX1_LVT)       0.00       0.15 r
-  library hold time                                      -0.03       0.12
-  data required time                                                 0.12
+  nonoverlap_ylw/lowIn_dly_reg/CLK (DFFX1_LVT)            0.00       0.15 r
+  library hold time                                      -0.01       0.14
+  data required time                                                 0.14
   --------------------------------------------------------------------------
-  data required time                                                 0.12
-  data arrival time                                                 -0.06
+  data required time                                                 0.14
+  data arrival time                                                 -0.14
   --------------------------------------------------------------------------
-  slack (VIOLATED)                                                  -0.06
+  slack (MET)                                                        0.00
 
 
 1

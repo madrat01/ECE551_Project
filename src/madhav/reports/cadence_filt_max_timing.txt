@@ -7,7 +7,7 @@ Report : timing
         -max_paths 3
 Design : cadence_filt
 Version: S-2021.06
-Date   : Mon Apr 25 16:03:36 2022
+Date   : Mon Apr 25 23:22:34 2022
 ****************************************
 
 Operating Conditions: tt0p85v25c   Library: saed32lvt_tt0p85v25c
@@ -47,7 +47,7 @@ Wire Load Model Mode: enclosed
   add_35/U1_1_12/C1 (HADDX1_LVT)                          0.06       0.77 f
   add_35/U1_1_13/C1 (HADDX1_LVT)                          0.06       0.83 f
   add_35/U1_1_14/C1 (HADDX1_LVT)                          0.06       0.88 f
-  add_35/U1/Y (XOR2X1_LVT)                                0.08       0.96 r
+  add_35/U3/Y (XOR2X1_LVT)                                0.08       0.96 r
   add_35/SUM[15] (cadence_filt_DW01_inc_0)                0.00       0.96 r
   stbl_cnt_reg[15]/D (DFFSSRX1_LVT)                       0.01       0.97 r
   data arrival time                                                  0.97
@@ -99,7 +99,7 @@ Wire Load Model Mode: enclosed
   add_35/U1_1_12/C1 (HADDX1_LVT)                          0.06       0.77 f
   add_35/U1_1_13/C1 (HADDX1_LVT)                          0.06       0.82 f
   add_35/U1_1_14/C1 (HADDX1_LVT)                          0.06       0.88 f
-  add_35/U1/Y (XOR2X1_LVT)                                0.08       0.96 r
+  add_35/U3/Y (XOR2X1_LVT)                                0.08       0.96 r
   add_35/SUM[15] (cadence_filt_DW01_inc_0)                0.00       0.96 r
   stbl_cnt_reg[15]/D (DFFSSRX1_LVT)                       0.01       0.97 r
   data arrival time                                                  0.97
@@ -151,7 +151,7 @@ Wire Load Model Mode: enclosed
   add_35/U1_1_12/C1 (HADDX1_LVT)                          0.06       0.77 r
   add_35/U1_1_13/C1 (HADDX1_LVT)                          0.06       0.83 r
   add_35/U1_1_14/C1 (HADDX1_LVT)                          0.06       0.88 r
-  add_35/U1/Y (XOR2X1_LVT)                                0.06       0.94 r
+  add_35/U3/Y (XOR2X1_LVT)                                0.06       0.94 r
   add_35/SUM[15] (cadence_filt_DW01_inc_0)                0.00       0.94 r
   stbl_cnt_reg[15]/D (DFFSSRX1_LVT)                       0.01       0.95 r
   data arrival time                                                  0.95

@@ -1,0 +1,11 @@
+dc_shell -f brushless.sdc
+dc_shell -f cadence_filt.sdc
+dc_shell -f cadence_meas.sdc
+dc_shell -f desiredDrive.sdc
+dc_shell -f mtr_drv.sdc
+dc_shell -f nonoverlap.sdc
+dc_shell -f PID.sdc
+dc_shell -f PWM.sdc
+dc_shell -f reset_synch.sdc
+dc_shell -f sensorCondition.sdc
+dc_shell -f telemetry.sdc

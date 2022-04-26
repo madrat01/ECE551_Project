@@ -7,15 +7,15 @@ Report : timing
         -max_paths 3
 Design : cadence_meas
 Version: S-2021.06
-Date   : Mon Apr 25 16:05:04 2022
+Date   : Mon Apr 25 23:22:40 2022
 ****************************************
 
 Operating Conditions: tt0p85v25c   Library: saed32lvt_tt0p85v25c
 Wire Load Model Mode: enclosed
 
-  Startpoint: cadence_per_reg[4]
+  Startpoint: cadence_per_reg[7]
               (rising edge-triggered flip-flop clocked by clk)
-  Endpoint: cadence_per_reg[4]
+  Endpoint: cadence_per_reg[7]
             (rising edge-triggered flip-flop clocked by clk)
   Path Group: clk
   Path Type: min
@@ -28,28 +28,28 @@ Wire Load Model Mode: enclosed
   -----------------------------------------------------------
   clock clk (rise edge)                    0.00       0.00
   clock network delay (ideal)              0.00       0.00
-  cadence_per_reg[4]/CLK (DFFX1_LVT)       0.00       0.00 r
-  cadence_per_reg[4]/Q (DFFX1_LVT)         0.08       0.08 f
-  U15/Y (AO22X1_LVT)                       0.05       0.13 f
-  cadence_per_reg[4]/D (DFFX1_LVT)         0.01       0.13 f
-  data arrival time                                   0.13
+  cadence_per_reg[7]/CLK (DFFX1_LVT)       0.00       0.00 r
+  cadence_per_reg[7]/Q (DFFX1_LVT)         0.08       0.08 r
+  U19/Y (AO221X1_LVT)                      0.06       0.14 r
+  cadence_per_reg[7]/D (DFFX1_LVT)         0.01       0.14 r
+  data arrival time                                   0.14
 
   clock clk (rise edge)                    0.00       0.00
   clock network delay (ideal)              0.00       0.00
   clock uncertainty                        0.15       0.15
-  cadence_per_reg[4]/CLK (DFFX1_LVT)       0.00       0.15 r
+  cadence_per_reg[7]/CLK (DFFX1_LVT)       0.00       0.15 r
   library hold time                       -0.01       0.14
   data required time                                  0.14
   -----------------------------------------------------------
   data required time                                  0.14
-  data arrival time                                  -0.13
+  data arrival time                                  -0.14
   -----------------------------------------------------------
-  slack (VIOLATED)                                   -0.01
+  slack (MET)                                         0.00
 
 
-  Startpoint: cadence_per_reg[3]
+  Startpoint: cadence_per_reg[6]
               (rising edge-triggered flip-flop clocked by clk)
-  Endpoint: cadence_per_reg[3]
+  Endpoint: cadence_per_reg[6]
             (rising edge-triggered flip-flop clocked by clk)
   Path Group: clk
   Path Type: min
@@ -62,28 +62,28 @@ Wire Load Model Mode: enclosed
   -----------------------------------------------------------
   clock clk (rise edge)                    0.00       0.00
   clock network delay (ideal)              0.00       0.00
-  cadence_per_reg[3]/CLK (DFFX1_LVT)       0.00       0.00 r
-  cadence_per_reg[3]/Q (DFFX1_LVT)         0.08       0.08 f
-  U14/Y (AO22X1_LVT)                       0.05       0.13 f
-  cadence_per_reg[3]/D (DFFX1_LVT)         0.01       0.13 f
-  data arrival time                                   0.13
+  cadence_per_reg[6]/CLK (DFFX1_LVT)       0.00       0.00 r
+  cadence_per_reg[6]/Q (DFFX1_LVT)         0.08       0.08 r
+  U18/Y (AO221X1_LVT)                      0.06       0.14 r
+  cadence_per_reg[6]/D (DFFX1_LVT)         0.01       0.14 r
+  data arrival time                                   0.14
 
   clock clk (rise edge)                    0.00       0.00
   clock network delay (ideal)              0.00       0.00
   clock uncertainty                        0.15       0.15
-  cadence_per_reg[3]/CLK (DFFX1_LVT)       0.00       0.15 r
+  cadence_per_reg[6]/CLK (DFFX1_LVT)       0.00       0.15 r
   library hold time                       -0.01       0.14
   data required time                                  0.14
   -----------------------------------------------------------
   data required time                                  0.14
-  data arrival time                                  -0.13
+  data arrival time                                  -0.14
   -----------------------------------------------------------
-  slack (VIOLATED)                                   -0.01
+  slack (MET)                                         0.00
 
 
-  Startpoint: cadence_per_reg[1]
+  Startpoint: cadence_per_reg[5]
               (rising edge-triggered flip-flop clocked by clk)
-  Endpoint: cadence_per_reg[1]
+  Endpoint: cadence_per_reg[5]
             (rising edge-triggered flip-flop clocked by clk)
   Path Group: clk
   Path Type: min
@@ -96,23 +96,23 @@ Wire Load Model Mode: enclosed
   -----------------------------------------------------------
   clock clk (rise edge)                    0.00       0.00
   clock network delay (ideal)              0.00       0.00
-  cadence_per_reg[1]/CLK (DFFX1_LVT)       0.00       0.00 r
-  cadence_per_reg[1]/Q (DFFX1_LVT)         0.08       0.08 f
-  U12/Y (AO22X1_LVT)                       0.05       0.13 f
-  cadence_per_reg[1]/D (DFFX1_LVT)         0.01       0.13 f
-  data arrival time                                   0.13
+  cadence_per_reg[5]/CLK (DFFX1_LVT)       0.00       0.00 r
+  cadence_per_reg[5]/Q (DFFX1_LVT)         0.08       0.08 r
+  U17/Y (AO221X1_LVT)                      0.06       0.14 r
+  cadence_per_reg[5]/D (DFFX1_LVT)         0.01       0.14 r
+  data arrival time                                   0.14
 
   clock clk (rise edge)                    0.00       0.00
   clock network delay (ideal)              0.00       0.00
   clock uncertainty                        0.15       0.15
-  cadence_per_reg[1]/CLK (DFFX1_LVT)       0.00       0.15 r
+  cadence_per_reg[5]/CLK (DFFX1_LVT)       0.00       0.15 r
   library hold time                       -0.01       0.14
   data required time                                  0.14
   -----------------------------------------------------------
   data required time                                  0.14
-  data arrival time                                  -0.13
+  data arrival time                                  -0.14
   -----------------------------------------------------------
-  slack (VIOLATED)                                   -0.01
+  slack (MET)                                         0.00
 
 
 1

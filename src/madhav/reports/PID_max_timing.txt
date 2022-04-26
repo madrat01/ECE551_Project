@@ -7,7 +7,7 @@ Report : timing
         -max_paths 3
 Design : PID
 Version: S-2021.06
-Date   : Mon Apr 25 16:07:51 2022
+Date   : Mon Apr 25 23:24:11 2022
 ****************************************
 
 Operating Conditions: tt0p85v25c   Library: saed32lvt_tt0p85v25c
@@ -45,7 +45,7 @@ Wire Load Model Mode: enclosed
   sub_89/U2_11/CO (FADDX1_LVT)                            0.08       1.26 r
   sub_89/U2_12/Y (XOR3X2_LVT)                             0.06       1.32 f
   sub_89/DIFF[12] (PID_DW01_sub_0)                        0.00       1.32 f
-  U164/Y (NAND2X4_LVT)                                    0.07       1.39 r
+  U211/Y (NAND2X4_LVT)                                    0.07       1.39 r
   U123/Y (AO21X1_LVT)                                     0.06       1.45 r
   add_0_root_add_0_root_add_100_2/B[1] (PID_DW01_add_1)
                                                           0.00       1.45 r
@@ -75,8 +75,8 @@ Wire Load Model Mode: enclosed
   add_0_root_add_0_root_add_100_2/U3/Y (XOR3X2_LVT)       0.06       2.46 f
   add_0_root_add_0_root_add_100_2/SUM[13] (PID_DW01_add_1)
                                                           0.00       2.46 f
-  U161/Y (INVX0_LVT)                                      0.04       2.50 r
-  U159/Y (AND2X1_LVT)                                     0.05       2.55 r
+  U208/Y (INVX0_LVT)                                      0.04       2.50 r
+  U206/Y (AND2X1_LVT)                                     0.05       2.55 r
   U107/Y (AO21X1_LVT)                                     0.04       2.59 r
   drv_mag[4] (out)                                        0.00       2.59 r
   data arrival time                                                  2.59
@@ -125,7 +125,7 @@ Wire Load Model Mode: enclosed
   sub_89/U2_11/CO (FADDX1_LVT)                            0.08       1.26 r
   sub_89/U2_12/Y (XOR3X2_LVT)                             0.06       1.32 f
   sub_89/DIFF[12] (PID_DW01_sub_0)                        0.00       1.32 f
-  U164/Y (NAND2X4_LVT)                                    0.07       1.39 r
+  U211/Y (NAND2X4_LVT)                                    0.07       1.39 r
   U123/Y (AO21X1_LVT)                                     0.06       1.45 r
   add_0_root_add_0_root_add_100_2/B[1] (PID_DW01_add_1)
                                                           0.00       1.45 r
@@ -155,8 +155,8 @@ Wire Load Model Mode: enclosed
   add_0_root_add_0_root_add_100_2/U3/Y (XOR3X2_LVT)       0.06       2.46 f
   add_0_root_add_0_root_add_100_2/SUM[13] (PID_DW01_add_1)
                                                           0.00       2.46 f
-  U161/Y (INVX0_LVT)                                      0.04       2.50 r
-  U158/Y (AND2X1_LVT)                                     0.05       2.55 r
+  U208/Y (INVX0_LVT)                                      0.04       2.50 r
+  U205/Y (AND2X1_LVT)                                     0.05       2.55 r
   U108/Y (AO21X1_LVT)                                     0.04       2.59 r
   drv_mag[3] (out)                                        0.00       2.59 r
   data arrival time                                                  2.59
@@ -205,7 +205,7 @@ Wire Load Model Mode: enclosed
   sub_89/U2_11/CO (FADDX1_LVT)                            0.08       1.26 r
   sub_89/U2_12/Y (XOR3X2_LVT)                             0.06       1.32 f
   sub_89/DIFF[12] (PID_DW01_sub_0)                        0.00       1.32 f
-  U164/Y (NAND2X4_LVT)                                    0.07       1.39 r
+  U211/Y (NAND2X4_LVT)                                    0.07       1.39 r
   U123/Y (AO21X1_LVT)                                     0.06       1.45 r
   add_0_root_add_0_root_add_100_2/B[1] (PID_DW01_add_1)
                                                           0.00       1.45 r
@@ -235,8 +235,8 @@ Wire Load Model Mode: enclosed
   add_0_root_add_0_root_add_100_2/U3/Y (XOR3X2_LVT)       0.06       2.46 f
   add_0_root_add_0_root_add_100_2/SUM[13] (PID_DW01_add_1)
                                                           0.00       2.46 f
-  U161/Y (INVX0_LVT)                                      0.04       2.50 r
-  U159/Y (AND2X1_LVT)                                     0.05       2.55 r
+  U208/Y (INVX0_LVT)                                      0.04       2.50 r
+  U206/Y (AND2X1_LVT)                                     0.05       2.55 r
   U109/Y (AO21X1_LVT)                                     0.04       2.59 r
   drv_mag[2] (out)                                        0.00       2.59 r
   data arrival time                                                  2.59

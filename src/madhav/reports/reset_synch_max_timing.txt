@@ -7,7 +7,7 @@ Report : timing
         -max_paths 3
 Design : reset_synch
 Version: S-2021.06
-Date   : Mon Apr 25 16:16:19 2022
+Date   : Mon Apr 25 23:24:39 2022
 ****************************************
 
 Operating Conditions: tt0p85v25c   Library: saed32lvt_tt0p85v25c
@@ -89,9 +89,11 @@ Wire Load Model Mode: enclosed
   clock network delay (ideal)              0.00       1.00
   input external delay                     0.00       1.00 f
   rst_n_t_reg/CLK (DFFNARX1_LVT)           0.00       1.00 f
-  rst_n_t_reg/Q (DFFNARX1_LVT)             0.08       1.08 f
-  rst_n_reg/D (DFFNARX1_LVT)               0.01       1.09 f
-  data arrival time                                   1.09
+  rst_n_t_reg/Q (DFFNARX1_LVT)             0.09       1.09 f
+  U3/Y (INVX4_LVT)                         0.07       1.16 r
+  U4/Y (INVX0_LVT)                         0.02       1.18 f
+  rst_n_reg/D (DFFNARX1_LVT)               0.01       1.19 f
+  data arrival time                                   1.19
 
   clock clk (fall edge)                    3.50       3.50
   clock network delay (ideal)              0.00       3.50
@@ -101,9 +103,9 @@ Wire Load Model Mode: enclosed
   data required time                                  3.31
   -----------------------------------------------------------
   data required time                                  3.31
-  data arrival time                                  -1.09
+  data arrival time                                  -1.19
   -----------------------------------------------------------
-  slack (MET)                                         2.21
+  slack (MET)                                         2.12
 
 
 1

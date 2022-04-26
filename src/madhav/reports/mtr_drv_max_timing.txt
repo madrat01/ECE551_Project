@@ -7,7 +7,7 @@ Report : timing
         -max_paths 3
 Design : mtr_drv
 Version: S-2021.06
-Date   : Mon Apr 25 16:12:36 2022
+Date   : Mon Apr 25 23:23:18 2022
 ****************************************
 
 Operating Conditions: tt0p85v25c   Library: saed32lvt_tt0p85v25c
@@ -29,18 +29,18 @@ Wire Load Model Mode: enclosed
   clock network delay (ideal)              0.00       0.00
   input external delay                     0.30       0.30 r
   duty[1] (in)                             0.00       0.30 r
-  U76/Y (INVX1_LVT)                        0.03       0.33 f
-  U89/Y (OA21X1_LVT)                       0.05       0.38 f
-  U90/Y (AOI222X1_LVT)                     0.07       0.45 r
-  U91/Y (AO221X1_LVT)                      0.05       0.50 r
-  U92/Y (OA221X1_LVT)                      0.05       0.54 r
-  U93/Y (AO221X1_LVT)                      0.05       0.60 r
-  U94/Y (OA221X1_LVT)                      0.05       0.65 r
-  U95/Y (AO221X1_LVT)                      0.05       0.70 r
-  U96/Y (OA221X1_LVT)                      0.05       0.75 r
-  U97/Y (AO221X1_LVT)                      0.05       0.80 r
-  U98/Y (OA221X1_LVT)                      0.05       0.85 r
-  U99/Y (AO21X1_LVT)                       0.04       0.88 r
+  U89/Y (INVX1_LVT)                        0.03       0.33 f
+  U102/Y (OA21X1_LVT)                      0.05       0.38 f
+  U103/Y (AOI222X1_LVT)                    0.07       0.45 r
+  U104/Y (AO221X1_LVT)                     0.05       0.50 r
+  U105/Y (OA221X1_LVT)                     0.05       0.54 r
+  U106/Y (AO221X1_LVT)                     0.05       0.60 r
+  U107/Y (OA221X1_LVT)                     0.05       0.65 r
+  U108/Y (AO221X1_LVT)                     0.05       0.70 r
+  U109/Y (OA221X1_LVT)                     0.05       0.75 r
+  U110/Y (AO221X1_LVT)                     0.05       0.80 r
+  U111/Y (OA221X1_LVT)                     0.05       0.85 r
+  U112/Y (AO21X1_LVT)                      0.04       0.88 r
   pwm/PWM_sig_reg/D (DFFARX1_LVT)          0.01       0.89 r
   data arrival time                                   0.89
 
@@ -73,18 +73,18 @@ Wire Load Model Mode: enclosed
   clock network delay (ideal)              0.00       0.00
   input external delay                     0.30       0.30 r
   duty[0] (in)                             0.00       0.30 r
-  U75/Y (INVX1_LVT)                        0.02       0.33 f
-  U89/Y (OA21X1_LVT)                       0.04       0.36 f
-  U90/Y (AOI222X1_LVT)                     0.07       0.43 r
-  U91/Y (AO221X1_LVT)                      0.05       0.48 r
-  U92/Y (OA221X1_LVT)                      0.05       0.53 r
-  U93/Y (AO221X1_LVT)                      0.05       0.58 r
-  U94/Y (OA221X1_LVT)                      0.05       0.63 r
-  U95/Y (AO221X1_LVT)                      0.05       0.68 r
-  U96/Y (OA221X1_LVT)                      0.05       0.73 r
-  U97/Y (AO221X1_LVT)                      0.05       0.79 r
-  U98/Y (OA221X1_LVT)                      0.05       0.83 r
-  U99/Y (AO21X1_LVT)                       0.04       0.87 r
+  U88/Y (INVX1_LVT)                        0.02       0.33 f
+  U102/Y (OA21X1_LVT)                      0.04       0.36 f
+  U103/Y (AOI222X1_LVT)                    0.07       0.43 r
+  U104/Y (AO221X1_LVT)                     0.05       0.48 r
+  U105/Y (OA221X1_LVT)                     0.05       0.53 r
+  U106/Y (AO221X1_LVT)                     0.05       0.58 r
+  U107/Y (OA221X1_LVT)                     0.05       0.63 r
+  U108/Y (AO221X1_LVT)                     0.05       0.68 r
+  U109/Y (OA221X1_LVT)                     0.05       0.73 r
+  U110/Y (AO221X1_LVT)                     0.05       0.79 r
+  U111/Y (OA221X1_LVT)                     0.05       0.83 r
+  U112/Y (AO21X1_LVT)                      0.04       0.87 r
   pwm/PWM_sig_reg/D (DFFARX1_LVT)          0.01       0.88 r
   data arrival time                                   0.88
 
@@ -117,18 +117,18 @@ Wire Load Model Mode: enclosed
   clock network delay (ideal)              0.00       0.00
   input external delay                     0.30       0.30 f
   duty[1] (in)                             0.00       0.30 f
-  U76/Y (INVX1_LVT)                        0.03       0.33 r
-  U89/Y (OA21X1_LVT)                       0.05       0.38 r
-  U90/Y (AOI222X1_LVT)                     0.07       0.46 f
-  U91/Y (AO221X1_LVT)                      0.04       0.50 f
-  U92/Y (OA221X1_LVT)                      0.05       0.55 f
-  U93/Y (AO221X1_LVT)                      0.05       0.59 f
-  U94/Y (OA221X1_LVT)                      0.05       0.64 f
-  U95/Y (AO221X1_LVT)                      0.05       0.68 f
-  U96/Y (OA221X1_LVT)                      0.05       0.73 f
-  U97/Y (AO221X1_LVT)                      0.05       0.78 f
-  U98/Y (OA221X1_LVT)                      0.05       0.82 f
-  U99/Y (AO21X1_LVT)                       0.04       0.86 f
+  U89/Y (INVX1_LVT)                        0.03       0.33 r
+  U102/Y (OA21X1_LVT)                      0.05       0.38 r
+  U103/Y (AOI222X1_LVT)                    0.07       0.46 f
+  U104/Y (AO221X1_LVT)                     0.04       0.50 f
+  U105/Y (OA221X1_LVT)                     0.05       0.55 f
+  U106/Y (AO221X1_LVT)                     0.05       0.59 f
+  U107/Y (OA221X1_LVT)                     0.05       0.64 f
+  U108/Y (AO221X1_LVT)                     0.05       0.68 f
+  U109/Y (OA221X1_LVT)                     0.05       0.73 f
+  U110/Y (AO221X1_LVT)                     0.05       0.78 f
+  U111/Y (OA221X1_LVT)                     0.05       0.82 f
+  U112/Y (AO21X1_LVT)                      0.04       0.86 f
   pwm/PWM_sig_reg/D (DFFARX1_LVT)          0.01       0.87 f
   data arrival time                                   0.87
 

@@ -7,15 +7,15 @@ Report : timing
         -max_paths 3
 Design : sensorCondition
 Version: S-2021.06
-Date   : Mon Apr 25 15:52:46 2022
+Date   : Mon Apr 25 23:25:04 2022
 ****************************************
 
 Operating Conditions: tt0p85v25c   Library: saed32lvt_tt0p85v25c
 Wire Load Model Mode: enclosed
 
-  Startpoint: cadence_f/cadence_sync_intermediate_reg
+  Startpoint: telemetry/uart_tx/n003_reg[6]
               (rising edge-triggered flip-flop clocked by clk)
-  Endpoint: cadence_f/cadence_sync_reg
+  Endpoint: telemetry/uart_tx/n003_reg[6]
             (rising edge-triggered flip-flop clocked by clk)
   Path Group: clk
   Path Type: min
@@ -28,29 +28,28 @@ Wire Load Model Mode: enclosed
   --------------------------------------------------------------------------
   clock clk (rise edge)                                   0.00       0.00
   clock network delay (ideal)                             0.00       0.00
-  cadence_f/cadence_sync_intermediate_reg/CLK (DFFX1_LVT)
-                                                          0.00       0.00 r
-  cadence_f/cadence_sync_intermediate_reg/Q (DFFX1_LVT)
-                                                          0.07       0.07 r
-  cadence_f/cadence_sync_reg/D (DFFX1_LVT)                0.01       0.08 r
-  data arrival time                                                  0.08
+  telemetry/uart_tx/n003_reg[6]/CLK (DFFASX1_LVT)         0.00       0.00 r
+  telemetry/uart_tx/n003_reg[6]/Q (DFFASX1_LVT)           0.09       0.09 f
+  U728/Y (AO222X1_LVT)                                    0.04       0.13 f
+  telemetry/uart_tx/n003_reg[6]/D (DFFASX1_LVT)           0.01       0.14 f
+  data arrival time                                                  0.14
 
   clock clk (rise edge)                                   0.00       0.00
   clock network delay (ideal)                             0.00       0.00
   clock uncertainty                                       0.15       0.15
-  cadence_f/cadence_sync_reg/CLK (DFFX1_LVT)              0.00       0.15 r
+  telemetry/uart_tx/n003_reg[6]/CLK (DFFASX1_LVT)         0.00       0.15 r
   library hold time                                      -0.01       0.14
   data required time                                                 0.14
   --------------------------------------------------------------------------
   data required time                                                 0.14
-  data arrival time                                                 -0.08
+  data arrival time                                                 -0.14
   --------------------------------------------------------------------------
-  slack (VIOLATED)                                                  -0.06
+  slack (MET)                                                        0.00
 
 
-  Startpoint: cadence_f/cadence_sync_reg
+  Startpoint: telemetry/transmiterFSM_reg[2]
               (rising edge-triggered flip-flop clocked by clk)
-  Endpoint: cadence_f/cadence_sync_delayed_reg
+  Endpoint: telemetry/transmiterFSM_dly_reg[2]
             (rising edge-triggered flip-flop clocked by clk)
   Path Group: clk
   Path Type: min
@@ -63,27 +62,29 @@ Wire Load Model Mode: enclosed
   --------------------------------------------------------------------------
   clock clk (rise edge)                                   0.00       0.00
   clock network delay (ideal)                             0.00       0.00
-  cadence_f/cadence_sync_reg/CLK (DFFX1_LVT)              0.00       0.00 r
-  cadence_f/cadence_sync_reg/Q (DFFX1_LVT)                0.08       0.08 r
-  cadence_f/cadence_sync_delayed_reg/D (DFFX1_LVT)        0.01       0.09 r
-  data arrival time                                                  0.09
+  telemetry/transmiterFSM_reg[2]/CLK (DFFARX1_LVT)        0.00       0.00 r
+  telemetry/transmiterFSM_reg[2]/Q (DFFARX1_LVT)          0.09       0.09 f
+  U431/Y (INVX0_LVT)                                      0.03       0.12 r
+  U432/Y (INVX0_LVT)                                      0.02       0.14 f
+  telemetry/transmiterFSM_dly_reg[2]/D (DFFX1_LVT)        0.01       0.15 f
+  data arrival time                                                  0.15
 
   clock clk (rise edge)                                   0.00       0.00
   clock network delay (ideal)                             0.00       0.00
   clock uncertainty                                       0.15       0.15
-  cadence_f/cadence_sync_delayed_reg/CLK (DFFX1_LVT)      0.00       0.15 r
-  library hold time                                      -0.01       0.14
-  data required time                                                 0.14
+  telemetry/transmiterFSM_dly_reg[2]/CLK (DFFX1_LVT)      0.00       0.15 r
+  library hold time                                       0.00       0.15
+  data required time                                                 0.15
   --------------------------------------------------------------------------
-  data required time                                                 0.14
-  data arrival time                                                 -0.09
+  data required time                                                 0.15
+  data arrival time                                                 -0.15
   --------------------------------------------------------------------------
-  slack (VIOLATED)                                                  -0.06
+  slack (MET)                                                        0.00
 
 
-  Startpoint: cadence_f/cadence_sync_intermediate_reg
+  Startpoint: telemetry/transmiterFSM_reg[2]
               (rising edge-triggered flip-flop clocked by clk)
-  Endpoint: cadence_f/cadence_sync_reg
+  Endpoint: telemetry/transmiterFSM_dly_reg[2]
             (rising edge-triggered flip-flop clocked by clk)
   Path Group: clk
   Path Type: min
@@ -96,24 +97,24 @@ Wire Load Model Mode: enclosed
   --------------------------------------------------------------------------
   clock clk (rise edge)                                   0.00       0.00
   clock network delay (ideal)                             0.00       0.00
-  cadence_f/cadence_sync_intermediate_reg/CLK (DFFX1_LVT)
-                                                          0.00       0.00 r
-  cadence_f/cadence_sync_intermediate_reg/Q (DFFX1_LVT)
-                                                          0.08       0.08 f
-  cadence_f/cadence_sync_reg/D (DFFX1_LVT)                0.01       0.09 f
-  data arrival time                                                  0.09
+  telemetry/transmiterFSM_reg[2]/CLK (DFFARX1_LVT)        0.00       0.00 r
+  telemetry/transmiterFSM_reg[2]/Q (DFFARX1_LVT)          0.09       0.09 r
+  U431/Y (INVX0_LVT)                                      0.02       0.11 f
+  U432/Y (INVX0_LVT)                                      0.02       0.13 r
+  telemetry/transmiterFSM_dly_reg[2]/D (DFFX1_LVT)        0.01       0.14 r
+  data arrival time                                                  0.14
 
   clock clk (rise edge)                                   0.00       0.00
   clock network delay (ideal)                             0.00       0.00
   clock uncertainty                                       0.15       0.15
-  cadence_f/cadence_sync_reg/CLK (DFFX1_LVT)              0.00       0.15 r
+  telemetry/transmiterFSM_dly_reg[2]/CLK (DFFX1_LVT)      0.00       0.15 r
   library hold time                                      -0.01       0.14
   data required time                                                 0.14
   --------------------------------------------------------------------------
   data required time                                                 0.14
-  data arrival time                                                 -0.09
+  data arrival time                                                 -0.14
   --------------------------------------------------------------------------
-  slack (VIOLATED)                                                  -0.06
+  slack (MET)                                                        0.00
 
 
 1

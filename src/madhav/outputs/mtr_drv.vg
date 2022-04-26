@@ -1,14 +1,14 @@
 /////////////////////////////////////////////////////////////
 // Created by: Synopsys DC Expert(TM) in wire load mode
 // Version   : S-2021.06
-// Date      : Mon Apr 25 16:12:36 2022
+// Date      : Mon Apr 25 23:23:18 2022
 /////////////////////////////////////////////////////////////
 
 
 module mtr_drv_DW01_inc_3 ( A, SUM );
   input [10:0] A;
   output [10:0] SUM;
-
+  wire   n2;
   wire   [10:2] carry;
 
   HADDX1_LVT U1_1_9 ( .A0(A[9]), .B0(carry[9]), .C1(carry[10]), .SO(SUM[9]) );
@@ -20,8 +20,9 @@ module mtr_drv_DW01_inc_3 ( A, SUM );
   HADDX1_LVT U1_1_3 ( .A0(A[3]), .B0(carry[3]), .C1(carry[4]), .SO(SUM[3]) );
   HADDX1_LVT U1_1_2 ( .A0(A[2]), .B0(carry[2]), .C1(carry[3]), .SO(SUM[2]) );
   HADDX1_LVT U1_1_1 ( .A0(A[1]), .B0(A[0]), .C1(carry[2]), .SO(SUM[1]) );
-  XOR2X1_LVT U1 ( .A1(carry[10]), .A2(A[10]), .Y(SUM[10]) );
-  INVX0_LVT U2 ( .A(A[0]), .Y(SUM[0]) );
+  INVX0_LVT U1 ( .A(A[0]), .Y(n2) );
+  NBUFFX2_LVT U2 ( .A(n2), .Y(SUM[0]) );
+  XOR2X1_LVT U3 ( .A1(carry[10]), .A2(A[10]), .Y(SUM[10]) );
 endmodule
 
 
@@ -37,24 +38,25 @@ module mtr_drv ( clk, rst_n, selGrn, selYlw, selBlu, duty, highBlu, lowBlu,
          lowBlu_in, \pwm/N12 , \pwm/N11 , \pwm/N10 , \pwm/N9 , \pwm/N8 ,
          \pwm/N7 , \pwm/N6 , \pwm/N5 , \pwm/N4 , \pwm/N3 , \pwm/N2 , \pwm/N1 ,
          \nonoverlap_grn/N21 , \nonoverlap_grn/N20 , \nonoverlap_grn/N19 ,
-         \nonoverlap_grn/N18 , \nonoverlap_grn/deadTimeFSM ,
-         \nonoverlap_grn/N10 , \nonoverlap_grn/N9 ,
-         \nonoverlap_grn/deadTimeFSM_next , \nonoverlap_grn/lowIn_dly ,
-         \nonoverlap_grn/highIn_dly , \nonoverlap_ylw/N21 ,
-         \nonoverlap_ylw/N20 , \nonoverlap_ylw/N19 , \nonoverlap_ylw/N18 ,
+         \nonoverlap_grn/N18 , \nonoverlap_grn/N17 ,
+         \nonoverlap_grn/deadTimeFSM , \nonoverlap_grn/N10 ,
+         \nonoverlap_grn/N9 , \nonoverlap_grn/deadTimeFSM_next ,
+         \nonoverlap_grn/lowIn_dly , \nonoverlap_grn/highIn_dly ,
+         \nonoverlap_ylw/N21 , \nonoverlap_ylw/N20 , \nonoverlap_ylw/N19 ,
+         \nonoverlap_ylw/N18 , \nonoverlap_ylw/N17 ,
          \nonoverlap_ylw/deadTimeFSM , \nonoverlap_ylw/N10 ,
          \nonoverlap_ylw/N9 , \nonoverlap_ylw/deadTimeFSM_next ,
          \nonoverlap_ylw/lowIn_dly , \nonoverlap_ylw/highIn_dly ,
          \nonoverlap_blu/N21 , \nonoverlap_blu/N20 , \nonoverlap_blu/N19 ,
-         \nonoverlap_blu/N18 , \nonoverlap_blu/deadTimeFSM ,
-         \nonoverlap_blu/N10 , \nonoverlap_blu/N9 ,
-         \nonoverlap_blu/deadTimeFSM_next , \nonoverlap_blu/lowIn_dly ,
-         \nonoverlap_blu/highIn_dly , n26, n27, n28, n29, n30, n31, n32, n33,
-         n34, n35, n36, n37, n38, n39, n40, n41, n42, n43, n44, n45, n46, n47,
-         n48, n49, n50, n51, n52, n53, n54, n55, n56, n57, n58, n59, n60, n61,
-         n62, n63, n64, n65, n66, n67, n68, n69, n70, n71, n72, n73, n74, n75,
-         n76, n77, n78, n79, n80, n81, n82, n83, n84, n85, n86, n87, n88, n89,
-         n90;
+         \nonoverlap_blu/N18 , \nonoverlap_blu/N17 ,
+         \nonoverlap_blu/deadTimeFSM , \nonoverlap_blu/N10 ,
+         \nonoverlap_blu/N9 , \nonoverlap_blu/deadTimeFSM_next ,
+         \nonoverlap_blu/lowIn_dly , \nonoverlap_blu/highIn_dly , n26, n27,
+         n28, n29, n30, n31, n32, n33, n34, n35, n36, n37, n38, n39, n40, n41,
+         n42, n43, n44, n45, n46, n47, n48, n49, n50, n51, n52, n53, n54, n55,
+         n56, n57, n58, n59, n60, n61, n62, n63, n64, n65, n66, n67, n68, n69,
+         n70, n71, n72, n73, n74, n75, n76, n77, n78, n79, n80, n81, n82, n83,
+         n84, n85, n86, n87, n88, n89, n90, n91, n92, n93, n94;
   wire   [10:0] \pwm/cnt ;
   wire   [4:0] \nonoverlap_grn/deadTime ;
   wire   [4:0] \nonoverlap_ylw/deadTime ;
@@ -70,33 +72,32 @@ module mtr_drv ( clk, rst_n, selGrn, selYlw, selBlu, duty, highBlu, lowBlu,
   DFFARX1_LVT \pwm/cnt_reg[1]  ( .D(\pwm/N3 ), .CLK(clk), .RSTB(rst_n), .Q(
         \pwm/cnt [1]) );
   DFFARX1_LVT \pwm/cnt_reg[2]  ( .D(\pwm/N4 ), .CLK(clk), .RSTB(rst_n), .Q(
-        \pwm/cnt [2]), .QN(n65) );
+        \pwm/cnt [2]), .QN(n67) );
   DFFARX1_LVT \pwm/cnt_reg[3]  ( .D(\pwm/N5 ), .CLK(clk), .RSTB(rst_n), .Q(
-        \pwm/cnt [3]), .QN(n61) );
+        \pwm/cnt [3]), .QN(n71) );
   DFFARX1_LVT \pwm/cnt_reg[4]  ( .D(\pwm/N6 ), .CLK(clk), .RSTB(rst_n), .Q(
-        \pwm/cnt [4]), .QN(n66) );
+        \pwm/cnt [4]), .QN(n68) );
   DFFARX1_LVT \pwm/cnt_reg[5]  ( .D(\pwm/N7 ), .CLK(clk), .RSTB(rst_n), .Q(
-        \pwm/cnt [5]), .QN(n62) );
+        \pwm/cnt [5]), .QN(n72) );
   DFFARX1_LVT \pwm/cnt_reg[6]  ( .D(\pwm/N8 ), .CLK(clk), .RSTB(rst_n), .Q(
-        \pwm/cnt [6]), .QN(n67) );
+        \pwm/cnt [6]), .QN(n69) );
   DFFARX1_LVT \pwm/cnt_reg[7]  ( .D(\pwm/N9 ), .CLK(clk), .RSTB(rst_n), .Q(
-        \pwm/cnt [7]), .QN(n63) );
+        \pwm/cnt [7]), .QN(n73) );
   DFFARX1_LVT \pwm/cnt_reg[8]  ( .D(\pwm/N10 ), .CLK(clk), .RSTB(rst_n), .Q(
-        \pwm/cnt [8]), .QN(n68) );
+        \pwm/cnt [8]), .QN(n70) );
   DFFARX1_LVT \pwm/cnt_reg[9]  ( .D(\pwm/N11 ), .CLK(clk), .RSTB(rst_n), .Q(
-        \pwm/cnt [9]), .QN(n64) );
+        \pwm/cnt [9]), .QN(n74) );
   DFFARX1_LVT \pwm/PWM_sig_reg  ( .D(\pwm/N1 ), .CLK(clk), .RSTB(rst_n), .Q(
         PWM_sig), .QN(n26) );
   DFFX1_LVT \nonoverlap_grn/lowIn_dly_reg  ( .D(lowGrn_in), .CLK(clk), .Q(
         \nonoverlap_grn/lowIn_dly ) );
   DFFX1_LVT \nonoverlap_grn/highIn_dly_reg  ( .D(highGrn_in), .CLK(clk), .Q(
         \nonoverlap_grn/highIn_dly ) );
-  DFFARX1_LVT \nonoverlap_grn/deadTimeFSM_reg  ( .D(
-        \nonoverlap_grn/deadTimeFSM_next ), .CLK(clk), .RSTB(rst_n), .Q(
-        \nonoverlap_grn/deadTimeFSM ), .QN(n28) );
+  DFFARX1_LVT \nonoverlap_grn/deadTimeFSM_reg  ( .D(n66), .CLK(clk), .RSTB(
+        rst_n), .Q(\nonoverlap_grn/deadTimeFSM ), .QN(n28) );
   DFFARX1_LVT \nonoverlap_grn/lowOut_reg  ( .D(\nonoverlap_grn/N10 ), .CLK(clk), .RSTB(rst_n), .Q(lowGrn) );
-  DFFSSRX1_LVT \nonoverlap_grn/deadTime_reg[0]  ( .D(n71), .SETB(1'b1), .RSTB(
-        n37), .CLK(clk), .Q(\nonoverlap_grn/deadTime [0]), .QN(n71) );
+  DFFSSRX1_LVT \nonoverlap_grn/deadTime_reg[0]  ( .D(n65), .SETB(1'b1), .RSTB(
+        n37), .CLK(clk), .Q(\nonoverlap_grn/deadTime [0]) );
   DFFSSRX1_LVT \nonoverlap_grn/deadTime_reg[1]  ( .D(\nonoverlap_grn/N18 ), 
         .SETB(1'b1), .RSTB(n37), .CLK(clk), .Q(\nonoverlap_grn/deadTime [1])
          );
@@ -114,12 +115,11 @@ module mtr_drv ( clk, rst_n, selGrn, selYlw, selBlu, duty, highBlu, lowBlu,
         \nonoverlap_ylw/lowIn_dly ) );
   DFFX1_LVT \nonoverlap_ylw/highIn_dly_reg  ( .D(highYlw_in), .CLK(clk), .Q(
         \nonoverlap_ylw/highIn_dly ) );
-  DFFARX1_LVT \nonoverlap_ylw/deadTimeFSM_reg  ( .D(
-        \nonoverlap_ylw/deadTimeFSM_next ), .CLK(clk), .RSTB(rst_n), .Q(
-        \nonoverlap_ylw/deadTimeFSM ), .QN(n29) );
+  DFFARX1_LVT \nonoverlap_ylw/deadTimeFSM_reg  ( .D(n64), .CLK(clk), .RSTB(
+        rst_n), .Q(\nonoverlap_ylw/deadTimeFSM ), .QN(n29) );
   DFFARX1_LVT \nonoverlap_ylw/lowOut_reg  ( .D(\nonoverlap_ylw/N10 ), .CLK(clk), .RSTB(rst_n), .Q(lowYlw) );
-  DFFSSRX1_LVT \nonoverlap_ylw/deadTime_reg[0]  ( .D(n70), .SETB(1'b1), .RSTB(
-        n31), .CLK(clk), .Q(\nonoverlap_ylw/deadTime [0]), .QN(n70) );
+  DFFSSRX1_LVT \nonoverlap_ylw/deadTime_reg[0]  ( .D(n63), .SETB(1'b1), .RSTB(
+        n31), .CLK(clk), .Q(\nonoverlap_ylw/deadTime [0]) );
   DFFSSRX1_LVT \nonoverlap_ylw/deadTime_reg[1]  ( .D(\nonoverlap_ylw/N18 ), 
         .SETB(1'b1), .RSTB(n31), .CLK(clk), .Q(\nonoverlap_ylw/deadTime [1])
          );
@@ -137,12 +137,11 @@ module mtr_drv ( clk, rst_n, selGrn, selYlw, selBlu, duty, highBlu, lowBlu,
         \nonoverlap_blu/lowIn_dly ) );
   DFFX1_LVT \nonoverlap_blu/highIn_dly_reg  ( .D(highBlu_in), .CLK(clk), .Q(
         \nonoverlap_blu/highIn_dly ) );
-  DFFARX1_LVT \nonoverlap_blu/deadTimeFSM_reg  ( .D(
-        \nonoverlap_blu/deadTimeFSM_next ), .CLK(clk), .RSTB(rst_n), .Q(
-        \nonoverlap_blu/deadTimeFSM ), .QN(n30) );
+  DFFARX1_LVT \nonoverlap_blu/deadTimeFSM_reg  ( .D(n62), .CLK(clk), .RSTB(
+        rst_n), .Q(\nonoverlap_blu/deadTimeFSM ), .QN(n30) );
   DFFARX1_LVT \nonoverlap_blu/lowOut_reg  ( .D(\nonoverlap_blu/N10 ), .CLK(clk), .RSTB(rst_n), .Q(lowBlu) );
-  DFFSSRX1_LVT \nonoverlap_blu/deadTime_reg[0]  ( .D(n69), .SETB(1'b1), .RSTB(
-        n43), .CLK(clk), .Q(\nonoverlap_blu/deadTime [0]), .QN(n69) );
+  DFFSSRX1_LVT \nonoverlap_blu/deadTime_reg[0]  ( .D(n61), .SETB(1'b1), .RSTB(
+        n43), .CLK(clk), .Q(\nonoverlap_blu/deadTime [0]) );
   DFFSSRX1_LVT \nonoverlap_blu/deadTime_reg[1]  ( .D(\nonoverlap_blu/N18 ), 
         .SETB(1'b1), .RSTB(n43), .CLK(clk), .Q(\nonoverlap_blu/deadTime [1])
          );
@@ -158,33 +157,27 @@ module mtr_drv ( clk, rst_n, selGrn, selYlw, selBlu, duty, highBlu, lowBlu,
   DFFARX1_LVT \nonoverlap_blu/highOut_reg  ( .D(\nonoverlap_blu/N9 ), .CLK(clk), .RSTB(rst_n), .Q(highBlu) );
   NOR4X1_LVT U25 ( .A1(n60), .A2(\pwm/cnt [4]), .A3(\pwm/cnt [6]), .A4(
         \pwm/cnt [5]), .Y(n59) );
-  AND2X1_LVT U32 ( .A1(highYlw_in), .A2(n87), .Y(\nonoverlap_ylw/N9 ) );
-  NOR2X0_LVT U33 ( .A1(n32), .A2(n87), .Y(n31) );
-  AND2X1_LVT U34 ( .A1(lowYlw_in), .A2(n87), .Y(\nonoverlap_ylw/N10 ) );
-  AO22X1_LVT U35 ( .A1(n32), .A2(n29), .A3(\nonoverlap_ylw/deadTimeFSM ), .A4(
-        n33), .Y(\nonoverlap_ylw/deadTimeFSM_next ) );
+  AND2X1_LVT U32 ( .A1(highYlw_in), .A2(n91), .Y(\nonoverlap_ylw/N9 ) );
+  NOR2X0_LVT U33 ( .A1(n32), .A2(n91), .Y(n31) );
+  AND2X1_LVT U34 ( .A1(lowYlw_in), .A2(n91), .Y(\nonoverlap_ylw/N10 ) );
   NAND4X0_LVT U36 ( .A1(\nonoverlap_ylw/deadTime [4]), .A2(
         \nonoverlap_ylw/deadTime [3]), .A3(n34), .A4(
         \nonoverlap_ylw/deadTime [2]), .Y(n33) );
   AND2X1_LVT U37 ( .A1(\nonoverlap_ylw/deadTime [1]), .A2(
         \nonoverlap_ylw/deadTime [0]), .Y(n34) );
   NAND2X0_LVT U38 ( .A1(n35), .A2(n36), .Y(n32) );
-  AND2X1_LVT U39 ( .A1(highGrn_in), .A2(n85), .Y(\nonoverlap_grn/N9 ) );
-  NOR2X0_LVT U40 ( .A1(n38), .A2(n85), .Y(n37) );
-  AND2X1_LVT U41 ( .A1(lowGrn_in), .A2(n85), .Y(\nonoverlap_grn/N10 ) );
-  AO22X1_LVT U42 ( .A1(n38), .A2(n28), .A3(\nonoverlap_grn/deadTimeFSM ), .A4(
-        n39), .Y(\nonoverlap_grn/deadTimeFSM_next ) );
+  AND2X1_LVT U39 ( .A1(highGrn_in), .A2(n89), .Y(\nonoverlap_grn/N9 ) );
+  NOR2X0_LVT U40 ( .A1(n38), .A2(n89), .Y(n37) );
+  AND2X1_LVT U41 ( .A1(lowGrn_in), .A2(n89), .Y(\nonoverlap_grn/N10 ) );
   NAND4X0_LVT U43 ( .A1(\nonoverlap_grn/deadTime [4]), .A2(
         \nonoverlap_grn/deadTime [3]), .A3(n40), .A4(
         \nonoverlap_grn/deadTime [2]), .Y(n39) );
   AND2X1_LVT U44 ( .A1(\nonoverlap_grn/deadTime [1]), .A2(
         \nonoverlap_grn/deadTime [0]), .Y(n40) );
   NAND2X0_LVT U45 ( .A1(n41), .A2(n42), .Y(n38) );
-  AND2X1_LVT U46 ( .A1(highBlu_in), .A2(n89), .Y(\nonoverlap_blu/N9 ) );
-  NOR2X0_LVT U47 ( .A1(n44), .A2(n89), .Y(n43) );
-  AND2X1_LVT U48 ( .A1(lowBlu_in), .A2(n89), .Y(\nonoverlap_blu/N10 ) );
-  AO22X1_LVT U49 ( .A1(n44), .A2(n30), .A3(\nonoverlap_blu/deadTimeFSM ), .A4(
-        n45), .Y(\nonoverlap_blu/deadTimeFSM_next ) );
+  AND2X1_LVT U46 ( .A1(highBlu_in), .A2(n93), .Y(\nonoverlap_blu/N9 ) );
+  NOR2X0_LVT U47 ( .A1(n44), .A2(n93), .Y(n43) );
+  AND2X1_LVT U48 ( .A1(lowBlu_in), .A2(n93), .Y(\nonoverlap_blu/N10 ) );
   NAND4X0_LVT U50 ( .A1(\nonoverlap_blu/deadTime [4]), .A2(
         \nonoverlap_blu/deadTime [3]), .A3(n46), .A4(
         \nonoverlap_blu/deadTime [2]), .Y(n45) );
@@ -193,22 +186,22 @@ module mtr_drv ( clk, rst_n, selGrn, selYlw, selBlu, duty, highBlu, lowBlu,
   NAND2X0_LVT U52 ( .A1(n47), .A2(n48), .Y(n44) );
   AO22X1_LVT U53 ( .A1(PWM_sig), .A2(selYlw[0]), .A3(n49), .A4(selYlw[1]), .Y(
         lowYlw_in) );
-  AND2X1_LVT U54 ( .A1(n26), .A2(n88), .Y(n49) );
+  AND2X1_LVT U54 ( .A1(n26), .A2(n92), .Y(n49) );
   AO22X1_LVT U55 ( .A1(selGrn[0]), .A2(PWM_sig), .A3(n50), .A4(selGrn[1]), .Y(
         lowGrn_in) );
-  AND2X1_LVT U56 ( .A1(n26), .A2(n86), .Y(n50) );
+  AND2X1_LVT U56 ( .A1(n26), .A2(n90), .Y(n50) );
   AO22X1_LVT U57 ( .A1(selBlu[0]), .A2(PWM_sig), .A3(n51), .A4(selBlu[1]), .Y(
         lowBlu_in) );
-  AND2X1_LVT U58 ( .A1(n26), .A2(n90), .Y(n51) );
+  AND2X1_LVT U58 ( .A1(n26), .A2(n94), .Y(n51) );
   NAND2X0_LVT U59 ( .A1(n52), .A2(n53), .Y(highYlw_in) );
-  OR3X1_LVT U60 ( .A1(PWM_sig), .A2(selYlw[1]), .A3(n88), .Y(n53) );
-  NAND3X0_LVT U61 ( .A1(PWM_sig), .A2(n88), .A3(selYlw[1]), .Y(n52) );
+  OR3X1_LVT U60 ( .A1(PWM_sig), .A2(selYlw[1]), .A3(n92), .Y(n53) );
+  NAND3X0_LVT U61 ( .A1(PWM_sig), .A2(n92), .A3(selYlw[1]), .Y(n52) );
   NAND2X0_LVT U62 ( .A1(n54), .A2(n55), .Y(highGrn_in) );
-  OR3X1_LVT U63 ( .A1(PWM_sig), .A2(selGrn[1]), .A3(n86), .Y(n55) );
-  NAND3X0_LVT U64 ( .A1(PWM_sig), .A2(n86), .A3(selGrn[1]), .Y(n54) );
+  OR3X1_LVT U63 ( .A1(PWM_sig), .A2(selGrn[1]), .A3(n90), .Y(n55) );
+  NAND3X0_LVT U64 ( .A1(PWM_sig), .A2(n90), .A3(selGrn[1]), .Y(n54) );
   NAND2X0_LVT U65 ( .A1(n56), .A2(n57), .Y(highBlu_in) );
-  OR3X1_LVT U66 ( .A1(PWM_sig), .A2(selBlu[1]), .A3(n90), .Y(n57) );
-  NAND3X0_LVT U67 ( .A1(PWM_sig), .A2(n90), .A3(selBlu[1]), .Y(n56) );
+  OR3X1_LVT U66 ( .A1(PWM_sig), .A2(selBlu[1]), .A3(n94), .Y(n57) );
+  NAND3X0_LVT U67 ( .A1(PWM_sig), .A2(n94), .A3(selBlu[1]), .Y(n56) );
   AND4X1_LVT U68 ( .A1(\pwm/cnt [0]), .A2(n27), .A3(n58), .A4(n59), .Y(
         PWM_synch) );
   OR3X1_LVT U69 ( .A1(\pwm/cnt [9]), .A2(\pwm/cnt [8]), .A3(\pwm/cnt [7]), .Y(
@@ -236,52 +229,71 @@ module mtr_drv ( clk, rst_n, selGrn, selYlw, selBlu, duty, highBlu, lowBlu,
         .SO(\nonoverlap_grn/N19 ) );
   HADDX1_LVT \nonoverlap_grn/add_66/U1_1_3  ( .A0(\nonoverlap_grn/deadTime [3]), .B0(\nonoverlap_grn/add_66/carry [3]), .C1(\nonoverlap_grn/add_66/carry [4]), 
         .SO(\nonoverlap_grn/N20 ) );
-  INVX1_LVT U71 ( .A(\nonoverlap_blu/deadTimeFSM_next ), .Y(n89) );
-  INVX1_LVT U72 ( .A(\nonoverlap_ylw/deadTimeFSM_next ), .Y(n87) );
-  INVX1_LVT U73 ( .A(\nonoverlap_grn/deadTimeFSM_next ), .Y(n85) );
-  INVX1_LVT U74 ( .A(duty[2]), .Y(n84) );
-  INVX1_LVT U75 ( .A(duty[0]), .Y(n82) );
-  INVX1_LVT U76 ( .A(duty[1]), .Y(n83) );
-  XNOR2X1_LVT U77 ( .A1(\nonoverlap_blu/lowIn_dly ), .A2(lowBlu_in), .Y(n47)
+  INVX0_LVT U71 ( .A(\nonoverlap_blu/deadTime [0]), .Y(\nonoverlap_blu/N17 )
          );
-  XNOR2X1_LVT U78 ( .A1(\nonoverlap_blu/highIn_dly ), .A2(highBlu_in), .Y(n48)
+  NBUFFX2_LVT U72 ( .A(\nonoverlap_blu/N17 ), .Y(n61) );
+  AO22X1_LVT U73 ( .A1(n44), .A2(n30), .A3(\nonoverlap_blu/deadTimeFSM ), .A4(
+        n45), .Y(\nonoverlap_blu/deadTimeFSM_next ) );
+  NBUFFX2_LVT U74 ( .A(\nonoverlap_blu/deadTimeFSM_next ), .Y(n62) );
+  INVX0_LVT U75 ( .A(\nonoverlap_ylw/deadTime [0]), .Y(\nonoverlap_ylw/N17 )
          );
-  XNOR2X1_LVT U79 ( .A1(\nonoverlap_ylw/lowIn_dly ), .A2(lowYlw_in), .Y(n35)
+  NBUFFX2_LVT U76 ( .A(\nonoverlap_ylw/N17 ), .Y(n63) );
+  AO22X1_LVT U77 ( .A1(n32), .A2(n29), .A3(\nonoverlap_ylw/deadTimeFSM ), .A4(
+        n33), .Y(\nonoverlap_ylw/deadTimeFSM_next ) );
+  NBUFFX2_LVT U78 ( .A(\nonoverlap_ylw/deadTimeFSM_next ), .Y(n64) );
+  INVX0_LVT U79 ( .A(\nonoverlap_grn/deadTime [0]), .Y(\nonoverlap_grn/N17 )
          );
-  XNOR2X1_LVT U80 ( .A1(\nonoverlap_ylw/highIn_dly ), .A2(highYlw_in), .Y(n36)
+  NBUFFX2_LVT U80 ( .A(\nonoverlap_grn/N17 ), .Y(n65) );
+  AO22X1_LVT U81 ( .A1(n38), .A2(n28), .A3(\nonoverlap_grn/deadTimeFSM ), .A4(
+        n39), .Y(\nonoverlap_grn/deadTimeFSM_next ) );
+  NBUFFX2_LVT U82 ( .A(\nonoverlap_grn/deadTimeFSM_next ), .Y(n66) );
+  INVX1_LVT U83 ( .A(\nonoverlap_blu/deadTimeFSM_next ), .Y(n93) );
+  INVX1_LVT U84 ( .A(\nonoverlap_ylw/deadTimeFSM_next ), .Y(n91) );
+  INVX1_LVT U85 ( .A(\nonoverlap_grn/deadTimeFSM_next ), .Y(n89) );
+  INVX1_LVT U86 ( .A(\pwm/cnt [10]), .Y(n85) );
+  INVX1_LVT U87 ( .A(duty[2]), .Y(n88) );
+  INVX1_LVT U88 ( .A(duty[0]), .Y(n86) );
+  INVX1_LVT U89 ( .A(duty[1]), .Y(n87) );
+  XNOR2X1_LVT U90 ( .A1(\nonoverlap_blu/lowIn_dly ), .A2(lowBlu_in), .Y(n47)
          );
-  XNOR2X1_LVT U81 ( .A1(\nonoverlap_grn/lowIn_dly ), .A2(lowGrn_in), .Y(n41)
+  XNOR2X1_LVT U91 ( .A1(\nonoverlap_blu/highIn_dly ), .A2(highBlu_in), .Y(n48)
          );
-  XNOR2X1_LVT U82 ( .A1(\nonoverlap_grn/highIn_dly ), .A2(highGrn_in), .Y(n42)
+  XNOR2X1_LVT U92 ( .A1(\nonoverlap_ylw/lowIn_dly ), .A2(lowYlw_in), .Y(n35)
          );
-  INVX1_LVT U83 ( .A(selBlu[0]), .Y(n90) );
-  INVX1_LVT U84 ( .A(selYlw[0]), .Y(n88) );
-  INVX1_LVT U85 ( .A(selGrn[0]), .Y(n86) );
-  XOR2X1_LVT U86 ( .A1(\nonoverlap_grn/add_66/carry [4]), .A2(
+  XNOR2X1_LVT U93 ( .A1(\nonoverlap_ylw/highIn_dly ), .A2(highYlw_in), .Y(n36)
+         );
+  XNOR2X1_LVT U94 ( .A1(\nonoverlap_grn/lowIn_dly ), .A2(lowGrn_in), .Y(n41)
+         );
+  XNOR2X1_LVT U95 ( .A1(\nonoverlap_grn/highIn_dly ), .A2(highGrn_in), .Y(n42)
+         );
+  INVX1_LVT U96 ( .A(selBlu[0]), .Y(n94) );
+  INVX1_LVT U97 ( .A(selYlw[0]), .Y(n92) );
+  INVX1_LVT U98 ( .A(selGrn[0]), .Y(n90) );
+  XOR2X1_LVT U99 ( .A1(\nonoverlap_grn/add_66/carry [4]), .A2(
         \nonoverlap_grn/deadTime [4]), .Y(\nonoverlap_grn/N21 ) );
-  XOR2X1_LVT U87 ( .A1(\nonoverlap_ylw/add_66/carry [4]), .A2(
+  XOR2X1_LVT U100 ( .A1(\nonoverlap_ylw/add_66/carry [4]), .A2(
         \nonoverlap_ylw/deadTime [4]), .Y(\nonoverlap_ylw/N21 ) );
-  XOR2X1_LVT U88 ( .A1(\nonoverlap_blu/add_66/carry [4]), .A2(
+  XOR2X1_LVT U101 ( .A1(\nonoverlap_blu/add_66/carry [4]), .A2(
         \nonoverlap_blu/deadTime [4]), .Y(\nonoverlap_blu/N21 ) );
-  OA21X1_LVT U89 ( .A1(n83), .A2(\pwm/cnt [1]), .A3(n82), .Y(n72) );
-  AOI222X1_LVT U90 ( .A1(\pwm/cnt [2]), .A2(n84), .A3(n72), .A4(\pwm/cnt [0]), 
-        .A5(\pwm/cnt [1]), .A6(n83), .Y(n73) );
-  AO221X1_LVT U91 ( .A1(duty[2]), .A2(n65), .A3(duty[3]), .A4(n61), .A5(n73), 
-        .Y(n74) );
-  OA221X1_LVT U92 ( .A1(duty[4]), .A2(n66), .A3(duty[3]), .A4(n61), .A5(n74), 
-        .Y(n75) );
-  AO221X1_LVT U93 ( .A1(duty[4]), .A2(n66), .A3(duty[5]), .A4(n62), .A5(n75), 
-        .Y(n76) );
-  OA221X1_LVT U94 ( .A1(duty[6]), .A2(n67), .A3(duty[5]), .A4(n62), .A5(n76), 
+  OA21X1_LVT U102 ( .A1(n87), .A2(\pwm/cnt [1]), .A3(n86), .Y(n75) );
+  AOI222X1_LVT U103 ( .A1(\pwm/cnt [2]), .A2(n88), .A3(n75), .A4(\pwm/cnt [0]), 
+        .A5(\pwm/cnt [1]), .A6(n87), .Y(n76) );
+  AO221X1_LVT U104 ( .A1(duty[2]), .A2(n67), .A3(duty[3]), .A4(n71), .A5(n76), 
         .Y(n77) );
-  AO221X1_LVT U95 ( .A1(duty[6]), .A2(n67), .A3(duty[7]), .A4(n63), .A5(n77), 
+  OA221X1_LVT U105 ( .A1(duty[4]), .A2(n68), .A3(duty[3]), .A4(n71), .A5(n77), 
         .Y(n78) );
-  OA221X1_LVT U96 ( .A1(duty[8]), .A2(n68), .A3(duty[7]), .A4(n63), .A5(n78), 
+  AO221X1_LVT U106 ( .A1(duty[4]), .A2(n68), .A3(duty[5]), .A4(n72), .A5(n78), 
         .Y(n79) );
-  AO221X1_LVT U97 ( .A1(duty[8]), .A2(n68), .A3(duty[9]), .A4(n64), .A5(n79), 
+  OA221X1_LVT U107 ( .A1(duty[6]), .A2(n69), .A3(duty[5]), .A4(n72), .A5(n79), 
         .Y(n80) );
-  OA221X1_LVT U98 ( .A1(duty[10]), .A2(n27), .A3(duty[9]), .A4(n64), .A5(n80), 
+  AO221X1_LVT U108 ( .A1(duty[6]), .A2(n69), .A3(duty[7]), .A4(n73), .A5(n80), 
         .Y(n81) );
-  AO21X1_LVT U99 ( .A1(duty[10]), .A2(n27), .A3(n81), .Y(\pwm/N1 ) );
+  OA221X1_LVT U109 ( .A1(duty[8]), .A2(n70), .A3(duty[7]), .A4(n73), .A5(n81), 
+        .Y(n82) );
+  AO221X1_LVT U110 ( .A1(duty[8]), .A2(n70), .A3(duty[9]), .A4(n74), .A5(n82), 
+        .Y(n83) );
+  OA221X1_LVT U111 ( .A1(duty[10]), .A2(n85), .A3(duty[9]), .A4(n74), .A5(n83), 
+        .Y(n84) );
+  AO21X1_LVT U112 ( .A1(duty[10]), .A2(n85), .A3(n84), .Y(\pwm/N1 ) );
 endmodule
 

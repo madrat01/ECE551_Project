@@ -1,7 +1,7 @@
 # Read all files
 read_file -format sverilog {brushless.sv}
 
-# Set current design to telemetry (top module)
+# Set current design to brushless (top module)
 current_design brushless
 
 # create clock of 400 MHz
@@ -31,6 +31,8 @@ set_wire_load_model -name 16000 -library saed32lvt_tt0p85v25c
 
 # Set clock uncertainty
 set_clock_uncertainty  0.15 clk
+
+set_fix_hold clk
 
 ungroup -all -flatten
 

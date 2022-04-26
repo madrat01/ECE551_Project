@@ -1,7 +1,7 @@
 /////////////////////////////////////////////////////////////
 // Created by: Synopsys DC Expert(TM) in wire load mode
 // Version   : S-2021.06
-// Date      : Mon Apr 25 16:14:45 2022
+// Date      : Mon Apr 25 23:22:09 2022
 /////////////////////////////////////////////////////////////
 
 
@@ -15,7 +15,8 @@ module brushless ( clk, rst_n, drv_mag, hallGrn, hallYlw, hallBlu, brake_n,
   input clk, rst_n, hallGrn, hallYlw, hallBlu, brake_n, PWM_synch;
   wire   hallGrn_d2, hallGrn_d3, hallBlu_d2, hallBlu_d3, hallYlw_d2,
          hallYlw_d3, N31, N32, N33, N34, N35, N36, N37, N38, N39, N40, n8, n9,
-         n10, n11, n12, n13, n14, n15;
+         n10, n11, n12, n13, n14, n15, n16, n17, n18, n19, n20, n21, n22, n23,
+         n24, n25, n26, n27;
   wire   [2:0] rotationState;
   assign N31 = drv_mag[2];
   assign N32 = drv_mag[3];
@@ -30,30 +31,24 @@ module brushless ( clk, rst_n, drv_mag, hallGrn, hallYlw, hallBlu, brake_n,
   assign duty[10] = 1'b1;
 
   DFFX1_LVT hallGrn_d2_reg ( .D(hallGrn), .CLK(clk), .Q(hallGrn_d2) );
-  DFFX1_LVT hallGrn_d3_reg ( .D(hallGrn_d2), .CLK(clk), .Q(hallGrn_d3) );
-  DFFARX1_LVT synchGrn_reg ( .D(n10), .CLK(clk), .RSTB(rst_n), .Q(
-        rotationState[2]), .QN(n13) );
+  DFFX1_LVT hallGrn_d3_reg ( .D(n20), .CLK(clk), .Q(hallGrn_d3) );
+  DFFARX1_LVT synchGrn_reg ( .D(n19), .CLK(clk), .RSTB(rst_n), .Q(
+        rotationState[2]), .QN(n25) );
   DFFX1_LVT hallBlu_d2_reg ( .D(hallBlu), .CLK(clk), .Q(hallBlu_d2) );
-  DFFX1_LVT hallBlu_d3_reg ( .D(hallBlu_d2), .CLK(clk), .Q(hallBlu_d3) );
-  DFFARX1_LVT synchBlu_reg ( .D(n9), .CLK(clk), .RSTB(rst_n), .Q(
-        rotationState[0]), .QN(n14) );
+  DFFX1_LVT hallBlu_d3_reg ( .D(n16), .CLK(clk), .Q(hallBlu_d3) );
+  DFFARX1_LVT synchBlu_reg ( .D(n15), .CLK(clk), .RSTB(rst_n), .Q(
+        rotationState[0]), .QN(n26) );
   DFFX1_LVT hallYlw_d2_reg ( .D(hallYlw), .CLK(clk), .Q(hallYlw_d2) );
-  DFFX1_LVT hallYlw_d3_reg ( .D(hallYlw_d2), .CLK(clk), .Q(hallYlw_d3) );
-  DFFARX1_LVT synchYlw_reg ( .D(n8), .CLK(clk), .RSTB(rst_n), .Q(
-        rotationState[1]), .QN(n15) );
-  AO21X1_LVT U3 ( .A1(rotationState[1]), .A2(n14), .A3(n11), .Y(selYlw[1]) );
-  AO21X1_LVT U4 ( .A1(rotationState[0]), .A2(n15), .A3(n11), .Y(selYlw[0]) );
-  AO21X1_LVT U6 ( .A1(rotationState[2]), .A2(n15), .A3(n11), .Y(selGrn[1]) );
-  AO21X1_LVT U8 ( .A1(rotationState[1]), .A2(n13), .A3(n11), .Y(selGrn[0]) );
-  AO21X1_LVT U9 ( .A1(rotationState[0]), .A2(n13), .A3(n11), .Y(selBlu[1]) );
-  AO21X1_LVT U11 ( .A1(rotationState[2]), .A2(n14), .A3(n11), .Y(selBlu[0]) );
-  AO22X1_LVT U13 ( .A1(PWM_synch), .A2(hallYlw_d3), .A3(rotationState[1]), 
-        .A4(n12), .Y(n8) );
-  AO22X1_LVT U14 ( .A1(PWM_synch), .A2(hallBlu_d3), .A3(rotationState[0]), 
-        .A4(n12), .Y(n9) );
-  AO22X1_LVT U15 ( .A1(PWM_synch), .A2(hallGrn_d3), .A3(rotationState[2]), 
-        .A4(n12), .Y(n10) );
-  OR2X1_LVT U17 ( .A1(N40), .A2(n11), .Y(duty[9]) );
+  DFFX1_LVT hallYlw_d3_reg ( .D(n12), .CLK(clk), .Q(hallYlw_d3) );
+  DFFARX1_LVT synchYlw_reg ( .D(n11), .CLK(clk), .RSTB(rst_n), .Q(
+        rotationState[1]), .QN(n27) );
+  AO21X1_LVT U3 ( .A1(rotationState[1]), .A2(n26), .A3(n23), .Y(selYlw[1]) );
+  AO21X1_LVT U4 ( .A1(rotationState[0]), .A2(n27), .A3(n23), .Y(selYlw[0]) );
+  AO21X1_LVT U6 ( .A1(rotationState[2]), .A2(n27), .A3(n23), .Y(selGrn[1]) );
+  AO21X1_LVT U8 ( .A1(rotationState[1]), .A2(n25), .A3(n23), .Y(selGrn[0]) );
+  AO21X1_LVT U9 ( .A1(rotationState[0]), .A2(n25), .A3(n23), .Y(selBlu[1]) );
+  AO21X1_LVT U11 ( .A1(rotationState[2]), .A2(n26), .A3(n23), .Y(selBlu[0]) );
+  OR2X1_LVT U17 ( .A1(N40), .A2(n23), .Y(duty[9]) );
   AND2X1_LVT U18 ( .A1(N39), .A2(brake_n), .Y(duty[8]) );
   AND2X1_LVT U19 ( .A1(N38), .A2(brake_n), .Y(duty[7]) );
   AND2X1_LVT U20 ( .A1(N37), .A2(brake_n), .Y(duty[6]) );
@@ -63,7 +58,25 @@ module brushless ( clk, rst_n, drv_mag, hallGrn, hallYlw, hallBlu, brake_n,
   AND2X1_LVT U24 ( .A1(N33), .A2(brake_n), .Y(duty[2]) );
   AND2X1_LVT U25 ( .A1(N32), .A2(brake_n), .Y(duty[1]) );
   AND2X1_LVT U28 ( .A1(N31), .A2(brake_n), .Y(duty[0]) );
-  INVX1_LVT U29 ( .A(brake_n), .Y(n11) );
-  INVX1_LVT U30 ( .A(PWM_synch), .Y(n12) );
+  AO22X1_LVT U29 ( .A1(PWM_synch), .A2(hallYlw_d3), .A3(rotationState[1]), 
+        .A4(n24), .Y(n8) );
+  NBUFFX2_LVT U30 ( .A(n8), .Y(n11) );
+  INVX0_LVT U31 ( .A(hallYlw_d2), .Y(n13) );
+  NBUFFX2_LVT U32 ( .A(n14), .Y(n12) );
+  INVX0_LVT U33 ( .A(n13), .Y(n14) );
+  AO22X1_LVT U34 ( .A1(PWM_synch), .A2(hallBlu_d3), .A3(rotationState[0]), 
+        .A4(n24), .Y(n9) );
+  NBUFFX2_LVT U35 ( .A(n9), .Y(n15) );
+  INVX0_LVT U36 ( .A(hallBlu_d2), .Y(n17) );
+  NBUFFX2_LVT U37 ( .A(n18), .Y(n16) );
+  INVX0_LVT U38 ( .A(n17), .Y(n18) );
+  AO22X1_LVT U39 ( .A1(PWM_synch), .A2(hallGrn_d3), .A3(rotationState[2]), 
+        .A4(n24), .Y(n10) );
+  NBUFFX2_LVT U40 ( .A(n10), .Y(n19) );
+  INVX0_LVT U41 ( .A(hallGrn_d2), .Y(n21) );
+  NBUFFX2_LVT U42 ( .A(n22), .Y(n20) );
+  INVX0_LVT U43 ( .A(n21), .Y(n22) );
+  INVX1_LVT U44 ( .A(brake_n), .Y(n23) );
+  INVX1_LVT U45 ( .A(PWM_synch), .Y(n24) );
 endmodule
 

@@ -1,8 +1,8 @@
 # Read all files
-read_file -format sverilog {telemetry.sv UART_tx.sv}
+read_file -format sverilog {SPI_mnrch.sv}
 
-# Set current design to telemetry (top module)
-current_design telemetry
+# Set current design to SPI_mnrch (top module)
+current_design SPI_mnrch
 
 # create clock of 400 MHz
 create_clock -name "clk" -period 2.5 -waveform {0 1} clk
@@ -40,11 +40,11 @@ compile
 
 check_design
 
-report_area > telemetry_area.txt
+report_area > SPI_mnrch_area.txt
 
 # min and max timing reports
-report_timing -path full -delay max -nworst 3 > telemetry_max_timing.txt
-report_timing -path full -delay min -nworst 3 > telemetry_min_timing.txt
+report_timing -path full -delay max -nworst 3 > SPI_mnrch_max_timing.txt
+report_timing -path full -delay min -nworst 3 > SPI_mnrch_min_timing.txt
 
 # net list
-write -format verilog telemetry -output telemetry.vg
+write -format verilog SPI_mnrch -output SPI_mnrch.vg
