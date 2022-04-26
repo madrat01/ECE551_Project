@@ -1,0 +1,118 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay min
+        -nworst 3
+        -max_paths 3
+Design : mtr_drv
+Version: S-2021.06
+Date   : Mon Apr 25 18:31:23 2022
+****************************************
+
+Operating Conditions: tt0p85v25c   Library: saed32lvt_tt0p85v25c
+Wire Load Model Mode: enclosed
+
+  Startpoint: NOLP1/cnt_reg[1]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: NOLP1/cnt_reg[1]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  mtr_drv            16000                 saed32lvt_tt0p85v25c
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  NOLP1/cnt_reg[1]/CLK (DFFARX1_LVT)       0.00       0.00 r
+  NOLP1/cnt_reg[1]/Q (DFFARX1_LVT)         0.09       0.09 f
+  U24/Y (AO22X1_LVT)                       0.04       0.14 f
+  NOLP1/cnt_reg[1]/D (DFFARX1_LVT)         0.01       0.15 f
+  data arrival time                                   0.15
+
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  clock uncertainty                        0.15       0.15
+  NOLP1/cnt_reg[1]/CLK (DFFARX1_LVT)       0.00       0.15 r
+  library hold time                       -0.01       0.14
+  data required time                                  0.14
+  -----------------------------------------------------------
+  data required time                                  0.14
+  data arrival time                                  -0.15
+  -----------------------------------------------------------
+  slack (MET)                                         0.01
+
+
+  Startpoint: NOLP2/cnt_reg[1]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: NOLP2/cnt_reg[1]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  mtr_drv            16000                 saed32lvt_tt0p85v25c
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  NOLP2/cnt_reg[1]/CLK (DFFARX1_LVT)       0.00       0.00 r
+  NOLP2/cnt_reg[1]/Q (DFFARX1_LVT)         0.09       0.09 f
+  U17/Y (AO22X1_LVT)                       0.04       0.14 f
+  NOLP2/cnt_reg[1]/D (DFFARX1_LVT)         0.01       0.15 f
+  data arrival time                                   0.15
+
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  clock uncertainty                        0.15       0.15
+  NOLP2/cnt_reg[1]/CLK (DFFARX1_LVT)       0.00       0.15 r
+  library hold time                       -0.01       0.14
+  data required time                                  0.14
+  -----------------------------------------------------------
+  data required time                                  0.14
+  data arrival time                                  -0.15
+  -----------------------------------------------------------
+  slack (MET)                                         0.01
+
+
+  Startpoint: NOLP3/cnt_reg[1]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: NOLP3/cnt_reg[1]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  mtr_drv            16000                 saed32lvt_tt0p85v25c
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  NOLP3/cnt_reg[1]/CLK (DFFARX1_LVT)       0.00       0.00 r
+  NOLP3/cnt_reg[1]/Q (DFFARX1_LVT)         0.09       0.09 f
+  U2/Y (AO22X1_LVT)                        0.04       0.14 f
+  NOLP3/cnt_reg[1]/D (DFFARX1_LVT)         0.01       0.15 f
+  data arrival time                                   0.15
+
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  clock uncertainty                        0.15       0.15
+  NOLP3/cnt_reg[1]/CLK (DFFARX1_LVT)       0.00       0.15 r
+  library hold time                       -0.01       0.14
+  data required time                                  0.14
+  -----------------------------------------------------------
+  data required time                                  0.14
+  data arrival time                                  -0.15
+  -----------------------------------------------------------
+  slack (MET)                                         0.01
+
+
+1

@@ -1,8 +1,8 @@
 # Read all files
-read_file -format sverilog {desiredDrive.sv}
+read_file -format sverilog {brushless.sv}
 
-# Set current design to telemetry (top module)
-current_design desiredDrive
+# Set current design to brushless (top module)
+current_design brushless
 
 # create clock of 400 MHz
 create_clock -name "clk" -period 2.5 -waveform {0 1} clk
@@ -32,17 +32,19 @@ set_wire_load_model -name 16000 -library saed32lvt_tt0p85v25c
 # Set clock uncertainty
 set_clock_uncertainty  0.15 clk
 
+set_fix_hold clk
+
 ungroup -all -flatten
 
 compile
 
 check_design
 
-report_area > desiredDrive_area.txt
+report_area > brushless_area.txt
 
 # min and max timing reports
-report_timing -path full -delay max -nworst 3 > desiredDrive_max_timing.txt
-report_timing -path full -delay min -nworst 3 > desiredDrive_min_timing.txt
+report_timing -path full -delay max -nworst 3 > brushless_max_timing.txt
+report_timing -path full -delay min -nworst 3 > brushless_min_timing.txt
 
 # net list
-write -format verilog desiredDrive -output desiredDrive.vg
+write -format verilog brushless -output brushless.vg

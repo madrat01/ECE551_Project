@@ -1,0 +1,54 @@
+/////////////////////////////////////////////////////////////
+// Created by: Synopsys DC Expert(TM) in wire load mode
+// Version   : S-2021.06
+// Date      : Mon Apr 25 18:26:03 2022
+/////////////////////////////////////////////////////////////
+
+
+module nonoverlap ( clk, rst_n, highIn, lowIn, highOut, lowOut );
+  input clk, rst_n, highIn, lowIn;
+  output highOut, lowOut;
+  wire   N5, N6, N7, N8, N9, N10, n10, n13, n14, n15, n16, n17, n18, n19, n20,
+         n26, n27, n28, n29, n30, n31, n32, n33, n34, n35, n36, n37, n38, n39,
+         n40, n41;
+  wire   [4:2] \add_39/carry ;
+
+  DFFARX1_LVT highIn_nxt_reg ( .D(highIn), .CLK(clk), .RSTB(rst_n), .QN(n19)
+         );
+  DFFARX1_LVT lowIn_nxt_reg ( .D(lowIn), .CLK(clk), .RSTB(rst_n), .QN(n20) );
+  DFFARX1_LVT \cnt_reg[0]  ( .D(n31), .CLK(clk), .RSTB(n30), .Q(n36) );
+  DFFARX1_LVT \cnt_reg[4]  ( .D(n29), .CLK(clk), .RSTB(n30), .Q(n38) );
+  DFFARX1_LVT \cnt_reg[3]  ( .D(n28), .CLK(clk), .RSTB(n30), .Q(n39) );
+  DFFARX1_LVT \cnt_reg[2]  ( .D(n27), .CLK(clk), .RSTB(n30), .Q(n40) );
+  DFFARX1_LVT \cnt_reg[1]  ( .D(n26), .CLK(clk), .RSTB(n30), .Q(n41) );
+  DFFARX1_LVT lowOut_reg ( .D(n33), .CLK(clk), .RSTB(rst_n), .Q(lowOut) );
+  DFFARX1_LVT highOut_reg ( .D(n32), .CLK(clk), .RSTB(rst_n), .Q(highOut) );
+  AO22X1_LVT U3 ( .A1(N7), .A2(N5), .A3(n37), .A4(n41), .Y(n26) );
+  AO22X1_LVT U6 ( .A1(N8), .A2(N5), .A3(n37), .A4(n40), .Y(n27) );
+  AO22X1_LVT U7 ( .A1(N9), .A2(N5), .A3(n37), .A4(n39), .Y(n28) );
+  AO22X1_LVT U8 ( .A1(n37), .A2(n38), .A3(N10), .A4(N5), .Y(n29) );
+  AND2X1_LVT U9 ( .A1(rst_n), .A2(n10), .Y(n30) );
+  AO22X1_LVT U10 ( .A1(N6), .A2(N5), .A3(n37), .A4(n36), .Y(n31) );
+  AO22X1_LVT U12 ( .A1(n35), .A2(highIn), .A3(n13), .A4(n10), .Y(n32) );
+  AND2X1_LVT U13 ( .A1(n14), .A2(highOut), .Y(n13) );
+  AO22X1_LVT U14 ( .A1(n35), .A2(lowIn), .A3(n15), .A4(n10), .Y(n33) );
+  AND2X1_LVT U15 ( .A1(n14), .A2(lowOut), .Y(n15) );
+  NAND4X0_LVT U17 ( .A1(n36), .A2(n38), .A3(n10), .A4(n16), .Y(n14) );
+  AND3X1_LVT U18 ( .A1(n40), .A2(n41), .A3(n39), .Y(n16) );
+  AND2X1_LVT U22 ( .A1(n17), .A2(n18), .Y(n10) );
+  HADDX1_LVT \add_39/U1_1_1  ( .A0(n41), .B0(n36), .C1(\add_39/carry [2]), 
+        .SO(N7) );
+  HADDX1_LVT \add_39/U1_1_2  ( .A0(n40), .B0(\add_39/carry [2]), .C1(
+        \add_39/carry [3]), .SO(N8) );
+  HADDX1_LVT \add_39/U1_1_3  ( .A0(n39), .B0(\add_39/carry [3]), .C1(
+        \add_39/carry [4]), .SO(N9) );
+  INVX1_LVT U27 ( .A(n14), .Y(n35) );
+  INVX1_LVT U28 ( .A(N5), .Y(n37) );
+  XOR2X1_LVT U29 ( .A1(n19), .A2(highIn), .Y(n18) );
+  XOR2X1_LVT U30 ( .A1(n20), .A2(lowIn), .Y(n17) );
+  INVX0_LVT U31 ( .A(n36), .Y(N6) );
+  XOR2X1_LVT U32 ( .A1(\add_39/carry [4]), .A2(n38), .Y(N10) );
+  AND2X1_LVT U33 ( .A1(n38), .A2(n39), .Y(n34) );
+  NAND4X0_LVT U34 ( .A1(n40), .A2(n41), .A3(n34), .A4(n36), .Y(N5) );
+endmodule
+

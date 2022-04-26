@@ -1,0 +1,1353 @@
+/////////////////////////////////////////////////////////////
+// Created by: Synopsys DC Expert(TM) in wire load mode
+// Version   : S-2021.06
+// Date      : Mon Apr 25 18:53:12 2022
+/////////////////////////////////////////////////////////////
+
+
+module inert_intf_DW01_inc_2 ( A, SUM );
+  input [15:0] A;
+  output [15:0] SUM;
+
+  wire   [15:2] carry;
+
+  HADDX1_LVT U1_1_14 ( .A0(A[14]), .B0(carry[14]), .C1(carry[15]), .SO(SUM[14]) );
+  HADDX1_LVT U1_1_13 ( .A0(A[13]), .B0(carry[13]), .C1(carry[14]), .SO(SUM[13]) );
+  HADDX1_LVT U1_1_12 ( .A0(A[12]), .B0(carry[12]), .C1(carry[13]), .SO(SUM[12]) );
+  HADDX1_LVT U1_1_11 ( .A0(A[11]), .B0(carry[11]), .C1(carry[12]), .SO(SUM[11]) );
+  HADDX1_LVT U1_1_10 ( .A0(A[10]), .B0(carry[10]), .C1(carry[11]), .SO(SUM[10]) );
+  HADDX1_LVT U1_1_9 ( .A0(A[9]), .B0(carry[9]), .C1(carry[10]), .SO(SUM[9]) );
+  HADDX1_LVT U1_1_8 ( .A0(A[8]), .B0(carry[8]), .C1(carry[9]), .SO(SUM[8]) );
+  HADDX1_LVT U1_1_7 ( .A0(A[7]), .B0(carry[7]), .C1(carry[8]), .SO(SUM[7]) );
+  HADDX1_LVT U1_1_6 ( .A0(A[6]), .B0(carry[6]), .C1(carry[7]), .SO(SUM[6]) );
+  HADDX1_LVT U1_1_5 ( .A0(A[5]), .B0(carry[5]), .C1(carry[6]), .SO(SUM[5]) );
+  HADDX1_LVT U1_1_4 ( .A0(A[4]), .B0(carry[4]), .C1(carry[5]), .SO(SUM[4]) );
+  HADDX1_LVT U1_1_3 ( .A0(A[3]), .B0(carry[3]), .C1(carry[4]), .SO(SUM[3]) );
+  HADDX1_LVT U1_1_2 ( .A0(A[2]), .B0(carry[2]), .C1(carry[3]), .SO(SUM[2]) );
+  HADDX1_LVT U1_1_1 ( .A0(A[1]), .B0(A[0]), .C1(carry[2]), .SO(SUM[1]) );
+  XOR2X1_LVT U1 ( .A1(carry[15]), .A2(A[15]), .Y(SUM[15]) );
+  INVX0_LVT U2 ( .A(A[0]), .Y(SUM[0]) );
+endmodule
+
+
+module inert_intf_DW01_add_2 ( A, B, CI, SUM, CO );
+  input [23:0] A;
+  input [23:0] B;
+  output [23:0] SUM;
+  input CI;
+  output CO;
+
+  wire   [23:1] carry;
+
+  FADDX1_LVT U1_22 ( .A(A[22]), .B(B[22]), .CI(carry[22]), .CO(carry[23]), .S(
+        SUM[22]) );
+  FADDX1_LVT U1_21 ( .A(A[21]), .B(B[21]), .CI(carry[21]), .CO(carry[22]), .S(
+        SUM[21]) );
+  FADDX1_LVT U1_20 ( .A(A[20]), .B(B[20]), .CI(carry[20]), .CO(carry[21]), .S(
+        SUM[20]) );
+  FADDX1_LVT U1_19 ( .A(A[19]), .B(B[19]), .CI(carry[19]), .CO(carry[20]), .S(
+        SUM[19]) );
+  FADDX1_LVT U1_18 ( .A(A[18]), .B(B[18]), .CI(carry[18]), .CO(carry[19]), .S(
+        SUM[18]) );
+  FADDX1_LVT U1_17 ( .A(A[17]), .B(B[17]), .CI(carry[17]), .CO(carry[18]), .S(
+        SUM[17]) );
+  FADDX1_LVT U1_16 ( .A(A[16]), .B(B[16]), .CI(carry[16]), .CO(carry[17]), .S(
+        SUM[16]) );
+  FADDX1_LVT U1_15 ( .A(A[15]), .B(B[15]), .CI(carry[15]), .CO(carry[16]), .S(
+        SUM[15]) );
+  FADDX1_LVT U1_14 ( .A(A[14]), .B(B[14]), .CI(carry[14]), .CO(carry[15]), .S(
+        SUM[14]) );
+  FADDX1_LVT U1_13 ( .A(A[13]), .B(B[13]), .CI(carry[13]), .CO(carry[14]), .S(
+        SUM[13]) );
+  FADDX1_LVT U1_12 ( .A(A[12]), .B(B[12]), .CI(carry[12]), .CO(carry[13]), .S(
+        SUM[12]) );
+  FADDX1_LVT U1_11 ( .A(A[11]), .B(B[11]), .CI(carry[11]), .CO(carry[12]), .S(
+        SUM[11]) );
+  FADDX1_LVT U1_10 ( .A(A[10]), .B(B[10]), .CI(carry[10]), .CO(carry[11]), .S(
+        SUM[10]) );
+  FADDX1_LVT U1_9 ( .A(A[9]), .B(B[9]), .CI(carry[9]), .CO(carry[10]), .S(
+        SUM[9]) );
+  FADDX1_LVT U1_8 ( .A(A[8]), .B(B[8]), .CI(carry[8]), .CO(carry[9]), .S(
+        SUM[8]) );
+  FADDX1_LVT U1_7 ( .A(A[7]), .B(B[7]), .CI(carry[7]), .CO(carry[8]), .S(
+        SUM[7]) );
+  FADDX1_LVT U1_6 ( .A(A[6]), .B(B[6]), .CI(carry[6]), .CO(carry[7]), .S(
+        SUM[6]) );
+  FADDX1_LVT U1_5 ( .A(A[5]), .B(B[5]), .CI(carry[5]), .CO(carry[6]), .S(
+        SUM[5]) );
+  FADDX1_LVT U1_4 ( .A(A[4]), .B(B[4]), .CI(carry[4]), .CO(carry[5]), .S(
+        SUM[4]) );
+  FADDX1_LVT U1_3 ( .A(A[3]), .B(B[3]), .CI(carry[3]), .CO(carry[4]), .S(
+        SUM[3]) );
+  FADDX1_LVT U1_2 ( .A(A[2]), .B(B[2]), .CI(carry[2]), .CO(carry[3]), .S(
+        SUM[2]) );
+  FADDX1_LVT U1_1 ( .A(A[1]), .B(B[1]), .CI(carry[1]), .CO(carry[2]), .S(
+        SUM[1]) );
+  XOR3X1_LVT U1_23 ( .A1(A[23]), .A2(B[23]), .A3(carry[23]), .Y(SUM[23]) );
+  XOR2X1_LVT U1 ( .A1(A[0]), .A2(B[0]), .Y(SUM[0]) );
+  AND2X1_LVT U2 ( .A1(A[0]), .A2(B[0]), .Y(carry[1]) );
+endmodule
+
+
+module inert_intf_DW01_add_1 ( A, B, CI, SUM, CO );
+  input [23:0] A;
+  input [23:0] B;
+  output [23:0] SUM;
+  input CI;
+  output CO;
+
+  wire   [23:1] carry;
+
+  FADDX1_LVT U1_14 ( .A(A[14]), .B(B[14]), .CI(carry[14]), .CO(carry[15]), .S(
+        SUM[14]) );
+  FADDX1_LVT U1_13 ( .A(A[13]), .B(B[13]), .CI(carry[13]), .CO(carry[14]), .S(
+        SUM[13]) );
+  FADDX1_LVT U1_12 ( .A(A[12]), .B(B[12]), .CI(carry[12]), .CO(carry[13]), .S(
+        SUM[12]) );
+  FADDX1_LVT U1_11 ( .A(A[11]), .B(B[11]), .CI(carry[11]), .CO(carry[12]), .S(
+        SUM[11]) );
+  FADDX1_LVT U1_10 ( .A(A[10]), .B(B[10]), .CI(carry[10]), .CO(carry[11]), .S(
+        SUM[10]) );
+  FADDX1_LVT U1_9 ( .A(A[9]), .B(B[9]), .CI(carry[9]), .CO(carry[10]), .S(
+        SUM[9]) );
+  FADDX1_LVT U1_8 ( .A(A[8]), .B(B[8]), .CI(carry[8]), .CO(carry[9]), .S(
+        SUM[8]) );
+  FADDX1_LVT U1_7 ( .A(A[7]), .B(B[7]), .CI(carry[7]), .CO(carry[8]), .S(
+        SUM[7]) );
+  FADDX1_LVT U1_6 ( .A(A[6]), .B(B[6]), .CI(carry[6]), .CO(carry[7]), .S(
+        SUM[6]) );
+  FADDX1_LVT U1_5 ( .A(A[5]), .B(B[5]), .CI(carry[5]), .CO(carry[6]), .S(
+        SUM[5]) );
+  FADDX1_LVT U1_4 ( .A(A[4]), .B(B[4]), .CI(carry[4]), .CO(carry[5]), .S(
+        SUM[4]) );
+  FADDX1_LVT U1_3 ( .A(A[3]), .B(B[3]), .CI(carry[3]), .CO(carry[4]), .S(
+        SUM[3]) );
+  FADDX1_LVT U1_2 ( .A(A[2]), .B(B[2]), .CI(carry[2]), .CO(carry[3]), .S(
+        SUM[2]) );
+  FADDX1_LVT U1_1 ( .A(A[1]), .B(B[1]), .CI(carry[1]), .CO(carry[2]), .S(
+        SUM[1]) );
+  XOR3X1_LVT U1_23 ( .A1(A[23]), .A2(B[23]), .A3(carry[23]), .Y(SUM[23]) );
+  FADDX1_LVT U1_20 ( .A(A[20]), .B(B[20]), .CI(carry[20]), .CO(carry[21]), .S(
+        SUM[20]) );
+  FADDX1_LVT U1_19 ( .A(A[19]), .B(B[19]), .CI(carry[19]), .CO(carry[20]), .S(
+        SUM[19]) );
+  FADDX1_LVT U1_18 ( .A(A[18]), .B(B[18]), .CI(carry[18]), .CO(carry[19]), .S(
+        SUM[18]) );
+  FADDX1_LVT U1_17 ( .A(A[17]), .B(B[17]), .CI(carry[17]), .CO(carry[18]), .S(
+        SUM[17]) );
+  FADDX1_LVT U1_16 ( .A(A[16]), .B(B[16]), .CI(carry[16]), .CO(carry[17]), .S(
+        SUM[16]) );
+  FADDX1_LVT U1_15 ( .A(A[15]), .B(B[15]), .CI(carry[15]), .CO(carry[16]), .S(
+        SUM[15]) );
+  FADDX1_LVT U1_22 ( .A(A[22]), .B(B[22]), .CI(carry[22]), .CO(carry[23]), .S(
+        SUM[22]) );
+  FADDX1_LVT U1_21 ( .A(A[21]), .B(B[21]), .CI(carry[21]), .CO(carry[22]), .S(
+        SUM[21]) );
+  XOR2X1_LVT U1 ( .A1(A[0]), .A2(B[0]), .Y(SUM[0]) );
+  AND2X1_LVT U2 ( .A1(A[0]), .A2(B[0]), .Y(carry[1]) );
+endmodule
+
+
+module inert_intf ( clk, rst_n, INT, MISO, SS_n, SCLK, MOSI, incline, vld );
+  output [12:0] incline;
+  input clk, rst_n, INT, MISO;
+  output SS_n, SCLK, MOSI, vld;
+  wire   INT_ff1, N21, N22, N23, N24, N25, N26, N27, N28, N29, N30, N31, N32,
+         N33, N34, N35, N36, N37, \SPI_DUT/N48 , \SPI_DUT/N47 , \SPI_DUT/N46 ,
+         \SPI_DUT/N45 , \SPI_DUT/N44 , \SPI_DUT/N20 , \SPI_DUT/N19 ,
+         \SPI_DUT/N18 , \SPI_DUT/N17 , \SPI_DUT/N16 , \SPI_DUT/N15 ,
+         \SPI_DUT/N14 , \SPI_DUT/N13 , \SPI_DUT/N12 , \SPI_DUT/N11 ,
+         \SPI_DUT/SCLK_div[3] , \inertial_integrator_DUT/N142 ,
+         \inertial_integrator_DUT/N141 , \inertial_integrator_DUT/N112 ,
+         \inertial_integrator_DUT/N111 , \inertial_integrator_DUT/N110 ,
+         \inertial_integrator_DUT/N109 , \inertial_integrator_DUT/N108 ,
+         \inertial_integrator_DUT/N107 , \inertial_integrator_DUT/N106 ,
+         \inertial_integrator_DUT/N105 , \inertial_integrator_DUT/N104 ,
+         \inertial_integrator_DUT/N103 , \inertial_integrator_DUT/N102 ,
+         \inertial_integrator_DUT/N101 , \inertial_integrator_DUT/N99 ,
+         \inertial_integrator_DUT/N98 , \inertial_integrator_DUT/N97 ,
+         \inertial_integrator_DUT/N96 , \inertial_integrator_DUT/N95 ,
+         \inertial_integrator_DUT/N94 , \inertial_integrator_DUT/N93 ,
+         \inertial_integrator_DUT/N92 , \inertial_integrator_DUT/N91 ,
+         \inertial_integrator_DUT/N90 , \inertial_integrator_DUT/N89 ,
+         \inertial_integrator_DUT/N88 , \inertial_integrator_DUT/N87 ,
+         \inertial_integrator_DUT/N86 , \inertial_integrator_DUT/N85 ,
+         \inertial_integrator_DUT/N84 , \inertial_integrator_DUT/N83 ,
+         \inertial_integrator_DUT/N82 , \inertial_integrator_DUT/N81 ,
+         \inertial_integrator_DUT/N80 , \inertial_integrator_DUT/N79 ,
+         \inertial_integrator_DUT/N78 , \inertial_integrator_DUT/N77 ,
+         \inertial_integrator_DUT/N76 ,
+         \inertial_integrator_DUT/fusion_roll_offset[23] ,
+         \inertial_integrator_DUT/N51 , \inertial_integrator_DUT/N50 ,
+         \inertial_integrator_DUT/N49 , \inertial_integrator_DUT/N48 ,
+         \inertial_integrator_DUT/N47 , \inertial_integrator_DUT/N46 ,
+         \inertial_integrator_DUT/N45 , \inertial_integrator_DUT/N44 ,
+         \inertial_integrator_DUT/N43 , \inertial_integrator_DUT/N42 ,
+         \inertial_integrator_DUT/N41 , \inertial_integrator_DUT/N40 ,
+         \inertial_integrator_DUT/N39 , \inertial_integrator_DUT/N38 ,
+         \inertial_integrator_DUT/N37 , \inertial_integrator_DUT/N36 ,
+         \inertial_integrator_DUT/N35 , \inertial_integrator_DUT/N34 ,
+         \inertial_integrator_DUT/N33 , \inertial_integrator_DUT/N32 ,
+         \inertial_integrator_DUT/N31 , \inertial_integrator_DUT/N30 ,
+         \inertial_integrator_DUT/N29 , \inertial_integrator_DUT/N28 ,
+         \inertial_integrator_DUT/fusion_incline_offset[23] ,
+         \inertial_integrator_DUT/vld_ff , n37, n40, n42, n46, n47, n49, n50,
+         n52, n55, n56, n57, n58, n59, n60, n63, n64, n66, n68, n69, n70, n75,
+         n80, n86, n87, n88, n89, n90, n92, n95, n96, n97, n98, n99, n100,
+         n101, n102, n103, n104, n105, n106, n107, n108, n109, n110, n111,
+         n112, n114, n116, n117, n118, n119, n120, n121, n122, n123, n124,
+         n126, n127, n130, n131, n134, n135, n138, n140, n141, n142, n143,
+         n146, n150, n151, n152, n154, n155, n156, n160, n161, n163, n164,
+         n165, n166, n171, n173, n174, n175, n176, n180, n197, n198, n199,
+         n200, n201, n202, n203, n204, n205, n206, n207, n208, n209, n210,
+         n211, n212, n213, n214, n215, n216, n217, n218, n219, n220, n221,
+         n222, n223, n224, n225, n226, n227, n228, n229, n230, n231, n232,
+         n233, n234, n235, n236, n237, n238, n239, n240, n241, n242, n243,
+         n244, n245, n246, n247, n248, n249, n250, n251, n252, n253, n254,
+         n255, n256, n257, n258, n259, n260, n261, n262, n263, n264, n265,
+         n266, n267, n268, n269, n270, n271, n272, n273, n274, n275, n276,
+         n277, n278, n279, n280, n281, n282, n283, n284, n285, n286, n287,
+         n288, n289, n290, n291, n292, n293, n294, n295, n296, n297, n298,
+         n299, n300, n301, n302, n303, n304, n305, n306, n307, n308, n309,
+         n310, n311, n312, n313, n314, n315, n316, n317, n318, n319, n320,
+         n321, n322, n323, n324, n325, n326, n327, n328, n329, n330, n331,
+         n332, n333, \inertial_integrator_DUT/N9 ,
+         \inertial_integrator_DUT/N8 , \inertial_integrator_DUT/N7 ,
+         \inertial_integrator_DUT/N6 , \inertial_integrator_DUT/N5 ,
+         \inertial_integrator_DUT/N4 , \inertial_integrator_DUT/N27 ,
+         \inertial_integrator_DUT/N26 , \inertial_integrator_DUT/N25 ,
+         \inertial_integrator_DUT/N24 , \inertial_integrator_DUT/N23 ,
+         \inertial_integrator_DUT/N22 , \inertial_integrator_DUT/N21 ,
+         \inertial_integrator_DUT/N20 , \inertial_integrator_DUT/N19 ,
+         \inertial_integrator_DUT/N18 , \inertial_integrator_DUT/N17 ,
+         \inertial_integrator_DUT/N16 , \inertial_integrator_DUT/N15 ,
+         \inertial_integrator_DUT/N14 , \inertial_integrator_DUT/N13 ,
+         \inertial_integrator_DUT/N12 , \inertial_integrator_DUT/N11 ,
+         \inertial_integrator_DUT/N10 , \inertial_integrator_DUT/N75 ,
+         \inertial_integrator_DUT/N74 , \inertial_integrator_DUT/N73 ,
+         \inertial_integrator_DUT/N72 , \inertial_integrator_DUT/N71 ,
+         \inertial_integrator_DUT/N70 , \inertial_integrator_DUT/N69 ,
+         \inertial_integrator_DUT/N68 , \inertial_integrator_DUT/N67 ,
+         \inertial_integrator_DUT/N66 , \inertial_integrator_DUT/N65 ,
+         \inertial_integrator_DUT/N64 , \inertial_integrator_DUT/N63 ,
+         \inertial_integrator_DUT/N62 , n334, n335, n336, n337, n338, n339,
+         n340, n341, n342, n343, n344, n345, n346, n347, n348, n349, n350,
+         n351, n352, n353, n354, n355, n356, n357, n358, n359, n360, n361,
+         n362, n363, n364, n365, n366, n367, n368, n369, n370, n371, n372,
+         n373, n374, n375, n376, n377, n378, n379, n380, n381, n382, n383,
+         n384, n385, n386, n387, n388, n389, n390, n391, n392, n393, n394,
+         n395, n396, n397, n398, n399, n400, n401, n402, n403, n404, n405,
+         n406, n407, n408, n409, n410, n412, n413, n414, n415, n416, n417,
+         n418, n419, n420, n421, n422, n423, n424, n425, n427, n428, n429,
+         n430, n431, n432, n433, n434, n435, n436, n437, n438, n439, n440,
+         n442, n443, n444, n445, n446, n447, n448, n449, n450, n451, n452,
+         n453, n454, n455, n456, n457, n458, n459, n460, n461, n462, n463,
+         n464, n465, n466, n467, n468, n469, n470, n471, n472, n473, n474,
+         n475, n476, n477, n478, n479;
+  wire   [15:0] resp;
+  wire   [15:0] timer;
+  wire   [3:0] state;
+  wire   [7:0] roll_L;
+  wire   [7:0] roll_H;
+  wire   [7:0] yaw_L;
+  wire   [7:0] yaw_H;
+  wire   [4:0] \SPI_DUT/bit_cntr ;
+  wire   [25:13] \inertial_integrator_DUT/incline_acc_product ;
+  wire   [11:0] \inertial_integrator_DUT/roll_abs ;
+  wire   [23:0] \inertial_integrator_DUT/roll_int ;
+  wire   [23:0] \inertial_integrator_DUT/incline_int ;
+  wire   [15:0] \inertial_integrator_DUT/yaw_rt_comp ;
+  wire   [12:0] \inertial_integrator_DUT/sub_81/carry ;
+  wire   [16:0] \inertial_integrator_DUT/sub_44/carry ;
+  wire   [4:2] \SPI_DUT/add_56/carry ;
+  wire   [4:2] \SPI_DUT/add_28/carry ;
+  wire   [23:1] \add_0_root_add_0_root_inertial_integrator_DUT/add_71_2/carry 
+;
+  wire   [23:1] \add_1_root_add_0_root_inertial_integrator_DUT/add_57_2/carry 
+;
+
+  DFFARX1_LVT INT_ff1_reg ( .D(INT), .CLK(clk), .RSTB(n370), .Q(INT_ff1) );
+  DFFARX1_LVT INT_ff2_reg ( .D(n342), .CLK(clk), .RSTB(n379), .QN(n180) );
+  DFFARX1_LVT \timer_reg[0]  ( .D(n260), .CLK(clk), .RSTB(n379), .Q(timer[0])
+         );
+  DFFARX1_LVT \timer_reg[15]  ( .D(n259), .CLK(clk), .RSTB(n379), .Q(timer[15]) );
+  DFFARX1_LVT \timer_reg[14]  ( .D(n258), .CLK(clk), .RSTB(n379), .Q(timer[14]) );
+  DFFARX1_LVT \timer_reg[13]  ( .D(n257), .CLK(clk), .RSTB(n379), .Q(timer[13]) );
+  DFFARX1_LVT \timer_reg[12]  ( .D(n256), .CLK(clk), .RSTB(n379), .Q(timer[12]) );
+  DFFARX1_LVT \timer_reg[11]  ( .D(n255), .CLK(clk), .RSTB(n379), .Q(timer[11]) );
+  DFFARX1_LVT \timer_reg[10]  ( .D(n254), .CLK(clk), .RSTB(n379), .Q(timer[10]) );
+  DFFARX1_LVT \timer_reg[9]  ( .D(n253), .CLK(clk), .RSTB(n379), .Q(timer[9])
+         );
+  DFFARX1_LVT \timer_reg[8]  ( .D(n252), .CLK(clk), .RSTB(n379), .Q(timer[8])
+         );
+  DFFARX1_LVT \timer_reg[7]  ( .D(n251), .CLK(clk), .RSTB(n379), .Q(timer[7])
+         );
+  DFFARX1_LVT \timer_reg[6]  ( .D(n250), .CLK(clk), .RSTB(n379), .Q(timer[6])
+         );
+  DFFARX1_LVT \timer_reg[5]  ( .D(n249), .CLK(clk), .RSTB(n378), .Q(timer[5])
+         );
+  DFFARX1_LVT \timer_reg[4]  ( .D(n248), .CLK(clk), .RSTB(n378), .Q(timer[4])
+         );
+  DFFARX1_LVT \timer_reg[3]  ( .D(n247), .CLK(clk), .RSTB(n378), .Q(timer[3])
+         );
+  DFFARX1_LVT \timer_reg[2]  ( .D(n246), .CLK(clk), .RSTB(n378), .Q(timer[2])
+         );
+  DFFARX1_LVT \timer_reg[1]  ( .D(n245), .CLK(clk), .RSTB(n378), .Q(timer[1])
+         );
+  DFFASX1_LVT \SPI_DUT/SCLK_div_reg[4]  ( .D(\SPI_DUT/N20 ), .CLK(clk), .SETB(
+        n369), .Q(SCLK) );
+  DFFARX1_LVT \SPI_DUT/bit_cntr_reg[1]  ( .D(n341), .CLK(clk), .RSTB(n378), 
+        .Q(\SPI_DUT/bit_cntr [1]) );
+  DFFARX1_LVT \SPI_DUT/state_reg[1]  ( .D(n340), .CLK(clk), .RSTB(n378), .Q(
+        n443), .QN(n263) );
+  DFFARX1_LVT \SPI_DUT/state_reg[0]  ( .D(n332), .CLK(clk), .RSTB(n378), .Q(
+        n348), .QN(n262) );
+  DFFASX1_LVT \SPI_DUT/SCLK_div_reg[0]  ( .D(\SPI_DUT/N16 ), .CLK(clk), .SETB(
+        n369), .Q(n444) );
+  DFFASX1_LVT \SPI_DUT/SCLK_div_reg[1]  ( .D(\SPI_DUT/N17 ), .CLK(clk), .SETB(
+        n369), .Q(n445), .QN(n174) );
+  DFFASX1_LVT \SPI_DUT/SCLK_div_reg[2]  ( .D(\SPI_DUT/N18 ), .CLK(clk), .SETB(
+        n369), .Q(n446), .QN(n176) );
+  DFFARX1_LVT \SPI_DUT/done_reg  ( .D(n330), .CLK(clk), .RSTB(n378), .Q(n347), 
+        .QN(n261) );
+  DFFARX1_LVT \state_reg[0]  ( .D(n328), .CLK(clk), .RSTB(n378), .Q(state[0]), 
+        .QN(n456) );
+  DFFARX1_LVT \state_reg[3]  ( .D(n329), .CLK(clk), .RSTB(n378), .Q(state[3]), 
+        .QN(n462) );
+  DFFARX1_LVT \state_reg[1]  ( .D(n327), .CLK(clk), .RSTB(n377), .Q(state[1]), 
+        .QN(n463) );
+  DFFARX1_LVT \state_reg[2]  ( .D(n326), .CLK(clk), .RSTB(n377), .Q(state[2]), 
+        .QN(n464) );
+  DFFARX1_LVT \SPI_DUT/bit_cntr_reg[2]  ( .D(n339), .CLK(clk), .RSTB(n377), 
+        .Q(\SPI_DUT/bit_cntr [2]) );
+  DFFARX1_LVT \SPI_DUT/bit_cntr_reg[3]  ( .D(n338), .CLK(clk), .RSTB(n377), 
+        .Q(\SPI_DUT/bit_cntr [3]) );
+  DFFARX1_LVT \SPI_DUT/bit_cntr_reg[0]  ( .D(n324), .CLK(clk), .RSTB(n377), 
+        .Q(\SPI_DUT/bit_cntr [0]) );
+  DFFASX1_LVT \SPI_DUT/SS_n_reg  ( .D(n337), .CLK(clk), .SETB(n369), .Q(SS_n)
+         );
+  DFFARX1_LVT \SPI_DUT/shft_reg_reg[0]  ( .D(n314), .CLK(clk), .RSTB(n377), 
+        .Q(n465) );
+  DFFARX1_LVT \SPI_DUT/shft_reg_reg[1]  ( .D(n320), .CLK(clk), .RSTB(n377), 
+        .Q(n466) );
+  DFFARX1_LVT \SPI_DUT/resp_reg[1]  ( .D(n319), .CLK(clk), .RSTB(n377), .Q(
+        resp[1]) );
+  DFFARX1_LVT \roll_L_reg[1]  ( .D(n318), .CLK(clk), .RSTB(n377), .Q(roll_L[1]) );
+  DFFARX1_LVT \roll_H_reg[1]  ( .D(n317), .CLK(clk), .RSTB(n377), .Q(roll_H[1]) );
+  DFFARX1_LVT \yaw_L_reg[1]  ( .D(n316), .CLK(clk), .RSTB(n377), .Q(
+        \inertial_integrator_DUT/yaw_rt_comp [1]) );
+  DFFARX1_LVT \yaw_H_reg[1]  ( .D(n315), .CLK(clk), .RSTB(n377), .Q(yaw_H[1])
+         );
+  DFFARX1_LVT \SPI_DUT/resp_reg[0]  ( .D(n313), .CLK(clk), .RSTB(n377), .Q(
+        resp[0]) );
+  DFFARX1_LVT \roll_L_reg[0]  ( .D(n312), .CLK(clk), .RSTB(n376), .Q(roll_L[0]) );
+  DFFARX1_LVT \roll_H_reg[0]  ( .D(n311), .CLK(clk), .RSTB(n376), .Q(roll_H[0]) );
+  DFFARX1_LVT \yaw_L_reg[0]  ( .D(n310), .CLK(clk), .RSTB(n376), .Q(
+        \inertial_integrator_DUT/yaw_rt_comp [0]) );
+  DFFARX1_LVT \yaw_H_reg[0]  ( .D(n309), .CLK(clk), .RSTB(n376), .Q(yaw_H[0])
+         );
+  DFFARX1_LVT \SPI_DUT/shft_reg_reg[2]  ( .D(n308), .CLK(clk), .RSTB(n376), 
+        .Q(n467) );
+  DFFARX1_LVT \SPI_DUT/resp_reg[2]  ( .D(n336), .CLK(clk), .RSTB(n376), .Q(
+        resp[2]) );
+  DFFARX1_LVT \roll_L_reg[2]  ( .D(n306), .CLK(clk), .RSTB(n376), .Q(roll_L[2]) );
+  DFFARX1_LVT \roll_H_reg[2]  ( .D(n305), .CLK(clk), .RSTB(n376), .Q(roll_H[2]) );
+  DFFARX1_LVT \yaw_L_reg[2]  ( .D(n304), .CLK(clk), .RSTB(n376), .Q(yaw_L[2]), 
+        .QN(\inertial_integrator_DUT/yaw_rt_comp [2]) );
+  DFFARX1_LVT \yaw_H_reg[2]  ( .D(n303), .CLK(clk), .RSTB(n376), .Q(yaw_H[2])
+         );
+  DFFARX1_LVT \SPI_DUT/shft_reg_reg[3]  ( .D(n302), .CLK(clk), .RSTB(n376), 
+        .Q(n468) );
+  DFFARX1_LVT \SPI_DUT/resp_reg[3]  ( .D(n301), .CLK(clk), .RSTB(n376), .Q(
+        resp[3]) );
+  DFFARX1_LVT \roll_L_reg[3]  ( .D(n300), .CLK(clk), .RSTB(n376), .Q(roll_L[3]) );
+  DFFARX1_LVT \roll_H_reg[3]  ( .D(n299), .CLK(clk), .RSTB(n375), .Q(roll_H[3]) );
+  DFFARX1_LVT \yaw_L_reg[3]  ( .D(n298), .CLK(clk), .RSTB(n375), .Q(yaw_L[3])
+         );
+  DFFARX1_LVT \yaw_H_reg[3]  ( .D(n297), .CLK(clk), .RSTB(n375), .Q(yaw_H[3])
+         );
+  DFFARX1_LVT \SPI_DUT/shft_reg_reg[4]  ( .D(n296), .CLK(clk), .RSTB(n375), 
+        .Q(n469) );
+  DFFARX1_LVT \SPI_DUT/resp_reg[4]  ( .D(n295), .CLK(clk), .RSTB(n375), .Q(
+        resp[4]) );
+  DFFARX1_LVT \roll_L_reg[4]  ( .D(n294), .CLK(clk), .RSTB(n375), .Q(roll_L[4]) );
+  DFFARX1_LVT \roll_H_reg[4]  ( .D(n293), .CLK(clk), .RSTB(n375), .Q(roll_H[4]) );
+  DFFARX1_LVT \yaw_L_reg[4]  ( .D(n292), .CLK(clk), .RSTB(n375), .Q(yaw_L[4])
+         );
+  DFFARX1_LVT \yaw_H_reg[4]  ( .D(n291), .CLK(clk), .RSTB(n375), .Q(yaw_H[4])
+         );
+  DFFARX1_LVT \SPI_DUT/shft_reg_reg[5]  ( .D(n290), .CLK(clk), .RSTB(n375), 
+        .Q(n470) );
+  DFFARX1_LVT \SPI_DUT/resp_reg[5]  ( .D(n289), .CLK(clk), .RSTB(n375), .Q(
+        resp[5]) );
+  DFFARX1_LVT \roll_L_reg[5]  ( .D(n288), .CLK(clk), .RSTB(n375), .Q(roll_L[5]) );
+  DFFARX1_LVT \roll_H_reg[5]  ( .D(n287), .CLK(clk), .RSTB(n375), .Q(roll_H[5]) );
+  DFFARX1_LVT \yaw_L_reg[5]  ( .D(n286), .CLK(clk), .RSTB(n374), .Q(yaw_L[5])
+         );
+  DFFARX1_LVT \yaw_H_reg[5]  ( .D(n285), .CLK(clk), .RSTB(n374), .Q(yaw_H[5])
+         );
+  DFFARX1_LVT \SPI_DUT/shft_reg_reg[6]  ( .D(n284), .CLK(clk), .RSTB(n374), 
+        .Q(n471) );
+  DFFARX1_LVT \SPI_DUT/resp_reg[6]  ( .D(n283), .CLK(clk), .RSTB(n374), .Q(
+        resp[6]) );
+  DFFARX1_LVT \roll_L_reg[6]  ( .D(n282), .CLK(clk), .RSTB(n374), .Q(roll_L[6]) );
+  DFFARX1_LVT \roll_H_reg[6]  ( .D(n281), .CLK(clk), .RSTB(n374), .Q(roll_H[6]) );
+  DFFARX1_LVT \yaw_L_reg[6]  ( .D(n280), .CLK(clk), .RSTB(n374), .Q(yaw_L[6])
+         );
+  DFFARX1_LVT \yaw_H_reg[6]  ( .D(n279), .CLK(clk), .RSTB(n374), .Q(yaw_H[6])
+         );
+  DFFARX1_LVT \SPI_DUT/shft_reg_reg[7]  ( .D(n278), .CLK(clk), .RSTB(n374), 
+        .Q(n472) );
+  DFFARX1_LVT \SPI_DUT/resp_reg[7]  ( .D(n277), .CLK(clk), .RSTB(n374), .Q(
+        resp[7]) );
+  DFFARX1_LVT \roll_L_reg[7]  ( .D(n276), .CLK(clk), .RSTB(n374), .Q(roll_L[7]) );
+  DFFARX1_LVT \yaw_L_reg[7]  ( .D(n274), .CLK(clk), .RSTB(n373), .Q(yaw_L[7])
+         );
+  DFFARX1_LVT \yaw_H_reg[7]  ( .D(n273), .CLK(clk), .RSTB(n373), .Q(yaw_H[7])
+         );
+  DFFARX1_LVT \SPI_DUT/shft_reg_reg[8]  ( .D(n272), .CLK(clk), .RSTB(n373), 
+        .Q(n473) );
+  DFFARX1_LVT \SPI_DUT/shft_reg_reg[9]  ( .D(n271), .CLK(clk), .RSTB(n373), 
+        .Q(n474) );
+  DFFARX1_LVT \SPI_DUT/shft_reg_reg[10]  ( .D(n270), .CLK(clk), .RSTB(n373), 
+        .Q(n475) );
+  DFFARX1_LVT \SPI_DUT/shft_reg_reg[11]  ( .D(n269), .CLK(clk), .RSTB(n373), 
+        .Q(n476) );
+  DFFARX1_LVT \SPI_DUT/shft_reg_reg[12]  ( .D(n268), .CLK(clk), .RSTB(n373), 
+        .Q(n477) );
+  DFFARX1_LVT \SPI_DUT/shft_reg_reg[13]  ( .D(n267), .CLK(clk), .RSTB(n373), 
+        .Q(n478) );
+  DFFARX1_LVT \SPI_DUT/shft_reg_reg[14]  ( .D(n335), .CLK(clk), .RSTB(n373), 
+        .Q(n479) );
+  DFFARX1_LVT \SPI_DUT/shft_reg_reg[15]  ( .D(n265), .CLK(clk), .RSTB(n373), 
+        .Q(MOSI) );
+  DFFARX1_LVT \inertial_integrator_DUT/vld_ff_reg  ( .D(vld), .CLK(clk), 
+        .RSTB(n373), .Q(\inertial_integrator_DUT/vld_ff ) );
+  DFFARX1_LVT \inertial_integrator_DUT/incline_int_reg[0]  ( .D(n244), .CLK(
+        clk), .RSTB(n373), .Q(\inertial_integrator_DUT/N4 ) );
+  DFFARX1_LVT \inertial_integrator_DUT/incline_int_reg[23]  ( .D(n243), .CLK(
+        clk), .RSTB(n372), .Q(\inertial_integrator_DUT/incline_int [23]) );
+  DFFARX1_LVT \inertial_integrator_DUT/incline_int_reg[22]  ( .D(n242), .CLK(
+        clk), .RSTB(n372), .Q(\inertial_integrator_DUT/incline_int [22]), .QN(
+        n410) );
+  DFFARX1_LVT \inertial_integrator_DUT/incline_int_reg[21]  ( .D(n241), .CLK(
+        clk), .RSTB(n372), .Q(\inertial_integrator_DUT/incline_int [21]), .QN(
+        n409) );
+  DFFARX1_LVT \inertial_integrator_DUT/incline_int_reg[20]  ( .D(n240), .CLK(
+        clk), .RSTB(n372), .Q(\inertial_integrator_DUT/incline_int [20]), .QN(
+        n408) );
+  DFFARX1_LVT \inertial_integrator_DUT/incline_int_reg[19]  ( .D(n239), .CLK(
+        clk), .RSTB(n372), .Q(\inertial_integrator_DUT/incline_int [19]), .QN(
+        n407) );
+  DFFARX1_LVT \inertial_integrator_DUT/incline_int_reg[18]  ( .D(n238), .CLK(
+        clk), .RSTB(n372), .Q(\inertial_integrator_DUT/incline_int [18]), .QN(
+        n406) );
+  DFFARX1_LVT \inertial_integrator_DUT/incline_int_reg[17]  ( .D(n237), .CLK(
+        clk), .RSTB(n372), .Q(\inertial_integrator_DUT/incline_int [17]), .QN(
+        n405) );
+  DFFARX1_LVT \inertial_integrator_DUT/incline_int_reg[16]  ( .D(n236), .CLK(
+        clk), .RSTB(n372), .Q(\inertial_integrator_DUT/incline_int [16]), .QN(
+        n404) );
+  DFFARX1_LVT \inertial_integrator_DUT/incline_int_reg[15]  ( .D(n235), .CLK(
+        clk), .RSTB(n372), .Q(\inertial_integrator_DUT/incline_int [15]), .QN(
+        n403) );
+  DFFARX1_LVT \inertial_integrator_DUT/incline_int_reg[14]  ( .D(n234), .CLK(
+        clk), .RSTB(n372), .Q(\inertial_integrator_DUT/incline_int [14]), .QN(
+        n402) );
+  DFFARX1_LVT \inertial_integrator_DUT/incline_int_reg[13]  ( .D(n233), .CLK(
+        clk), .RSTB(n372), .Q(\inertial_integrator_DUT/incline_int [13]), .QN(
+        n401) );
+  DFFARX1_LVT \inertial_integrator_DUT/incline_int_reg[12]  ( .D(n232), .CLK(
+        clk), .RSTB(n372), .Q(\inertial_integrator_DUT/incline_int [12]), .QN(
+        n400) );
+  DFFARX1_LVT \inertial_integrator_DUT/incline_int_reg[11]  ( .D(n231), .CLK(
+        clk), .RSTB(n372), .Q(\inertial_integrator_DUT/incline_int [11]), .QN(
+        n391) );
+  DFFARX1_LVT \inertial_integrator_DUT/incline_int_reg[10]  ( .D(n230), .CLK(
+        clk), .RSTB(n371), .Q(\inertial_integrator_DUT/incline_int [10]), .QN(
+        \inertial_integrator_DUT/N14 ) );
+  DFFARX1_LVT \inertial_integrator_DUT/incline_int_reg[9]  ( .D(n229), .CLK(
+        clk), .RSTB(n371), .Q(\inertial_integrator_DUT/N13 ) );
+  DFFARX1_LVT \inertial_integrator_DUT/incline_int_reg[8]  ( .D(n228), .CLK(
+        clk), .RSTB(n371), .Q(\inertial_integrator_DUT/N12 ) );
+  DFFARX1_LVT \inertial_integrator_DUT/incline_int_reg[7]  ( .D(n227), .CLK(
+        clk), .RSTB(n371), .Q(\inertial_integrator_DUT/N11 ) );
+  DFFARX1_LVT \inertial_integrator_DUT/incline_int_reg[6]  ( .D(n226), .CLK(
+        clk), .RSTB(n371), .Q(\inertial_integrator_DUT/N10 ) );
+  DFFARX1_LVT \inertial_integrator_DUT/incline_int_reg[5]  ( .D(n225), .CLK(
+        clk), .RSTB(n371), .Q(\inertial_integrator_DUT/N9 ) );
+  DFFARX1_LVT \inertial_integrator_DUT/incline_int_reg[4]  ( .D(n224), .CLK(
+        clk), .RSTB(n371), .Q(\inertial_integrator_DUT/N8 ) );
+  DFFARX1_LVT \inertial_integrator_DUT/incline_int_reg[3]  ( .D(n223), .CLK(
+        clk), .RSTB(n371), .Q(\inertial_integrator_DUT/N7 ) );
+  DFFARX1_LVT \inertial_integrator_DUT/incline_int_reg[2]  ( .D(n222), .CLK(
+        clk), .RSTB(n371), .Q(\inertial_integrator_DUT/N6 ) );
+  DFFARX1_LVT \inertial_integrator_DUT/incline_int_reg[1]  ( .D(n221), .CLK(
+        clk), .RSTB(n371), .Q(\inertial_integrator_DUT/N5 ) );
+  DFFARX1_LVT \inertial_integrator_DUT/roll_int_reg[0]  ( .D(n220), .CLK(clk), 
+        .RSTB(n371), .Q(\inertial_integrator_DUT/roll_int [0]) );
+  DFFARX1_LVT \inertial_integrator_DUT/roll_int_reg[22]  ( .D(n218), .CLK(clk), 
+        .RSTB(n371), .Q(\inertial_integrator_DUT/roll_int [22]), .QN(n425) );
+  DFFARX1_LVT \inertial_integrator_DUT/roll_int_reg[21]  ( .D(n217), .CLK(clk), 
+        .RSTB(n370), .Q(\inertial_integrator_DUT/roll_int [21]), .QN(n424) );
+  DFFARX1_LVT \inertial_integrator_DUT/roll_int_reg[20]  ( .D(n216), .CLK(clk), 
+        .RSTB(n370), .Q(\inertial_integrator_DUT/roll_int [20]), .QN(n423) );
+  DFFARX1_LVT \inertial_integrator_DUT/roll_int_reg[19]  ( .D(n215), .CLK(clk), 
+        .RSTB(n370), .Q(\inertial_integrator_DUT/roll_int [19]), .QN(n422) );
+  DFFARX1_LVT \inertial_integrator_DUT/roll_int_reg[18]  ( .D(n214), .CLK(clk), 
+        .RSTB(n370), .Q(\inertial_integrator_DUT/roll_int [18]), .QN(n421) );
+  DFFARX1_LVT \inertial_integrator_DUT/roll_int_reg[17]  ( .D(n213), .CLK(clk), 
+        .RSTB(n370), .Q(\inertial_integrator_DUT/roll_int [17]), .QN(n420) );
+  DFFARX1_LVT \inertial_integrator_DUT/roll_int_reg[16]  ( .D(n212), .CLK(clk), 
+        .RSTB(n370), .Q(\inertial_integrator_DUT/roll_int [16]), .QN(n419) );
+  DFFARX1_LVT \inertial_integrator_DUT/roll_int_reg[15]  ( .D(n211), .CLK(clk), 
+        .RSTB(n370), .Q(\inertial_integrator_DUT/roll_int [15]), .QN(n418) );
+  DFFARX1_LVT \inertial_integrator_DUT/roll_int_reg[14]  ( .D(n210), .CLK(clk), 
+        .RSTB(n370), .Q(\inertial_integrator_DUT/roll_int [14]), .QN(n412) );
+  DFFARX1_LVT \inertial_integrator_DUT/roll_int_reg[13]  ( .D(n209), .CLK(clk), 
+        .RSTB(n371), .Q(\inertial_integrator_DUT/roll_int [13]), .QN(n386) );
+  DFFARX1_LVT \inertial_integrator_DUT/roll_int_reg[12]  ( .D(n208), .CLK(clk), 
+        .RSTB(n370), .Q(\inertial_integrator_DUT/roll_int [12]), .QN(n385) );
+  DFFARX1_LVT \inertial_integrator_DUT/roll_int_reg[11]  ( .D(n207), .CLK(clk), 
+        .RSTB(n370), .Q(\inertial_integrator_DUT/N101 ), .QN(n384) );
+  DFFARX1_LVT \inertial_integrator_DUT/roll_int_reg[10]  ( .D(n206), .CLK(clk), 
+        .RSTB(n369), .Q(\inertial_integrator_DUT/roll_int [10]) );
+  DFFARX1_LVT \inertial_integrator_DUT/roll_int_reg[9]  ( .D(n205), .CLK(clk), 
+        .RSTB(n369), .Q(\inertial_integrator_DUT/roll_int [9]) );
+  DFFARX1_LVT \inertial_integrator_DUT/roll_int_reg[8]  ( .D(n204), .CLK(clk), 
+        .RSTB(n369), .Q(\inertial_integrator_DUT/roll_int [8]) );
+  DFFARX1_LVT \inertial_integrator_DUT/roll_int_reg[7]  ( .D(n203), .CLK(clk), 
+        .RSTB(n370), .Q(\inertial_integrator_DUT/roll_int [7]) );
+  DFFARX1_LVT \inertial_integrator_DUT/roll_int_reg[6]  ( .D(n202), .CLK(clk), 
+        .RSTB(n369), .Q(\inertial_integrator_DUT/roll_int [6]) );
+  DFFARX1_LVT \inertial_integrator_DUT/roll_int_reg[5]  ( .D(n201), .CLK(clk), 
+        .RSTB(n369), .Q(\inertial_integrator_DUT/roll_int [5]) );
+  DFFARX1_LVT \inertial_integrator_DUT/roll_int_reg[4]  ( .D(n200), .CLK(clk), 
+        .RSTB(n369), .Q(\inertial_integrator_DUT/roll_int [4]) );
+  DFFARX1_LVT \inertial_integrator_DUT/roll_int_reg[3]  ( .D(n199), .CLK(clk), 
+        .RSTB(n369), .Q(\inertial_integrator_DUT/roll_int [3]) );
+  DFFARX1_LVT \inertial_integrator_DUT/roll_int_reg[2]  ( .D(n198), .CLK(clk), 
+        .RSTB(n369), .Q(\inertial_integrator_DUT/roll_int [2]) );
+  DFFARX1_LVT \inertial_integrator_DUT/roll_int_reg[1]  ( .D(n197), .CLK(clk), 
+        .RSTB(n374), .Q(\inertial_integrator_DUT/roll_int [1]) );
+  AO222X1_LVT U4 ( .A1(n433), .A2(n479), .A3(n40), .A4(MOSI), .A5(n432), .A6(
+        n42), .Y(n265) );
+  AO22X1_LVT U5 ( .A1(n433), .A2(n478), .A3(n368), .A4(n479), .Y(n266) );
+  AO222X1_LVT U15 ( .A1(n433), .A2(n477), .A3(n368), .A4(n478), .A5(n432), 
+        .A6(n42), .Y(n267) );
+  AO222X1_LVT U17 ( .A1(n433), .A2(n476), .A3(n40), .A4(n477), .A5(n432), .A6(
+        n46), .Y(n268) );
+  AO222X1_LVT U19 ( .A1(n40), .A2(n476), .A3(n432), .A4(n47), .A5(n433), .A6(
+        n475), .Y(n269) );
+  NAND3X0_LVT U20 ( .A1(n49), .A2(n50), .A3(n452), .Y(n47) );
+  AO222X1_LVT U22 ( .A1(n368), .A2(n475), .A3(n432), .A4(n52), .A5(n433), .A6(
+        n474), .Y(n270) );
+  OR3X1_LVT U23 ( .A1(n457), .A2(n55), .A3(n56), .Y(n52) );
+  NAND3X0_LVT U24 ( .A1(n57), .A2(n58), .A3(n59), .Y(n56) );
+  AO222X1_LVT U26 ( .A1(n40), .A2(n474), .A3(n432), .A4(n60), .A5(n433), .A6(
+        n473), .Y(n271) );
+  NAND2X0_LVT U27 ( .A1(n448), .A2(n63), .Y(n60) );
+  AO222X1_LVT U29 ( .A1(n368), .A2(n473), .A3(n432), .A4(n64), .A5(n433), .A6(
+        n472), .Y(n272) );
+  NAND2X0_LVT U30 ( .A1(n66), .A2(n438), .Y(n64) );
+  NAND4X0_LVT U32 ( .A1(n68), .A2(n69), .A3(n70), .A4(n50), .Y(n55) );
+  AO22X1_LVT U34 ( .A1(yaw_H[7]), .A2(n49), .A3(resp[7]), .A4(n450), .Y(n273)
+         );
+  AO22X1_LVT U35 ( .A1(yaw_L[7]), .A2(n70), .A3(n447), .A4(resp[7]), .Y(n274)
+         );
+  AO22X1_LVT U36 ( .A1(n346), .A2(n58), .A3(n451), .A4(resp[7]), .Y(n275) );
+  AO22X1_LVT U37 ( .A1(roll_L[7]), .A2(n68), .A3(n449), .A4(resp[7]), .Y(n276)
+         );
+  AO22X1_LVT U38 ( .A1(resp[7]), .A2(n75), .A3(n439), .A4(n472), .Y(n277) );
+  AO22X1_LVT U39 ( .A1(n433), .A2(n471), .A3(n40), .A4(n472), .Y(n278) );
+  AO22X1_LVT U41 ( .A1(yaw_H[6]), .A2(n49), .A3(resp[6]), .A4(n450), .Y(n279)
+         );
+  AO22X1_LVT U42 ( .A1(yaw_L[6]), .A2(n70), .A3(resp[6]), .A4(n447), .Y(n280)
+         );
+  AO22X1_LVT U43 ( .A1(roll_H[6]), .A2(n58), .A3(resp[6]), .A4(n451), .Y(n281)
+         );
+  AO22X1_LVT U44 ( .A1(roll_L[6]), .A2(n68), .A3(resp[6]), .A4(n449), .Y(n282)
+         );
+  AO22X1_LVT U45 ( .A1(resp[6]), .A2(n75), .A3(n439), .A4(n471), .Y(n283) );
+  AO222X1_LVT U46 ( .A1(n433), .A2(n470), .A3(n368), .A4(n471), .A5(n432), 
+        .A6(n46), .Y(n284) );
+  AO22X1_LVT U48 ( .A1(yaw_H[5]), .A2(n49), .A3(resp[5]), .A4(n450), .Y(n285)
+         );
+  AO22X1_LVT U49 ( .A1(yaw_L[5]), .A2(n70), .A3(resp[5]), .A4(n447), .Y(n286)
+         );
+  AO22X1_LVT U50 ( .A1(roll_H[5]), .A2(n58), .A3(resp[5]), .A4(n451), .Y(n287)
+         );
+  AO22X1_LVT U51 ( .A1(roll_L[5]), .A2(n68), .A3(resp[5]), .A4(n449), .Y(n288)
+         );
+  AO22X1_LVT U52 ( .A1(resp[5]), .A2(n75), .A3(n439), .A4(n470), .Y(n289) );
+  AO222X1_LVT U53 ( .A1(n433), .A2(n469), .A3(n40), .A4(n470), .A5(n457), .A6(
+        n432), .Y(n290) );
+  AO22X1_LVT U55 ( .A1(yaw_H[4]), .A2(n49), .A3(resp[4]), .A4(n450), .Y(n291)
+         );
+  AO22X1_LVT U56 ( .A1(yaw_L[4]), .A2(n70), .A3(resp[4]), .A4(n447), .Y(n292)
+         );
+  AO22X1_LVT U57 ( .A1(roll_H[4]), .A2(n58), .A3(resp[4]), .A4(n451), .Y(n293)
+         );
+  AO22X1_LVT U58 ( .A1(roll_L[4]), .A2(n68), .A3(resp[4]), .A4(n449), .Y(n294)
+         );
+  AO22X1_LVT U59 ( .A1(resp[4]), .A2(n75), .A3(n439), .A4(n469), .Y(n295) );
+  AO222X1_LVT U60 ( .A1(n40), .A2(n469), .A3(n432), .A4(n80), .A5(n433), .A6(
+        n468), .Y(n296) );
+  AO22X1_LVT U62 ( .A1(yaw_H[3]), .A2(n49), .A3(resp[3]), .A4(n450), .Y(n297)
+         );
+  AO22X1_LVT U63 ( .A1(yaw_L[3]), .A2(n70), .A3(resp[3]), .A4(n447), .Y(n298)
+         );
+  AO22X1_LVT U64 ( .A1(roll_H[3]), .A2(n58), .A3(resp[3]), .A4(n451), .Y(n299)
+         );
+  AO22X1_LVT U65 ( .A1(roll_L[3]), .A2(n68), .A3(resp[3]), .A4(n449), .Y(n300)
+         );
+  AO22X1_LVT U66 ( .A1(resp[3]), .A2(n75), .A3(n439), .A4(n468), .Y(n301) );
+  AO22X1_LVT U67 ( .A1(n433), .A2(n467), .A3(n368), .A4(n468), .Y(n302) );
+  AO22X1_LVT U69 ( .A1(yaw_H[2]), .A2(n49), .A3(resp[2]), .A4(n450), .Y(n303)
+         );
+  AO22X1_LVT U70 ( .A1(yaw_L[2]), .A2(n70), .A3(resp[2]), .A4(n447), .Y(n304)
+         );
+  AO22X1_LVT U71 ( .A1(roll_H[2]), .A2(n58), .A3(resp[2]), .A4(n451), .Y(n305)
+         );
+  AO22X1_LVT U72 ( .A1(roll_L[2]), .A2(n68), .A3(resp[2]), .A4(n449), .Y(n306)
+         );
+  AO22X1_LVT U73 ( .A1(resp[2]), .A2(n75), .A3(n439), .A4(n467), .Y(n307) );
+  AO22X1_LVT U74 ( .A1(n433), .A2(n466), .A3(n40), .A4(n467), .Y(n308) );
+  AO22X1_LVT U76 ( .A1(yaw_H[0]), .A2(n49), .A3(resp[0]), .A4(n450), .Y(n309)
+         );
+  AO22X1_LVT U77 ( .A1(\inertial_integrator_DUT/yaw_rt_comp [0]), .A2(n70), 
+        .A3(resp[0]), .A4(n447), .Y(n310) );
+  AO22X1_LVT U78 ( .A1(roll_H[0]), .A2(n58), .A3(resp[0]), .A4(n451), .Y(n311)
+         );
+  AO22X1_LVT U79 ( .A1(roll_L[0]), .A2(n68), .A3(resp[0]), .A4(n449), .Y(n312)
+         );
+  AO22X1_LVT U80 ( .A1(resp[0]), .A2(n75), .A3(n439), .A4(n465), .Y(n313) );
+  AO222X1_LVT U81 ( .A1(MISO), .A2(n433), .A3(n368), .A4(n465), .A5(n458), 
+        .A6(n432), .Y(n314) );
+  AO22X1_LVT U82 ( .A1(yaw_H[1]), .A2(n49), .A3(resp[1]), .A4(n450), .Y(n315)
+         );
+  AO22X1_LVT U84 ( .A1(\inertial_integrator_DUT/yaw_rt_comp [1]), .A2(n70), 
+        .A3(resp[1]), .A4(n447), .Y(n316) );
+  AO22X1_LVT U86 ( .A1(roll_H[1]), .A2(n58), .A3(resp[1]), .A4(n451), .Y(n317)
+         );
+  AO22X1_LVT U88 ( .A1(roll_L[1]), .A2(n68), .A3(resp[1]), .A4(n449), .Y(n318)
+         );
+  AO22X1_LVT U90 ( .A1(resp[1]), .A2(n75), .A3(n439), .A4(n466), .Y(n319) );
+  AO222X1_LVT U91 ( .A1(n368), .A2(n466), .A3(n432), .A4(n86), .A5(n433), .A6(
+        n465), .Y(n320) );
+  NAND2X0_LVT U93 ( .A1(n87), .A2(n50), .Y(n86) );
+  AO22X1_LVT U96 ( .A1(\SPI_DUT/N45 ), .A2(n433), .A3(n368), .A4(
+        \SPI_DUT/bit_cntr [1]), .Y(n321) );
+  AO22X1_LVT U97 ( .A1(\SPI_DUT/N46 ), .A2(n433), .A3(n40), .A4(
+        \SPI_DUT/bit_cntr [2]), .Y(n322) );
+  AO22X1_LVT U98 ( .A1(\SPI_DUT/N47 ), .A2(n433), .A3(n368), .A4(
+        \SPI_DUT/bit_cntr [3]), .Y(n323) );
+  AO22X1_LVT U99 ( .A1(\SPI_DUT/N44 ), .A2(n433), .A3(n40), .A4(
+        \SPI_DUT/bit_cntr [0]), .Y(n324) );
+  AO21X1_LVT U100 ( .A1(n88), .A2(SS_n), .A3(n439), .Y(n325) );
+  AO221X1_LVT U101 ( .A1(state[2]), .A2(n89), .A3(n90), .A4(n347), .A5(n92), 
+        .Y(n326) );
+  NAND2X0_LVT U102 ( .A1(n57), .A2(n37), .Y(n92) );
+  NAND4X0_LVT U103 ( .A1(n431), .A2(n453), .A3(n95), .A4(n96), .Y(n89) );
+  NAND2X0_LVT U104 ( .A1(n261), .A2(n97), .Y(n95) );
+  NAND4X0_LVT U106 ( .A1(n69), .A2(n59), .A3(n98), .A4(n99), .Y(n90) );
+  AND2X1_LVT U107 ( .A1(n100), .A2(n101), .Y(n99) );
+  AO22X1_LVT U108 ( .A1(state[1]), .A2(n102), .A3(n431), .A4(n103), .Y(n327)
+         );
+  NAND4X0_LVT U109 ( .A1(n104), .A2(n105), .A3(n57), .A4(n49), .Y(n103) );
+  NAND2X0_LVT U110 ( .A1(n106), .A2(n347), .Y(n105) );
+  AO22X1_LVT U111 ( .A1(state[0]), .A2(n102), .A3(n431), .A4(n107), .Y(n328)
+         );
+  NAND4X0_LVT U112 ( .A1(n70), .A2(n37), .A3(n68), .A4(n108), .Y(n107) );
+  NAND3X0_LVT U114 ( .A1(n100), .A2(n69), .A3(n66), .Y(n110) );
+  NAND2X0_LVT U115 ( .A1(n112), .A2(n454), .Y(n100) );
+  NAND2X0_LVT U116 ( .A1(n104), .A2(n114), .Y(n109) );
+  AO21X1_LVT U117 ( .A1(n459), .A2(n116), .A3(n347), .Y(n114) );
+  NAND2X0_LVT U119 ( .A1(n87), .A2(n101), .Y(n106) );
+  AND3X1_LVT U120 ( .A1(n117), .A2(n96), .A3(n66), .Y(n104) );
+  OA21X1_LVT U121 ( .A1(n118), .A2(state[0]), .A3(n63), .Y(n66) );
+  NAND2X0_LVT U122 ( .A1(n261), .A2(n119), .Y(n117) );
+  NAND3X0_LVT U123 ( .A1(n59), .A2(n120), .A3(n98), .Y(n119) );
+  NAND2X0_LVT U124 ( .A1(n121), .A2(n122), .Y(n37) );
+  AO21X1_LVT U125 ( .A1(state[3]), .A2(n123), .A3(n124), .Y(n329) );
+  NAND4X0_LVT U126 ( .A1(n455), .A2(n431), .A3(n452), .A4(n101), .Y(n123) );
+  NAND2X0_LVT U127 ( .A1(n126), .A2(n122), .Y(n101) );
+  AO22X1_LVT U130 ( .A1(n180), .A2(n460), .A3(n437), .A4(n111), .Y(n102) );
+  NAND3X0_LVT U134 ( .A1(n120), .A2(n131), .A3(n116), .Y(n97) );
+  AO21X1_LVT U135 ( .A1(n88), .A2(n347), .A3(n439), .Y(n330) );
+  AO22X1_LVT U137 ( .A1(n434), .A2(n443), .A3(n134), .A4(n135), .Y(n331) );
+  AND2X1_LVT U138 ( .A1(n263), .A2(n348), .Y(n134) );
+  AO22X1_LVT U139 ( .A1(n135), .A2(n442), .A3(n434), .A4(n348), .Y(n332) );
+  OA222X1_LVT U141 ( .A1(n348), .A2(n138), .A3(\SPI_DUT/bit_cntr [4]), .A4(
+        n140), .A5(n141), .A6(n142), .Y(n135) );
+  NAND2X0_LVT U142 ( .A1(n263), .A2(n348), .Y(n140) );
+  NAND2X0_LVT U143 ( .A1(n143), .A2(n443), .Y(n138) );
+  NAND4X0_LVT U144 ( .A1(SCLK), .A2(n444), .A3(n146), .A4(n446), .Y(n143) );
+  AND2X1_LVT U145 ( .A1(\SPI_DUT/SCLK_div[3] ), .A2(n445), .Y(n146) );
+  AO22X1_LVT U147 ( .A1(\SPI_DUT/N48 ), .A2(n433), .A3(n368), .A4(
+        \SPI_DUT/bit_cntr [4]), .Y(n333) );
+  NAND4X0_LVT U151 ( .A1(SCLK), .A2(n444), .A3(n88), .A4(n151), .Y(n150) );
+  AND3X1_LVT U152 ( .A1(n175), .A2(n176), .A3(n174), .Y(n151) );
+  NAND2X0_LVT U153 ( .A1(n442), .A2(n142), .Y(n88) );
+  NAND3X0_LVT U154 ( .A1(n152), .A2(n50), .A3(n435), .Y(n142) );
+  NAND4X0_LVT U156 ( .A1(n448), .A2(n154), .A3(n155), .A4(n68), .Y(n42) );
+  NAND2X0_LVT U158 ( .A1(n112), .A2(n121), .Y(n96) );
+  NAND2X0_LVT U159 ( .A1(n127), .A2(n347), .Y(n155) );
+  NAND3X0_LVT U160 ( .A1(n63), .A2(n59), .A3(n69), .Y(n127) );
+  NAND2X0_LVT U161 ( .A1(n454), .A2(n122), .Y(n69) );
+  NAND3X0_LVT U162 ( .A1(state[0]), .A2(state[1]), .A3(n156), .Y(n59) );
+  NAND2X0_LVT U163 ( .A1(n156), .A2(n121), .Y(n63) );
+  AND2X1_LVT U164 ( .A1(state[1]), .A2(n456), .Y(n121) );
+  OR2X1_LVT U165 ( .A1(n57), .A2(n180), .Y(n154) );
+  NAND2X0_LVT U166 ( .A1(n126), .A2(n112), .Y(n57) );
+  NAND3X0_LVT U168 ( .A1(n58), .A2(n70), .A3(n49), .Y(n124) );
+  NAND2X0_LVT U170 ( .A1(n126), .A2(n156), .Y(n116) );
+  AND2X1_LVT U172 ( .A1(state[3]), .A2(n464), .Y(n156) );
+  NAND3X0_LVT U174 ( .A1(state[0]), .A2(state[1]), .A3(n112), .Y(n120) );
+  AND2X1_LVT U175 ( .A1(state[2]), .A2(n462), .Y(n112) );
+  NAND2X0_LVT U176 ( .A1(n130), .A2(n111), .Y(n50) );
+  NAND2X0_LVT U177 ( .A1(n160), .A2(n161), .Y(n111) );
+  NAND3X0_LVT U178 ( .A1(n122), .A2(state[1]), .A3(state[0]), .Y(n161) );
+  AND2X1_LVT U179 ( .A1(state[3]), .A2(state[2]), .Y(n122) );
+  NAND3X0_LVT U180 ( .A1(n464), .A2(n462), .A3(n454), .Y(n160) );
+  NAND2X0_LVT U182 ( .A1(n463), .A2(n456), .Y(n131) );
+  NAND4X0_LVT U184 ( .A1(timer[1]), .A2(timer[15]), .A3(timer[14]), .A4(
+        timer[13]), .Y(n166) );
+  NAND4X0_LVT U185 ( .A1(timer[12]), .A2(timer[11]), .A3(timer[10]), .A4(
+        timer[0]), .Y(n165) );
+  NAND4X0_LVT U186 ( .A1(timer[9]), .A2(timer[8]), .A3(timer[7]), .A4(timer[6]), .Y(n164) );
+  NAND4X0_LVT U187 ( .A1(timer[5]), .A2(timer[4]), .A3(timer[3]), .A4(timer[2]), .Y(n163) );
+  NAND2X0_LVT U188 ( .A1(n46), .A2(n347), .Y(n152) );
+  OR2X1_LVT U190 ( .A1(n80), .A2(n457), .Y(n46) );
+  NAND2X0_LVT U192 ( .A1(n461), .A2(state[0]), .Y(n98) );
+  AO21X1_LVT U193 ( .A1(n461), .A2(n456), .A3(n458), .Y(n80) );
+  NAND3X0_LVT U195 ( .A1(n464), .A2(n462), .A3(n126), .Y(n87) );
+  AND2X1_LVT U196 ( .A1(state[0]), .A2(n463), .Y(n126) );
+  NAND3X0_LVT U200 ( .A1(n464), .A2(n462), .A3(state[1]), .Y(n118) );
+  AO22X1_LVT U204 ( .A1(n365), .A2(\inertial_integrator_DUT/roll_int [1]), 
+        .A3(\inertial_integrator_DUT/N77 ), .A4(n358), .Y(n197) );
+  AO22X1_LVT U205 ( .A1(\inertial_integrator_DUT/roll_int [2]), .A2(n365), 
+        .A3(\inertial_integrator_DUT/N78 ), .A4(n358), .Y(n198) );
+  AO22X1_LVT U206 ( .A1(\inertial_integrator_DUT/roll_int [3]), .A2(n365), 
+        .A3(\inertial_integrator_DUT/N79 ), .A4(n358), .Y(n199) );
+  AO22X1_LVT U207 ( .A1(\inertial_integrator_DUT/roll_int [4]), .A2(n365), 
+        .A3(\inertial_integrator_DUT/N80 ), .A4(n358), .Y(n200) );
+  AO22X1_LVT U208 ( .A1(\inertial_integrator_DUT/roll_int [5]), .A2(n365), 
+        .A3(\inertial_integrator_DUT/N81 ), .A4(n358), .Y(n201) );
+  AO22X1_LVT U209 ( .A1(\inertial_integrator_DUT/roll_int [6]), .A2(n365), 
+        .A3(\inertial_integrator_DUT/N82 ), .A4(n358), .Y(n202) );
+  AO22X1_LVT U210 ( .A1(\inertial_integrator_DUT/roll_int [7]), .A2(n365), 
+        .A3(\inertial_integrator_DUT/N83 ), .A4(n358), .Y(n203) );
+  AO22X1_LVT U211 ( .A1(\inertial_integrator_DUT/roll_int [8]), .A2(n365), 
+        .A3(\inertial_integrator_DUT/N84 ), .A4(n358), .Y(n204) );
+  AO22X1_LVT U212 ( .A1(\inertial_integrator_DUT/roll_int [9]), .A2(n365), 
+        .A3(\inertial_integrator_DUT/N85 ), .A4(n358), .Y(n205) );
+  AO22X1_LVT U213 ( .A1(\inertial_integrator_DUT/roll_int [10]), .A2(n365), 
+        .A3(\inertial_integrator_DUT/N86 ), .A4(n358), .Y(n206) );
+  AO22X1_LVT U214 ( .A1(\inertial_integrator_DUT/N101 ), .A2(n365), .A3(
+        \inertial_integrator_DUT/N87 ), .A4(n358), .Y(n207) );
+  AO22X1_LVT U215 ( .A1(\inertial_integrator_DUT/roll_int [12]), .A2(n365), 
+        .A3(\inertial_integrator_DUT/N88 ), .A4(n358), .Y(n208) );
+  AO22X1_LVT U216 ( .A1(\inertial_integrator_DUT/roll_int [13]), .A2(n364), 
+        .A3(\inertial_integrator_DUT/N89 ), .A4(n357), .Y(n209) );
+  AO22X1_LVT U217 ( .A1(\inertial_integrator_DUT/roll_int [14]), .A2(n364), 
+        .A3(\inertial_integrator_DUT/N90 ), .A4(n357), .Y(n210) );
+  AO22X1_LVT U218 ( .A1(\inertial_integrator_DUT/roll_int [15]), .A2(n364), 
+        .A3(\inertial_integrator_DUT/N91 ), .A4(n357), .Y(n211) );
+  AO22X1_LVT U219 ( .A1(\inertial_integrator_DUT/roll_int [16]), .A2(n364), 
+        .A3(\inertial_integrator_DUT/N92 ), .A4(n357), .Y(n212) );
+  AO22X1_LVT U220 ( .A1(\inertial_integrator_DUT/roll_int [17]), .A2(n364), 
+        .A3(\inertial_integrator_DUT/N93 ), .A4(n357), .Y(n213) );
+  AO22X1_LVT U221 ( .A1(\inertial_integrator_DUT/roll_int [18]), .A2(n364), 
+        .A3(\inertial_integrator_DUT/N94 ), .A4(n357), .Y(n214) );
+  AO22X1_LVT U222 ( .A1(\inertial_integrator_DUT/roll_int [19]), .A2(n364), 
+        .A3(\inertial_integrator_DUT/N95 ), .A4(n357), .Y(n215) );
+  AO22X1_LVT U223 ( .A1(\inertial_integrator_DUT/roll_int [20]), .A2(n364), 
+        .A3(\inertial_integrator_DUT/N96 ), .A4(n357), .Y(n216) );
+  AO22X1_LVT U224 ( .A1(\inertial_integrator_DUT/roll_int [21]), .A2(n364), 
+        .A3(\inertial_integrator_DUT/N97 ), .A4(n357), .Y(n217) );
+  AO22X1_LVT U225 ( .A1(\inertial_integrator_DUT/roll_int [22]), .A2(n364), 
+        .A3(\inertial_integrator_DUT/N98 ), .A4(n357), .Y(n218) );
+  AO22X1_LVT U226 ( .A1(\inertial_integrator_DUT/roll_int [23]), .A2(n364), 
+        .A3(\inertial_integrator_DUT/N99 ), .A4(n360), .Y(n219) );
+  AO22X1_LVT U227 ( .A1(\inertial_integrator_DUT/roll_int [0]), .A2(n364), 
+        .A3(\inertial_integrator_DUT/N76 ), .A4(n357), .Y(n220) );
+  AO22X1_LVT U228 ( .A1(\inertial_integrator_DUT/N5 ), .A2(n363), .A3(
+        \inertial_integrator_DUT/N29 ), .A4(n334), .Y(n221) );
+  AO22X1_LVT U229 ( .A1(\inertial_integrator_DUT/N6 ), .A2(n363), .A3(
+        \inertial_integrator_DUT/N30 ), .A4(n360), .Y(n222) );
+  AO22X1_LVT U230 ( .A1(\inertial_integrator_DUT/N7 ), .A2(n363), .A3(
+        \inertial_integrator_DUT/N31 ), .A4(n334), .Y(n223) );
+  AO22X1_LVT U231 ( .A1(\inertial_integrator_DUT/N8 ), .A2(n363), .A3(
+        \inertial_integrator_DUT/N32 ), .A4(n360), .Y(n224) );
+  AO22X1_LVT U232 ( .A1(\inertial_integrator_DUT/N9 ), .A2(n363), .A3(
+        \inertial_integrator_DUT/N33 ), .A4(n360), .Y(n225) );
+  AO22X1_LVT U233 ( .A1(\inertial_integrator_DUT/N10 ), .A2(n363), .A3(
+        \inertial_integrator_DUT/N34 ), .A4(n360), .Y(n226) );
+  AO22X1_LVT U234 ( .A1(\inertial_integrator_DUT/N11 ), .A2(n363), .A3(
+        \inertial_integrator_DUT/N35 ), .A4(n360), .Y(n227) );
+  AO22X1_LVT U235 ( .A1(\inertial_integrator_DUT/N12 ), .A2(n363), .A3(
+        \inertial_integrator_DUT/N36 ), .A4(n360), .Y(n228) );
+  AO22X1_LVT U236 ( .A1(\inertial_integrator_DUT/N13 ), .A2(n363), .A3(
+        \inertial_integrator_DUT/N37 ), .A4(n360), .Y(n229) );
+  AO22X1_LVT U237 ( .A1(\inertial_integrator_DUT/incline_int [10]), .A2(n363), 
+        .A3(\inertial_integrator_DUT/N38 ), .A4(n360), .Y(n230) );
+  AO22X1_LVT U238 ( .A1(\inertial_integrator_DUT/incline_int [11]), .A2(n363), 
+        .A3(\inertial_integrator_DUT/N39 ), .A4(n360), .Y(n231) );
+  AO22X1_LVT U239 ( .A1(\inertial_integrator_DUT/incline_int [12]), .A2(n362), 
+        .A3(\inertial_integrator_DUT/N40 ), .A4(n357), .Y(n232) );
+  AO22X1_LVT U240 ( .A1(\inertial_integrator_DUT/incline_int [13]), .A2(n362), 
+        .A3(\inertial_integrator_DUT/N41 ), .A4(n359), .Y(n233) );
+  AO22X1_LVT U241 ( .A1(\inertial_integrator_DUT/incline_int [14]), .A2(n362), 
+        .A3(\inertial_integrator_DUT/N42 ), .A4(n359), .Y(n234) );
+  AO22X1_LVT U242 ( .A1(\inertial_integrator_DUT/incline_int [15]), .A2(n362), 
+        .A3(\inertial_integrator_DUT/N43 ), .A4(n359), .Y(n235) );
+  AO22X1_LVT U243 ( .A1(\inertial_integrator_DUT/incline_int [16]), .A2(n362), 
+        .A3(\inertial_integrator_DUT/N44 ), .A4(n359), .Y(n236) );
+  AO22X1_LVT U244 ( .A1(\inertial_integrator_DUT/incline_int [17]), .A2(n362), 
+        .A3(\inertial_integrator_DUT/N45 ), .A4(n359), .Y(n237) );
+  AO22X1_LVT U245 ( .A1(\inertial_integrator_DUT/incline_int [18]), .A2(n362), 
+        .A3(\inertial_integrator_DUT/N46 ), .A4(n359), .Y(n238) );
+  AO22X1_LVT U246 ( .A1(\inertial_integrator_DUT/incline_int [19]), .A2(n362), 
+        .A3(\inertial_integrator_DUT/N47 ), .A4(n359), .Y(n239) );
+  AO22X1_LVT U247 ( .A1(\inertial_integrator_DUT/incline_int [20]), .A2(n362), 
+        .A3(\inertial_integrator_DUT/N48 ), .A4(n359), .Y(n240) );
+  AO22X1_LVT U248 ( .A1(\inertial_integrator_DUT/incline_int [21]), .A2(n362), 
+        .A3(\inertial_integrator_DUT/N49 ), .A4(n359), .Y(n241) );
+  AO22X1_LVT U249 ( .A1(\inertial_integrator_DUT/incline_int [22]), .A2(n362), 
+        .A3(\inertial_integrator_DUT/N50 ), .A4(n359), .Y(n242) );
+  AO22X1_LVT U250 ( .A1(\inertial_integrator_DUT/incline_int [23]), .A2(n362), 
+        .A3(\inertial_integrator_DUT/N51 ), .A4(n359), .Y(n243) );
+  AO22X1_LVT U251 ( .A1(\inertial_integrator_DUT/N4 ), .A2(n363), .A3(
+        \inertial_integrator_DUT/N28 ), .A4(n359), .Y(n244) );
+  AO22X1_LVT U253 ( .A1(N23), .A2(N21), .A3(timer[1]), .A4(n436), .Y(n245) );
+  AO22X1_LVT U254 ( .A1(N24), .A2(N21), .A3(timer[2]), .A4(n436), .Y(n246) );
+  AO22X1_LVT U255 ( .A1(N25), .A2(N21), .A3(timer[3]), .A4(n436), .Y(n247) );
+  AO22X1_LVT U256 ( .A1(N26), .A2(N21), .A3(timer[4]), .A4(n436), .Y(n248) );
+  AO22X1_LVT U257 ( .A1(N27), .A2(N21), .A3(timer[5]), .A4(n436), .Y(n249) );
+  AO22X1_LVT U258 ( .A1(N28), .A2(N21), .A3(timer[6]), .A4(n436), .Y(n250) );
+  AO22X1_LVT U259 ( .A1(N29), .A2(N21), .A3(timer[7]), .A4(n436), .Y(n251) );
+  AO22X1_LVT U260 ( .A1(N30), .A2(N21), .A3(timer[8]), .A4(n436), .Y(n252) );
+  AO22X1_LVT U261 ( .A1(N31), .A2(N21), .A3(timer[9]), .A4(n436), .Y(n253) );
+  AO22X1_LVT U262 ( .A1(N32), .A2(N21), .A3(timer[10]), .A4(n436), .Y(n254) );
+  AO22X1_LVT U263 ( .A1(N33), .A2(N21), .A3(timer[11]), .A4(n436), .Y(n255) );
+  AO22X1_LVT U264 ( .A1(N34), .A2(N21), .A3(timer[12]), .A4(n436), .Y(n256) );
+  AO22X1_LVT U265 ( .A1(N35), .A2(N21), .A3(timer[13]), .A4(n436), .Y(n257) );
+  AO22X1_LVT U266 ( .A1(N36), .A2(N21), .A3(timer[14]), .A4(n436), .Y(n258) );
+  AO22X1_LVT U267 ( .A1(N37), .A2(N21), .A3(timer[15]), .A4(n436), .Y(n259) );
+  AO22X1_LVT U268 ( .A1(N22), .A2(N21), .A3(timer[0]), .A4(n436), .Y(n260) );
+  AO22X1_LVT U270 ( .A1(n264), .A2(\inertial_integrator_DUT/roll_int [20]), 
+        .A3(\inertial_integrator_DUT/N110 ), .A4(
+        \inertial_integrator_DUT/roll_int [23]), .Y(
+        \inertial_integrator_DUT/roll_abs [9]) );
+  AO22X1_LVT U271 ( .A1(n264), .A2(\inertial_integrator_DUT/roll_int [19]), 
+        .A3(\inertial_integrator_DUT/N109 ), .A4(
+        \inertial_integrator_DUT/roll_int [23]), .Y(
+        \inertial_integrator_DUT/roll_abs [8]) );
+  AO22X1_LVT U272 ( .A1(n264), .A2(\inertial_integrator_DUT/roll_int [18]), 
+        .A3(\inertial_integrator_DUT/N108 ), .A4(
+        \inertial_integrator_DUT/roll_int [23]), .Y(
+        \inertial_integrator_DUT/roll_abs [7]) );
+  AO22X1_LVT U273 ( .A1(n264), .A2(\inertial_integrator_DUT/roll_int [17]), 
+        .A3(\inertial_integrator_DUT/N107 ), .A4(
+        \inertial_integrator_DUT/roll_int [23]), .Y(
+        \inertial_integrator_DUT/roll_abs [6]) );
+  AO22X1_LVT U274 ( .A1(n264), .A2(\inertial_integrator_DUT/roll_int [16]), 
+        .A3(\inertial_integrator_DUT/N106 ), .A4(
+        \inertial_integrator_DUT/roll_int [23]), .Y(
+        \inertial_integrator_DUT/roll_abs [5]) );
+  AO22X1_LVT U275 ( .A1(n264), .A2(\inertial_integrator_DUT/roll_int [15]), 
+        .A3(\inertial_integrator_DUT/N105 ), .A4(
+        \inertial_integrator_DUT/roll_int [23]), .Y(
+        \inertial_integrator_DUT/roll_abs [4]) );
+  AO22X1_LVT U276 ( .A1(n264), .A2(\inertial_integrator_DUT/roll_int [14]), 
+        .A3(\inertial_integrator_DUT/N104 ), .A4(
+        \inertial_integrator_DUT/roll_int [23]), .Y(
+        \inertial_integrator_DUT/roll_abs [3]) );
+  AO22X1_LVT U277 ( .A1(n264), .A2(\inertial_integrator_DUT/roll_int [13]), 
+        .A3(\inertial_integrator_DUT/N103 ), .A4(
+        \inertial_integrator_DUT/roll_int [23]), .Y(
+        \inertial_integrator_DUT/roll_abs [2]) );
+  AO22X1_LVT U278 ( .A1(n264), .A2(\inertial_integrator_DUT/roll_int [12]), 
+        .A3(\inertial_integrator_DUT/N102 ), .A4(
+        \inertial_integrator_DUT/roll_int [23]), .Y(
+        \inertial_integrator_DUT/roll_abs [1]) );
+  AO22X1_LVT U279 ( .A1(n264), .A2(\inertial_integrator_DUT/roll_int [22]), 
+        .A3(\inertial_integrator_DUT/N112 ), .A4(
+        \inertial_integrator_DUT/roll_int [23]), .Y(
+        \inertial_integrator_DUT/roll_abs [11]) );
+  AO22X1_LVT U280 ( .A1(n264), .A2(\inertial_integrator_DUT/roll_int [21]), 
+        .A3(\inertial_integrator_DUT/N111 ), .A4(
+        \inertial_integrator_DUT/roll_int [23]), .Y(
+        \inertial_integrator_DUT/roll_abs [10]) );
+  AO22X1_LVT U281 ( .A1(n264), .A2(\inertial_integrator_DUT/N101 ), .A3(
+        \inertial_integrator_DUT/N101 ), .A4(
+        \inertial_integrator_DUT/roll_int [23]), .Y(
+        \inertial_integrator_DUT/roll_abs [0]) );
+  AND2X1_LVT U284 ( .A1(\inertial_integrator_DUT/incline_int [20]), .A2(n355), 
+        .Y(incline[9]) );
+  AND2X1_LVT U285 ( .A1(\inertial_integrator_DUT/incline_int [19]), .A2(n355), 
+        .Y(incline[8]) );
+  AND2X1_LVT U286 ( .A1(\inertial_integrator_DUT/incline_int [18]), .A2(n355), 
+        .Y(incline[7]) );
+  AND2X1_LVT U287 ( .A1(\inertial_integrator_DUT/incline_int [17]), .A2(n355), 
+        .Y(incline[6]) );
+  AND2X1_LVT U288 ( .A1(\inertial_integrator_DUT/incline_int [16]), .A2(n355), 
+        .Y(incline[5]) );
+  AND2X1_LVT U289 ( .A1(\inertial_integrator_DUT/incline_int [15]), .A2(n355), 
+        .Y(incline[4]) );
+  AND2X1_LVT U290 ( .A1(\inertial_integrator_DUT/incline_int [14]), .A2(n355), 
+        .Y(incline[3]) );
+  AND2X1_LVT U291 ( .A1(\inertial_integrator_DUT/incline_int [13]), .A2(n355), 
+        .Y(incline[2]) );
+  AND2X1_LVT U292 ( .A1(\inertial_integrator_DUT/incline_int [12]), .A2(n355), 
+        .Y(incline[1]) );
+  AND2X1_LVT U293 ( .A1(\inertial_integrator_DUT/incline_int [23]), .A2(n355), 
+        .Y(incline[12]) );
+  AND2X1_LVT U294 ( .A1(\inertial_integrator_DUT/incline_int [22]), .A2(n355), 
+        .Y(incline[11]) );
+  AND2X1_LVT U295 ( .A1(\inertial_integrator_DUT/incline_int [21]), .A2(n355), 
+        .Y(incline[10]) );
+  AND2X1_LVT U296 ( .A1(\inertial_integrator_DUT/incline_int [11]), .A2(n355), 
+        .Y(incline[0]) );
+  OR2X1_LVT U298 ( .A1(\SPI_DUT/N15 ), .A2(n171), .Y(\SPI_DUT/N20 ) );
+  AND2X1_LVT U299 ( .A1(\SPI_DUT/N14 ), .A2(n440), .Y(\SPI_DUT/N19 ) );
+  OR2X1_LVT U301 ( .A1(\SPI_DUT/N13 ), .A2(n171), .Y(\SPI_DUT/N18 ) );
+  OR2X1_LVT U302 ( .A1(\SPI_DUT/N12 ), .A2(n171), .Y(\SPI_DUT/N17 ) );
+  OR2X1_LVT U303 ( .A1(\SPI_DUT/N11 ), .A2(n171), .Y(\SPI_DUT/N16 ) );
+  NAND2X0_LVT U304 ( .A1(n141), .A2(n75), .Y(n171) );
+  AND4X1_LVT U306 ( .A1(n444), .A2(n446), .A3(\SPI_DUT/SCLK_div[3] ), .A4(n445), .Y(n173) );
+  NOR4X1_LVT U183 ( .A1(n163), .A2(n164), .A3(n165), .A4(n166), .Y(n130) );
+  inert_intf_DW01_inc_2 add_36 ( .A(timer), .SUM({N37, N36, N35, N34, N33, N32, 
+        N31, N30, N29, N28, N27, N26, N25, N24, N23, N22}) );
+  inert_intf_DW01_add_2 \add_0_root_add_0_root_inertial_integrator_DUT/add_57_2  ( 
+        .A({n353, n354, n354, n353, n354, n353, n353, n354, n352, 
+        \inertial_integrator_DUT/yaw_rt_comp [14:0]}), .B({
+        \inertial_integrator_DUT/N27 , \inertial_integrator_DUT/N26 , 
+        \inertial_integrator_DUT/N25 , \inertial_integrator_DUT/N24 , 
+        \inertial_integrator_DUT/N23 , \inertial_integrator_DUT/N22 , 
+        \inertial_integrator_DUT/N21 , \inertial_integrator_DUT/N20 , 
+        \inertial_integrator_DUT/N19 , \inertial_integrator_DUT/N18 , 
+        \inertial_integrator_DUT/N17 , \inertial_integrator_DUT/N16 , 
+        \inertial_integrator_DUT/N15 , \inertial_integrator_DUT/N14 , 
+        \inertial_integrator_DUT/N13 , \inertial_integrator_DUT/N12 , 
+        \inertial_integrator_DUT/N11 , \inertial_integrator_DUT/N10 , 
+        \inertial_integrator_DUT/N9 , \inertial_integrator_DUT/N8 , 
+        \inertial_integrator_DUT/N7 , \inertial_integrator_DUT/N6 , 
+        \inertial_integrator_DUT/N5 , \inertial_integrator_DUT/N4 }), .CI(1'b0), .SUM({\inertial_integrator_DUT/N51 , \inertial_integrator_DUT/N50 , 
+        \inertial_integrator_DUT/N49 , \inertial_integrator_DUT/N48 , 
+        \inertial_integrator_DUT/N47 , \inertial_integrator_DUT/N46 , 
+        \inertial_integrator_DUT/N45 , \inertial_integrator_DUT/N44 , 
+        \inertial_integrator_DUT/N43 , \inertial_integrator_DUT/N42 , 
+        \inertial_integrator_DUT/N41 , \inertial_integrator_DUT/N40 , 
+        \inertial_integrator_DUT/N39 , \inertial_integrator_DUT/N38 , 
+        \inertial_integrator_DUT/N37 , \inertial_integrator_DUT/N36 , 
+        \inertial_integrator_DUT/N35 , \inertial_integrator_DUT/N34 , 
+        \inertial_integrator_DUT/N33 , \inertial_integrator_DUT/N32 , 
+        \inertial_integrator_DUT/N31 , \inertial_integrator_DUT/N30 , 
+        \inertial_integrator_DUT/N29 , \inertial_integrator_DUT/N28 }) );
+  inert_intf_DW01_add_1 \add_1_root_add_0_root_inertial_integrator_DUT/add_71_2  ( 
+        .A({\inertial_integrator_DUT/roll_int [23:12], 
+        \inertial_integrator_DUT/N101 , 
+        \inertial_integrator_DUT/roll_int [10:0]}), .B({n351, n351, n346, n346, 
+        n351, n346, n346, n351, n350, roll_H[6:0], roll_L}), .CI(1'b0), .SUM({
+        \inertial_integrator_DUT/N75 , \inertial_integrator_DUT/N74 , 
+        \inertial_integrator_DUT/N73 , \inertial_integrator_DUT/N72 , 
+        \inertial_integrator_DUT/N71 , \inertial_integrator_DUT/N70 , 
+        \inertial_integrator_DUT/N69 , \inertial_integrator_DUT/N68 , 
+        \inertial_integrator_DUT/N67 , \inertial_integrator_DUT/N66 , 
+        \inertial_integrator_DUT/N65 , \inertial_integrator_DUT/N64 , 
+        \inertial_integrator_DUT/N63 , \inertial_integrator_DUT/N62 , 
+        \inertial_integrator_DUT/N85 , \inertial_integrator_DUT/N84 , 
+        \inertial_integrator_DUT/N83 , \inertial_integrator_DUT/N82 , 
+        \inertial_integrator_DUT/N81 , \inertial_integrator_DUT/N80 , 
+        \inertial_integrator_DUT/N79 , \inertial_integrator_DUT/N78 , 
+        \inertial_integrator_DUT/N77 , \inertial_integrator_DUT/N76 }) );
+  HADDX1_LVT \SPI_DUT/add_56/U1_1_1  ( .A0(\SPI_DUT/bit_cntr [1]), .B0(
+        \SPI_DUT/bit_cntr [0]), .C1(\SPI_DUT/add_56/carry [2]), .SO(
+        \SPI_DUT/N45 ) );
+  HADDX1_LVT \SPI_DUT/add_56/U1_1_2  ( .A0(\SPI_DUT/bit_cntr [2]), .B0(
+        \SPI_DUT/add_56/carry [2]), .C1(\SPI_DUT/add_56/carry [3]), .SO(
+        \SPI_DUT/N46 ) );
+  HADDX1_LVT \SPI_DUT/add_56/U1_1_3  ( .A0(\SPI_DUT/bit_cntr [3]), .B0(
+        \SPI_DUT/add_56/carry [3]), .C1(\SPI_DUT/add_56/carry [4]), .SO(
+        \SPI_DUT/N47 ) );
+  HADDX1_LVT \SPI_DUT/add_28/U1_1_1  ( .A0(n445), .B0(n444), .C1(
+        \SPI_DUT/add_28/carry [2]), .SO(\SPI_DUT/N12 ) );
+  HADDX1_LVT \SPI_DUT/add_28/U1_1_2  ( .A0(n446), .B0(
+        \SPI_DUT/add_28/carry [2]), .C1(\SPI_DUT/add_28/carry [3]), .SO(
+        \SPI_DUT/N13 ) );
+  HADDX1_LVT \SPI_DUT/add_28/U1_1_3  ( .A0(\SPI_DUT/SCLK_div[3] ), .B0(
+        \SPI_DUT/add_28/carry [3]), .C1(\SPI_DUT/add_28/carry [4]), .SO(
+        \SPI_DUT/N14 ) );
+  FADDX1_LVT \add_0_root_add_0_root_inertial_integrator_DUT/add_71_2/U1_11  ( 
+        .A(\inertial_integrator_DUT/fusion_roll_offset[23] ), .B(
+        \inertial_integrator_DUT/N63 ), .CI(\inertial_integrator_DUT/N62 ), 
+        .CO(\add_0_root_add_0_root_inertial_integrator_DUT/add_71_2/carry [12]), .S(\inertial_integrator_DUT/N87 ) );
+  FADDX1_LVT \add_0_root_add_0_root_inertial_integrator_DUT/add_71_2/U1_12  ( 
+        .A(\inertial_integrator_DUT/fusion_roll_offset[23] ), .B(
+        \inertial_integrator_DUT/N64 ), .CI(
+        \add_0_root_add_0_root_inertial_integrator_DUT/add_71_2/carry [12]), 
+        .CO(\add_0_root_add_0_root_inertial_integrator_DUT/add_71_2/carry [13]), .S(\inertial_integrator_DUT/N88 ) );
+  FADDX1_LVT \add_0_root_add_0_root_inertial_integrator_DUT/add_71_2/U1_13  ( 
+        .A(\inertial_integrator_DUT/fusion_roll_offset[23] ), .B(
+        \inertial_integrator_DUT/N65 ), .CI(
+        \add_0_root_add_0_root_inertial_integrator_DUT/add_71_2/carry [13]), 
+        .CO(\add_0_root_add_0_root_inertial_integrator_DUT/add_71_2/carry [14]), .S(\inertial_integrator_DUT/N89 ) );
+  FADDX1_LVT \add_0_root_add_0_root_inertial_integrator_DUT/add_71_2/U1_14  ( 
+        .A(\inertial_integrator_DUT/fusion_roll_offset[23] ), .B(
+        \inertial_integrator_DUT/N66 ), .CI(
+        \add_0_root_add_0_root_inertial_integrator_DUT/add_71_2/carry [14]), 
+        .CO(\add_0_root_add_0_root_inertial_integrator_DUT/add_71_2/carry [15]), .S(\inertial_integrator_DUT/N90 ) );
+  FADDX1_LVT \add_0_root_add_0_root_inertial_integrator_DUT/add_71_2/U1_15  ( 
+        .A(\inertial_integrator_DUT/fusion_roll_offset[23] ), .B(
+        \inertial_integrator_DUT/N67 ), .CI(
+        \add_0_root_add_0_root_inertial_integrator_DUT/add_71_2/carry [15]), 
+        .CO(\add_0_root_add_0_root_inertial_integrator_DUT/add_71_2/carry [16]), .S(\inertial_integrator_DUT/N91 ) );
+  FADDX1_LVT \add_0_root_add_0_root_inertial_integrator_DUT/add_71_2/U1_16  ( 
+        .A(\inertial_integrator_DUT/fusion_roll_offset[23] ), .B(
+        \inertial_integrator_DUT/N68 ), .CI(
+        \add_0_root_add_0_root_inertial_integrator_DUT/add_71_2/carry [16]), 
+        .CO(\add_0_root_add_0_root_inertial_integrator_DUT/add_71_2/carry [17]), .S(\inertial_integrator_DUT/N92 ) );
+  FADDX1_LVT \add_0_root_add_0_root_inertial_integrator_DUT/add_71_2/U1_17  ( 
+        .A(\inertial_integrator_DUT/fusion_roll_offset[23] ), .B(
+        \inertial_integrator_DUT/N69 ), .CI(
+        \add_0_root_add_0_root_inertial_integrator_DUT/add_71_2/carry [17]), 
+        .CO(\add_0_root_add_0_root_inertial_integrator_DUT/add_71_2/carry [18]), .S(\inertial_integrator_DUT/N93 ) );
+  FADDX1_LVT \add_0_root_add_0_root_inertial_integrator_DUT/add_71_2/U1_18  ( 
+        .A(\inertial_integrator_DUT/fusion_roll_offset[23] ), .B(
+        \inertial_integrator_DUT/N70 ), .CI(
+        \add_0_root_add_0_root_inertial_integrator_DUT/add_71_2/carry [18]), 
+        .CO(\add_0_root_add_0_root_inertial_integrator_DUT/add_71_2/carry [19]), .S(\inertial_integrator_DUT/N94 ) );
+  FADDX1_LVT \add_0_root_add_0_root_inertial_integrator_DUT/add_71_2/U1_19  ( 
+        .A(\inertial_integrator_DUT/fusion_roll_offset[23] ), .B(
+        \inertial_integrator_DUT/N71 ), .CI(
+        \add_0_root_add_0_root_inertial_integrator_DUT/add_71_2/carry [19]), 
+        .CO(\add_0_root_add_0_root_inertial_integrator_DUT/add_71_2/carry [20]), .S(\inertial_integrator_DUT/N95 ) );
+  FADDX1_LVT \add_0_root_add_0_root_inertial_integrator_DUT/add_71_2/U1_20  ( 
+        .A(\inertial_integrator_DUT/fusion_roll_offset[23] ), .B(
+        \inertial_integrator_DUT/N72 ), .CI(
+        \add_0_root_add_0_root_inertial_integrator_DUT/add_71_2/carry [20]), 
+        .CO(\add_0_root_add_0_root_inertial_integrator_DUT/add_71_2/carry [21]), .S(\inertial_integrator_DUT/N96 ) );
+  FADDX1_LVT \add_0_root_add_0_root_inertial_integrator_DUT/add_71_2/U1_21  ( 
+        .A(\inertial_integrator_DUT/fusion_roll_offset[23] ), .B(
+        \inertial_integrator_DUT/N73 ), .CI(
+        \add_0_root_add_0_root_inertial_integrator_DUT/add_71_2/carry [21]), 
+        .CO(\add_0_root_add_0_root_inertial_integrator_DUT/add_71_2/carry [22]), .S(\inertial_integrator_DUT/N97 ) );
+  FADDX1_LVT \add_0_root_add_0_root_inertial_integrator_DUT/add_71_2/U1_22  ( 
+        .A(\inertial_integrator_DUT/fusion_roll_offset[23] ), .B(
+        \inertial_integrator_DUT/N74 ), .CI(
+        \add_0_root_add_0_root_inertial_integrator_DUT/add_71_2/carry [22]), 
+        .CO(\add_0_root_add_0_root_inertial_integrator_DUT/add_71_2/carry [23]), .S(\inertial_integrator_DUT/N98 ) );
+  FADDX1_LVT \add_0_root_add_0_root_inertial_integrator_DUT/add_71_2/U1_23  ( 
+        .A(\inertial_integrator_DUT/fusion_roll_offset[23] ), .B(
+        \inertial_integrator_DUT/N75 ), .CI(
+        \add_0_root_add_0_root_inertial_integrator_DUT/add_71_2/carry [23]), 
+        .S(\inertial_integrator_DUT/N99 ) );
+  FADDX1_LVT \add_1_root_add_0_root_inertial_integrator_DUT/add_57_2/U1_11  ( 
+        .A(\inertial_integrator_DUT/incline_int [11]), .B(
+        \inertial_integrator_DUT/fusion_incline_offset[23] ), .CI(
+        \inertial_integrator_DUT/incline_int [10]), .CO(
+        \add_1_root_add_0_root_inertial_integrator_DUT/add_57_2/carry [12]), 
+        .S(\inertial_integrator_DUT/N15 ) );
+  FADDX1_LVT \add_1_root_add_0_root_inertial_integrator_DUT/add_57_2/U1_12  ( 
+        .A(\inertial_integrator_DUT/incline_int [12]), .B(
+        \inertial_integrator_DUT/fusion_incline_offset[23] ), .CI(
+        \add_1_root_add_0_root_inertial_integrator_DUT/add_57_2/carry [12]), 
+        .CO(\add_1_root_add_0_root_inertial_integrator_DUT/add_57_2/carry [13]), .S(\inertial_integrator_DUT/N16 ) );
+  FADDX1_LVT \add_1_root_add_0_root_inertial_integrator_DUT/add_57_2/U1_13  ( 
+        .A(\inertial_integrator_DUT/incline_int [13]), .B(
+        \inertial_integrator_DUT/fusion_incline_offset[23] ), .CI(
+        \add_1_root_add_0_root_inertial_integrator_DUT/add_57_2/carry [13]), 
+        .CO(\add_1_root_add_0_root_inertial_integrator_DUT/add_57_2/carry [14]), .S(\inertial_integrator_DUT/N17 ) );
+  FADDX1_LVT \add_1_root_add_0_root_inertial_integrator_DUT/add_57_2/U1_14  ( 
+        .A(\inertial_integrator_DUT/incline_int [14]), .B(
+        \inertial_integrator_DUT/fusion_incline_offset[23] ), .CI(
+        \add_1_root_add_0_root_inertial_integrator_DUT/add_57_2/carry [14]), 
+        .CO(\add_1_root_add_0_root_inertial_integrator_DUT/add_57_2/carry [15]), .S(\inertial_integrator_DUT/N18 ) );
+  FADDX1_LVT \add_1_root_add_0_root_inertial_integrator_DUT/add_57_2/U1_15  ( 
+        .A(\inertial_integrator_DUT/incline_int [15]), .B(
+        \inertial_integrator_DUT/fusion_incline_offset[23] ), .CI(
+        \add_1_root_add_0_root_inertial_integrator_DUT/add_57_2/carry [15]), 
+        .CO(\add_1_root_add_0_root_inertial_integrator_DUT/add_57_2/carry [16]), .S(\inertial_integrator_DUT/N19 ) );
+  FADDX1_LVT \add_1_root_add_0_root_inertial_integrator_DUT/add_57_2/U1_16  ( 
+        .A(\inertial_integrator_DUT/incline_int [16]), .B(
+        \inertial_integrator_DUT/fusion_incline_offset[23] ), .CI(
+        \add_1_root_add_0_root_inertial_integrator_DUT/add_57_2/carry [16]), 
+        .CO(\add_1_root_add_0_root_inertial_integrator_DUT/add_57_2/carry [17]), .S(\inertial_integrator_DUT/N20 ) );
+  FADDX1_LVT \add_1_root_add_0_root_inertial_integrator_DUT/add_57_2/U1_17  ( 
+        .A(\inertial_integrator_DUT/incline_int [17]), .B(
+        \inertial_integrator_DUT/fusion_incline_offset[23] ), .CI(
+        \add_1_root_add_0_root_inertial_integrator_DUT/add_57_2/carry [17]), 
+        .CO(\add_1_root_add_0_root_inertial_integrator_DUT/add_57_2/carry [18]), .S(\inertial_integrator_DUT/N21 ) );
+  FADDX1_LVT \add_1_root_add_0_root_inertial_integrator_DUT/add_57_2/U1_18  ( 
+        .A(\inertial_integrator_DUT/incline_int [18]), .B(
+        \inertial_integrator_DUT/fusion_incline_offset[23] ), .CI(
+        \add_1_root_add_0_root_inertial_integrator_DUT/add_57_2/carry [18]), 
+        .CO(\add_1_root_add_0_root_inertial_integrator_DUT/add_57_2/carry [19]), .S(\inertial_integrator_DUT/N22 ) );
+  FADDX1_LVT \add_1_root_add_0_root_inertial_integrator_DUT/add_57_2/U1_19  ( 
+        .A(\inertial_integrator_DUT/incline_int [19]), .B(
+        \inertial_integrator_DUT/fusion_incline_offset[23] ), .CI(
+        \add_1_root_add_0_root_inertial_integrator_DUT/add_57_2/carry [19]), 
+        .CO(\add_1_root_add_0_root_inertial_integrator_DUT/add_57_2/carry [20]), .S(\inertial_integrator_DUT/N23 ) );
+  FADDX1_LVT \add_1_root_add_0_root_inertial_integrator_DUT/add_57_2/U1_20  ( 
+        .A(\inertial_integrator_DUT/incline_int [20]), .B(
+        \inertial_integrator_DUT/fusion_incline_offset[23] ), .CI(
+        \add_1_root_add_0_root_inertial_integrator_DUT/add_57_2/carry [20]), 
+        .CO(\add_1_root_add_0_root_inertial_integrator_DUT/add_57_2/carry [21]), .S(\inertial_integrator_DUT/N24 ) );
+  FADDX1_LVT \add_1_root_add_0_root_inertial_integrator_DUT/add_57_2/U1_21  ( 
+        .A(\inertial_integrator_DUT/incline_int [21]), .B(
+        \inertial_integrator_DUT/fusion_incline_offset[23] ), .CI(
+        \add_1_root_add_0_root_inertial_integrator_DUT/add_57_2/carry [21]), 
+        .CO(\add_1_root_add_0_root_inertial_integrator_DUT/add_57_2/carry [22]), .S(\inertial_integrator_DUT/N25 ) );
+  FADDX1_LVT \add_1_root_add_0_root_inertial_integrator_DUT/add_57_2/U1_22  ( 
+        .A(\inertial_integrator_DUT/incline_int [22]), .B(
+        \inertial_integrator_DUT/fusion_incline_offset[23] ), .CI(
+        \add_1_root_add_0_root_inertial_integrator_DUT/add_57_2/carry [22]), 
+        .CO(\add_1_root_add_0_root_inertial_integrator_DUT/add_57_2/carry [23]), .S(\inertial_integrator_DUT/N26 ) );
+  FADDX1_LVT \add_1_root_add_0_root_inertial_integrator_DUT/add_57_2/U1_23  ( 
+        .A(\inertial_integrator_DUT/incline_int [23]), .B(
+        \inertial_integrator_DUT/fusion_incline_offset[23] ), .CI(
+        \add_1_root_add_0_root_inertial_integrator_DUT/add_57_2/carry [23]), 
+        .S(\inertial_integrator_DUT/N27 ) );
+  DFFARX1_LVT \inertial_integrator_DUT/vld_ff2_reg  ( .D(n344), .CLK(clk), 
+        .RSTB(rst_n), .Q(n367), .QN(n361) );
+  DFFARX1_LVT \SPI_DUT/SCLK_div_reg[3]  ( .D(\SPI_DUT/N19 ), .CLK(clk), .RSTB(
+        n378), .Q(\SPI_DUT/SCLK_div[3] ), .QN(n175) );
+  DFFARX1_LVT \SPI_DUT/bit_cntr_reg[4]  ( .D(n333), .CLK(clk), .RSTB(n378), 
+        .Q(\SPI_DUT/bit_cntr [4]) );
+  DFFARX2_LVT \inertial_integrator_DUT/roll_int_reg[23]  ( .D(n219), .CLK(clk), 
+        .RSTB(n370), .Q(\inertial_integrator_DUT/roll_int [23]), .QN(n264) );
+  DFFARX1_LVT \roll_H_reg[7]  ( .D(n275), .CLK(clk), .RSTB(n374), .Q(n346), 
+        .QN(n349) );
+  AO21X1_LVT U314 ( .A1(\inertial_integrator_DUT/incline_int [23]), .A2(1'b1), 
+        .A3(n399), .Y(\inertial_integrator_DUT/N141 ) );
+  OA222X1_LVT U315 ( .A1(1'b1), .A2(n401), .A3(1'b1), .A4(n392), .A5(n391), 
+        .A6(n400), .Y(n393) );
+  AO21X1_LVT U316 ( .A1(\inertial_integrator_DUT/roll_int [23]), .A2(1'b1), 
+        .A3(n417), .Y(\inertial_integrator_DUT/N142 ) );
+  AND2X1_LVT U317 ( .A1(n410), .A2(n398), .Y(n399) );
+  AND3X1_LVT U318 ( .A1(n409), .A2(n397), .A3(n408), .Y(n398) );
+  AND3X1_LVT U319 ( .A1(n406), .A2(n396), .A3(n407), .Y(n397) );
+  AND3X1_LVT U320 ( .A1(n404), .A2(n395), .A3(n405), .Y(n396) );
+  AND3X1_LVT U321 ( .A1(n402), .A2(n394), .A3(n403), .Y(n395) );
+  AO221X1_LVT U322 ( .A1(1'b1), .A2(n401), .A3(1'b0), .A4(n402), .A5(n393), 
+        .Y(n394) );
+  AND2X1_LVT U323 ( .A1(n425), .A2(n416), .Y(n417) );
+  AND3X1_LVT U324 ( .A1(n424), .A2(n415), .A3(n423), .Y(n416) );
+  AND3X1_LVT U325 ( .A1(n421), .A2(n414), .A3(n422), .Y(n415) );
+  AND3X1_LVT U326 ( .A1(n419), .A2(n413), .A3(n420), .Y(n414) );
+  AND2X1_LVT U327 ( .A1(n418), .A2(n412), .Y(n413) );
+  NBUFFX2_LVT U328 ( .A(n367), .Y(n334) );
+  NBUFFX2_LVT U329 ( .A(n266), .Y(n335) );
+  NBUFFX2_LVT U330 ( .A(n307), .Y(n336) );
+  NBUFFX2_LVT U331 ( .A(n325), .Y(n337) );
+  NBUFFX2_LVT U332 ( .A(n323), .Y(n338) );
+  NBUFFX2_LVT U333 ( .A(n322), .Y(n339) );
+  NBUFFX2_LVT U334 ( .A(n331), .Y(n340) );
+  NBUFFX2_LVT U335 ( .A(n321), .Y(n341) );
+  NBUFFX2_LVT U336 ( .A(INT_ff1), .Y(n343) );
+  NBUFFX2_LVT U337 ( .A(n343), .Y(n342) );
+  NBUFFX2_LVT U338 ( .A(\inertial_integrator_DUT/vld_ff ), .Y(n345) );
+  NBUFFX2_LVT U339 ( .A(n345), .Y(n344) );
+  INVX1_LVT U340 ( .A(n349), .Y(n350) );
+  INVX1_LVT U341 ( .A(n349), .Y(n351) );
+  XOR2X1_LVT U342 ( .A1(yaw_H[7]), .A2(
+        \inertial_integrator_DUT/sub_44/carry [15]), .Y(
+        \inertial_integrator_DUT/yaw_rt_comp [15]) );
+  INVX1_LVT U343 ( .A(\inertial_integrator_DUT/yaw_rt_comp [15]), .Y(n352) );
+  INVX1_LVT U344 ( .A(\inertial_integrator_DUT/yaw_rt_comp [15]), .Y(n353) );
+  INVX1_LVT U345 ( .A(\inertial_integrator_DUT/yaw_rt_comp [15]), .Y(n354) );
+  INVX1_LVT U346 ( .A(n361), .Y(n366) );
+  INVX1_LVT U347 ( .A(n361), .Y(n360) );
+  INVX1_LVT U348 ( .A(n88), .Y(n432) );
+  INVX1_LVT U349 ( .A(n361), .Y(n358) );
+  INVX1_LVT U350 ( .A(n361), .Y(n357) );
+  INVX1_LVT U351 ( .A(n361), .Y(n359) );
+  INVX1_LVT U352 ( .A(n366), .Y(n364) );
+  INVX1_LVT U353 ( .A(n366), .Y(n365) );
+  INVX1_LVT U354 ( .A(n366), .Y(n363) );
+  INVX1_LVT U355 ( .A(n124), .Y(n448) );
+  INVX1_LVT U356 ( .A(n131), .Y(n454) );
+  INVX1_LVT U357 ( .A(n87), .Y(n458) );
+  INVX1_LVT U358 ( .A(n37), .Y(vld) );
+  INVX1_LVT U359 ( .A(n90), .Y(n453) );
+  INVX1_LVT U360 ( .A(n127), .Y(n452) );
+  INVX1_LVT U361 ( .A(n70), .Y(n447) );
+  INVX1_LVT U362 ( .A(n366), .Y(n362) );
+  INVX2_LVT U363 ( .A(n150), .Y(n433) );
+  INVX1_LVT U364 ( .A(n42), .Y(n435) );
+  NAND3X0_LVT U365 ( .A1(n454), .A2(n347), .A3(n156), .Y(n70) );
+  INVX1_LVT U366 ( .A(n55), .Y(n438) );
+  AND2X1_LVT U367 ( .A1(n150), .A2(n88), .Y(n40) );
+  AND2X1_LVT U368 ( .A1(n150), .A2(n88), .Y(n368) );
+  INVX1_LVT U369 ( .A(n98), .Y(n457) );
+  INVX1_LVT U370 ( .A(n118), .Y(n461) );
+  INVX1_LVT U371 ( .A(n135), .Y(n434) );
+  INVX1_LVT U372 ( .A(n106), .Y(n459) );
+  INVX1_LVT U373 ( .A(n141), .Y(n442) );
+  INVX1_LVT U374 ( .A(n102), .Y(n431) );
+  INVX1_LVT U375 ( .A(n68), .Y(n449) );
+  INVX1_LVT U376 ( .A(n58), .Y(n451) );
+  INVX1_LVT U377 ( .A(n49), .Y(n450) );
+  INVX1_LVT U378 ( .A(n171), .Y(n440) );
+  INVX2_LVT U379 ( .A(N21), .Y(n436) );
+  INVX1_LVT U380 ( .A(n75), .Y(n439) );
+  NBUFFX2_LVT U381 ( .A(n383), .Y(n369) );
+  NBUFFX2_LVT U382 ( .A(n382), .Y(n371) );
+  NBUFFX2_LVT U383 ( .A(n382), .Y(n372) );
+  NBUFFX2_LVT U384 ( .A(n381), .Y(n375) );
+  NBUFFX2_LVT U385 ( .A(n381), .Y(n376) );
+  NBUFFX2_LVT U386 ( .A(n380), .Y(n377) );
+  NBUFFX2_LVT U387 ( .A(n380), .Y(n378) );
+  NBUFFX2_LVT U388 ( .A(n382), .Y(n373) );
+  NBUFFX2_LVT U389 ( .A(n381), .Y(n374) );
+  NBUFFX2_LVT U390 ( .A(n383), .Y(n370) );
+  NBUFFX2_LVT U391 ( .A(n380), .Y(n379) );
+  IBUFFX8_LVT U392 ( .A(\inertial_integrator_DUT/N141 ), .Y(
+        \inertial_integrator_DUT/fusion_incline_offset[23] ) );
+  INVX1_LVT U393 ( .A(\inertial_integrator_DUT/N62 ), .Y(
+        \inertial_integrator_DUT/N86 ) );
+  INVX4_LVT U394 ( .A(\inertial_integrator_DUT/N142 ), .Y(
+        \inertial_integrator_DUT/fusion_roll_offset[23] ) );
+  NOR4X1_LVT U395 ( .A1(\inertial_integrator_DUT/roll_abs [9]), .A2(
+        \inertial_integrator_DUT/roll_abs [8]), .A3(
+        \inertial_integrator_DUT/roll_abs [11]), .A4(n430), .Y(n355) );
+  XOR2X1_LVT U396 ( .A1(\inertial_integrator_DUT/roll_int [22]), .A2(n356), 
+        .Y(\inertial_integrator_DUT/N112 ) );
+  NAND2X0_LVT U397 ( .A1(n424), .A2(\inertial_integrator_DUT/sub_81/carry [10]), .Y(n356) );
+  OR2X1_LVT U398 ( .A1(n116), .A2(n261), .Y(n49) );
+  OR2X1_LVT U399 ( .A1(n120), .A2(n261), .Y(n58) );
+  OR2X1_LVT U400 ( .A1(n96), .A2(n261), .Y(n68) );
+  AOI221X1_LVT U401 ( .A1(state[0]), .A2(n109), .A3(n110), .A4(n347), .A5(n111), .Y(n108) );
+  XNOR2X1_LVT U402 ( .A1(n443), .A2(n262), .Y(n141) );
+  INVX1_LVT U403 ( .A(n130), .Y(n437) );
+  INVX1_LVT U404 ( .A(n57), .Y(n460) );
+  INVX1_LVT U405 ( .A(n97), .Y(n455) );
+  NAND4X0_LVT U406 ( .A1(n443), .A2(SCLK), .A3(n262), .A4(n173), .Y(n75) );
+  OR4X2_LVT U407 ( .A1(n390), .A2(n389), .A3(n388), .A4(n387), .Y(N21) );
+  NBUFFX2_LVT U408 ( .A(rst_n), .Y(n382) );
+  NBUFFX2_LVT U409 ( .A(rst_n), .Y(n381) );
+  NBUFFX2_LVT U410 ( .A(rst_n), .Y(n380) );
+  NBUFFX2_LVT U411 ( .A(rst_n), .Y(n383) );
+  XOR2X1_LVT U417 ( .A1(n424), .A2(\inertial_integrator_DUT/sub_81/carry [10]), 
+        .Y(\inertial_integrator_DUT/N111 ) );
+  AND2X1_LVT U418 ( .A1(n423), .A2(\inertial_integrator_DUT/sub_81/carry [9]), 
+        .Y(\inertial_integrator_DUT/sub_81/carry [10]) );
+  XOR2X1_LVT U419 ( .A1(n423), .A2(\inertial_integrator_DUT/sub_81/carry [9]), 
+        .Y(\inertial_integrator_DUT/N110 ) );
+  AND2X1_LVT U420 ( .A1(n422), .A2(\inertial_integrator_DUT/sub_81/carry [8]), 
+        .Y(\inertial_integrator_DUT/sub_81/carry [9]) );
+  XOR2X1_LVT U421 ( .A1(n422), .A2(\inertial_integrator_DUT/sub_81/carry [8]), 
+        .Y(\inertial_integrator_DUT/N109 ) );
+  AND2X1_LVT U422 ( .A1(n421), .A2(\inertial_integrator_DUT/sub_81/carry [7]), 
+        .Y(\inertial_integrator_DUT/sub_81/carry [8]) );
+  XOR2X1_LVT U423 ( .A1(n421), .A2(\inertial_integrator_DUT/sub_81/carry [7]), 
+        .Y(\inertial_integrator_DUT/N108 ) );
+  AND2X1_LVT U424 ( .A1(n420), .A2(\inertial_integrator_DUT/sub_81/carry [6]), 
+        .Y(\inertial_integrator_DUT/sub_81/carry [7]) );
+  XOR2X1_LVT U425 ( .A1(n420), .A2(\inertial_integrator_DUT/sub_81/carry [6]), 
+        .Y(\inertial_integrator_DUT/N107 ) );
+  AND2X1_LVT U426 ( .A1(n419), .A2(\inertial_integrator_DUT/sub_81/carry [5]), 
+        .Y(\inertial_integrator_DUT/sub_81/carry [6]) );
+  XOR2X1_LVT U427 ( .A1(n419), .A2(\inertial_integrator_DUT/sub_81/carry [5]), 
+        .Y(\inertial_integrator_DUT/N106 ) );
+  AND2X1_LVT U428 ( .A1(n418), .A2(\inertial_integrator_DUT/sub_81/carry [4]), 
+        .Y(\inertial_integrator_DUT/sub_81/carry [5]) );
+  XOR2X1_LVT U429 ( .A1(n418), .A2(\inertial_integrator_DUT/sub_81/carry [4]), 
+        .Y(\inertial_integrator_DUT/N105 ) );
+  AND2X1_LVT U430 ( .A1(n412), .A2(\inertial_integrator_DUT/sub_81/carry [3]), 
+        .Y(\inertial_integrator_DUT/sub_81/carry [4]) );
+  XOR2X1_LVT U431 ( .A1(n412), .A2(\inertial_integrator_DUT/sub_81/carry [3]), 
+        .Y(\inertial_integrator_DUT/N104 ) );
+  AND2X1_LVT U432 ( .A1(n386), .A2(\inertial_integrator_DUT/sub_81/carry [2]), 
+        .Y(\inertial_integrator_DUT/sub_81/carry [3]) );
+  XOR2X1_LVT U433 ( .A1(n386), .A2(\inertial_integrator_DUT/sub_81/carry [2]), 
+        .Y(\inertial_integrator_DUT/N103 ) );
+  AND2X1_LVT U434 ( .A1(n385), .A2(n384), .Y(
+        \inertial_integrator_DUT/sub_81/carry [2]) );
+  XOR2X1_LVT U435 ( .A1(n385), .A2(n384), .Y(\inertial_integrator_DUT/N102 )
+         );
+  OR2X1_LVT U436 ( .A1(yaw_H[6]), .A2(
+        \inertial_integrator_DUT/sub_44/carry [14]), .Y(
+        \inertial_integrator_DUT/sub_44/carry [15]) );
+  XNOR2X1_LVT U437 ( .A1(\inertial_integrator_DUT/sub_44/carry [14]), .A2(
+        yaw_H[6]), .Y(\inertial_integrator_DUT/yaw_rt_comp [14]) );
+  OR2X1_LVT U438 ( .A1(yaw_H[5]), .A2(
+        \inertial_integrator_DUT/sub_44/carry [13]), .Y(
+        \inertial_integrator_DUT/sub_44/carry [14]) );
+  XNOR2X1_LVT U439 ( .A1(\inertial_integrator_DUT/sub_44/carry [13]), .A2(
+        yaw_H[5]), .Y(\inertial_integrator_DUT/yaw_rt_comp [13]) );
+  OR2X1_LVT U440 ( .A1(yaw_H[4]), .A2(
+        \inertial_integrator_DUT/sub_44/carry [12]), .Y(
+        \inertial_integrator_DUT/sub_44/carry [13]) );
+  XNOR2X1_LVT U441 ( .A1(\inertial_integrator_DUT/sub_44/carry [12]), .A2(
+        yaw_H[4]), .Y(\inertial_integrator_DUT/yaw_rt_comp [12]) );
+  OR2X1_LVT U442 ( .A1(yaw_H[3]), .A2(
+        \inertial_integrator_DUT/sub_44/carry [11]), .Y(
+        \inertial_integrator_DUT/sub_44/carry [12]) );
+  XNOR2X1_LVT U443 ( .A1(\inertial_integrator_DUT/sub_44/carry [11]), .A2(
+        yaw_H[3]), .Y(\inertial_integrator_DUT/yaw_rt_comp [11]) );
+  OR2X1_LVT U444 ( .A1(yaw_H[2]), .A2(
+        \inertial_integrator_DUT/sub_44/carry [10]), .Y(
+        \inertial_integrator_DUT/sub_44/carry [11]) );
+  XNOR2X1_LVT U445 ( .A1(\inertial_integrator_DUT/sub_44/carry [10]), .A2(
+        yaw_H[2]), .Y(\inertial_integrator_DUT/yaw_rt_comp [10]) );
+  OR2X1_LVT U446 ( .A1(yaw_H[1]), .A2(
+        \inertial_integrator_DUT/sub_44/carry [9]), .Y(
+        \inertial_integrator_DUT/sub_44/carry [10]) );
+  XNOR2X1_LVT U447 ( .A1(\inertial_integrator_DUT/sub_44/carry [9]), .A2(
+        yaw_H[1]), .Y(\inertial_integrator_DUT/yaw_rt_comp [9]) );
+  OR2X1_LVT U448 ( .A1(yaw_H[0]), .A2(
+        \inertial_integrator_DUT/sub_44/carry [8]), .Y(
+        \inertial_integrator_DUT/sub_44/carry [9]) );
+  XNOR2X1_LVT U449 ( .A1(\inertial_integrator_DUT/sub_44/carry [8]), .A2(
+        yaw_H[0]), .Y(\inertial_integrator_DUT/yaw_rt_comp [8]) );
+  OR2X1_LVT U450 ( .A1(yaw_L[7]), .A2(
+        \inertial_integrator_DUT/sub_44/carry [7]), .Y(
+        \inertial_integrator_DUT/sub_44/carry [8]) );
+  XNOR2X1_LVT U451 ( .A1(\inertial_integrator_DUT/sub_44/carry [7]), .A2(
+        yaw_L[7]), .Y(\inertial_integrator_DUT/yaw_rt_comp [7]) );
+  AND2X1_LVT U452 ( .A1(\inertial_integrator_DUT/sub_44/carry [6]), .A2(
+        yaw_L[6]), .Y(\inertial_integrator_DUT/sub_44/carry [7]) );
+  XOR2X1_LVT U453 ( .A1(yaw_L[6]), .A2(
+        \inertial_integrator_DUT/sub_44/carry [6]), .Y(
+        \inertial_integrator_DUT/yaw_rt_comp [6]) );
+  OR2X1_LVT U454 ( .A1(yaw_L[5]), .A2(
+        \inertial_integrator_DUT/sub_44/carry [5]), .Y(
+        \inertial_integrator_DUT/sub_44/carry [6]) );
+  XNOR2X1_LVT U455 ( .A1(\inertial_integrator_DUT/sub_44/carry [5]), .A2(
+        yaw_L[5]), .Y(\inertial_integrator_DUT/yaw_rt_comp [5]) );
+  AND2X1_LVT U456 ( .A1(\inertial_integrator_DUT/sub_44/carry [4]), .A2(
+        yaw_L[4]), .Y(\inertial_integrator_DUT/sub_44/carry [5]) );
+  XOR2X1_LVT U457 ( .A1(yaw_L[4]), .A2(
+        \inertial_integrator_DUT/sub_44/carry [4]), .Y(
+        \inertial_integrator_DUT/yaw_rt_comp [4]) );
+  OR2X1_LVT U458 ( .A1(yaw_L[3]), .A2(yaw_L[2]), .Y(
+        \inertial_integrator_DUT/sub_44/carry [4]) );
+  XNOR2X1_LVT U459 ( .A1(yaw_L[2]), .A2(yaw_L[3]), .Y(
+        \inertial_integrator_DUT/yaw_rt_comp [3]) );
+  INVX0_LVT U460 ( .A(n444), .Y(\SPI_DUT/N11 ) );
+  XOR2X1_LVT U461 ( .A1(\SPI_DUT/add_28/carry [4]), .A2(SCLK), .Y(
+        \SPI_DUT/N15 ) );
+  INVX0_LVT U462 ( .A(\SPI_DUT/bit_cntr [0]), .Y(\SPI_DUT/N44 ) );
+  XOR2X1_LVT U463 ( .A1(\SPI_DUT/add_56/carry [4]), .A2(\SPI_DUT/bit_cntr [4]), 
+        .Y(\SPI_DUT/N48 ) );
+  NAND4X0_LVT U464 ( .A1(timer[13]), .A2(timer[12]), .A3(timer[11]), .A4(
+        timer[10]), .Y(n390) );
+  NAND4X0_LVT U465 ( .A1(timer[15]), .A2(timer[9]), .A3(timer[8]), .A4(
+        timer[14]), .Y(n389) );
+  NAND4X0_LVT U466 ( .A1(timer[3]), .A2(timer[2]), .A3(timer[1]), .A4(timer[0]), .Y(n388) );
+  NAND4X0_LVT U467 ( .A1(timer[7]), .A2(timer[6]), .A3(timer[5]), .A4(timer[4]), .Y(n387) );
+  AND2X1_LVT U468 ( .A1(n391), .A2(n400), .Y(n392) );
+  OR3X1_LVT U469 ( .A1(\inertial_integrator_DUT/roll_abs [2]), .A2(
+        \inertial_integrator_DUT/roll_abs [1]), .A3(
+        \inertial_integrator_DUT/roll_abs [0]), .Y(n427) );
+  AND3X1_LVT U470 ( .A1(\inertial_integrator_DUT/roll_abs [3]), .A2(n427), 
+        .A3(\inertial_integrator_DUT/roll_abs [4]), .Y(n428) );
+  OR3X1_LVT U471 ( .A1(\inertial_integrator_DUT/roll_abs [6]), .A2(
+        \inertial_integrator_DUT/roll_abs [5]), .A3(n428), .Y(n429) );
+  AO21X1_LVT U472 ( .A1(\inertial_integrator_DUT/roll_abs [7]), .A2(n429), 
+        .A3(\inertial_integrator_DUT/roll_abs [10]), .Y(n430) );
+endmodule
+

@@ -1,0 +1,424 @@
+/////////////////////////////////////////////////////////////
+// Created by: Synopsys DC Expert(TM) in wire load mode
+// Version   : S-2021.06
+// Date      : Mon Apr 25 18:07:12 2022
+/////////////////////////////////////////////////////////////
+
+
+module telemetry_DW01_inc_0_DW01_inc_1 ( A, SUM );
+  input [19:0] A;
+  output [19:0] SUM;
+
+  wire   [19:2] carry;
+
+  HADDX1_LVT U1_1_18 ( .A0(A[18]), .B0(carry[18]), .C1(carry[19]), .SO(SUM[18]) );
+  HADDX1_LVT U1_1_17 ( .A0(A[17]), .B0(carry[17]), .C1(carry[18]), .SO(SUM[17]) );
+  HADDX1_LVT U1_1_16 ( .A0(A[16]), .B0(carry[16]), .C1(carry[17]), .SO(SUM[16]) );
+  HADDX1_LVT U1_1_15 ( .A0(A[15]), .B0(carry[15]), .C1(carry[16]), .SO(SUM[15]) );
+  HADDX1_LVT U1_1_14 ( .A0(A[14]), .B0(carry[14]), .C1(carry[15]), .SO(SUM[14]) );
+  HADDX1_LVT U1_1_13 ( .A0(A[13]), .B0(carry[13]), .C1(carry[14]), .SO(SUM[13]) );
+  HADDX1_LVT U1_1_12 ( .A0(A[12]), .B0(carry[12]), .C1(carry[13]), .SO(SUM[12]) );
+  HADDX1_LVT U1_1_11 ( .A0(A[11]), .B0(carry[11]), .C1(carry[12]), .SO(SUM[11]) );
+  HADDX1_LVT U1_1_10 ( .A0(A[10]), .B0(carry[10]), .C1(carry[11]), .SO(SUM[10]) );
+  HADDX1_LVT U1_1_9 ( .A0(A[9]), .B0(carry[9]), .C1(carry[10]), .SO(SUM[9]) );
+  HADDX1_LVT U1_1_8 ( .A0(A[8]), .B0(carry[8]), .C1(carry[9]), .SO(SUM[8]) );
+  HADDX1_LVT U1_1_7 ( .A0(A[7]), .B0(carry[7]), .C1(carry[8]), .SO(SUM[7]) );
+  HADDX1_LVT U1_1_6 ( .A0(A[6]), .B0(carry[6]), .C1(carry[7]), .SO(SUM[6]) );
+  HADDX1_LVT U1_1_5 ( .A0(A[5]), .B0(carry[5]), .C1(carry[6]), .SO(SUM[5]) );
+  HADDX1_LVT U1_1_4 ( .A0(A[4]), .B0(carry[4]), .C1(carry[5]), .SO(SUM[4]) );
+  HADDX1_LVT U1_1_3 ( .A0(A[3]), .B0(carry[3]), .C1(carry[4]), .SO(SUM[3]) );
+  HADDX1_LVT U1_1_2 ( .A0(A[2]), .B0(carry[2]), .C1(carry[3]), .SO(SUM[2]) );
+  HADDX1_LVT U1_1_1 ( .A0(A[1]), .B0(A[0]), .C1(carry[2]), .SO(SUM[1]) );
+  XOR2X1_LVT U1 ( .A1(carry[19]), .A2(A[19]), .Y(SUM[19]) );
+  INVX0_LVT U2 ( .A(A[0]), .Y(SUM[0]) );
+endmodule
+
+
+module telemetry ( clk, rst_n, batt_v, avg_curr, avg_torque, TX );
+  input [11:0] batt_v;
+  input [11:0] avg_curr;
+  input [11:0] avg_torque;
+  input clk, rst_n;
+  output TX;
+  wire   tx_done, N17, N18, N19, N20, N21, N22, N23, N24, N25, N26, N27, N28,
+         N29, N30, N31, N32, N33, N34, N35, N36, N37, N38, N39, N40, N41, N42,
+         N43, N44, N45, N46, N47, N48, N49, N50, N51, N52, N53, N54, N55, N56,
+         N150, N151, N152, N165, N174, N175, N176, N177, N181, N182, N183,
+         N184, N185, \UARTTX/N33 , \UARTTX/N32 , \UARTTX/N31 , \UARTTX/N30 ,
+         \UARTTX/N29 , \UARTTX/N28 , \UARTTX/N27 , \UARTTX/N26 , \UARTTX/N25 ,
+         \UARTTX/n002 , \UARTTX/n001 , n7, n8, n9, n10, n11, n12, n14, n15,
+         n16, n17, n18, n19, n20, n21, n22, n23, n24, n25, n26, n27, n28, n29,
+         n30, n31, n32, n33, n34, n35, n36, n37, n38, n39, n40, n41, n42, n43,
+         n44, n45, n46, n47, n48, n49, n50, n51, n52, n53, n54, n55, n56, n57,
+         n58, n59, n60, n61, n62, n63, n64, n65, n66, n67, n68, n69, n70, n71,
+         n72, n73, n74, n75, n76, n77, n78, n79, n80, n81, n82, n83, n84, n85,
+         n86, n87, n88, n89, n90, n91, n92, n95, n96, n97, n98, n99, n100,
+         n101, n102, n103, n104, n105, n106, n107, n108, n109, n110, n111,
+         n112, n113, n114, n115, n116, n117, n159, n160, n161, n162, n163,
+         n164, n165, n166, n167, n168, n169, n170, n171, n172, n173, n174,
+         n175, n176, n177, n178, n179, n180, n181, n182, n183, n184, n185,
+         n186, n187, n188, n189, n190, n191, n192, n193, n194, n195, n196,
+         n197, n198, n199, n200, n201, n202, n203, n204, n205, n206, n207,
+         n208, n209, n210, n211, n212, n213, n214, n215, n216, n217, n218,
+         n219, n220, n221, n222, n223, n224, n225;
+  wire   [19:0] cnt;
+  wire   [3:0] state;
+  wire   [3:0] nxt_state;
+  wire   [8:1] \UARTTX/n003 ;
+  wire   [8:0] \UARTTX/n005 ;
+  wire   [3:0] \UARTTX/n004 ;
+
+  DFFARX1_LVT \cnt_reg[0]  ( .D(N37), .CLK(clk), .RSTB(rst_n), .Q(cnt[0]), 
+        .QN(n8) );
+  DFFARX1_LVT \cnt_reg[1]  ( .D(N38), .CLK(clk), .RSTB(n206), .Q(cnt[1]) );
+  DFFARX1_LVT \cnt_reg[2]  ( .D(N39), .CLK(clk), .RSTB(n206), .Q(cnt[2]) );
+  DFFARX1_LVT \cnt_reg[3]  ( .D(N40), .CLK(clk), .RSTB(n206), .Q(cnt[3]) );
+  DFFARX1_LVT \cnt_reg[4]  ( .D(N41), .CLK(clk), .RSTB(n206), .Q(cnt[4]), .QN(
+        n173) );
+  DFFARX1_LVT \cnt_reg[5]  ( .D(N42), .CLK(clk), .RSTB(n206), .Q(cnt[5]), .QN(
+        n172) );
+  DFFARX1_LVT \cnt_reg[6]  ( .D(N43), .CLK(clk), .RSTB(n206), .Q(cnt[6]) );
+  DFFARX1_LVT \cnt_reg[7]  ( .D(N44), .CLK(clk), .RSTB(n206), .Q(cnt[7]) );
+  DFFARX1_LVT \cnt_reg[8]  ( .D(N45), .CLK(clk), .RSTB(n206), .Q(cnt[8]) );
+  DFFARX1_LVT \cnt_reg[9]  ( .D(N46), .CLK(clk), .RSTB(n206), .Q(cnt[9]) );
+  DFFARX1_LVT \cnt_reg[10]  ( .D(N47), .CLK(clk), .RSTB(n206), .Q(cnt[10]), 
+        .QN(n7) );
+  DFFARX1_LVT \cnt_reg[11]  ( .D(N48), .CLK(clk), .RSTB(n206), .Q(cnt[11]) );
+  DFFARX1_LVT \cnt_reg[12]  ( .D(N49), .CLK(clk), .RSTB(n205), .Q(cnt[12]) );
+  DFFARX1_LVT \cnt_reg[13]  ( .D(N50), .CLK(clk), .RSTB(n207), .Q(cnt[13]) );
+  DFFARX1_LVT \cnt_reg[14]  ( .D(N51), .CLK(clk), .RSTB(n206), .Q(cnt[14]) );
+  DFFARX1_LVT \cnt_reg[15]  ( .D(N52), .CLK(clk), .RSTB(n205), .Q(cnt[15]) );
+  DFFARX1_LVT \cnt_reg[16]  ( .D(N53), .CLK(clk), .RSTB(n207), .Q(cnt[16]) );
+  DFFARX1_LVT \cnt_reg[17]  ( .D(N54), .CLK(clk), .RSTB(n207), .Q(cnt[17]) );
+  DFFARX1_LVT \cnt_reg[18]  ( .D(N55), .CLK(clk), .RSTB(rst_n), .Q(cnt[18]) );
+  DFFARX1_LVT \cnt_reg[19]  ( .D(N56), .CLK(clk), .RSTB(rst_n), .Q(cnt[19]) );
+  DFFARX1_LVT \state_reg[0]  ( .D(nxt_state[0]), .CLK(clk), .RSTB(n207), .Q(
+        state[0]), .QN(n12) );
+  DFFARX1_LVT \state_reg[3]  ( .D(nxt_state[3]), .CLK(clk), .RSTB(n207), .Q(
+        state[3]), .QN(n9) );
+  DFFARX1_LVT \state_reg[2]  ( .D(nxt_state[2]), .CLK(clk), .RSTB(n205), .Q(
+        state[2]), .QN(n10) );
+  DFFARX1_LVT \state_reg[1]  ( .D(nxt_state[1]), .CLK(clk), .RSTB(n207), .Q(
+        state[1]), .QN(n11) );
+  DFFARX1_LVT \UARTTX/n001_reg  ( .D(\UARTTX/n002 ), .CLK(clk), .RSTB(n207), 
+        .Q(\UARTTX/n001 ) );
+  DFFASX1_LVT \UARTTX/n005_reg[8]  ( .D(n109), .CLK(clk), .SETB(n206), .Q(
+        \UARTTX/n005 [8]) );
+  DFFARX1_LVT \UARTTX/n004_reg[0]  ( .D(n169), .CLK(clk), .RSTB(n207), .Q(
+        \UARTTX/n004 [0]), .QN(n17) );
+  DFFARX1_LVT \UARTTX/n004_reg[1]  ( .D(n168), .CLK(clk), .RSTB(n207), .Q(
+        \UARTTX/n004 [1]), .QN(n18) );
+  DFFARX1_LVT \UARTTX/n004_reg[2]  ( .D(n167), .CLK(clk), .RSTB(n207), .Q(
+        \UARTTX/n004 [2]), .QN(n19) );
+  DFFARX1_LVT \UARTTX/n004_reg[3]  ( .D(n166), .CLK(clk), .RSTB(n207), .Q(
+        \UARTTX/n004 [3]), .QN(n20) );
+  DFFASX1_LVT \UARTTX/n003_reg[8]  ( .D(n95), .CLK(clk), .SETB(n206), .Q(
+        \UARTTX/n003 [8]) );
+  DFFASX1_LVT \UARTTX/n003_reg[7]  ( .D(n165), .CLK(clk), .SETB(n205), .Q(
+        \UARTTX/n003 [7]) );
+  DFFASX1_LVT \UARTTX/n003_reg[6]  ( .D(n164), .CLK(clk), .SETB(n205), .Q(
+        \UARTTX/n003 [6]) );
+  DFFASX1_LVT \UARTTX/n003_reg[5]  ( .D(n163), .CLK(clk), .SETB(n205), .Q(
+        \UARTTX/n003 [5]) );
+  DFFASX1_LVT \UARTTX/n003_reg[4]  ( .D(n162), .CLK(clk), .SETB(n205), .Q(
+        \UARTTX/n003 [4]) );
+  DFFASX1_LVT \UARTTX/n003_reg[3]  ( .D(n161), .CLK(clk), .SETB(n205), .Q(
+        \UARTTX/n003 [3]) );
+  DFFASX1_LVT \UARTTX/n003_reg[2]  ( .D(n160), .CLK(clk), .SETB(n205), .Q(
+        \UARTTX/n003 [2]) );
+  DFFASX1_LVT \UARTTX/n003_reg[1]  ( .D(n102), .CLK(clk), .SETB(n205), .Q(
+        \UARTTX/n003 [1]) );
+  DFFASX1_LVT \UARTTX/n003_reg[0]  ( .D(n159), .CLK(clk), .SETB(n205), .Q(TX)
+         );
+  DFFARX1_LVT \UARTTX/n005_reg[0]  ( .D(n117), .CLK(clk), .RSTB(n207), .Q(
+        \UARTTX/n005 [0]) );
+  DFFASX1_LVT \UARTTX/n005_reg[1]  ( .D(n116), .CLK(clk), .SETB(n205), .Q(
+        \UARTTX/n005 [1]) );
+  DFFARX1_LVT \UARTTX/n005_reg[2]  ( .D(n115), .CLK(clk), .RSTB(n207), .Q(
+        \UARTTX/n005 [2]) );
+  DFFARX1_LVT \UARTTX/n005_reg[3]  ( .D(n114), .CLK(clk), .RSTB(n207), .Q(
+        \UARTTX/n005 [3]) );
+  DFFASX1_LVT \UARTTX/n005_reg[4]  ( .D(n113), .CLK(clk), .SETB(n205), .Q(
+        \UARTTX/n005 [4]), .QN(n15) );
+  DFFASX1_LVT \UARTTX/n005_reg[5]  ( .D(n112), .CLK(clk), .SETB(n205), .Q(
+        \UARTTX/n005 [5]), .QN(n16) );
+  DFFARX1_LVT \UARTTX/n005_reg[6]  ( .D(n111), .CLK(clk), .RSTB(n206), .Q(
+        \UARTTX/n005 [6]) );
+  DFFASX1_LVT \UARTTX/n005_reg[7]  ( .D(n110), .CLK(clk), .SETB(n205), .Q(
+        \UARTTX/n005 [7]), .QN(n170) );
+  NOR4X1_LVT U3 ( .A1(\UARTTX/n005 [0]), .A2(\UARTTX/n005 [1]), .A3(
+        \UARTTX/n005 [2]), .A4(\UARTTX/n005 [3]), .Y(n81) );
+  AO221X1_LVT U15 ( .A1(n222), .A2(n21), .A3(\UARTTX/n003 [8]), .A4(n22), .A5(
+        n221), .Y(n95) );
+  AO221X1_LVT U16 ( .A1(avg_curr[7]), .A2(n23), .A3(avg_torque[7]), .A4(n24), 
+        .A5(n25), .Y(n21) );
+  AO21X1_LVT U17 ( .A1(batt_v[7]), .A2(n26), .A3(n27), .Y(n25) );
+  AO222X1_LVT U18 ( .A1(n221), .A2(\UARTTX/n003 [8]), .A3(n222), .A4(n28), 
+        .A5(\UARTTX/n003 [7]), .A6(n22), .Y(n96) );
+  AO221X1_LVT U19 ( .A1(avg_curr[6]), .A2(n23), .A3(avg_torque[6]), .A4(n24), 
+        .A5(n29), .Y(n28) );
+  AO21X1_LVT U20 ( .A1(batt_v[6]), .A2(n26), .A3(n30), .Y(n29) );
+  AO222X1_LVT U21 ( .A1(\UARTTX/n003 [7]), .A2(n221), .A3(n222), .A4(n31), 
+        .A5(\UARTTX/n003 [6]), .A6(n22), .Y(n97) );
+  AO221X1_LVT U22 ( .A1(avg_curr[5]), .A2(n23), .A3(avg_torque[5]), .A4(n24), 
+        .A5(n32), .Y(n31) );
+  AO21X1_LVT U23 ( .A1(batt_v[5]), .A2(n26), .A3(n27), .Y(n32) );
+  AO222X1_LVT U24 ( .A1(\UARTTX/n003 [6]), .A2(n221), .A3(n222), .A4(n33), 
+        .A5(\UARTTX/n003 [5]), .A6(n22), .Y(n98) );
+  AO221X1_LVT U25 ( .A1(avg_curr[4]), .A2(n23), .A3(avg_torque[4]), .A4(n24), 
+        .A5(n34), .Y(n33) );
+  AO21X1_LVT U26 ( .A1(batt_v[4]), .A2(n26), .A3(n30), .Y(n34) );
+  AO222X1_LVT U27 ( .A1(\UARTTX/n003 [5]), .A2(n221), .A3(n222), .A4(n35), 
+        .A5(\UARTTX/n003 [4]), .A6(n22), .Y(n99) );
+  OR3X1_LVT U28 ( .A1(n27), .A2(n36), .A3(n37), .Y(n35) );
+  AO221X1_LVT U29 ( .A1(avg_torque[11]), .A2(n38), .A3(avg_curr[3]), .A4(n23), 
+        .A5(n39), .Y(n37) );
+  AO22X1_LVT U30 ( .A1(avg_curr[11]), .A2(n40), .A3(batt_v[11]), .A4(n41), .Y(
+        n39) );
+  AO22X1_LVT U31 ( .A1(batt_v[3]), .A2(n26), .A3(avg_torque[3]), .A4(n24), .Y(
+        n36) );
+  AO222X1_LVT U32 ( .A1(\UARTTX/n003 [4]), .A2(n221), .A3(n222), .A4(n42), 
+        .A5(\UARTTX/n003 [3]), .A6(n22), .Y(n100) );
+  OR3X1_LVT U33 ( .A1(n43), .A2(n44), .A3(n45), .Y(n42) );
+  AO221X1_LVT U34 ( .A1(avg_torque[2]), .A2(n24), .A3(batt_v[2]), .A4(n26), 
+        .A5(n30), .Y(n45) );
+  AO22X1_LVT U35 ( .A1(avg_curr[2]), .A2(n23), .A3(avg_torque[10]), .A4(n38), 
+        .Y(n44) );
+  AO22X1_LVT U36 ( .A1(avg_curr[10]), .A2(n40), .A3(batt_v[10]), .A4(n46), .Y(
+        n43) );
+  AO222X1_LVT U37 ( .A1(\UARTTX/n003 [3]), .A2(n221), .A3(n222), .A4(n47), 
+        .A5(\UARTTX/n003 [2]), .A6(n22), .Y(n101) );
+  OR3X1_LVT U38 ( .A1(n27), .A2(n48), .A3(n49), .Y(n47) );
+  AO221X1_LVT U39 ( .A1(avg_torque[9]), .A2(n38), .A3(avg_curr[1]), .A4(n23), 
+        .A5(n50), .Y(n49) );
+  AO22X1_LVT U40 ( .A1(avg_curr[9]), .A2(n40), .A3(batt_v[9]), .A4(n41), .Y(
+        n50) );
+  AO22X1_LVT U41 ( .A1(n51), .A2(tx_done), .A3(n52), .A4(n14), .Y(n41) );
+  AO22X1_LVT U42 ( .A1(batt_v[1]), .A2(n26), .A3(avg_torque[1]), .A4(n24), .Y(
+        n48) );
+  AO22X1_LVT U43 ( .A1(N181), .A2(n53), .A3(n54), .A4(n14), .Y(n27) );
+  OR3X1_LVT U45 ( .A1(n56), .A2(n57), .A3(n58), .Y(n55) );
+  AO221X1_LVT U46 ( .A1(avg_torque[0]), .A2(n24), .A3(batt_v[0]), .A4(n26), 
+        .A5(n30), .Y(n58) );
+  AO22X1_LVT U47 ( .A1(tx_done), .A2(n54), .A3(n51), .A4(n14), .Y(n30) );
+  AND3X1_LVT U48 ( .A1(n11), .A2(n10), .A3(n59), .Y(n54) );
+  AO22X1_LVT U49 ( .A1(n52), .A2(tx_done), .A3(n60), .A4(n14), .Y(n26) );
+  AO22X1_LVT U50 ( .A1(n61), .A2(tx_done), .A3(n62), .A4(state[3]), .Y(n24) );
+  AO22X1_LVT U51 ( .A1(avg_curr[0]), .A2(n23), .A3(avg_torque[8]), .A4(n38), 
+        .Y(n57) );
+  AO22X1_LVT U52 ( .A1(tx_done), .A2(n63), .A3(n61), .A4(n14), .Y(n38) );
+  AND3X1_LVT U53 ( .A1(state[1]), .A2(n59), .A3(state[2]), .Y(n61) );
+  AO22X1_LVT U54 ( .A1(tx_done), .A2(n64), .A3(n63), .A4(n14), .Y(n23) );
+  AND3X1_LVT U55 ( .A1(state[1]), .A2(n65), .A3(state[2]), .Y(n63) );
+  AO22X1_LVT U56 ( .A1(avg_curr[8]), .A2(n40), .A3(batt_v[8]), .A4(n46), .Y(
+        n56) );
+  AO21X1_LVT U57 ( .A1(n52), .A2(n14), .A3(n51), .Y(n46) );
+  AND3X1_LVT U58 ( .A1(n65), .A2(n10), .A3(state[1]), .Y(n51) );
+  AND3X1_LVT U59 ( .A1(n59), .A2(n10), .A3(state[1]), .Y(n52) );
+  AO22X1_LVT U60 ( .A1(n60), .A2(tx_done), .A3(n64), .A4(n14), .Y(n40) );
+  AND3X1_LVT U61 ( .A1(n59), .A2(n11), .A3(state[2]), .Y(n64) );
+  AND2X1_LVT U62 ( .A1(state[0]), .A2(n9), .Y(n59) );
+  AND3X1_LVT U63 ( .A1(n65), .A2(n11), .A3(state[2]), .Y(n60) );
+  AND2X1_LVT U64 ( .A1(n9), .A2(n12), .Y(n65) );
+  AO22X1_LVT U66 ( .A1(n225), .A2(tx_done), .A3(n66), .A4(n171), .Y(n104) );
+  NAND2X0_LVT U67 ( .A1(n171), .A2(n67), .Y(n66) );
+  AND2X1_LVT U69 ( .A1(n70), .A2(n20), .Y(n69) );
+  AO21X1_LVT U70 ( .A1(n221), .A2(n19), .A3(n71), .Y(n68) );
+  AND3X1_LVT U72 ( .A1(\UARTTX/n004 [1]), .A2(n221), .A3(\UARTTX/n004 [0]), 
+        .Y(n70) );
+  AO21X1_LVT U73 ( .A1(n221), .A2(n18), .A3(n72), .Y(n71) );
+  AO22X1_LVT U74 ( .A1(\UARTTX/n004 [1]), .A2(n72), .A3(n73), .A4(
+        \UARTTX/n004 [0]), .Y(n107) );
+  AND2X1_LVT U75 ( .A1(n221), .A2(n18), .Y(n73) );
+  AO21X1_LVT U76 ( .A1(n221), .A2(n17), .A3(n22), .Y(n72) );
+  OR2X1_LVT U79 ( .A1(n76), .A2(n222), .Y(n74) );
+  AO221X1_LVT U80 ( .A1(\UARTTX/N33 ), .A2(n223), .A3(\UARTTX/n005 [8]), .A4(
+        n77), .A5(n78), .Y(n109) );
+  AO221X1_LVT U81 ( .A1(\UARTTX/N32 ), .A2(n223), .A3(\UARTTX/n005 [7]), .A4(
+        n77), .A5(n78), .Y(n110) );
+  AO22X1_LVT U82 ( .A1(\UARTTX/n005 [6]), .A2(n77), .A3(\UARTTX/N31 ), .A4(
+        n223), .Y(n111) );
+  AO221X1_LVT U83 ( .A1(\UARTTX/N30 ), .A2(n223), .A3(\UARTTX/n005 [5]), .A4(
+        n77), .A5(n78), .Y(n112) );
+  AO221X1_LVT U84 ( .A1(\UARTTX/N29 ), .A2(n223), .A3(\UARTTX/n005 [4]), .A4(
+        n77), .A5(n78), .Y(n113) );
+  AO22X1_LVT U85 ( .A1(\UARTTX/n005 [3]), .A2(n77), .A3(\UARTTX/N28 ), .A4(
+        n223), .Y(n114) );
+  AO22X1_LVT U86 ( .A1(\UARTTX/n005 [2]), .A2(n77), .A3(\UARTTX/N27 ), .A4(
+        n223), .Y(n115) );
+  AO221X1_LVT U87 ( .A1(\UARTTX/N26 ), .A2(n223), .A3(\UARTTX/n005 [1]), .A4(
+        n77), .A5(n78), .Y(n116) );
+  AO22X1_LVT U88 ( .A1(\UARTTX/n005 [0]), .A2(n77), .A3(\UARTTX/N25 ), .A4(
+        n223), .Y(n117) );
+  AND2X1_LVT U89 ( .A1(n224), .A2(n79), .Y(n77) );
+  NAND2X0_LVT U90 ( .A1(\UARTTX/n001 ), .A2(n224), .Y(n79) );
+  NAND2X0_LVT U91 ( .A1(n75), .A2(n76), .Y(n78) );
+  NAND4X0_LVT U92 ( .A1(n15), .A2(n16), .A3(n80), .A4(n81), .Y(n76) );
+  NOR3X0_LVT U93 ( .A1(\UARTTX/n005 [7]), .A2(\UARTTX/n005 [8]), .A3(
+        \UARTTX/n005 [6]), .Y(n80) );
+  AND3X1_LVT U94 ( .A1(n11), .A2(n10), .A3(n12), .Y(n62) );
+  AO21X1_LVT U95 ( .A1(\UARTTX/n001 ), .A2(n67), .A3(n222), .Y(\UARTTX/n002 )
+         );
+  OR2X1_LVT U96 ( .A1(n171), .A2(\UARTTX/n001 ), .Y(n75) );
+  NAND4X0_LVT U97 ( .A1(\UARTTX/n004 [3]), .A2(\UARTTX/n004 [1]), .A3(n17), 
+        .A4(n19), .Y(n67) );
+  AND2X1_LVT U98 ( .A1(N36), .A2(n82), .Y(N56) );
+  AND2X1_LVT U99 ( .A1(N35), .A2(n204), .Y(N55) );
+  AND2X1_LVT U100 ( .A1(N34), .A2(n82), .Y(N54) );
+  AND2X1_LVT U101 ( .A1(N33), .A2(n204), .Y(N53) );
+  AND2X1_LVT U102 ( .A1(N32), .A2(n82), .Y(N52) );
+  AND2X1_LVT U103 ( .A1(N31), .A2(n204), .Y(N51) );
+  AND2X1_LVT U104 ( .A1(N30), .A2(n82), .Y(N50) );
+  AND2X1_LVT U105 ( .A1(N29), .A2(n204), .Y(N49) );
+  AND2X1_LVT U106 ( .A1(N28), .A2(n82), .Y(N48) );
+  AND2X1_LVT U107 ( .A1(N27), .A2(n204), .Y(N47) );
+  AND2X1_LVT U108 ( .A1(N26), .A2(n82), .Y(N46) );
+  AND2X1_LVT U109 ( .A1(N25), .A2(n204), .Y(N45) );
+  AND2X1_LVT U110 ( .A1(N24), .A2(n82), .Y(N44) );
+  AND2X1_LVT U111 ( .A1(N23), .A2(n204), .Y(N43) );
+  AND2X1_LVT U112 ( .A1(N22), .A2(n82), .Y(N42) );
+  AND2X1_LVT U113 ( .A1(N21), .A2(n204), .Y(N41) );
+  AND2X1_LVT U114 ( .A1(N20), .A2(n82), .Y(N40) );
+  AND2X1_LVT U115 ( .A1(N19), .A2(n204), .Y(N39) );
+  AND2X1_LVT U116 ( .A1(N18), .A2(n82), .Y(N38) );
+  AND2X1_LVT U117 ( .A1(N17), .A2(n204), .Y(N37) );
+  NAND4X0_LVT U119 ( .A1(n86), .A2(n8), .A3(cnt[10]), .A4(n87), .Y(n85) );
+  AND3X1_LVT U120 ( .A1(cnt[14]), .A2(cnt[13]), .A3(cnt[15]), .Y(n87) );
+  NAND3X0_LVT U121 ( .A1(cnt[1]), .A2(cnt[19]), .A3(cnt[8]), .Y(n84) );
+  NAND3X0_LVT U122 ( .A1(cnt[17]), .A2(cnt[16]), .A3(cnt[18]), .Y(n83) );
+  AND2X1_LVT U123 ( .A1(state[3]), .A2(n88), .Y(N185) );
+  AND2X1_LVT U124 ( .A1(state[2]), .A2(n88), .Y(N184) );
+  AND2X1_LVT U125 ( .A1(state[1]), .A2(n88), .Y(N183) );
+  NAND2X0_LVT U126 ( .A1(n12), .A2(n88), .Y(N182) );
+  NOR2X0_LVT U127 ( .A1(n88), .A2(n208), .Y(N181) );
+  OR3X1_LVT U128 ( .A1(n89), .A2(n90), .A3(n91), .Y(n88) );
+  NAND4X0_LVT U129 ( .A1(n86), .A2(n7), .A3(cnt[0]), .A4(n92), .Y(n91) );
+  NOR3X0_LVT U130 ( .A1(cnt[14]), .A2(cnt[15]), .A3(cnt[13]), .Y(n92) );
+  OR3X1_LVT U132 ( .A1(cnt[17]), .A2(cnt[18]), .A3(cnt[16]), .Y(n90) );
+  OR3X1_LVT U133 ( .A1(cnt[1]), .A2(cnt[8]), .A3(cnt[19]), .Y(n89) );
+  NAND2X0_LVT U134 ( .A1(n14), .A2(n9), .Y(N165) );
+  NAND2X0_LVT U135 ( .A1(n14), .A2(n10), .Y(N152) );
+  AND2X1_LVT U136 ( .A1(state[1]), .A2(n14), .Y(N175) );
+  NAND2X0_LVT U137 ( .A1(n14), .A2(n12), .Y(N150) );
+  AND2X1_LVT U138 ( .A1(state[3]), .A2(n14), .Y(N177) );
+  AND2X1_LVT U139 ( .A1(state[2]), .A2(n14), .Y(N176) );
+  NAND2X0_LVT U140 ( .A1(n14), .A2(n11), .Y(N151) );
+  AND2X1_LVT U141 ( .A1(state[0]), .A2(n14), .Y(N174) );
+  telemetry_DW01_inc_0_DW01_inc_1 add_31 ( .A(cnt), .SUM({N36, N35, N34, N33, 
+        N32, N31, N30, N29, N28, N27, N26, N25, N24, N23, N22, N21, N20, N19, 
+        N18, N17}) );
+  DFFARX1_LVT \UARTTX/tx_done_reg  ( .D(n104), .CLK(clk), .RSTB(n207), .Q(
+        tx_done), .QN(n14) );
+  AO22X1_LVT U183 ( .A1(TX), .A2(n22), .A3(\UARTTX/n003 [1]), .A4(n221), .Y(
+        n103) );
+  NBUFFX2_LVT U184 ( .A(n103), .Y(n159) );
+  AO222X2_LVT U185 ( .A1(\UARTTX/n003 [2]), .A2(n221), .A3(n222), .A4(n55), 
+        .A5(\UARTTX/n003 [1]), .A6(n22), .Y(n102) );
+  NBUFFX2_LVT U186 ( .A(n101), .Y(n160) );
+  NBUFFX2_LVT U187 ( .A(n100), .Y(n161) );
+  NBUFFX2_LVT U188 ( .A(n99), .Y(n162) );
+  NBUFFX2_LVT U189 ( .A(n98), .Y(n163) );
+  NBUFFX2_LVT U190 ( .A(n97), .Y(n164) );
+  NBUFFX2_LVT U191 ( .A(n96), .Y(n165) );
+  AO22X1_LVT U192 ( .A1(\UARTTX/n004 [3]), .A2(n68), .A3(n69), .A4(
+        \UARTTX/n004 [2]), .Y(n105) );
+  NBUFFX2_LVT U193 ( .A(n105), .Y(n166) );
+  NBUFFX2_LVT U194 ( .A(n106), .Y(n167) );
+  AO22X2_LVT U195 ( .A1(\UARTTX/n004 [2]), .A2(n71), .A3(n70), .A4(n19), .Y(
+        n106) );
+  NBUFFX2_LVT U196 ( .A(n107), .Y(n168) );
+  NBUFFX2_LVT U197 ( .A(n108), .Y(n169) );
+  AO22X2_LVT U198 ( .A1(\UARTTX/n004 [0]), .A2(n22), .A3(n221), .A4(n17), .Y(
+        n108) );
+  INVX1_LVT U199 ( .A(rst_n), .Y(n208) );
+  INVX1_LVT U200 ( .A(n74), .Y(n221) );
+  INVX1_LVT U201 ( .A(n78), .Y(n224) );
+  INVX1_LVT U202 ( .A(n75), .Y(n222) );
+  AND2X1_LVT U203 ( .A1(n75), .A2(n74), .Y(n22) );
+  INVX1_LVT U204 ( .A(n79), .Y(n223) );
+  OR3X1_LVT U205 ( .A1(n83), .A2(n84), .A3(n85), .Y(n82) );
+  OR3X1_LVT U206 ( .A1(n83), .A2(n84), .A3(n85), .Y(n204) );
+  INVX2_LVT U207 ( .A(n208), .Y(n207) );
+  AOI22X1_LVT U208 ( .A1(N181), .A2(n203), .A3(n202), .A4(tx_done), .Y(n171)
+         );
+  INVX1_LVT U209 ( .A(n213), .Y(n216) );
+  INVX1_LVT U210 ( .A(n212), .Y(n217) );
+  INVX1_LVT U211 ( .A(n209), .Y(n220) );
+  INVX1_LVT U212 ( .A(n211), .Y(n218) );
+  INVX1_LVT U213 ( .A(n210), .Y(n219) );
+  AND4X1_LVT U214 ( .A1(n172), .A2(n173), .A3(n174), .A4(n175), .Y(n86) );
+  NOR3X0_LVT U215 ( .A1(cnt[9]), .A2(cnt[7]), .A3(cnt[6]), .Y(n174) );
+  NOR4X1_LVT U216 ( .A1(cnt[12]), .A2(cnt[11]), .A3(cnt[3]), .A4(cnt[2]), .Y(
+        n175) );
+  INVX1_LVT U217 ( .A(n66), .Y(n225) );
+  XOR2X1_LVT U218 ( .A1(n62), .A2(state[3]), .Y(n53) );
+  INVX2_LVT U219 ( .A(n208), .Y(n205) );
+  INVX2_LVT U220 ( .A(n208), .Y(n206) );
+  NAND3X0_LVT U221 ( .A1(n10), .A2(n11), .A3(n12), .Y(n201) );
+  NOR2X0_LVT U222 ( .A1(n9), .A2(n201), .Y(n191) );
+  AND2X1_LVT U223 ( .A1(state[0]), .A2(n9), .Y(n176) );
+  AND3X1_LVT U224 ( .A1(n10), .A2(n11), .A3(n176), .Y(n190) );
+  AND2X1_LVT U225 ( .A1(n176), .A2(state[1]), .Y(n192) );
+  AND2X1_LVT U226 ( .A1(n192), .A2(n10), .Y(n189) );
+  AO222X1_LVT U227 ( .A1(N174), .A2(n191), .A3(N174), .A4(n190), .A5(N174), 
+        .A6(n189), .Y(n180) );
+  AND2X1_LVT U228 ( .A1(n176), .A2(n11), .Y(n196) );
+  AND3X1_LVT U229 ( .A1(n11), .A2(n12), .A3(n9), .Y(n195) );
+  AND3X1_LVT U230 ( .A1(n9), .A2(n12), .A3(state[1]), .Y(n193) );
+  AO22X1_LVT U231 ( .A1(N150), .A2(n193), .A3(N174), .A4(n192), .Y(n177) );
+  AO221X1_LVT U232 ( .A1(N174), .A2(n196), .A3(N150), .A4(n195), .A5(n177), 
+        .Y(n178) );
+  AND2X1_LVT U233 ( .A1(n193), .A2(n10), .Y(n197) );
+  XNOR2X1_LVT U234 ( .A1(n201), .A2(state[3]), .Y(n203) );
+  AO222X1_LVT U235 ( .A1(n178), .A2(state[2]), .A3(N150), .A4(n197), .A5(N182), 
+        .A6(n203), .Y(n179) );
+  OR2X1_LVT U236 ( .A1(n180), .A2(n179), .Y(nxt_state[0]) );
+  AO222X1_LVT U237 ( .A1(N175), .A2(n191), .A3(N151), .A4(n190), .A5(N175), 
+        .A6(n189), .Y(n184) );
+  AO22X1_LVT U238 ( .A1(N151), .A2(n193), .A3(N175), .A4(n192), .Y(n181) );
+  AO221X1_LVT U239 ( .A1(N151), .A2(n196), .A3(N175), .A4(n195), .A5(n181), 
+        .Y(n182) );
+  AO222X1_LVT U240 ( .A1(n182), .A2(state[2]), .A3(N151), .A4(n197), .A5(N183), 
+        .A6(n203), .Y(n183) );
+  OR2X1_LVT U241 ( .A1(n184), .A2(n183), .Y(nxt_state[1]) );
+  AO222X1_LVT U242 ( .A1(N176), .A2(n191), .A3(N176), .A4(n190), .A5(N152), 
+        .A6(n189), .Y(n188) );
+  AO22X1_LVT U243 ( .A1(N152), .A2(n193), .A3(N176), .A4(n192), .Y(n185) );
+  AO221X1_LVT U244 ( .A1(N152), .A2(n196), .A3(N152), .A4(n195), .A5(n185), 
+        .Y(n186) );
+  AO222X1_LVT U245 ( .A1(n186), .A2(state[2]), .A3(N176), .A4(n197), .A5(N184), 
+        .A6(n203), .Y(n187) );
+  OR2X1_LVT U246 ( .A1(n188), .A2(n187), .Y(nxt_state[2]) );
+  AO222X1_LVT U247 ( .A1(N177), .A2(n191), .A3(N177), .A4(n190), .A5(N177), 
+        .A6(n189), .Y(n200) );
+  AO22X1_LVT U248 ( .A1(N177), .A2(n193), .A3(N165), .A4(n192), .Y(n194) );
+  AO221X1_LVT U249 ( .A1(N177), .A2(n196), .A3(N177), .A4(n195), .A5(n194), 
+        .Y(n198) );
+  AO222X1_LVT U250 ( .A1(n198), .A2(state[2]), .A3(N177), .A4(n197), .A5(N185), 
+        .A6(n203), .Y(n199) );
+  OR2X1_LVT U251 ( .A1(n200), .A2(n199), .Y(nxt_state[3]) );
+  AND2X1_LVT U252 ( .A1(n201), .A2(n9), .Y(n202) );
+  INVX0_LVT U253 ( .A(\UARTTX/n005 [0]), .Y(\UARTTX/N25 ) );
+  OR2X1_LVT U254 ( .A1(\UARTTX/n005 [1]), .A2(\UARTTX/n005 [0]), .Y(n209) );
+  AO21X1_LVT U255 ( .A1(\UARTTX/n005 [1]), .A2(\UARTTX/n005 [0]), .A3(n220), 
+        .Y(\UARTTX/N26 ) );
+  OR2X1_LVT U256 ( .A1(n209), .A2(\UARTTX/n005 [2]), .Y(n210) );
+  AO21X1_LVT U257 ( .A1(\UARTTX/n005 [2]), .A2(n209), .A3(n219), .Y(
+        \UARTTX/N27 ) );
+  OR2X1_LVT U258 ( .A1(n210), .A2(\UARTTX/n005 [3]), .Y(n211) );
+  AO21X1_LVT U259 ( .A1(\UARTTX/n005 [3]), .A2(n210), .A3(n218), .Y(
+        \UARTTX/N28 ) );
+  OR2X1_LVT U260 ( .A1(n211), .A2(\UARTTX/n005 [4]), .Y(n212) );
+  AO21X1_LVT U261 ( .A1(\UARTTX/n005 [4]), .A2(n211), .A3(n217), .Y(
+        \UARTTX/N29 ) );
+  OR2X1_LVT U262 ( .A1(n212), .A2(\UARTTX/n005 [5]), .Y(n213) );
+  AO21X1_LVT U263 ( .A1(\UARTTX/n005 [5]), .A2(n212), .A3(n216), .Y(
+        \UARTTX/N30 ) );
+  NOR2X0_LVT U264 ( .A1(n213), .A2(\UARTTX/n005 [6]), .Y(n214) );
+  AO21X1_LVT U265 ( .A1(\UARTTX/n005 [6]), .A2(n213), .A3(n214), .Y(
+        \UARTTX/N31 ) );
+  XNOR2X1_LVT U266 ( .A1(n170), .A2(n214), .Y(\UARTTX/N32 ) );
+  NAND2X0_LVT U267 ( .A1(n214), .A2(n170), .Y(n215) );
+  XNOR2X1_LVT U268 ( .A1(n215), .A2(\UARTTX/n005 [8]), .Y(\UARTTX/N33 ) );
+endmodule
+

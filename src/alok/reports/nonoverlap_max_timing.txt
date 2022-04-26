@@ -1,0 +1,126 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -nworst 3
+        -max_paths 3
+Design : nonoverlap
+Version: S-2021.06
+Date   : Mon Apr 25 18:26:03 2022
+****************************************
+
+Operating Conditions: tt0p85v25c   Library: saed32lvt_tt0p85v25c
+Wire Load Model Mode: enclosed
+
+  Startpoint: lowIn (input port clocked by clk)
+  Endpoint: lowOut_reg (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  nonoverlap         16000                 saed32lvt_tt0p85v25c
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     0.30       0.30 f
+  lowIn (in)                               0.01       0.31 f
+  U30/Y (XOR2X1_LVT)                       0.09       0.39 r
+  U22/Y (AND2X1_LVT)                       0.05       0.44 r
+  U17/Y (NAND4X0_LVT)                      0.06       0.50 f
+  U27/Y (INVX1_LVT)                        0.05       0.55 r
+  U14/Y (AO22X1_LVT)                       0.06       0.61 r
+  lowOut_reg/D (DFFARX1_LVT)               0.01       0.62 r
+  data arrival time                                   0.62
+
+  clock clk (rise edge)                    2.50       2.50
+  clock network delay (ideal)              0.00       2.50
+  clock uncertainty                       -0.15       2.35
+  lowOut_reg/CLK (DFFARX1_LVT)             0.00       2.35 r
+  library setup time                      -0.03       2.32
+  data required time                                  2.32
+  -----------------------------------------------------------
+  data required time                                  2.32
+  data arrival time                                  -0.62
+  -----------------------------------------------------------
+  slack (MET)                                         1.70
+
+
+  Startpoint: lowIn (input port clocked by clk)
+  Endpoint: highOut_reg
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  nonoverlap         16000                 saed32lvt_tt0p85v25c
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     0.30       0.30 f
+  lowIn (in)                               0.01       0.31 f
+  U30/Y (XOR2X1_LVT)                       0.09       0.39 r
+  U22/Y (AND2X1_LVT)                       0.05       0.44 r
+  U17/Y (NAND4X0_LVT)                      0.06       0.50 f
+  U27/Y (INVX1_LVT)                        0.05       0.55 r
+  U12/Y (AO22X1_LVT)                       0.06       0.61 r
+  highOut_reg/D (DFFARX1_LVT)              0.01       0.62 r
+  data arrival time                                   0.62
+
+  clock clk (rise edge)                    2.50       2.50
+  clock network delay (ideal)              0.00       2.50
+  clock uncertainty                       -0.15       2.35
+  highOut_reg/CLK (DFFARX1_LVT)            0.00       2.35 r
+  library setup time                      -0.03       2.32
+  data required time                                  2.32
+  -----------------------------------------------------------
+  data required time                                  2.32
+  data arrival time                                  -0.62
+  -----------------------------------------------------------
+  slack (MET)                                         1.70
+
+
+  Startpoint: highIn (input port clocked by clk)
+  Endpoint: highOut_reg
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  nonoverlap         16000                 saed32lvt_tt0p85v25c
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     0.30       0.30 f
+  highIn (in)                              0.01       0.31 f
+  U29/Y (XOR2X1_LVT)                       0.09       0.39 r
+  U22/Y (AND2X1_LVT)                       0.05       0.44 r
+  U17/Y (NAND4X0_LVT)                      0.06       0.50 f
+  U27/Y (INVX1_LVT)                        0.05       0.55 r
+  U12/Y (AO22X1_LVT)                       0.06       0.60 r
+  highOut_reg/D (DFFARX1_LVT)              0.01       0.62 r
+  data arrival time                                   0.62
+
+  clock clk (rise edge)                    2.50       2.50
+  clock network delay (ideal)              0.00       2.50
+  clock uncertainty                       -0.15       2.35
+  highOut_reg/CLK (DFFARX1_LVT)            0.00       2.35 r
+  library setup time                      -0.03       2.32
+  data required time                                  2.32
+  -----------------------------------------------------------
+  data required time                                  2.32
+  data arrival time                                  -0.62
+  -----------------------------------------------------------
+  slack (MET)                                         1.71
+
+
+1

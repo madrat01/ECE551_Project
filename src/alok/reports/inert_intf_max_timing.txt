@@ -1,0 +1,296 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -nworst 3
+        -max_paths 3
+Design : inert_intf
+Version: S-2021.06
+Date   : Mon Apr 25 18:53:12 2022
+****************************************
+
+Operating Conditions: tt0p85v25c   Library: saed32lvt_tt0p85v25c
+Wire Load Model Mode: enclosed
+
+  Startpoint: inertial_integrator_DUT/roll_int_reg[0]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: inertial_integrator_DUT/roll_int_reg[23]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  inert_intf         16000                 saed32lvt_tt0p85v25c
+  inert_intf_DW01_add_1
+                     ForQA                 saed32lvt_tt0p85v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  inertial_integrator_DUT/roll_int_reg[0]/CLK (DFFARX1_LVT)
+                                                          0.00       0.00 r
+  inertial_integrator_DUT/roll_int_reg[0]/Q (DFFARX1_LVT)
+                                                          0.10       0.10 r
+  add_1_root_add_0_root_inertial_integrator_DUT/add_71_2/A[0] (inert_intf_DW01_add_1)
+                                                          0.00       0.10 r
+  add_1_root_add_0_root_inertial_integrator_DUT/add_71_2/U2/Y (AND2X1_LVT)
+                                                          0.05       0.14 r
+  add_1_root_add_0_root_inertial_integrator_DUT/add_71_2/U1_1/CO (FADDX1_LVT)
+                                                          0.08       0.22 r
+  add_1_root_add_0_root_inertial_integrator_DUT/add_71_2/U1_2/CO (FADDX1_LVT)
+                                                          0.08       0.31 r
+  add_1_root_add_0_root_inertial_integrator_DUT/add_71_2/U1_3/CO (FADDX1_LVT)
+                                                          0.08       0.39 r
+  add_1_root_add_0_root_inertial_integrator_DUT/add_71_2/U1_4/CO (FADDX1_LVT)
+                                                          0.08       0.47 r
+  add_1_root_add_0_root_inertial_integrator_DUT/add_71_2/U1_5/CO (FADDX1_LVT)
+                                                          0.08       0.56 r
+  add_1_root_add_0_root_inertial_integrator_DUT/add_71_2/U1_6/CO (FADDX1_LVT)
+                                                          0.08       0.64 r
+  add_1_root_add_0_root_inertial_integrator_DUT/add_71_2/U1_7/CO (FADDX1_LVT)
+                                                          0.08       0.72 r
+  add_1_root_add_0_root_inertial_integrator_DUT/add_71_2/U1_8/CO (FADDX1_LVT)
+                                                          0.08       0.81 r
+  add_1_root_add_0_root_inertial_integrator_DUT/add_71_2/U1_9/CO (FADDX1_LVT)
+                                                          0.08       0.89 r
+  add_1_root_add_0_root_inertial_integrator_DUT/add_71_2/U1_10/CO (FADDX1_LVT)
+                                                          0.08       0.97 r
+  add_1_root_add_0_root_inertial_integrator_DUT/add_71_2/U1_11/CO (FADDX1_LVT)
+                                                          0.08       1.06 r
+  add_1_root_add_0_root_inertial_integrator_DUT/add_71_2/U1_12/CO (FADDX1_LVT)
+                                                          0.08       1.14 r
+  add_1_root_add_0_root_inertial_integrator_DUT/add_71_2/U1_13/CO (FADDX1_LVT)
+                                                          0.08       1.22 r
+  add_1_root_add_0_root_inertial_integrator_DUT/add_71_2/U1_14/CO (FADDX1_LVT)
+                                                          0.08       1.31 r
+  add_1_root_add_0_root_inertial_integrator_DUT/add_71_2/U1_15/CO (FADDX1_LVT)
+                                                          0.08       1.39 r
+  add_1_root_add_0_root_inertial_integrator_DUT/add_71_2/U1_16/CO (FADDX1_LVT)
+                                                          0.08       1.47 r
+  add_1_root_add_0_root_inertial_integrator_DUT/add_71_2/U1_17/CO (FADDX1_LVT)
+                                                          0.08       1.56 r
+  add_1_root_add_0_root_inertial_integrator_DUT/add_71_2/U1_18/CO (FADDX1_LVT)
+                                                          0.08       1.64 r
+  add_1_root_add_0_root_inertial_integrator_DUT/add_71_2/U1_19/CO (FADDX1_LVT)
+                                                          0.08       1.72 r
+  add_1_root_add_0_root_inertial_integrator_DUT/add_71_2/U1_20/CO (FADDX1_LVT)
+                                                          0.08       1.81 r
+  add_1_root_add_0_root_inertial_integrator_DUT/add_71_2/U1_21/CO (FADDX1_LVT)
+                                                          0.08       1.89 r
+  add_1_root_add_0_root_inertial_integrator_DUT/add_71_2/U1_22/S (FADDX1_LVT)
+                                                          0.11       2.00 f
+  add_1_root_add_0_root_inertial_integrator_DUT/add_71_2/SUM[22] (inert_intf_DW01_add_1)
+                                                          0.00       2.00 f
+  add_0_root_add_0_root_inertial_integrator_DUT/add_71_2/U1_22/CO (FADDX1_LVT)
+                                                          0.09       2.09 f
+  add_0_root_add_0_root_inertial_integrator_DUT/add_71_2/U1_23/S (FADDX1_LVT)
+                                                          0.11       2.20 r
+  U226/Y (AO22X1_LVT)                                     0.04       2.24 r
+  inertial_integrator_DUT/roll_int_reg[23]/D (DFFARX2_LVT)
+                                                          0.01       2.25 r
+  data arrival time                                                  2.25
+
+  clock clk (rise edge)                                   2.50       2.50
+  clock network delay (ideal)                             0.00       2.50
+  clock uncertainty                                      -0.15       2.35
+  inertial_integrator_DUT/roll_int_reg[23]/CLK (DFFARX2_LVT)
+                                                          0.00       2.35 r
+  library setup time                                     -0.03       2.32
+  data required time                                                 2.32
+  --------------------------------------------------------------------------
+  data required time                                                 2.32
+  data arrival time                                                 -2.25
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.06
+
+
+  Startpoint: roll_L_reg[0]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: inertial_integrator_DUT/roll_int_reg[23]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  inert_intf         16000                 saed32lvt_tt0p85v25c
+  inert_intf_DW01_add_1
+                     ForQA                 saed32lvt_tt0p85v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  roll_L_reg[0]/CLK (DFFARX1_LVT)                         0.00       0.00 r
+  roll_L_reg[0]/Q (DFFARX1_LVT)                           0.10       0.10 r
+  add_1_root_add_0_root_inertial_integrator_DUT/add_71_2/B[0] (inert_intf_DW01_add_1)
+                                                          0.00       0.10 r
+  add_1_root_add_0_root_inertial_integrator_DUT/add_71_2/U2/Y (AND2X1_LVT)
+                                                          0.05       0.14 r
+  add_1_root_add_0_root_inertial_integrator_DUT/add_71_2/U1_1/CO (FADDX1_LVT)
+                                                          0.08       0.22 r
+  add_1_root_add_0_root_inertial_integrator_DUT/add_71_2/U1_2/CO (FADDX1_LVT)
+                                                          0.08       0.31 r
+  add_1_root_add_0_root_inertial_integrator_DUT/add_71_2/U1_3/CO (FADDX1_LVT)
+                                                          0.08       0.39 r
+  add_1_root_add_0_root_inertial_integrator_DUT/add_71_2/U1_4/CO (FADDX1_LVT)
+                                                          0.08       0.47 r
+  add_1_root_add_0_root_inertial_integrator_DUT/add_71_2/U1_5/CO (FADDX1_LVT)
+                                                          0.08       0.56 r
+  add_1_root_add_0_root_inertial_integrator_DUT/add_71_2/U1_6/CO (FADDX1_LVT)
+                                                          0.08       0.64 r
+  add_1_root_add_0_root_inertial_integrator_DUT/add_71_2/U1_7/CO (FADDX1_LVT)
+                                                          0.08       0.72 r
+  add_1_root_add_0_root_inertial_integrator_DUT/add_71_2/U1_8/CO (FADDX1_LVT)
+                                                          0.08       0.81 r
+  add_1_root_add_0_root_inertial_integrator_DUT/add_71_2/U1_9/CO (FADDX1_LVT)
+                                                          0.08       0.89 r
+  add_1_root_add_0_root_inertial_integrator_DUT/add_71_2/U1_10/CO (FADDX1_LVT)
+                                                          0.08       0.97 r
+  add_1_root_add_0_root_inertial_integrator_DUT/add_71_2/U1_11/CO (FADDX1_LVT)
+                                                          0.08       1.06 r
+  add_1_root_add_0_root_inertial_integrator_DUT/add_71_2/U1_12/CO (FADDX1_LVT)
+                                                          0.08       1.14 r
+  add_1_root_add_0_root_inertial_integrator_DUT/add_71_2/U1_13/CO (FADDX1_LVT)
+                                                          0.08       1.22 r
+  add_1_root_add_0_root_inertial_integrator_DUT/add_71_2/U1_14/CO (FADDX1_LVT)
+                                                          0.08       1.30 r
+  add_1_root_add_0_root_inertial_integrator_DUT/add_71_2/U1_15/CO (FADDX1_LVT)
+                                                          0.08       1.39 r
+  add_1_root_add_0_root_inertial_integrator_DUT/add_71_2/U1_16/CO (FADDX1_LVT)
+                                                          0.08       1.47 r
+  add_1_root_add_0_root_inertial_integrator_DUT/add_71_2/U1_17/CO (FADDX1_LVT)
+                                                          0.08       1.55 r
+  add_1_root_add_0_root_inertial_integrator_DUT/add_71_2/U1_18/CO (FADDX1_LVT)
+                                                          0.08       1.64 r
+  add_1_root_add_0_root_inertial_integrator_DUT/add_71_2/U1_19/CO (FADDX1_LVT)
+                                                          0.08       1.72 r
+  add_1_root_add_0_root_inertial_integrator_DUT/add_71_2/U1_20/CO (FADDX1_LVT)
+                                                          0.08       1.81 r
+  add_1_root_add_0_root_inertial_integrator_DUT/add_71_2/U1_21/CO (FADDX1_LVT)
+                                                          0.08       1.89 r
+  add_1_root_add_0_root_inertial_integrator_DUT/add_71_2/U1_22/S (FADDX1_LVT)
+                                                          0.11       2.00 f
+  add_1_root_add_0_root_inertial_integrator_DUT/add_71_2/SUM[22] (inert_intf_DW01_add_1)
+                                                          0.00       2.00 f
+  add_0_root_add_0_root_inertial_integrator_DUT/add_71_2/U1_22/CO (FADDX1_LVT)
+                                                          0.09       2.09 f
+  add_0_root_add_0_root_inertial_integrator_DUT/add_71_2/U1_23/S (FADDX1_LVT)
+                                                          0.11       2.20 r
+  U226/Y (AO22X1_LVT)                                     0.04       2.24 r
+  inertial_integrator_DUT/roll_int_reg[23]/D (DFFARX2_LVT)
+                                                          0.01       2.25 r
+  data arrival time                                                  2.25
+
+  clock clk (rise edge)                                   2.50       2.50
+  clock network delay (ideal)                             0.00       2.50
+  clock uncertainty                                      -0.15       2.35
+  inertial_integrator_DUT/roll_int_reg[23]/CLK (DFFARX2_LVT)
+                                                          0.00       2.35 r
+  library setup time                                     -0.03       2.32
+  data required time                                                 2.32
+  --------------------------------------------------------------------------
+  data required time                                                 2.32
+  data arrival time                                                 -2.25
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.06
+
+
+  Startpoint: inertial_integrator_DUT/roll_int_reg[0]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: inertial_integrator_DUT/roll_int_reg[23]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  inert_intf         16000                 saed32lvt_tt0p85v25c
+  inert_intf_DW01_add_1
+                     ForQA                 saed32lvt_tt0p85v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  inertial_integrator_DUT/roll_int_reg[0]/CLK (DFFARX1_LVT)
+                                                          0.00       0.00 r
+  inertial_integrator_DUT/roll_int_reg[0]/Q (DFFARX1_LVT)
+                                                          0.10       0.10 r
+  add_1_root_add_0_root_inertial_integrator_DUT/add_71_2/A[0] (inert_intf_DW01_add_1)
+                                                          0.00       0.10 r
+  add_1_root_add_0_root_inertial_integrator_DUT/add_71_2/U2/Y (AND2X1_LVT)
+                                                          0.05       0.14 r
+  add_1_root_add_0_root_inertial_integrator_DUT/add_71_2/U1_1/CO (FADDX1_LVT)
+                                                          0.08       0.22 r
+  add_1_root_add_0_root_inertial_integrator_DUT/add_71_2/U1_2/CO (FADDX1_LVT)
+                                                          0.08       0.31 r
+  add_1_root_add_0_root_inertial_integrator_DUT/add_71_2/U1_3/CO (FADDX1_LVT)
+                                                          0.08       0.39 r
+  add_1_root_add_0_root_inertial_integrator_DUT/add_71_2/U1_4/CO (FADDX1_LVT)
+                                                          0.08       0.47 r
+  add_1_root_add_0_root_inertial_integrator_DUT/add_71_2/U1_5/CO (FADDX1_LVT)
+                                                          0.08       0.56 r
+  add_1_root_add_0_root_inertial_integrator_DUT/add_71_2/U1_6/CO (FADDX1_LVT)
+                                                          0.08       0.64 r
+  add_1_root_add_0_root_inertial_integrator_DUT/add_71_2/U1_7/CO (FADDX1_LVT)
+                                                          0.08       0.72 r
+  add_1_root_add_0_root_inertial_integrator_DUT/add_71_2/U1_8/CO (FADDX1_LVT)
+                                                          0.08       0.81 r
+  add_1_root_add_0_root_inertial_integrator_DUT/add_71_2/U1_9/CO (FADDX1_LVT)
+                                                          0.08       0.89 r
+  add_1_root_add_0_root_inertial_integrator_DUT/add_71_2/U1_10/CO (FADDX1_LVT)
+                                                          0.08       0.97 r
+  add_1_root_add_0_root_inertial_integrator_DUT/add_71_2/U1_11/CO (FADDX1_LVT)
+                                                          0.08       1.06 r
+  add_1_root_add_0_root_inertial_integrator_DUT/add_71_2/U1_12/CO (FADDX1_LVT)
+                                                          0.08       1.14 r
+  add_1_root_add_0_root_inertial_integrator_DUT/add_71_2/U1_13/CO (FADDX1_LVT)
+                                                          0.08       1.22 r
+  add_1_root_add_0_root_inertial_integrator_DUT/add_71_2/U1_14/CO (FADDX1_LVT)
+                                                          0.08       1.31 r
+  add_1_root_add_0_root_inertial_integrator_DUT/add_71_2/U1_15/CO (FADDX1_LVT)
+                                                          0.08       1.39 r
+  add_1_root_add_0_root_inertial_integrator_DUT/add_71_2/U1_16/CO (FADDX1_LVT)
+                                                          0.08       1.47 r
+  add_1_root_add_0_root_inertial_integrator_DUT/add_71_2/U1_17/CO (FADDX1_LVT)
+                                                          0.08       1.56 r
+  add_1_root_add_0_root_inertial_integrator_DUT/add_71_2/U1_18/CO (FADDX1_LVT)
+                                                          0.08       1.64 r
+  add_1_root_add_0_root_inertial_integrator_DUT/add_71_2/U1_19/CO (FADDX1_LVT)
+                                                          0.08       1.72 r
+  add_1_root_add_0_root_inertial_integrator_DUT/add_71_2/U1_20/CO (FADDX1_LVT)
+                                                          0.08       1.81 r
+  add_1_root_add_0_root_inertial_integrator_DUT/add_71_2/U1_21/S (FADDX1_LVT)
+                                                          0.11       1.92 f
+  add_1_root_add_0_root_inertial_integrator_DUT/add_71_2/SUM[21] (inert_intf_DW01_add_1)
+                                                          0.00       1.92 f
+  add_0_root_add_0_root_inertial_integrator_DUT/add_71_2/U1_21/CO (FADDX1_LVT)
+                                                          0.09       2.01 f
+  add_0_root_add_0_root_inertial_integrator_DUT/add_71_2/U1_22/CO (FADDX1_LVT)
+                                                          0.08       2.08 f
+  add_0_root_add_0_root_inertial_integrator_DUT/add_71_2/U1_23/S (FADDX1_LVT)
+                                                          0.11       2.19 r
+  U226/Y (AO22X1_LVT)                                     0.04       2.23 r
+  inertial_integrator_DUT/roll_int_reg[23]/D (DFFARX2_LVT)
+                                                          0.01       2.25 r
+  data arrival time                                                  2.25
+
+  clock clk (rise edge)                                   2.50       2.50
+  clock network delay (ideal)                             0.00       2.50
+  clock uncertainty                                      -0.15       2.35
+  inertial_integrator_DUT/roll_int_reg[23]/CLK (DFFARX2_LVT)
+                                                          0.00       2.35 r
+  library setup time                                     -0.03       2.32
+  data required time                                                 2.32
+  --------------------------------------------------------------------------
+  data required time                                                 2.32
+  data arrival time                                                 -2.25
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.07
+
+
+1

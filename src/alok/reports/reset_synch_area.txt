@@ -1,0 +1,31 @@
+ 
+****************************************
+Report : area
+Design : reset_synch
+Version: S-2021.06
+Date   : Mon Apr 25 18:43:14 2022
+****************************************
+
+Information: Updating design information... (UID-85)
+Library(s) Used:
+
+    saed32lvt_tt0p85v25c (File: /cae/apps/data/saed32_edk-2018/lib/stdcell_lvt/db_nldm/saed32lvt_tt0p85v25c.db)
+
+Number of ports:                            3
+Number of nets:                             7
+Number of cells:                            5
+Number of combinational cells:              2
+Number of sequential cells:                 2
+Number of macros/black boxes:               0
+Number of buf/inv:                          2
+Number of references:                       3
+
+Combinational area:                  3.303872
+Buf/Inv area:                        3.303872
+Noncombinational area:              14.740352
+Macro/Black Box area:                0.000000
+Net Interconnect area:               1.296311
+
+Total cell area:                    18.044224
+Total area:                         19.340535
+1

@@ -1,0 +1,120 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay min
+        -nworst 3
+        -max_paths 3
+Design : telemetry
+Version: S-2021.06
+Date   : Mon Apr 25 18:07:12 2022
+****************************************
+
+Operating Conditions: tt0p85v25c   Library: saed32lvt_tt0p85v25c
+Wire Load Model Mode: enclosed
+
+  Startpoint: UARTTX/n003_reg[1]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: UARTTX/n003_reg[1]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  telemetry          16000                 saed32lvt_tt0p85v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  UARTTX/n003_reg[1]/CLK (DFFASX1_LVT)                    0.00       0.00 r
+  UARTTX/n003_reg[1]/Q (DFFASX1_LVT)                      0.09       0.09 f
+  U185/Y (AO222X2_LVT)                                    0.04       0.13 f
+  UARTTX/n003_reg[1]/D (DFFASX1_LVT)                      0.01       0.14 f
+  data arrival time                                                  0.14
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.15       0.15
+  UARTTX/n003_reg[1]/CLK (DFFASX1_LVT)                    0.00       0.15 r
+  library hold time                                      -0.01       0.14
+  data required time                                                 0.14
+  --------------------------------------------------------------------------
+  data required time                                                 0.14
+  data arrival time                                                 -0.14
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.00
+
+
+  Startpoint: UARTTX/n004_reg[2]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: UARTTX/n004_reg[2]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  telemetry          16000                 saed32lvt_tt0p85v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  UARTTX/n004_reg[2]/CLK (DFFARX1_LVT)                    0.00       0.00 r
+  UARTTX/n004_reg[2]/QN (DFFARX1_LVT)                     0.06       0.06 f
+  U195/Y (AO22X2_LVT)                                     0.05       0.10 f
+  U194/Y (NBUFFX2_LVT)                                    0.03       0.14 f
+  UARTTX/n004_reg[2]/D (DFFARX1_LVT)                      0.01       0.14 f
+  data arrival time                                                  0.14
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.15       0.15
+  UARTTX/n004_reg[2]/CLK (DFFARX1_LVT)                    0.00       0.15 r
+  library hold time                                      -0.01       0.14
+  data required time                                                 0.14
+  --------------------------------------------------------------------------
+  data required time                                                 0.14
+  data arrival time                                                 -0.14
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.00
+
+
+  Startpoint: UARTTX/n004_reg[0]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: UARTTX/n004_reg[0]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  telemetry          16000                 saed32lvt_tt0p85v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  UARTTX/n004_reg[0]/CLK (DFFARX1_LVT)                    0.00       0.00 r
+  UARTTX/n004_reg[0]/QN (DFFARX1_LVT)                     0.06       0.06 f
+  U198/Y (AO22X2_LVT)                                     0.05       0.10 f
+  U197/Y (NBUFFX2_LVT)                                    0.03       0.14 f
+  UARTTX/n004_reg[0]/D (DFFARX1_LVT)                      0.01       0.14 f
+  data arrival time                                                  0.14
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.15       0.15
+  UARTTX/n004_reg[0]/CLK (DFFARX1_LVT)                    0.00       0.15 r
+  library hold time                                      -0.01       0.14
+  data required time                                                 0.14
+  --------------------------------------------------------------------------
+  data required time                                                 0.14
+  data arrival time                                                 -0.14
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.00
+
+
+1
