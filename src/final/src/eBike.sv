@@ -61,7 +61,7 @@ reset_synch reset_synch (.*);
 ///////////////////////////////////////////////////////
 // Instantiate A2D_intf to read torque & batt level //
 /////////////////////////////////////////////////////
-<instantiate A2D_intf>
+A2D_intf A2D_intf( .clk(clk), .rst_n(rst_n), .batt(batt), .curr(curr), .brake(brake), .torque(torque), .SS_n(A2D_SS_n), .SCLK(A2D_SCLK), .MOSI(A2D_MOSI), .MISO(A2D_MISO));
 		 
 ////////////////////////////////////////////////////////////
 // Instantiate SensorCondition block to filter & average //
@@ -87,7 +87,7 @@ mtr_drv mtr_drv (.*);
 /////////////////////////////////////////////////////////////
 // Instantiate inertial sensor to measure incline (pitch) //
 ///////////////////////////////////////////////////////////
-<instantiate inert_intf>
+inert_intf inert_intf( .clk(clk), .rst_n(rst_n), .INT(inertINT), .MISO(inertMISO), .SS_n(inertSS_n), .SCLK(inertSCLK), .MOSI(inertMOSI), .incline(incline), .vld());
 			
 /////////////////////////////////////////////////////////////////
 // Instantiate PB_intf block to establish setting/LED & scale //
