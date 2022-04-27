@@ -2,7 +2,7 @@ module eBike(clk,RST_n,A2D_SS_n,A2D_MOSI,A2D_SCLK,
             A2D_MISO,hallGrn,hallYlw,hallBlu,highGrn,
 		 lowGrn,highYlw,lowYlw,highBlu,lowBlu,
 		 inertSS_n,inertSCLK,inertMOSI,inertMISO,
-		 inertINT,cadence_raw,TX,tgglMd,LED);
+		 inertINT,cadence,TX,tgglMd,LED);
 		 
 parameter FAST_SIM = 1;		// accelerate simulation by default
 
@@ -26,7 +26,7 @@ output inertSCLK;			// SCLK signal to inertial (tilt) sensor
 output inertMOSI;			// Serial out to inertial (tilt) sensor  
 input inertMISO;			// Serial in from inertial (tilt) sensor
 input inertINT;			// Alerts when inertial sensor has new reading
-input cadence_raw;			// pulse input from pedal cadence sensor
+input cadence;			// pulse input from pedal cadence sensor
 input tgglMd;				// used to select setting[1:0] (from PB switch)
 output TX;				// serial output of measured batt,curr,torque
 output [1:0] LED;			// Lower 2-bits of LED (setting) 11 => easy, 10 => medium, 01 => hard, 00 => off
@@ -37,7 +37,6 @@ output [1:0] LED;			// Lower 2-bits of LED (setting) 11 => easy, 10 => medium, 0
 wire rst_n;									// global reset from reset_synch
 wire [11:0] torque, batt, curr, brake;		// Raw A2D results
 wire signed [12:0] error;
-wire cadence;
 wire not_pedaling;
 wire [10:0] duty;
 wire [1:0] selGrn, selYlw, selBlu;
@@ -67,7 +66,7 @@ A2D_intf A2D_intf( .clk(clk), .rst_n(rst_n), .batt(batt), .curr(curr), .brake(br
 // Instantiate SensorCondition block to filter & average //
 // readings and provide cadence_vec, and zero_cadence   //
 /////////////////////////////////////////////////////////
-sensorCondition #(FAST_SIM = 1) sensorCondition (.*);
+sensorCondition #(FAST_SIM = 1) sensorCondition (.*, .cadence_raw(cadence));
 			   
 ///////////////////////////////////////////////////
 // Instantiate PID to determine drive magnitude //
@@ -92,6 +91,6 @@ inert_intf inert_intf( .clk(clk), .rst_n(rst_n), .INT(inertINT), .MISO(inertMISO
 /////////////////////////////////////////////////////////////////
 // Instantiate PB_intf block to establish setting/LED & scale //
 ///////////////////////////////////////////////////////////////
-<instantiate PB_intf>
+PB_intf PB_intf(.*, .setting(LED));
 
 endmodule
