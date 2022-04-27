@@ -36,7 +36,7 @@ set_fix_hold clk
 
 ungroup -all -flatten
 
-compile
+compile -map_effort high
 
 check_design
 

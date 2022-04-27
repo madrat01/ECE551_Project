@@ -15,6 +15,7 @@ logic [11:0]		target_curr;
 logic               pass;
 
 desiredDrive dd (
+    .clk            (clk),
 	.avg_torque	    (avg_torque),
 	.cadence	    (cadence),
 	.not_pedaling	(not_pedaling),
@@ -42,10 +43,14 @@ initial begin
         not_pedaling = mem_stim[i][16];
         incline = mem_stim[i][15:3];
         scale = mem_stim[i][2:0];
-        #1
+        // 2 cycle delay to compute assist_prod
+        repeat (2) @ (posedge clk);
+        // wait for target curr to compute using assit prod, check at negative edge of clk
+        @ (negedge clk);
         if (target_curr != mem_resp[i]) begin
-            $display("Response mismatch, index %d", i);
+            $display("Response mismatch, index %d, target_curr %h, mem_resp %h", i, target_curr, mem_resp[i]);
             pass = 0;
+            break;
         end
     end
     if (pass)

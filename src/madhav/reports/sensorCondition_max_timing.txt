@@ -7,7 +7,7 @@ Report : timing
         -max_paths 3
 Design : sensorCondition
 Version: S-2021.06
-Date   : Mon Apr 25 23:25:04 2022
+Date   : Tue Apr 26 12:52:31 2022
 ****************************************
 
 Operating Conditions: tt0p85v25c   Library: saed32lvt_tt0p85v25c
@@ -15,7 +15,7 @@ Wire Load Model Mode: enclosed
 
   Startpoint: incline[11]
               (input port clocked by clk)
-  Endpoint: error[9] (output port clocked by clk)
+  Endpoint: error[6] (output port clocked by clk)
   Path Group: clk
   Path Type: max
 
@@ -28,87 +28,87 @@ Wire Load Model Mode: enclosed
                      8000                  saed32lvt_tt0p85v25c
   sensorCondition_DW02_mult_2
                      8000                  saed32lvt_tt0p85v25c
-  sensorCondition_DW01_sub_2
+  sensorCondition_DW01_sub_3
                      8000                  saed32lvt_tt0p85v25c
 
   Point                                                   Incr       Path
   --------------------------------------------------------------------------
   clock clk (rise edge)                                   0.00       0.00
   clock network delay (ideal)                             0.00       0.00
-  input external delay                                    0.30       0.30 r
-  incline[11] (in)                                        0.00       0.30 r
-  U577/Y (AND2X1_LVT)                                     0.04       0.35 r
-  U580/Y (AND4X1_LVT)                                     0.05       0.40 r
-  U579/Y (AO221X2_LVT)                                    0.07       0.47 r
+  input external delay                                    0.30       0.30 f
+  incline[11] (in)                                        0.01       0.31 f
+  U509/Y (INVX0_LVT)                                      0.03       0.34 r
+  U507/Y (NAND4X0_LVT)                                    0.04       0.38 f
+  U508/Y (AO221X2_LVT)                                    0.08       0.46 f
   desiredDrive/mult_36/A[1] (sensorCondition_DW02_mult_4)
-                                                          0.00       0.47 r
-  desiredDrive/mult_36/U67/Y (AND2X1_LVT)                 0.05       0.52 r
-  desiredDrive/mult_36/U8/Y (XOR2X1_LVT)                  0.09       0.62 f
-  desiredDrive/mult_36/S2_2_5/S (FADDX1_LVT)              0.12       0.74 r
-  desiredDrive/mult_36/S2_3_4/S (FADDX1_LVT)              0.11       0.85 f
-  desiredDrive/mult_36/S2_4_3/S (FADDX1_LVT)              0.12       0.97 r
-  desiredDrive/mult_36/S2_5_2/S (FADDX1_LVT)              0.11       1.08 f
-  desiredDrive/mult_36/S2_6_1/S (FADDX1_LVT)              0.12       1.20 r
-  desiredDrive/mult_36/S1_7_0/S (FADDX1_LVT)              0.11       1.30 f
-  desiredDrive/mult_36/FS_1/A[5] (sensorCondition_DW01_add_8)
-                                                          0.00       1.30 f
-  desiredDrive/mult_36/FS_1/U32/Y (NBUFFX2_LVT)           0.05       1.35 f
-  desiredDrive/mult_36/FS_1/SUM[5] (sensorCondition_DW01_add_8)
-                                                          0.00       1.35 f
-  desiredDrive/mult_36/PRODUCT[7] (sensorCondition_DW02_mult_4)
-                                                          0.00       1.35 f
-  desiredDrive/mult_36_2/A[7] (sensorCondition_DW02_mult_3)
-                                                          0.00       1.35 f
-  desiredDrive/mult_36_2/U116/Y (AND2X1_LVT)              0.05       1.40 f
-  desiredDrive/mult_36_2/S3_7_4/S (FADDX1_LVT)            0.13       1.53 r
-  desiredDrive/mult_36_2/S2_8_3/CO (FADDX1_LVT)           0.09       1.62 r
-  desiredDrive/mult_36_2/S2_9_3/CO (FADDX1_LVT)           0.10       1.72 r
-  desiredDrive/mult_36_2/S2_10_3/CO (FADDX1_LVT)          0.10       1.81 r
-  desiredDrive/mult_36_2/U53/Y (NAND2X0_LVT)              0.03       1.84 f
-  desiredDrive/mult_36_2/U56/Y (NAND3X0_LVT)              0.05       1.89 r
-  desiredDrive/mult_36_2/S2_12_3/CO (FADDX1_LVT)          0.10       1.99 r
-  desiredDrive/mult_36_2/S2_13_3/CO (FADDX1_LVT)          0.10       2.09 r
-  desiredDrive/mult_36_2/S2_14_3/CO (FADDX1_LVT)          0.10       2.19 r
-  desiredDrive/mult_36_2/S2_15_3/S (FADDX1_LVT)           0.12       2.31 f
-  desiredDrive/mult_36_2/U39/Y (NAND2X0_LVT)              0.04       2.36 r
-  desiredDrive/mult_36_2/U40/Y (NAND3X0_LVT)              0.05       2.41 f
-  desiredDrive/mult_36_2/S2_17_2/S (FADDX1_LVT)           0.14       2.54 r
-  desiredDrive/mult_36_2/S2_18_1/CO (FADDX1_LVT)          0.09       2.63 r
-  desiredDrive/mult_36_2/S2_19_1/CO (FADDX1_LVT)          0.10       2.73 r
-  desiredDrive/mult_36_2/S4_1/S (FADDX1_LVT)              0.13       2.86 f
-  desiredDrive/mult_36_2/U46/Y (XOR2X2_LVT)               0.10       2.95 r
-  desiredDrive/mult_36_2/PRODUCT[21] (sensorCondition_DW02_mult_3)
-                                                          0.00       2.95 r
-  desiredDrive/mult_36_3/A[21] (sensorCondition_DW02_mult_2)
-                                                          0.00       2.95 r
-  desiredDrive/mult_36_3/U13/Y (AND2X1_LVT)               0.05       3.00 r
-  desiredDrive/mult_36_3/S3_21_1/CO (FADDX1_LVT)          0.10       3.10 r
-  desiredDrive/mult_36_3/S3_22_1/CO (FADDX1_LVT)          0.09       3.19 r
-  desiredDrive/mult_36_3/S3_23_1/CO (FADDX1_LVT)          0.09       3.27 r
-  desiredDrive/mult_36_3/U49/Y (NAND2X0_LVT)              0.03       3.30 f
-  desiredDrive/mult_36_3/U51/Y (NAND3X0_LVT)              0.04       3.35 r
-  desiredDrive/mult_36_3/S3_25_1/CO (FADDX1_LVT)          0.09       3.43 r
-  desiredDrive/mult_36_3/S5_1/CO (FADDX1_LVT)             0.09       3.52 r
-  desiredDrive/mult_36_3/U11/Y (XOR2X2_LVT)               0.09       3.61 f
-  desiredDrive/mult_36_3/U3/Y (NAND3X0_LVT)               0.04       3.65 r
-  desiredDrive/mult_36_3/U2/Y (XOR2X2_LVT)                0.09       3.74 f
-  desiredDrive/mult_36_3/PRODUCT[29] (sensorCondition_DW02_mult_2)
-                                                          0.00       3.74 f
-  U417/Y (OR3X1_LVT)                                      0.06       3.79 f
-  U422/Y (OA21X1_LVT)                                     0.05       3.84 f
-  sub_112/A[7] (sensorCondition_DW01_sub_2)               0.00       3.84 f
-  sub_112/U56/Y (INVX0_LVT)                               0.03       3.87 r
-  sub_112/U13/Y (OR2X2_LVT)                               0.05       3.92 r
-  sub_112/U114/Y (NAND2X0_LVT)                            0.03       3.95 f
-  sub_112/U40/Y (NAND2X0_LVT)                             0.04       3.99 r
-  sub_112/U112/Y (OA21X1_LVT)                             0.05       4.03 r
-  sub_112/U107/Y (NAND4X0_LVT)                            0.05       4.08 f
-  sub_112/U70/Y (NBUFFX2_LVT)                             0.05       4.14 f
-  sub_112/U4/Y (XOR2X1_LVT)                               0.08       4.22 r
-  sub_112/DIFF[9] (sensorCondition_DW01_sub_2)            0.00       4.22 r
-  U742/Y (AND2X1_LVT)                                     0.04       4.26 r
-  error[9] (out)                                          0.00       4.26 r
-  data arrival time                                                  4.26
+                                                          0.00       0.46 f
+  desiredDrive/mult_36/U84/Y (AND2X1_LVT)                 0.06       0.53 f
+  desiredDrive/mult_36/U34/Y (XOR2X2_LVT)                 0.09       0.62 r
+  desiredDrive/mult_36/S2_2_7/S (FADDX1_LVT)              0.11       0.73 f
+  desiredDrive/mult_36/S2_3_6/S (FADDX1_LVT)              0.12       0.85 r
+  desiredDrive/mult_36/S2_4_5/S (FADDX1_LVT)              0.11       0.96 f
+  desiredDrive/mult_36/S2_5_4/S (FADDX1_LVT)              0.12       1.08 r
+  desiredDrive/mult_36/S2_6_3/S (FADDX1_LVT)              0.11       1.19 f
+  desiredDrive/mult_36/S2_7_2/S (FADDX1_LVT)              0.12       1.31 r
+  desiredDrive/mult_36/S4_1/S (FADDX1_LVT)                0.11       1.42 f
+  desiredDrive/mult_36/U17/Y (XOR2X1_LVT)                 0.09       1.51 r
+  desiredDrive/mult_36/FS_1/A[7] (sensorCondition_DW01_add_8)
+                                                          0.00       1.51 r
+  desiredDrive/mult_36/FS_1/U30/Y (NBUFFX2_LVT)           0.04       1.55 r
+  desiredDrive/mult_36/FS_1/SUM[7] (sensorCondition_DW01_add_8)
+                                                          0.00       1.55 r
+  desiredDrive/mult_36/PRODUCT[9] (sensorCondition_DW02_mult_4)
+                                                          0.00       1.55 r
+  desiredDrive/mult_36_2/A[9] (sensorCondition_DW02_mult_3)
+                                                          0.00       1.55 r
+  desiredDrive/mult_36_2/U114/Y (AND2X4_LVT)              0.06       1.61 r
+  desiredDrive/mult_36_2/S2_9_2/CO (FADDX1_LVT)           0.10       1.71 r
+  desiredDrive/mult_36_2/S2_10_2/CO (FADDX1_LVT)          0.10       1.81 r
+  desiredDrive/mult_36_2/S2_11_2/S (FADDX1_LVT)           0.12       1.94 f
+  desiredDrive/mult_36_2/S2_12_1/S (FADDX1_LVT)           0.12       2.06 r
+  desiredDrive/mult_36_2/S1_13_0/CO (FADDX1_LVT)          0.09       2.14 r
+  desiredDrive/mult_36_2/S1_14_0/S (FADDX1_LVT)           0.12       2.27 f
+  desiredDrive/mult_36_2/PRODUCT[14] (sensorCondition_DW02_mult_3)
+                                                          0.00       2.27 f
+  desiredDrive/mult_36_3/A[14] (sensorCondition_DW02_mult_2)
+                                                          0.00       2.27 f
+  desiredDrive/mult_36_3/U49/Y (AND2X1_LVT)               0.05       2.32 f
+  desiredDrive/mult_36_3/U44/Y (OA21X1_LVT)               0.05       2.37 f
+  desiredDrive/mult_36_3/U38/Y (AO21X1_LVT)               0.04       2.41 f
+  desiredDrive/mult_36_3/U40/Y (AND2X1_LVT)               0.05       2.46 f
+  desiredDrive/mult_36_3/U37/Y (OA22X1_LVT)               0.05       2.51 f
+  desiredDrive/mult_36_3/S3_16_1/CO (FADDX2_LVT)          0.09       2.60 f
+  desiredDrive/mult_36_3/S3_17_1/S (FADDX1_LVT)           0.13       2.73 r
+  desiredDrive/mult_36_3/U75/Y (NAND2X0_LVT)              0.03       2.76 f
+  desiredDrive/mult_36_3/U146/Y (NAND3X0_LVT)             0.05       2.81 r
+  desiredDrive/mult_36_3/S1_19_0/CO (FADDX2_LVT)          0.11       2.91 r
+  desiredDrive/mult_36_3/U69/CO (FADDX1_LVT)              0.10       3.01 r
+  desiredDrive/mult_36_3/U61/Y (AO22X1_LVT)               0.06       3.07 r
+  desiredDrive/mult_36_3/U99/CO (FADDX1_LVT)              0.08       3.16 r
+  desiredDrive/mult_36_3/U82/Y (NBUFFX2_LVT)              0.04       3.20 r
+  desiredDrive/mult_36_3/U80/Y (AO22X1_LVT)               0.05       3.25 r
+  desiredDrive/mult_36_3/U78/Y (AO22X1_LVT)               0.05       3.30 r
+  desiredDrive/mult_36_3/U79/Y (AO22X1_LVT)               0.05       3.35 r
+  desiredDrive/mult_36_3/U112/Y (NAND2X0_LVT)             0.03       3.38 f
+  desiredDrive/mult_36_3/U32/Y (NAND3X0_LVT)              0.05       3.43 r
+  desiredDrive/mult_36_3/U111/Y (NBUFFX2_LVT)             0.04       3.47 r
+  desiredDrive/mult_36_3/U106/Y (XOR2X2_LVT)              0.08       3.55 f
+  desiredDrive/mult_36_3/PRODUCT[27] (sensorCondition_DW02_mult_2)
+                                                          0.00       3.55 f
+  U498/Y (OR3X1_LVT)                                      0.06       3.61 f
+  U458/Y (OA21X1_LVT)                                     0.06       3.67 f
+  sub_112/A[0] (sensorCondition_DW01_sub_3)               0.00       3.67 f
+  sub_112/U108/Y (INVX0_LVT)                              0.04       3.70 r
+  sub_112/U83/Y (NAND2X0_LVT)                             0.03       3.73 f
+  sub_112/U107/Y (NAND2X0_LVT)                            0.05       3.78 r
+  sub_112/U73/Y (NAND3X0_LVT)                             0.04       3.82 f
+  sub_112/U86/Y (AOI221X2_LVT)                            0.08       3.89 r
+  sub_112/U112/Y (OA21X1_LVT)                             0.05       3.95 r
+  sub_112/U10/Y (XOR2X1_LVT)                              0.08       4.03 f
+  sub_112/DIFF[6] (sensorCondition_DW01_sub_3)            0.00       4.03 f
+  U748/Y (AND2X1_LVT)                                     0.04       4.07 f
+  error[6] (out)                                          0.00       4.07 f
+  data arrival time                                                  4.07
 
   clock clk (rise edge)                                   2.50       2.50
   clock network delay (ideal)                             0.00       2.50
@@ -117,14 +117,14 @@ Wire Load Model Mode: enclosed
   data required time                                                 1.85
   --------------------------------------------------------------------------
   data required time                                                 1.85
-  data arrival time                                                 -4.26
+  data arrival time                                                 -4.07
   --------------------------------------------------------------------------
-  slack (VIOLATED)                                                  -2.41
+  slack (VIOLATED)                                                  -2.22
 
 
   Startpoint: incline[11]
               (input port clocked by clk)
-  Endpoint: error[9] (output port clocked by clk)
+  Endpoint: error[6] (output port clocked by clk)
   Path Group: clk
   Path Type: max
 
@@ -137,7 +137,7 @@ Wire Load Model Mode: enclosed
                      8000                  saed32lvt_tt0p85v25c
   sensorCondition_DW02_mult_2
                      8000                  saed32lvt_tt0p85v25c
-  sensorCondition_DW01_sub_2
+  sensorCondition_DW01_sub_3
                      8000                  saed32lvt_tt0p85v25c
 
   Point                                                   Incr       Path
@@ -145,187 +145,79 @@ Wire Load Model Mode: enclosed
   clock clk (rise edge)                                   0.00       0.00
   clock network delay (ideal)                             0.00       0.00
   input external delay                                    0.30       0.30 f
-  incline[11] (in)                                        0.00       0.30 f
-  U578/Y (INVX0_LVT)                                      0.03       0.34 r
-  U526/Y (NAND4X0_LVT)                                    0.04       0.38 f
-  U473/Y (AO221X2_LVT)                                    0.09       0.47 f
-  desiredDrive/mult_36/A[0] (sensorCondition_DW02_mult_4)
-                                                          0.00       0.47 f
-  desiredDrive/mult_36/U64/Y (AND2X1_LVT)                 0.06       0.54 f
-  desiredDrive/mult_36/U4/Y (XOR2X1_LVT)                  0.09       0.62 r
-  desiredDrive/mult_36/S2_2_6/S (FADDX1_LVT)              0.11       0.74 f
-  desiredDrive/mult_36/S2_3_5/S (FADDX1_LVT)              0.12       0.85 r
-  desiredDrive/mult_36/S2_4_4/S (FADDX1_LVT)              0.11       0.97 f
-  desiredDrive/mult_36/S2_5_3/S (FADDX1_LVT)              0.12       1.08 r
-  desiredDrive/mult_36/S2_6_2/S (FADDX1_LVT)              0.11       1.20 f
-  desiredDrive/mult_36/S2_7_1/S (FADDX1_LVT)              0.12       1.31 r
-  desiredDrive/mult_36/S4_0/S (FADDX1_LVT)                0.11       1.42 f
-  desiredDrive/mult_36/FS_1/A[6] (sensorCondition_DW01_add_8)
-                                                          0.00       1.42 f
-  desiredDrive/mult_36/FS_1/U31/Y (NBUFFX2_LVT)           0.04       1.46 f
-  desiredDrive/mult_36/FS_1/SUM[6] (sensorCondition_DW01_add_8)
-                                                          0.00       1.46 f
-  desiredDrive/mult_36/PRODUCT[8] (sensorCondition_DW02_mult_4)
-                                                          0.00       1.46 f
-  desiredDrive/mult_36_2/A[8] (sensorCondition_DW02_mult_3)
-                                                          0.00       1.46 f
-  desiredDrive/mult_36_2/U117/Y (AND2X1_LVT)              0.05       1.51 f
-  desiredDrive/mult_36_2/S3_8_4/S (FADDX1_LVT)            0.12       1.63 r
-  desiredDrive/mult_36_2/S2_9_3/CO (FADDX1_LVT)           0.09       1.72 r
-  desiredDrive/mult_36_2/S2_10_3/CO (FADDX1_LVT)          0.10       1.81 r
-  desiredDrive/mult_36_2/U53/Y (NAND2X0_LVT)              0.03       1.84 f
-  desiredDrive/mult_36_2/U56/Y (NAND3X0_LVT)              0.05       1.89 r
-  desiredDrive/mult_36_2/S2_12_3/CO (FADDX1_LVT)          0.10       1.99 r
-  desiredDrive/mult_36_2/S2_13_3/CO (FADDX1_LVT)          0.10       2.09 r
-  desiredDrive/mult_36_2/S2_14_3/CO (FADDX1_LVT)          0.10       2.19 r
-  desiredDrive/mult_36_2/S2_15_3/S (FADDX1_LVT)           0.12       2.31 f
-  desiredDrive/mult_36_2/U39/Y (NAND2X0_LVT)              0.04       2.36 r
-  desiredDrive/mult_36_2/U40/Y (NAND3X0_LVT)              0.05       2.41 f
-  desiredDrive/mult_36_2/S2_17_2/S (FADDX1_LVT)           0.14       2.54 r
-  desiredDrive/mult_36_2/S2_18_1/CO (FADDX1_LVT)          0.09       2.63 r
-  desiredDrive/mult_36_2/S2_19_1/CO (FADDX1_LVT)          0.10       2.73 r
-  desiredDrive/mult_36_2/S4_1/S (FADDX1_LVT)              0.13       2.86 f
-  desiredDrive/mult_36_2/U46/Y (XOR2X2_LVT)               0.10       2.95 r
-  desiredDrive/mult_36_2/PRODUCT[21] (sensorCondition_DW02_mult_3)
-                                                          0.00       2.95 r
-  desiredDrive/mult_36_3/A[21] (sensorCondition_DW02_mult_2)
-                                                          0.00       2.95 r
-  desiredDrive/mult_36_3/U13/Y (AND2X1_LVT)               0.05       3.00 r
-  desiredDrive/mult_36_3/S3_21_1/CO (FADDX1_LVT)          0.10       3.10 r
-  desiredDrive/mult_36_3/S3_22_1/CO (FADDX1_LVT)          0.09       3.18 r
-  desiredDrive/mult_36_3/S3_23_1/CO (FADDX1_LVT)          0.09       3.27 r
-  desiredDrive/mult_36_3/U49/Y (NAND2X0_LVT)              0.03       3.30 f
-  desiredDrive/mult_36_3/U51/Y (NAND3X0_LVT)              0.04       3.35 r
-  desiredDrive/mult_36_3/S3_25_1/CO (FADDX1_LVT)          0.09       3.43 r
-  desiredDrive/mult_36_3/S5_1/CO (FADDX1_LVT)             0.09       3.52 r
-  desiredDrive/mult_36_3/U11/Y (XOR2X2_LVT)               0.09       3.61 f
-  desiredDrive/mult_36_3/U3/Y (NAND3X0_LVT)               0.04       3.65 r
-  desiredDrive/mult_36_3/U2/Y (XOR2X2_LVT)                0.09       3.74 f
-  desiredDrive/mult_36_3/PRODUCT[29] (sensorCondition_DW02_mult_2)
-                                                          0.00       3.74 f
-  U417/Y (OR3X1_LVT)                                      0.06       3.79 f
-  U422/Y (OA21X1_LVT)                                     0.05       3.84 f
-  sub_112/A[7] (sensorCondition_DW01_sub_2)               0.00       3.84 f
-  sub_112/U56/Y (INVX0_LVT)                               0.03       3.87 r
-  sub_112/U13/Y (OR2X2_LVT)                               0.05       3.92 r
-  sub_112/U114/Y (NAND2X0_LVT)                            0.03       3.95 f
-  sub_112/U40/Y (NAND2X0_LVT)                             0.04       3.99 r
-  sub_112/U112/Y (OA21X1_LVT)                             0.05       4.03 r
-  sub_112/U107/Y (NAND4X0_LVT)                            0.05       4.08 f
-  sub_112/U70/Y (NBUFFX2_LVT)                             0.05       4.14 f
-  sub_112/U4/Y (XOR2X1_LVT)                               0.08       4.22 r
-  sub_112/DIFF[9] (sensorCondition_DW01_sub_2)            0.00       4.22 r
-  U742/Y (AND2X1_LVT)                                     0.04       4.26 r
-  error[9] (out)                                          0.00       4.26 r
-  data arrival time                                                  4.26
-
-  clock clk (rise edge)                                   2.50       2.50
-  clock network delay (ideal)                             0.00       2.50
-  clock uncertainty                                      -0.15       2.35
-  output external delay                                  -0.50       1.85
-  data required time                                                 1.85
-  --------------------------------------------------------------------------
-  data required time                                                 1.85
-  data arrival time                                                 -4.26
-  --------------------------------------------------------------------------
-  slack (VIOLATED)                                                  -2.41
-
-
-  Startpoint: incline[8] (input port clocked by clk)
-  Endpoint: error[9] (output port clocked by clk)
-  Path Group: clk
-  Path Type: max
-
-  Des/Clust/Port     Wire Load Model       Library
-  ------------------------------------------------
-  sensorCondition    16000                 saed32lvt_tt0p85v25c
-  sensorCondition_DW02_mult_4
-                     8000                  saed32lvt_tt0p85v25c
-  sensorCondition_DW02_mult_3
-                     8000                  saed32lvt_tt0p85v25c
-  sensorCondition_DW02_mult_2
-                     8000                  saed32lvt_tt0p85v25c
-  sensorCondition_DW01_sub_2
-                     8000                  saed32lvt_tt0p85v25c
-
-  Point                                                   Incr       Path
-  --------------------------------------------------------------------------
-  clock clk (rise edge)                                   0.00       0.00
-  clock network delay (ideal)                             0.00       0.00
-  input external delay                                    0.30       0.30 f
-  incline[8] (in)                                         0.00       0.30 f
-  U581/Y (INVX0_LVT)                                      0.03       0.34 r
-  U699/Y (NAND4X0_LVT)                                    0.04       0.38 f
-  U579/Y (AO221X2_LVT)                                    0.08       0.46 f
+  incline[11] (in)                                        0.01       0.31 f
+  U509/Y (INVX0_LVT)                                      0.03       0.34 r
+  U507/Y (NAND4X0_LVT)                                    0.04       0.38 f
+  U508/Y (AO221X2_LVT)                                    0.08       0.46 f
   desiredDrive/mult_36/A[1] (sensorCondition_DW02_mult_4)
                                                           0.00       0.46 f
-  desiredDrive/mult_36/U65/Y (AND2X1_LVT)                 0.06       0.53 f
-  desiredDrive/mult_36/U4/Y (XOR2X1_LVT)                  0.10       0.62 r
-  desiredDrive/mult_36/S2_2_6/S (FADDX1_LVT)              0.11       0.74 f
-  desiredDrive/mult_36/S2_3_5/S (FADDX1_LVT)              0.12       0.85 r
-  desiredDrive/mult_36/S2_4_4/S (FADDX1_LVT)              0.11       0.97 f
-  desiredDrive/mult_36/S2_5_3/S (FADDX1_LVT)              0.12       1.08 r
-  desiredDrive/mult_36/S2_6_2/S (FADDX1_LVT)              0.11       1.20 f
-  desiredDrive/mult_36/S2_7_1/S (FADDX1_LVT)              0.12       1.31 r
-  desiredDrive/mult_36/S4_0/S (FADDX1_LVT)                0.11       1.42 f
-  desiredDrive/mult_36/FS_1/A[6] (sensorCondition_DW01_add_8)
-                                                          0.00       1.42 f
-  desiredDrive/mult_36/FS_1/U31/Y (NBUFFX2_LVT)           0.04       1.46 f
-  desiredDrive/mult_36/FS_1/SUM[6] (sensorCondition_DW01_add_8)
-                                                          0.00       1.46 f
-  desiredDrive/mult_36/PRODUCT[8] (sensorCondition_DW02_mult_4)
-                                                          0.00       1.46 f
-  desiredDrive/mult_36_2/A[8] (sensorCondition_DW02_mult_3)
-                                                          0.00       1.46 f
-  desiredDrive/mult_36_2/U117/Y (AND2X1_LVT)              0.05       1.51 f
-  desiredDrive/mult_36_2/S3_8_4/S (FADDX1_LVT)            0.12       1.63 r
-  desiredDrive/mult_36_2/S2_9_3/CO (FADDX1_LVT)           0.09       1.72 r
-  desiredDrive/mult_36_2/S2_10_3/CO (FADDX1_LVT)          0.10       1.81 r
-  desiredDrive/mult_36_2/U53/Y (NAND2X0_LVT)              0.03       1.84 f
-  desiredDrive/mult_36_2/U56/Y (NAND3X0_LVT)              0.05       1.89 r
-  desiredDrive/mult_36_2/S2_12_3/CO (FADDX1_LVT)          0.10       1.99 r
-  desiredDrive/mult_36_2/S2_13_3/CO (FADDX1_LVT)          0.10       2.09 r
-  desiredDrive/mult_36_2/S2_14_3/CO (FADDX1_LVT)          0.10       2.19 r
-  desiredDrive/mult_36_2/S2_15_3/S (FADDX1_LVT)           0.12       2.31 f
-  desiredDrive/mult_36_2/U39/Y (NAND2X0_LVT)              0.04       2.36 r
-  desiredDrive/mult_36_2/U40/Y (NAND3X0_LVT)              0.05       2.41 f
-  desiredDrive/mult_36_2/S2_17_2/S (FADDX1_LVT)           0.14       2.54 r
-  desiredDrive/mult_36_2/S2_18_1/CO (FADDX1_LVT)          0.09       2.63 r
-  desiredDrive/mult_36_2/S2_19_1/CO (FADDX1_LVT)          0.10       2.73 r
-  desiredDrive/mult_36_2/S4_1/S (FADDX1_LVT)              0.13       2.86 f
-  desiredDrive/mult_36_2/U46/Y (XOR2X2_LVT)               0.10       2.95 r
-  desiredDrive/mult_36_2/PRODUCT[21] (sensorCondition_DW02_mult_3)
-                                                          0.00       2.95 r
-  desiredDrive/mult_36_3/A[21] (sensorCondition_DW02_mult_2)
-                                                          0.00       2.95 r
-  desiredDrive/mult_36_3/U13/Y (AND2X1_LVT)               0.05       3.00 r
-  desiredDrive/mult_36_3/S3_21_1/CO (FADDX1_LVT)          0.10       3.10 r
-  desiredDrive/mult_36_3/S3_22_1/CO (FADDX1_LVT)          0.09       3.18 r
-  desiredDrive/mult_36_3/S3_23_1/CO (FADDX1_LVT)          0.09       3.27 r
-  desiredDrive/mult_36_3/U49/Y (NAND2X0_LVT)              0.03       3.30 f
-  desiredDrive/mult_36_3/U51/Y (NAND3X0_LVT)              0.04       3.35 r
-  desiredDrive/mult_36_3/S3_25_1/CO (FADDX1_LVT)          0.09       3.43 r
-  desiredDrive/mult_36_3/S5_1/CO (FADDX1_LVT)             0.09       3.52 r
-  desiredDrive/mult_36_3/U11/Y (XOR2X2_LVT)               0.09       3.61 f
-  desiredDrive/mult_36_3/U3/Y (NAND3X0_LVT)               0.04       3.65 r
-  desiredDrive/mult_36_3/U2/Y (XOR2X2_LVT)                0.09       3.74 f
-  desiredDrive/mult_36_3/PRODUCT[29] (sensorCondition_DW02_mult_2)
-                                                          0.00       3.74 f
-  U417/Y (OR3X1_LVT)                                      0.06       3.79 f
-  U422/Y (OA21X1_LVT)                                     0.05       3.84 f
-  sub_112/A[7] (sensorCondition_DW01_sub_2)               0.00       3.84 f
-  sub_112/U56/Y (INVX0_LVT)                               0.03       3.87 r
-  sub_112/U13/Y (OR2X2_LVT)                               0.05       3.92 r
-  sub_112/U114/Y (NAND2X0_LVT)                            0.03       3.95 f
-  sub_112/U40/Y (NAND2X0_LVT)                             0.04       3.99 r
-  sub_112/U112/Y (OA21X1_LVT)                             0.05       4.03 r
-  sub_112/U107/Y (NAND4X0_LVT)                            0.05       4.08 f
-  sub_112/U70/Y (NBUFFX2_LVT)                             0.05       4.14 f
-  sub_112/U4/Y (XOR2X1_LVT)                               0.08       4.22 r
-  sub_112/DIFF[9] (sensorCondition_DW01_sub_2)            0.00       4.22 r
-  U742/Y (AND2X1_LVT)                                     0.04       4.26 r
-  error[9] (out)                                          0.00       4.26 r
-  data arrival time                                                  4.26
+  desiredDrive/mult_36/U84/Y (AND2X1_LVT)                 0.06       0.53 f
+  desiredDrive/mult_36/U34/Y (XOR2X2_LVT)                 0.09       0.62 r
+  desiredDrive/mult_36/S2_2_7/S (FADDX1_LVT)              0.11       0.73 f
+  desiredDrive/mult_36/S2_3_6/S (FADDX1_LVT)              0.12       0.85 r
+  desiredDrive/mult_36/S2_4_5/S (FADDX1_LVT)              0.11       0.96 f
+  desiredDrive/mult_36/S2_5_4/S (FADDX1_LVT)              0.12       1.08 r
+  desiredDrive/mult_36/S2_6_3/S (FADDX1_LVT)              0.11       1.19 f
+  desiredDrive/mult_36/S2_7_2/S (FADDX1_LVT)              0.12       1.31 r
+  desiredDrive/mult_36/S4_1/S (FADDX1_LVT)                0.11       1.42 f
+  desiredDrive/mult_36/U17/Y (XOR2X1_LVT)                 0.09       1.51 r
+  desiredDrive/mult_36/FS_1/A[7] (sensorCondition_DW01_add_8)
+                                                          0.00       1.51 r
+  desiredDrive/mult_36/FS_1/U30/Y (NBUFFX2_LVT)           0.04       1.55 r
+  desiredDrive/mult_36/FS_1/SUM[7] (sensorCondition_DW01_add_8)
+                                                          0.00       1.55 r
+  desiredDrive/mult_36/PRODUCT[9] (sensorCondition_DW02_mult_4)
+                                                          0.00       1.55 r
+  desiredDrive/mult_36_2/A[9] (sensorCondition_DW02_mult_3)
+                                                          0.00       1.55 r
+  desiredDrive/mult_36_2/U114/Y (AND2X4_LVT)              0.06       1.61 r
+  desiredDrive/mult_36_2/S2_9_2/CO (FADDX1_LVT)           0.10       1.71 r
+  desiredDrive/mult_36_2/S2_10_2/S (FADDX1_LVT)           0.12       1.84 f
+  desiredDrive/mult_36_2/S2_11_1/S (FADDX1_LVT)           0.12       1.96 r
+  desiredDrive/mult_36_2/S1_12_0/CO (FADDX1_LVT)          0.09       2.04 r
+  desiredDrive/mult_36_2/S1_13_0/CO (FADDX1_LVT)          0.10       2.14 r
+  desiredDrive/mult_36_2/S1_14_0/S (FADDX1_LVT)           0.12       2.27 f
+  desiredDrive/mult_36_2/PRODUCT[14] (sensorCondition_DW02_mult_3)
+                                                          0.00       2.27 f
+  desiredDrive/mult_36_3/A[14] (sensorCondition_DW02_mult_2)
+                                                          0.00       2.27 f
+  desiredDrive/mult_36_3/U49/Y (AND2X1_LVT)               0.05       2.32 f
+  desiredDrive/mult_36_3/U44/Y (OA21X1_LVT)               0.05       2.37 f
+  desiredDrive/mult_36_3/U38/Y (AO21X1_LVT)               0.04       2.41 f
+  desiredDrive/mult_36_3/U40/Y (AND2X1_LVT)               0.05       2.46 f
+  desiredDrive/mult_36_3/U37/Y (OA22X1_LVT)               0.05       2.51 f
+  desiredDrive/mult_36_3/S3_16_1/CO (FADDX2_LVT)          0.09       2.60 f
+  desiredDrive/mult_36_3/S3_17_1/S (FADDX1_LVT)           0.13       2.73 r
+  desiredDrive/mult_36_3/U75/Y (NAND2X0_LVT)              0.03       2.76 f
+  desiredDrive/mult_36_3/U146/Y (NAND3X0_LVT)             0.05       2.81 r
+  desiredDrive/mult_36_3/S1_19_0/CO (FADDX2_LVT)          0.11       2.91 r
+  desiredDrive/mult_36_3/U69/CO (FADDX1_LVT)              0.10       3.01 r
+  desiredDrive/mult_36_3/U61/Y (AO22X1_LVT)               0.06       3.07 r
+  desiredDrive/mult_36_3/U99/CO (FADDX1_LVT)              0.08       3.16 r
+  desiredDrive/mult_36_3/U82/Y (NBUFFX2_LVT)              0.04       3.20 r
+  desiredDrive/mult_36_3/U80/Y (AO22X1_LVT)               0.05       3.25 r
+  desiredDrive/mult_36_3/U78/Y (AO22X1_LVT)               0.05       3.30 r
+  desiredDrive/mult_36_3/U79/Y (AO22X1_LVT)               0.05       3.35 r
+  desiredDrive/mult_36_3/U112/Y (NAND2X0_LVT)             0.03       3.38 f
+  desiredDrive/mult_36_3/U32/Y (NAND3X0_LVT)              0.05       3.43 r
+  desiredDrive/mult_36_3/U111/Y (NBUFFX2_LVT)             0.04       3.47 r
+  desiredDrive/mult_36_3/U106/Y (XOR2X2_LVT)              0.08       3.55 f
+  desiredDrive/mult_36_3/PRODUCT[27] (sensorCondition_DW02_mult_2)
+                                                          0.00       3.55 f
+  U498/Y (OR3X1_LVT)                                      0.06       3.61 f
+  U458/Y (OA21X1_LVT)                                     0.06       3.67 f
+  sub_112/A[0] (sensorCondition_DW01_sub_3)               0.00       3.67 f
+  sub_112/U108/Y (INVX0_LVT)                              0.04       3.70 r
+  sub_112/U83/Y (NAND2X0_LVT)                             0.03       3.73 f
+  sub_112/U107/Y (NAND2X0_LVT)                            0.05       3.78 r
+  sub_112/U73/Y (NAND3X0_LVT)                             0.04       3.82 f
+  sub_112/U86/Y (AOI221X2_LVT)                            0.08       3.89 r
+  sub_112/U112/Y (OA21X1_LVT)                             0.05       3.95 r
+  sub_112/U10/Y (XOR2X1_LVT)                              0.08       4.03 f
+  sub_112/DIFF[6] (sensorCondition_DW01_sub_3)            0.00       4.03 f
+  U748/Y (AND2X1_LVT)                                     0.04       4.07 f
+  error[6] (out)                                          0.00       4.07 f
+  data arrival time                                                  4.07
 
   clock clk (rise edge)                                   2.50       2.50
   clock network delay (ideal)                             0.00       2.50
@@ -334,9 +226,118 @@ Wire Load Model Mode: enclosed
   data required time                                                 1.85
   --------------------------------------------------------------------------
   data required time                                                 1.85
-  data arrival time                                                 -4.26
+  data arrival time                                                 -4.07
   --------------------------------------------------------------------------
-  slack (VIOLATED)                                                  -2.41
+  slack (VIOLATED)                                                  -2.22
+
+
+  Startpoint: incline[11]
+              (input port clocked by clk)
+  Endpoint: error[6] (output port clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  sensorCondition    16000                 saed32lvt_tt0p85v25c
+  sensorCondition_DW02_mult_4
+                     8000                  saed32lvt_tt0p85v25c
+  sensorCondition_DW02_mult_3
+                     8000                  saed32lvt_tt0p85v25c
+  sensorCondition_DW02_mult_2
+                     8000                  saed32lvt_tt0p85v25c
+  sensorCondition_DW01_sub_3
+                     8000                  saed32lvt_tt0p85v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    0.30       0.30 f
+  incline[11] (in)                                        0.01       0.31 f
+  U509/Y (INVX0_LVT)                                      0.03       0.34 r
+  U507/Y (NAND4X0_LVT)                                    0.04       0.38 f
+  U508/Y (AO221X2_LVT)                                    0.08       0.46 f
+  desiredDrive/mult_36/A[1] (sensorCondition_DW02_mult_4)
+                                                          0.00       0.46 f
+  desiredDrive/mult_36/U84/Y (AND2X1_LVT)                 0.06       0.53 f
+  desiredDrive/mult_36/U34/Y (XOR2X2_LVT)                 0.09       0.62 r
+  desiredDrive/mult_36/S2_2_7/S (FADDX1_LVT)              0.11       0.73 f
+  desiredDrive/mult_36/S2_3_6/S (FADDX1_LVT)              0.12       0.85 r
+  desiredDrive/mult_36/S2_4_5/S (FADDX1_LVT)              0.11       0.96 f
+  desiredDrive/mult_36/S2_5_4/S (FADDX1_LVT)              0.12       1.08 r
+  desiredDrive/mult_36/S2_6_3/S (FADDX1_LVT)              0.11       1.19 f
+  desiredDrive/mult_36/S2_7_2/S (FADDX1_LVT)              0.12       1.31 r
+  desiredDrive/mult_36/S4_1/S (FADDX1_LVT)                0.11       1.42 f
+  desiredDrive/mult_36/U17/Y (XOR2X1_LVT)                 0.09       1.51 r
+  desiredDrive/mult_36/FS_1/A[7] (sensorCondition_DW01_add_8)
+                                                          0.00       1.51 r
+  desiredDrive/mult_36/FS_1/U30/Y (NBUFFX2_LVT)           0.04       1.55 r
+  desiredDrive/mult_36/FS_1/SUM[7] (sensorCondition_DW01_add_8)
+                                                          0.00       1.55 r
+  desiredDrive/mult_36/PRODUCT[9] (sensorCondition_DW02_mult_4)
+                                                          0.00       1.55 r
+  desiredDrive/mult_36_2/A[9] (sensorCondition_DW02_mult_3)
+                                                          0.00       1.55 r
+  desiredDrive/mult_36_2/U114/Y (AND2X4_LVT)              0.06       1.61 r
+  desiredDrive/mult_36_2/S2_9_2/CO (FADDX1_LVT)           0.10       1.71 r
+  desiredDrive/mult_36_2/S2_10_2/CO (FADDX1_LVT)          0.10       1.81 r
+  desiredDrive/mult_36_2/S2_11_2/S (FADDX1_LVT)           0.12       1.94 f
+  desiredDrive/mult_36_2/S2_12_1/S (FADDX1_LVT)           0.12       2.06 r
+  desiredDrive/mult_36_2/S1_13_0/CO (FADDX1_LVT)          0.09       2.14 r
+  desiredDrive/mult_36_2/S1_14_0/S (FADDX1_LVT)           0.12       2.27 f
+  desiredDrive/mult_36_2/PRODUCT[14] (sensorCondition_DW02_mult_3)
+                                                          0.00       2.27 f
+  desiredDrive/mult_36_3/A[14] (sensorCondition_DW02_mult_2)
+                                                          0.00       2.27 f
+  desiredDrive/mult_36_3/U49/Y (AND2X1_LVT)               0.05       2.32 f
+  desiredDrive/mult_36_3/U44/Y (OA21X1_LVT)               0.05       2.37 f
+  desiredDrive/mult_36_3/U38/Y (AO21X1_LVT)               0.04       2.41 f
+  desiredDrive/mult_36_3/U40/Y (AND2X1_LVT)               0.05       2.46 f
+  desiredDrive/mult_36_3/U37/Y (OA22X1_LVT)               0.05       2.51 f
+  desiredDrive/mult_36_3/S3_16_1/CO (FADDX2_LVT)          0.09       2.60 f
+  desiredDrive/mult_36_3/S3_17_1/S (FADDX1_LVT)           0.13       2.73 r
+  desiredDrive/mult_36_3/U75/Y (NAND2X0_LVT)              0.03       2.76 f
+  desiredDrive/mult_36_3/U146/Y (NAND3X0_LVT)             0.05       2.81 r
+  desiredDrive/mult_36_3/S1_19_0/CO (FADDX2_LVT)          0.11       2.91 r
+  desiredDrive/mult_36_3/U69/CO (FADDX1_LVT)              0.10       3.01 r
+  desiredDrive/mult_36_3/U61/Y (AO22X1_LVT)               0.06       3.07 r
+  desiredDrive/mult_36_3/U99/CO (FADDX1_LVT)              0.08       3.16 r
+  desiredDrive/mult_36_3/U82/Y (NBUFFX2_LVT)              0.04       3.20 r
+  desiredDrive/mult_36_3/U80/Y (AO22X1_LVT)               0.05       3.25 r
+  desiredDrive/mult_36_3/U78/Y (AO22X1_LVT)               0.05       3.30 r
+  desiredDrive/mult_36_3/U79/Y (AO22X1_LVT)               0.05       3.35 r
+  desiredDrive/mult_36_3/U112/Y (NAND2X0_LVT)             0.03       3.38 f
+  desiredDrive/mult_36_3/U32/Y (NAND3X0_LVT)              0.05       3.43 r
+  desiredDrive/mult_36_3/U111/Y (NBUFFX2_LVT)             0.04       3.47 r
+  desiredDrive/mult_36_3/U106/Y (XOR2X2_LVT)              0.08       3.55 f
+  desiredDrive/mult_36_3/PRODUCT[27] (sensorCondition_DW02_mult_2)
+                                                          0.00       3.55 f
+  U498/Y (OR3X1_LVT)                                      0.06       3.61 f
+  U461/Y (OA21X1_LVT)                                     0.06       3.67 f
+  sub_112/A[1] (sensorCondition_DW01_sub_3)               0.00       3.67 f
+  sub_112/U74/Y (INVX0_LVT)                               0.03       3.70 r
+  sub_112/U120/Y (NAND2X0_LVT)                            0.03       3.73 f
+  sub_112/U107/Y (NAND2X0_LVT)                            0.04       3.78 r
+  sub_112/U73/Y (NAND3X0_LVT)                             0.04       3.81 f
+  sub_112/U86/Y (AOI221X2_LVT)                            0.08       3.89 r
+  sub_112/U112/Y (OA21X1_LVT)                             0.05       3.95 r
+  sub_112/U10/Y (XOR2X1_LVT)                              0.08       4.03 f
+  sub_112/DIFF[6] (sensorCondition_DW01_sub_3)            0.00       4.03 f
+  U748/Y (AND2X1_LVT)                                     0.04       4.07 f
+  error[6] (out)                                          0.00       4.07 f
+  data arrival time                                                  4.07
+
+  clock clk (rise edge)                                   2.50       2.50
+  clock network delay (ideal)                             0.00       2.50
+  clock uncertainty                                      -0.15       2.35
+  output external delay                                  -0.50       1.85
+  data required time                                                 1.85
+  --------------------------------------------------------------------------
+  data required time                                                 1.85
+  data arrival time                                                 -4.07
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -2.22
 
 
 1

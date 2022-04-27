@@ -5,114 +5,118 @@ Report : timing
         -delay min
         -nworst 3
         -max_paths 3
-Design : PID
+Design : PB_intf
 Version: S-2021.06
-Date   : Tue Apr 26 12:53:52 2022
+Date   : Tue Apr 26 20:06:21 2022
 ****************************************
 
 Operating Conditions: tt0p85v25c   Library: saed32lvt_tt0p85v25c
 Wire Load Model Mode: enclosed
 
-  Startpoint: prev_err_reg[4]
+  Startpoint: tgglMd_d2_reg
               (rising edge-triggered flip-flop clocked by clk)
-  Endpoint: prev_err_reg[4]
+  Endpoint: tgglMd_d3_reg
             (rising edge-triggered flip-flop clocked by clk)
   Path Group: clk
   Path Type: min
 
   Des/Clust/Port     Wire Load Model       Library
   ------------------------------------------------
-  PID                16000                 saed32lvt_tt0p85v25c
+  PB_intf            16000                 saed32lvt_tt0p85v25c
 
   Point                                    Incr       Path
   -----------------------------------------------------------
   clock clk (rise edge)                    0.00       0.00
   clock network delay (ideal)              0.00       0.00
-  prev_err_reg[4]/CLK (DFFARX1_LVT)        0.00       0.00 r
-  prev_err_reg[4]/Q (DFFARX1_LVT)          0.09       0.09 f
-  U17/Y (AO22X1_LVT)                       0.04       0.13 f
-  prev_err_reg[4]/D (DFFARX1_LVT)          0.01       0.14 f
-  data arrival time                                   0.14
+  tgglMd_d2_reg/CLK (DFFX1_LVT)            0.00       0.00 r
+  tgglMd_d2_reg/Q (DFFX1_LVT)              0.08       0.08 r
+  U8/Y (INVX0_LVT)                         0.02       0.09 f
+  U10/Y (INVX0_LVT)                        0.02       0.11 r
+  U9/Y (NBUFFX2_LVT)                       0.03       0.15 r
+  tgglMd_d3_reg/D (DFFX1_LVT)              0.01       0.16 r
+  data arrival time                                   0.16
 
   clock clk (rise edge)                    0.00       0.00
   clock network delay (ideal)              0.00       0.00
   clock uncertainty                        0.15       0.15
-  prev_err_reg[4]/CLK (DFFARX1_LVT)        0.00       0.15 r
+  tgglMd_d3_reg/CLK (DFFX1_LVT)            0.00       0.15 r
   library hold time                       -0.01       0.14
   data required time                                  0.14
   -----------------------------------------------------------
   data required time                                  0.14
-  data arrival time                                  -0.14
+  data arrival time                                  -0.16
   -----------------------------------------------------------
-  slack (MET)                                         0.00
+  slack (MET)                                         0.01
 
 
-  Startpoint: prev_err_reg[3]
+  Startpoint: tgglMd_d2_reg
               (rising edge-triggered flip-flop clocked by clk)
-  Endpoint: prev_err_reg[3]
+  Endpoint: tgglMd_d3_reg
             (rising edge-triggered flip-flop clocked by clk)
   Path Group: clk
   Path Type: min
 
   Des/Clust/Port     Wire Load Model       Library
   ------------------------------------------------
-  PID                16000                 saed32lvt_tt0p85v25c
+  PB_intf            16000                 saed32lvt_tt0p85v25c
 
   Point                                    Incr       Path
   -----------------------------------------------------------
   clock clk (rise edge)                    0.00       0.00
   clock network delay (ideal)              0.00       0.00
-  prev_err_reg[3]/CLK (DFFARX1_LVT)        0.00       0.00 r
-  prev_err_reg[3]/Q (DFFARX1_LVT)          0.09       0.09 f
-  U14/Y (AO22X1_LVT)                       0.04       0.13 f
-  prev_err_reg[3]/D (DFFARX1_LVT)          0.01       0.14 f
-  data arrival time                                   0.14
+  tgglMd_d2_reg/CLK (DFFX1_LVT)            0.00       0.00 r
+  tgglMd_d2_reg/Q (DFFX1_LVT)              0.08       0.08 f
+  U8/Y (INVX0_LVT)                         0.02       0.10 r
+  U10/Y (INVX0_LVT)                        0.02       0.12 f
+  U9/Y (NBUFFX2_LVT)                       0.03       0.15 f
+  tgglMd_d3_reg/D (DFFX1_LVT)              0.01       0.16 f
+  data arrival time                                   0.16
 
   clock clk (rise edge)                    0.00       0.00
   clock network delay (ideal)              0.00       0.00
   clock uncertainty                        0.15       0.15
-  prev_err_reg[3]/CLK (DFFARX1_LVT)        0.00       0.15 r
-  library hold time                       -0.01       0.14
-  data required time                                  0.14
+  tgglMd_d3_reg/CLK (DFFX1_LVT)            0.00       0.15 r
+  library hold time                        0.00       0.15
+  data required time                                  0.15
   -----------------------------------------------------------
-  data required time                                  0.14
-  data arrival time                                  -0.14
+  data required time                                  0.15
+  data arrival time                                  -0.16
   -----------------------------------------------------------
-  slack (MET)                                         0.00
+  slack (MET)                                         0.01
 
 
-  Startpoint: prev_err_reg[2]
+  Startpoint: setting_reg[1]
               (rising edge-triggered flip-flop clocked by clk)
-  Endpoint: prev_err_reg[2]
+  Endpoint: setting_reg[1]
             (rising edge-triggered flip-flop clocked by clk)
   Path Group: clk
   Path Type: min
 
   Des/Clust/Port     Wire Load Model       Library
   ------------------------------------------------
-  PID                16000                 saed32lvt_tt0p85v25c
+  PB_intf            16000                 saed32lvt_tt0p85v25c
 
   Point                                    Incr       Path
   -----------------------------------------------------------
   clock clk (rise edge)                    0.00       0.00
   clock network delay (ideal)              0.00       0.00
-  prev_err_reg[2]/CLK (DFFARX1_LVT)        0.00       0.00 r
-  prev_err_reg[2]/Q (DFFARX1_LVT)          0.09       0.09 f
-  U11/Y (AO22X1_LVT)                       0.04       0.13 f
-  prev_err_reg[2]/D (DFFARX1_LVT)          0.01       0.14 f
-  data arrival time                                   0.14
+  setting_reg[1]/CLK (DFFASX1_LVT)         0.00       0.00 r
+  setting_reg[1]/Q (DFFASX1_LVT)           0.09       0.09 r
+  U4/Y (XNOR2X1_LVT)                       0.06       0.15 r
+  setting_reg[1]/D (DFFASX1_LVT)           0.01       0.16 r
+  data arrival time                                   0.16
 
   clock clk (rise edge)                    0.00       0.00
   clock network delay (ideal)              0.00       0.00
   clock uncertainty                        0.15       0.15
-  prev_err_reg[2]/CLK (DFFARX1_LVT)        0.00       0.15 r
+  setting_reg[1]/CLK (DFFASX1_LVT)         0.00       0.15 r
   library hold time                       -0.01       0.14
   data required time                                  0.14
   -----------------------------------------------------------
   data required time                                  0.14
-  data arrival time                                  -0.14
+  data arrival time                                  -0.16
   -----------------------------------------------------------
-  slack (MET)                                         0.00
+  slack (MET)                                         0.02
 
 
 1

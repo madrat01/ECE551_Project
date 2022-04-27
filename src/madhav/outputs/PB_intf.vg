@@ -1,0 +1,31 @@
+/////////////////////////////////////////////////////////////
+// Created by: Synopsys DC Expert(TM) in wire load mode
+// Version   : S-2021.06
+// Date      : Tue Apr 26 20:06:21 2022
+/////////////////////////////////////////////////////////////
+
+
+module PB_intf ( clk, rst_n, tgglMd, setting, scale );
+  output [1:0] setting;
+  output [2:0] scale;
+  input clk, rst_n, tgglMd;
+  wire   tgglMd_d2, n1, n2, n3, n4, n5, n6, n7, n8;
+
+  DFFX1_LVT tgglMd_d2_reg ( .D(tgglMd), .CLK(clk), .Q(tgglMd_d2) );
+  DFFX1_LVT tgglMd_d3_reg ( .D(n6), .CLK(clk), .QN(n5) );
+  DFFARX1_LVT \setting_reg[0]  ( .D(n4), .CLK(clk), .RSTB(rst_n), .Q(scale[1])
+         );
+  DFFASX1_LVT \setting_reg[1]  ( .D(n3), .CLK(clk), .SETB(rst_n), .Q(scale[2])
+         );
+  OR2X1_LVT U3 ( .A1(scale[2]), .A2(scale[1]), .Y(scale[0]) );
+  XNOR2X1_LVT U4 ( .A1(scale[2]), .A2(n1), .Y(n3) );
+  NAND2X0_LVT U5 ( .A1(scale[1]), .A2(n2), .Y(n1) );
+  XOR2X1_LVT U6 ( .A1(scale[1]), .A2(n2), .Y(n4) );
+  AND2X1_LVT U7 ( .A1(tgglMd_d2), .A2(n5), .Y(n2) );
+  INVX0_LVT U8 ( .A(tgglMd_d2), .Y(n7) );
+  NBUFFX2_LVT U9 ( .A(n8), .Y(n6) );
+  INVX0_LVT U10 ( .A(n7), .Y(n8) );
+  NBUFFX2_LVT U11 ( .A(scale[2]), .Y(setting[1]) );
+  NBUFFX2_LVT U12 ( .A(scale[1]), .Y(setting[0]) );
+endmodule
+

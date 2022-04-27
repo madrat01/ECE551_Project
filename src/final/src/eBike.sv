@@ -66,12 +66,13 @@ A2D_intf A2D_intf( .clk(clk), .rst_n(rst_n), .batt(batt), .curr(curr), .brake(br
 // Instantiate SensorCondition block to filter & average //
 // readings and provide cadence_vec, and zero_cadence   //
 /////////////////////////////////////////////////////////
-sensorCondition #(FAST_SIM = 1) sensorCondition (.*, .cadence_raw(cadence));
+sensorCondition #(.FAST_SIM(1)) sensorCondition (.*, .cadence_raw(cadence));
 			   
 ///////////////////////////////////////////////////
 // Instantiate PID to determine drive magnitude //
 /////////////////////////////////////////////////		   
-PID #(FAST_SIM = 1) pid (.*);
+PID #(.FAST_SIM(1)) pid (.*);
+//PID_pipe #(.FAST_SIM(1)) pid (.*);
 
 ////////////////////////////////////////////////
 // Instantiate brushless DC motor controller //

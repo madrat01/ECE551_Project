@@ -1,0 +1,259 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -nworst 3
+        -max_paths 3
+Design : desiredDrive
+Version: S-2021.06
+Date   : Tue Apr 26 20:13:20 2022
+****************************************
+
+Operating Conditions: tt0p85v25c   Library: saed32lvt_tt0p85v25c
+Wire Load Model Mode: enclosed
+
+  Startpoint: cadence[1] (input port)
+  Endpoint: target_curr[11]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  desiredDrive       16000                 saed32lvt_tt0p85v25c
+  desiredDrive_DW02_mult_1
+                     ForQA                 saed32lvt_tt0p85v25c
+  desiredDrive_DW02_mult_0
+                     8000                  saed32lvt_tt0p85v25c
+  desiredDrive_DW01_add_0
+                     ForQA                 saed32lvt_tt0p85v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  input external delay                                    0.00       0.00 r
+  cadence[1] (in)                                         0.01       0.01 r
+  U132/Y (OR4X1_LVT)                                      0.09       0.10 r
+  U131/Y (AND2X1_LVT)                                     0.05       0.14 r
+  mult_41_2/A[0] (desiredDrive_DW02_mult_1)               0.00       0.14 r
+  mult_41_2/U29/Y (AND2X1_LVT)                            0.05       0.19 r
+  mult_41_2/U10/Y (AND2X1_LVT)                            0.05       0.24 r
+  mult_41_2/S3_2_1/CO (FADDX1_LVT)                        0.09       0.34 r
+  mult_41_2/S3_3_1/CO (FADDX1_LVT)                        0.09       0.43 r
+  mult_41_2/S3_4_1/CO (FADDX1_LVT)                        0.09       0.53 r
+  mult_41_2/S5_1/CO (FADDX1_LVT)                          0.09       0.62 r
+  mult_41_2/U4/Y (XOR2X1_LVT)                             0.09       0.71 f
+  mult_41_2/U13/Y (NAND2X0_LVT)                           0.05       0.77 r
+  mult_41_2/U11/Y (XNOR2X2_LVT)                           0.11       0.88 f
+  mult_41_2/PRODUCT[8] (desiredDrive_DW02_mult_1)         0.00       0.88 f
+  mult_41_3/B[8] (desiredDrive_DW02_mult_0)               0.00       0.88 f
+  mult_41_3/U211/Y (AND2X1_LVT)                           0.09       0.96 f
+  mult_41_3/U5/Y (XOR2X1_LVT)                             0.09       1.05 r
+  mult_41_3/S2_2_6/CO (FADDX1_LVT)                        0.09       1.14 r
+  mult_41_3/S2_3_6/S (FADDX1_LVT)                         0.12       1.26 f
+  mult_41_3/S2_4_5/S (FADDX1_LVT)                         0.12       1.38 r
+  mult_41_3/S2_5_4/CO (FADDX1_LVT)                        0.09       1.47 r
+  mult_41_3/S2_6_4/S (FADDX1_LVT)                         0.12       1.59 f
+  mult_41_3/S2_7_3/S (FADDX1_LVT)                         0.12       1.71 r
+  mult_41_3/S2_8_2/CO (FADDX1_LVT)                        0.09       1.80 r
+  mult_41_3/S2_9_2/CO (FADDX1_LVT)                        0.10       1.90 r
+  mult_41_3/S2_10_2/CO (FADDX1_LVT)                       0.10       2.00 r
+  mult_41_3/S2_11_2/CO (FADDX1_LVT)                       0.10       2.10 r
+  mult_41_3/S2_12_2/CO (FADDX1_LVT)                       0.10       2.20 r
+  mult_41_3/S2_13_2/CO (FADDX1_LVT)                       0.10       2.30 r
+  mult_41_3/S2_14_2/CO (FADDX1_LVT)                       0.10       2.40 r
+  mult_41_3/S2_15_2/CO (FADDX1_LVT)                       0.10       2.50 r
+  mult_41_3/S2_16_2/CO (FADDX1_LVT)                       0.10       2.60 r
+  mult_41_3/S2_17_2/CO (FADDX1_LVT)                       0.10       2.70 r
+  mult_41_3/S2_18_2/CO (FADDX1_LVT)                       0.10       2.80 r
+  mult_41_3/S2_19_2/CO (FADDX1_LVT)                       0.10       2.90 r
+  mult_41_3/S4_2/S (FADDX1_LVT)                           0.12       3.02 f
+  mult_41_3/U10/Y (XOR2X1_LVT)                            0.10       3.12 r
+  mult_41_3/FS_1/A[20] (desiredDrive_DW01_add_0)          0.00       3.12 r
+  mult_41_3/FS_1/U43/Y (NAND2X0_LVT)                      0.05       3.17 f
+  mult_41_3/FS_1/U35/Y (OA21X1_LVT)                       0.08       3.24 f
+  mult_41_3/FS_1/U30/Y (OA21X1_LVT)                       0.06       3.31 f
+  mult_41_3/FS_1/U28/Y (OA21X1_LVT)                       0.07       3.37 f
+  mult_41_3/FS_1/U7/Y (INVX1_LVT)                         0.04       3.41 r
+  mult_41_3/FS_1/U26/Y (OR2X1_LVT)                        0.05       3.46 r
+  mult_41_3/FS_1/U25/Y (AO22X1_LVT)                       0.06       3.52 r
+  mult_41_3/FS_1/U23/Y (OR2X1_LVT)                        0.05       3.58 r
+  mult_41_3/FS_1/U22/Y (AO22X1_LVT)                       0.06       3.63 r
+  mult_41_3/FS_1/U6/Y (INVX1_LVT)                         0.03       3.67 f
+  mult_41_3/FS_1/U20/Y (AND2X1_LVT)                       0.05       3.71 f
+  mult_41_3/FS_1/U19/Y (OA22X1_LVT)                       0.06       3.77 f
+  mult_41_3/FS_1/U9/Y (XNOR2X1_LVT)                       0.09       3.86 r
+  mult_41_3/FS_1/SUM[27] (desiredDrive_DW01_add_0)        0.00       3.86 r
+  mult_41_3/PRODUCT[29] (desiredDrive_DW02_mult_0)        0.00       3.86 r
+  U112/Y (OR3X1_LVT)                                      0.05       3.91 r
+  U111/Y (AND2X1_LVT)                                     0.06       3.98 r
+  U108/Y (AO21X1_LVT)                                     0.05       4.03 r
+  target_curr[11] (out)                                   0.00       4.03 r
+  data arrival time                                                  4.03
+  --------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: cadence[1] (input port)
+  Endpoint: target_curr[10]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  desiredDrive       16000                 saed32lvt_tt0p85v25c
+  desiredDrive_DW02_mult_1
+                     ForQA                 saed32lvt_tt0p85v25c
+  desiredDrive_DW02_mult_0
+                     8000                  saed32lvt_tt0p85v25c
+  desiredDrive_DW01_add_0
+                     ForQA                 saed32lvt_tt0p85v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  input external delay                                    0.00       0.00 r
+  cadence[1] (in)                                         0.01       0.01 r
+  U132/Y (OR4X1_LVT)                                      0.09       0.10 r
+  U131/Y (AND2X1_LVT)                                     0.05       0.14 r
+  mult_41_2/A[0] (desiredDrive_DW02_mult_1)               0.00       0.14 r
+  mult_41_2/U29/Y (AND2X1_LVT)                            0.05       0.19 r
+  mult_41_2/U10/Y (AND2X1_LVT)                            0.05       0.24 r
+  mult_41_2/S3_2_1/CO (FADDX1_LVT)                        0.09       0.34 r
+  mult_41_2/S3_3_1/CO (FADDX1_LVT)                        0.09       0.43 r
+  mult_41_2/S3_4_1/CO (FADDX1_LVT)                        0.09       0.53 r
+  mult_41_2/S5_1/CO (FADDX1_LVT)                          0.09       0.62 r
+  mult_41_2/U4/Y (XOR2X1_LVT)                             0.09       0.71 f
+  mult_41_2/U13/Y (NAND2X0_LVT)                           0.05       0.77 r
+  mult_41_2/U11/Y (XNOR2X2_LVT)                           0.11       0.88 f
+  mult_41_2/PRODUCT[8] (desiredDrive_DW02_mult_1)         0.00       0.88 f
+  mult_41_3/B[8] (desiredDrive_DW02_mult_0)               0.00       0.88 f
+  mult_41_3/U211/Y (AND2X1_LVT)                           0.09       0.96 f
+  mult_41_3/U5/Y (XOR2X1_LVT)                             0.09       1.05 r
+  mult_41_3/S2_2_6/CO (FADDX1_LVT)                        0.09       1.14 r
+  mult_41_3/S2_3_6/S (FADDX1_LVT)                         0.12       1.26 f
+  mult_41_3/S2_4_5/S (FADDX1_LVT)                         0.12       1.38 r
+  mult_41_3/S2_5_4/CO (FADDX1_LVT)                        0.09       1.47 r
+  mult_41_3/S2_6_4/S (FADDX1_LVT)                         0.12       1.59 f
+  mult_41_3/S2_7_3/S (FADDX1_LVT)                         0.12       1.71 r
+  mult_41_3/S2_8_2/CO (FADDX1_LVT)                        0.09       1.80 r
+  mult_41_3/S2_9_2/CO (FADDX1_LVT)                        0.10       1.90 r
+  mult_41_3/S2_10_2/CO (FADDX1_LVT)                       0.10       2.00 r
+  mult_41_3/S2_11_2/CO (FADDX1_LVT)                       0.10       2.10 r
+  mult_41_3/S2_12_2/CO (FADDX1_LVT)                       0.10       2.20 r
+  mult_41_3/S2_13_2/CO (FADDX1_LVT)                       0.10       2.30 r
+  mult_41_3/S2_14_2/CO (FADDX1_LVT)                       0.10       2.40 r
+  mult_41_3/S2_15_2/CO (FADDX1_LVT)                       0.10       2.50 r
+  mult_41_3/S2_16_2/CO (FADDX1_LVT)                       0.10       2.60 r
+  mult_41_3/S2_17_2/CO (FADDX1_LVT)                       0.10       2.70 r
+  mult_41_3/S2_18_2/CO (FADDX1_LVT)                       0.10       2.80 r
+  mult_41_3/S2_19_2/CO (FADDX1_LVT)                       0.10       2.90 r
+  mult_41_3/S4_2/S (FADDX1_LVT)                           0.12       3.02 f
+  mult_41_3/U10/Y (XOR2X1_LVT)                            0.10       3.12 r
+  mult_41_3/FS_1/A[20] (desiredDrive_DW01_add_0)          0.00       3.12 r
+  mult_41_3/FS_1/U43/Y (NAND2X0_LVT)                      0.05       3.17 f
+  mult_41_3/FS_1/U35/Y (OA21X1_LVT)                       0.08       3.24 f
+  mult_41_3/FS_1/U30/Y (OA21X1_LVT)                       0.06       3.31 f
+  mult_41_3/FS_1/U28/Y (OA21X1_LVT)                       0.07       3.37 f
+  mult_41_3/FS_1/U7/Y (INVX1_LVT)                         0.04       3.41 r
+  mult_41_3/FS_1/U26/Y (OR2X1_LVT)                        0.05       3.46 r
+  mult_41_3/FS_1/U25/Y (AO22X1_LVT)                       0.06       3.52 r
+  mult_41_3/FS_1/U23/Y (OR2X1_LVT)                        0.05       3.58 r
+  mult_41_3/FS_1/U22/Y (AO22X1_LVT)                       0.06       3.63 r
+  mult_41_3/FS_1/U6/Y (INVX1_LVT)                         0.03       3.67 f
+  mult_41_3/FS_1/U20/Y (AND2X1_LVT)                       0.05       3.71 f
+  mult_41_3/FS_1/U19/Y (OA22X1_LVT)                       0.06       3.77 f
+  mult_41_3/FS_1/U9/Y (XNOR2X1_LVT)                       0.09       3.86 r
+  mult_41_3/FS_1/SUM[27] (desiredDrive_DW01_add_0)        0.00       3.86 r
+  mult_41_3/PRODUCT[29] (desiredDrive_DW02_mult_0)        0.00       3.86 r
+  U112/Y (OR3X1_LVT)                                      0.05       3.91 r
+  U111/Y (AND2X1_LVT)                                     0.06       3.98 r
+  U109/Y (AO21X1_LVT)                                     0.05       4.03 r
+  target_curr[10] (out)                                   0.00       4.03 r
+  data arrival time                                                  4.03
+  --------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: cadence[1] (input port)
+  Endpoint: target_curr[11]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  desiredDrive       16000                 saed32lvt_tt0p85v25c
+  desiredDrive_DW02_mult_1
+                     ForQA                 saed32lvt_tt0p85v25c
+  desiredDrive_DW02_mult_0
+                     8000                  saed32lvt_tt0p85v25c
+  desiredDrive_DW01_add_0
+                     ForQA                 saed32lvt_tt0p85v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  input external delay                                    0.00       0.00 r
+  cadence[1] (in)                                         0.01       0.01 r
+  U132/Y (OR4X1_LVT)                                      0.09       0.10 r
+  U131/Y (AND2X1_LVT)                                     0.05       0.14 r
+  mult_41_2/A[0] (desiredDrive_DW02_mult_1)               0.00       0.14 r
+  mult_41_2/U29/Y (AND2X1_LVT)                            0.05       0.19 r
+  mult_41_2/U10/Y (AND2X1_LVT)                            0.05       0.24 r
+  mult_41_2/S3_2_1/CO (FADDX1_LVT)                        0.09       0.34 r
+  mult_41_2/S3_3_1/CO (FADDX1_LVT)                        0.09       0.43 r
+  mult_41_2/S3_4_1/CO (FADDX1_LVT)                        0.09       0.53 r
+  mult_41_2/S5_1/CO (FADDX1_LVT)                          0.09       0.62 r
+  mult_41_2/U4/Y (XOR2X1_LVT)                             0.09       0.71 f
+  mult_41_2/U13/Y (NAND2X0_LVT)                           0.05       0.77 r
+  mult_41_2/U11/Y (XNOR2X2_LVT)                           0.11       0.88 f
+  mult_41_2/PRODUCT[8] (desiredDrive_DW02_mult_1)         0.00       0.88 f
+  mult_41_3/B[8] (desiredDrive_DW02_mult_0)               0.00       0.88 f
+  mult_41_3/U211/Y (AND2X1_LVT)                           0.09       0.96 f
+  mult_41_3/U5/Y (XOR2X1_LVT)                             0.09       1.05 r
+  mult_41_3/S2_2_6/CO (FADDX1_LVT)                        0.09       1.14 r
+  mult_41_3/S2_3_6/S (FADDX1_LVT)                         0.12       1.26 f
+  mult_41_3/S2_4_5/S (FADDX1_LVT)                         0.12       1.38 r
+  mult_41_3/S2_5_4/CO (FADDX1_LVT)                        0.09       1.47 r
+  mult_41_3/S2_6_4/CO (FADDX1_LVT)                        0.10       1.57 r
+  mult_41_3/S2_7_4/S (FADDX1_LVT)                         0.12       1.69 f
+  mult_41_3/S2_8_3/S (FADDX1_LVT)                         0.12       1.81 r
+  mult_41_3/S2_9_2/CO (FADDX1_LVT)                        0.09       1.90 r
+  mult_41_3/S2_10_2/CO (FADDX1_LVT)                       0.10       2.00 r
+  mult_41_3/S2_11_2/CO (FADDX1_LVT)                       0.10       2.10 r
+  mult_41_3/S2_12_2/CO (FADDX1_LVT)                       0.10       2.20 r
+  mult_41_3/S2_13_2/CO (FADDX1_LVT)                       0.10       2.30 r
+  mult_41_3/S2_14_2/CO (FADDX1_LVT)                       0.10       2.40 r
+  mult_41_3/S2_15_2/CO (FADDX1_LVT)                       0.10       2.50 r
+  mult_41_3/S2_16_2/CO (FADDX1_LVT)                       0.10       2.60 r
+  mult_41_3/S2_17_2/CO (FADDX1_LVT)                       0.10       2.70 r
+  mult_41_3/S2_18_2/CO (FADDX1_LVT)                       0.10       2.80 r
+  mult_41_3/S2_19_2/CO (FADDX1_LVT)                       0.10       2.90 r
+  mult_41_3/S4_2/S (FADDX1_LVT)                           0.12       3.02 f
+  mult_41_3/U10/Y (XOR2X1_LVT)                            0.10       3.12 r
+  mult_41_3/FS_1/A[20] (desiredDrive_DW01_add_0)          0.00       3.12 r
+  mult_41_3/FS_1/U43/Y (NAND2X0_LVT)                      0.05       3.17 f
+  mult_41_3/FS_1/U35/Y (OA21X1_LVT)                       0.08       3.24 f
+  mult_41_3/FS_1/U30/Y (OA21X1_LVT)                       0.06       3.31 f
+  mult_41_3/FS_1/U28/Y (OA21X1_LVT)                       0.07       3.37 f
+  mult_41_3/FS_1/U7/Y (INVX1_LVT)                         0.04       3.41 r
+  mult_41_3/FS_1/U26/Y (OR2X1_LVT)                        0.05       3.46 r
+  mult_41_3/FS_1/U25/Y (AO22X1_LVT)                       0.06       3.52 r
+  mult_41_3/FS_1/U23/Y (OR2X1_LVT)                        0.05       3.58 r
+  mult_41_3/FS_1/U22/Y (AO22X1_LVT)                       0.06       3.63 r
+  mult_41_3/FS_1/U6/Y (INVX1_LVT)                         0.03       3.67 f
+  mult_41_3/FS_1/U20/Y (AND2X1_LVT)                       0.05       3.71 f
+  mult_41_3/FS_1/U19/Y (OA22X1_LVT)                       0.06       3.77 f
+  mult_41_3/FS_1/U9/Y (XNOR2X1_LVT)                       0.09       3.86 r
+  mult_41_3/FS_1/SUM[27] (desiredDrive_DW01_add_0)        0.00       3.86 r
+  mult_41_3/PRODUCT[29] (desiredDrive_DW02_mult_0)        0.00       3.86 r
+  U112/Y (OR3X1_LVT)                                      0.05       3.91 r
+  U111/Y (AND2X1_LVT)                                     0.06       3.98 r
+  U108/Y (AO21X1_LVT)                                     0.05       4.03 r
+  target_curr[11] (out)                                   0.00       4.03 r
+  data arrival time                                                  4.03
+  --------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+1

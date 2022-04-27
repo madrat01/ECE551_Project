@@ -1,4 +1,4 @@
-module desiredDrive (
+module desiredDrive_pipe (
 	input logic					clk,
 	input logic [11:0]			avg_torque,
 	input logic [4:0]			cadence,

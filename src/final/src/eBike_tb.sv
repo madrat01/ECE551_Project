@@ -65,7 +65,7 @@ module eBike_tb();
   //////////////////////////////////////////////////////////
 			 
   initial begin
-    <your magic here>
+    //<your magic here>
 	
   end
   

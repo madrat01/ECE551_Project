@@ -1,0 +1,220 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -nworst 3
+        -max_paths 3
+Design : eBike
+Version: S-2021.06
+Date   : Tue Apr 26 20:58:04 2022
+****************************************
+
+Operating Conditions: tt0p85v25c   Library: saed32lvt_tt0p85v25c
+Wire Load Model Mode: enclosed
+
+  Startpoint: sensorCondition/avg_torque_accum_reg[1]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: sensorCondition/avg_torque_accum_reg[16]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  eBike              16000                 saed32lvt_tt0p85v25c
+  eBike_DW02_mult_0  8000                  saed32lvt_tt0p85v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  sensorCondition/avg_torque_accum_reg[1]/CLK (DFFARX1_LVT)
+                                                          0.00       0.00 r
+  sensorCondition/avg_torque_accum_reg[1]/Q (DFFARX1_LVT)
+                                                          0.11       0.11 f
+  sensorCondition/mult_95/A[1] (eBike_DW02_mult_0)        0.00       0.11 f
+  sensorCondition/mult_95/U4/Y (XOR2X1_LVT)               0.11       0.22 r
+  sensorCondition/mult_95/S2_2_2/CO (FADDX1_LVT)          0.09       0.31 r
+  sensorCondition/mult_95/S2_3_2/CO (FADDX1_LVT)          0.10       0.41 r
+  sensorCondition/mult_95/S2_4_2/CO (FADDX1_LVT)          0.10       0.51 r
+  sensorCondition/mult_95/S2_5_2/CO (FADDX1_LVT)          0.10       0.61 r
+  sensorCondition/mult_95/S2_6_2/CO (FADDX1_LVT)          0.10       0.71 r
+  sensorCondition/mult_95/S2_7_2/CO (FADDX1_LVT)          0.10       0.81 r
+  sensorCondition/mult_95/S2_8_2/CO (FADDX1_LVT)          0.10       0.91 r
+  sensorCondition/mult_95/S2_9_2/CO (FADDX1_LVT)          0.10       1.01 r
+  sensorCondition/mult_95/S2_10_2/CO (FADDX1_LVT)         0.10       1.11 r
+  sensorCondition/mult_95/S2_11_2/CO (FADDX1_LVT)         0.10       1.21 r
+  sensorCondition/mult_95/S2_12_2/CO (FADDX1_LVT)         0.10       1.31 r
+  sensorCondition/mult_95/S2_13_2/CO (FADDX1_LVT)         0.10       1.41 r
+  sensorCondition/mult_95/S2_14_2/CO (FADDX1_LVT)         0.10       1.51 r
+  sensorCondition/mult_95/S2_15_2/CO (FADDX1_LVT)         0.10       1.61 r
+  sensorCondition/mult_95/S4_2/S (FADDX1_LVT)             0.13       1.73 f
+  sensorCondition/mult_95/U3/Y (XOR2X2_LVT)               0.10       1.83 r
+  sensorCondition/mult_95/U8/Y (AND2X1_LVT)               0.05       1.87 r
+  sensorCondition/mult_95/U24/Y (OR2X1_LVT)               0.04       1.92 r
+  sensorCondition/mult_95/U25/Y (AO22X1_LVT)              0.05       1.97 r
+  sensorCondition/mult_95/U10/Y (OR2X1_LVT)               0.05       2.02 r
+  sensorCondition/mult_95/U21/Y (AOI22X1_LVT)             0.07       2.08 f
+  sensorCondition/mult_95/U19/Y (XOR2X1_LVT)              0.08       2.17 r
+  sensorCondition/mult_95/PRODUCT[21] (eBike_DW02_mult_0)
+                                                          0.00       2.17 r
+  sensorCondition/add_95/A[16] (eBike_DW01_add_6)         0.00       2.17 r
+  sensorCondition/add_95/U1/Y (XNOR2X1_LVT)               0.08       2.25 r
+  sensorCondition/add_95/SUM[16] (eBike_DW01_add_6)       0.00       2.25 r
+  U221/Y (AO22X1_LVT)                                     0.05       2.30 r
+  sensorCondition/avg_torque_accum_reg[16]/D (DFFARX2_LVT)
+                                                          0.01       2.31 r
+  data arrival time                                                  2.31
+
+  clock clk (rise edge)                                   2.50       2.50
+  clock network delay (ideal)                             0.00       2.50
+  clock uncertainty                                      -0.15       2.35
+  sensorCondition/avg_torque_accum_reg[16]/CLK (DFFARX2_LVT)
+                                                          0.00       2.35 r
+  library setup time                                     -0.03       2.32
+  data required time                                                 2.32
+  --------------------------------------------------------------------------
+  data required time                                                 2.32
+  data arrival time                                                 -2.31
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.00
+
+
+  Startpoint: sensorCondition/avg_torque_accum_reg[1]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: sensorCondition/avg_torque_accum_reg[16]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  eBike              16000                 saed32lvt_tt0p85v25c
+  eBike_DW02_mult_0  8000                  saed32lvt_tt0p85v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  sensorCondition/avg_torque_accum_reg[1]/CLK (DFFARX1_LVT)
+                                                          0.00       0.00 r
+  sensorCondition/avg_torque_accum_reg[1]/Q (DFFARX1_LVT)
+                                                          0.11       0.11 f
+  sensorCondition/mult_95/A[1] (eBike_DW02_mult_0)        0.00       0.11 f
+  sensorCondition/mult_95/U5/Y (AND2X4_LVT)               0.07       0.18 f
+  sensorCondition/mult_95/S3_2_3/S (FADDX1_LVT)           0.13       0.31 r
+  sensorCondition/mult_95/S2_3_2/CO (FADDX1_LVT)          0.09       0.40 r
+  sensorCondition/mult_95/S2_4_2/CO (FADDX1_LVT)          0.10       0.50 r
+  sensorCondition/mult_95/S2_5_2/CO (FADDX1_LVT)          0.10       0.60 r
+  sensorCondition/mult_95/S2_6_2/CO (FADDX1_LVT)          0.10       0.70 r
+  sensorCondition/mult_95/S2_7_2/CO (FADDX1_LVT)          0.10       0.80 r
+  sensorCondition/mult_95/S2_8_2/CO (FADDX1_LVT)          0.10       0.90 r
+  sensorCondition/mult_95/S2_9_2/CO (FADDX1_LVT)          0.10       1.00 r
+  sensorCondition/mult_95/S2_10_2/CO (FADDX1_LVT)         0.10       1.10 r
+  sensorCondition/mult_95/S2_11_2/CO (FADDX1_LVT)         0.10       1.19 r
+  sensorCondition/mult_95/S2_12_2/CO (FADDX1_LVT)         0.10       1.29 r
+  sensorCondition/mult_95/S2_13_2/CO (FADDX1_LVT)         0.10       1.39 r
+  sensorCondition/mult_95/S2_14_2/CO (FADDX1_LVT)         0.10       1.49 r
+  sensorCondition/mult_95/S2_15_2/CO (FADDX1_LVT)         0.10       1.59 r
+  sensorCondition/mult_95/S4_2/S (FADDX1_LVT)             0.13       1.72 f
+  sensorCondition/mult_95/U3/Y (XOR2X2_LVT)               0.10       1.81 r
+  sensorCondition/mult_95/U8/Y (AND2X1_LVT)               0.05       1.86 r
+  sensorCondition/mult_95/U24/Y (OR2X1_LVT)               0.04       1.90 r
+  sensorCondition/mult_95/U25/Y (AO22X1_LVT)              0.05       1.96 r
+  sensorCondition/mult_95/U10/Y (OR2X1_LVT)               0.05       2.01 r
+  sensorCondition/mult_95/U21/Y (AOI22X1_LVT)             0.07       2.07 f
+  sensorCondition/mult_95/U19/Y (XOR2X1_LVT)              0.08       2.15 r
+  sensorCondition/mult_95/PRODUCT[21] (eBike_DW02_mult_0)
+                                                          0.00       2.15 r
+  sensorCondition/add_95/A[16] (eBike_DW01_add_6)         0.00       2.15 r
+  sensorCondition/add_95/U1/Y (XNOR2X1_LVT)               0.08       2.24 r
+  sensorCondition/add_95/SUM[16] (eBike_DW01_add_6)       0.00       2.24 r
+  U221/Y (AO22X1_LVT)                                     0.05       2.29 r
+  sensorCondition/avg_torque_accum_reg[16]/D (DFFARX2_LVT)
+                                                          0.01       2.30 r
+  data arrival time                                                  2.30
+
+  clock clk (rise edge)                                   2.50       2.50
+  clock network delay (ideal)                             0.00       2.50
+  clock uncertainty                                      -0.15       2.35
+  sensorCondition/avg_torque_accum_reg[16]/CLK (DFFARX2_LVT)
+                                                          0.00       2.35 r
+  library setup time                                     -0.03       2.32
+  data required time                                                 2.32
+  --------------------------------------------------------------------------
+  data required time                                                 2.32
+  data arrival time                                                 -2.30
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.01
+
+
+  Startpoint: sensorCondition/avg_torque_accum_reg[0]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: sensorCondition/avg_torque_accum_reg[16]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  eBike              16000                 saed32lvt_tt0p85v25c
+  eBike_DW02_mult_0  8000                  saed32lvt_tt0p85v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  sensorCondition/avg_torque_accum_reg[0]/CLK (DFFARX1_LVT)
+                                                          0.00       0.00 r
+  sensorCondition/avg_torque_accum_reg[0]/Q (DFFARX1_LVT)
+                                                          0.11       0.11 f
+  sensorCondition/mult_95/A[0] (eBike_DW02_mult_0)        0.00       0.11 f
+  sensorCondition/mult_95/U4/Y (XOR2X1_LVT)               0.10       0.21 r
+  sensorCondition/mult_95/S2_2_2/CO (FADDX1_LVT)          0.09       0.30 r
+  sensorCondition/mult_95/S2_3_2/CO (FADDX1_LVT)          0.10       0.40 r
+  sensorCondition/mult_95/S2_4_2/CO (FADDX1_LVT)          0.10       0.50 r
+  sensorCondition/mult_95/S2_5_2/CO (FADDX1_LVT)          0.10       0.60 r
+  sensorCondition/mult_95/S2_6_2/CO (FADDX1_LVT)          0.10       0.69 r
+  sensorCondition/mult_95/S2_7_2/CO (FADDX1_LVT)          0.10       0.79 r
+  sensorCondition/mult_95/S2_8_2/CO (FADDX1_LVT)          0.10       0.89 r
+  sensorCondition/mult_95/S2_9_2/CO (FADDX1_LVT)          0.10       0.99 r
+  sensorCondition/mult_95/S2_10_2/CO (FADDX1_LVT)         0.10       1.09 r
+  sensorCondition/mult_95/S2_11_2/CO (FADDX1_LVT)         0.10       1.19 r
+  sensorCondition/mult_95/S2_12_2/CO (FADDX1_LVT)         0.10       1.29 r
+  sensorCondition/mult_95/S2_13_2/CO (FADDX1_LVT)         0.10       1.39 r
+  sensorCondition/mult_95/S2_14_2/CO (FADDX1_LVT)         0.10       1.49 r
+  sensorCondition/mult_95/S2_15_2/CO (FADDX1_LVT)         0.10       1.59 r
+  sensorCondition/mult_95/S4_2/S (FADDX1_LVT)             0.13       1.72 f
+  sensorCondition/mult_95/U3/Y (XOR2X2_LVT)               0.10       1.81 r
+  sensorCondition/mult_95/U8/Y (AND2X1_LVT)               0.05       1.86 r
+  sensorCondition/mult_95/U24/Y (OR2X1_LVT)               0.04       1.90 r
+  sensorCondition/mult_95/U25/Y (AO22X1_LVT)              0.05       1.96 r
+  sensorCondition/mult_95/U10/Y (OR2X1_LVT)               0.05       2.00 r
+  sensorCondition/mult_95/U21/Y (AOI22X1_LVT)             0.07       2.07 f
+  sensorCondition/mult_95/U19/Y (XOR2X1_LVT)              0.08       2.15 r
+  sensorCondition/mult_95/PRODUCT[21] (eBike_DW02_mult_0)
+                                                          0.00       2.15 r
+  sensorCondition/add_95/A[16] (eBike_DW01_add_6)         0.00       2.15 r
+  sensorCondition/add_95/U1/Y (XNOR2X1_LVT)               0.08       2.24 r
+  sensorCondition/add_95/SUM[16] (eBike_DW01_add_6)       0.00       2.24 r
+  U221/Y (AO22X1_LVT)                                     0.05       2.29 r
+  sensorCondition/avg_torque_accum_reg[16]/D (DFFARX2_LVT)
+                                                          0.01       2.30 r
+  data arrival time                                                  2.30
+
+  clock clk (rise edge)                                   2.50       2.50
+  clock network delay (ideal)                             0.00       2.50
+  clock uncertainty                                      -0.15       2.35
+  sensorCondition/avg_torque_accum_reg[16]/CLK (DFFARX2_LVT)
+                                                          0.00       2.35 r
+  library setup time                                     -0.03       2.32
+  data required time                                                 2.32
+  --------------------------------------------------------------------------
+  data required time                                                 2.32
+  data arrival time                                                 -2.30
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.02
+
+
+1

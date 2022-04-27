@@ -7,13 +7,47 @@ Report : timing
         -max_paths 3
 Design : sensorCondition
 Version: S-2021.06
-Date   : Tue Apr 26 12:52:31 2022
+Date   : Tue Apr 26 20:53:19 2022
 ****************************************
 
 Operating Conditions: tt0p85v25c   Library: saed32lvt_tt0p85v25c
 Wire Load Model Mode: enclosed
 
-  Startpoint: telemetry/uart_tx/n003_reg[6]
+  Startpoint: telemetry/uart_tx/n003_reg[8]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: telemetry/uart_tx/n003_reg[7]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  sensorCondition    16000                 saed32lvt_tt0p85v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  telemetry/uart_tx/n003_reg[8]/CLK (DFFASX1_LVT)         0.00       0.00 r
+  telemetry/uart_tx/n003_reg[8]/Q (DFFASX1_LVT)           0.09       0.09 f
+  U87/Y (AO222X1_LVT)                                     0.04       0.13 f
+  telemetry/uart_tx/n003_reg[7]/D (DFFASX1_LVT)           0.01       0.14 f
+  data arrival time                                                  0.14
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.15       0.15
+  telemetry/uart_tx/n003_reg[7]/CLK (DFFASX1_LVT)         0.00       0.15 r
+  library hold time                                      -0.01       0.14
+  data required time                                                 0.14
+  --------------------------------------------------------------------------
+  data required time                                                 0.14
+  data arrival time                                                 -0.14
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.00
+
+
+  Startpoint: telemetry/uart_tx/n003_reg[7]
               (rising edge-triggered flip-flop clocked by clk)
   Endpoint: telemetry/uart_tx/n003_reg[6]
             (rising edge-triggered flip-flop clocked by clk)
@@ -28,9 +62,9 @@ Wire Load Model Mode: enclosed
   --------------------------------------------------------------------------
   clock clk (rise edge)                                   0.00       0.00
   clock network delay (ideal)                             0.00       0.00
-  telemetry/uart_tx/n003_reg[6]/CLK (DFFASX1_LVT)         0.00       0.00 r
-  telemetry/uart_tx/n003_reg[6]/Q (DFFASX1_LVT)           0.09       0.09 f
-  U739/Y (AO222X1_LVT)                                    0.04       0.13 f
+  telemetry/uart_tx/n003_reg[7]/CLK (DFFASX1_LVT)         0.00       0.00 r
+  telemetry/uart_tx/n003_reg[7]/Q (DFFASX1_LVT)           0.09       0.09 f
+  U90/Y (AO222X1_LVT)                                     0.04       0.13 f
   telemetry/uart_tx/n003_reg[6]/D (DFFASX1_LVT)           0.01       0.14 f
   data arrival time                                                  0.14
 
@@ -64,8 +98,8 @@ Wire Load Model Mode: enclosed
   clock network delay (ideal)                             0.00       0.00
   telemetry/transmiterFSM_reg[2]/CLK (DFFARX1_LVT)        0.00       0.00 r
   telemetry/transmiterFSM_reg[2]/Q (DFFARX1_LVT)          0.09       0.09 f
-  U430/Y (INVX0_LVT)                                      0.03       0.12 r
-  U431/Y (INVX0_LVT)                                      0.02       0.14 f
+  U440/Y (INVX0_LVT)                                      0.03       0.12 r
+  U441/Y (INVX0_LVT)                                      0.02       0.14 f
   telemetry/transmiterFSM_dly_reg[2]/D (DFFX1_LVT)        0.01       0.15 f
   data arrival time                                                  0.15
 
@@ -78,41 +112,6 @@ Wire Load Model Mode: enclosed
   --------------------------------------------------------------------------
   data required time                                                 0.15
   data arrival time                                                 -0.15
-  --------------------------------------------------------------------------
-  slack (MET)                                                        0.00
-
-
-  Startpoint: telemetry/transmiterFSM_reg[2]
-              (rising edge-triggered flip-flop clocked by clk)
-  Endpoint: telemetry/transmiterFSM_dly_reg[2]
-            (rising edge-triggered flip-flop clocked by clk)
-  Path Group: clk
-  Path Type: min
-
-  Des/Clust/Port     Wire Load Model       Library
-  ------------------------------------------------
-  sensorCondition    16000                 saed32lvt_tt0p85v25c
-
-  Point                                                   Incr       Path
-  --------------------------------------------------------------------------
-  clock clk (rise edge)                                   0.00       0.00
-  clock network delay (ideal)                             0.00       0.00
-  telemetry/transmiterFSM_reg[2]/CLK (DFFARX1_LVT)        0.00       0.00 r
-  telemetry/transmiterFSM_reg[2]/Q (DFFARX1_LVT)          0.09       0.09 r
-  U430/Y (INVX0_LVT)                                      0.02       0.11 f
-  U431/Y (INVX0_LVT)                                      0.02       0.13 r
-  telemetry/transmiterFSM_dly_reg[2]/D (DFFX1_LVT)        0.01       0.14 r
-  data arrival time                                                  0.14
-
-  clock clk (rise edge)                                   0.00       0.00
-  clock network delay (ideal)                             0.00       0.00
-  clock uncertainty                                       0.15       0.15
-  telemetry/transmiterFSM_dly_reg[2]/CLK (DFFX1_LVT)      0.00       0.15 r
-  library hold time                                      -0.01       0.14
-  data required time                                                 0.14
-  --------------------------------------------------------------------------
-  data required time                                                 0.14
-  data arrival time                                                 -0.14
   --------------------------------------------------------------------------
   slack (MET)                                                        0.00
 

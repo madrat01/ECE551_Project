@@ -3,7 +3,7 @@
 Report : area
 Design : sensorCondition
 Version: S-2021.06
-Date   : Mon Apr 25 23:25:04 2022
+Date   : Tue Apr 26 12:52:31 2022
 ****************************************
 
 Information: Updating design information... (UID-85)
@@ -12,20 +12,20 @@ Library(s) Used:
     saed32lvt_tt0p85v25c (File: /cae/apps/data/saed32_edk-2018/lib/stdcell_lvt/db_nldm/saed32lvt_tt0p85v25c.db)
 
 Number of ports:                          742
-Number of nets:                          2939
-Number of cells:                         1931
-Number of combinational cells:           1755
+Number of nets:                          3070
+Number of cells:                         2108
+Number of combinational cells:           1932
 Number of sequential cells:               142
 Number of macros/black boxes:               0
-Number of buf/inv:                        246
-Number of references:                      55
+Number of buf/inv:                        289
+Number of references:                      60
 
-Combinational area:               4821.619977
-Buf/Inv area:                      390.365191
-Noncombinational area:            1009.459986
+Combinational area:               5333.720138
+Buf/Inv area:                      473.216136
+Noncombinational area:            1008.443410
 Macro/Black Box area:                0.000000
-Net Interconnect area:            1008.874102
+Net Interconnect area:            1112.283913
 
-Total cell area:                  5831.079963
-Total area:                       6839.954065
+Total cell area:                  6342.163548
+Total area:                       7454.447461
 1

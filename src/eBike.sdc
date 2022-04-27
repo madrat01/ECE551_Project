@@ -1,8 +1,8 @@
 # Read all files
-read_file -format sverilog {sensorCondition.sv desiredDrive.sv cadence_filt.sv cadence_meas.sv cadence_LU.sv telemetry.sv UART_tx.sv}
+read_file -format sverilog {A2D_intf.sv brushless.sv cadence_filt.sv cadence_LU.sv cadence_meas.sv sensorCondition.sv desiredDrive.sv eBike.sv inertial_integrator.sv inert_intf.sv mtr_drv.sv nonoverlap.sv PB_intf.sv PID.sv PWM.sv reset_synch.sv eBike.sv SPI_mnrch.sv telemetry.sv UART_tx.sv}
 
-# Set current design to telemetry (top module)
-current_design sensorCondition
+# Set current design to eBike (top module)
+current_design eBike
 
 # create clock of 400 MHz
 create_clock -name "clk" -period 2.5 -waveform {0 1} clk
@@ -36,15 +36,15 @@ set_fix_hold clk
 
 ungroup -all -flatten
 
-compile -map_effort high
+compile
 
 check_design
 
-report_area > sensorCondition_area.txt
+report_area > eBike_area.txt
 
 # min and max timing reports
-report_timing -path full -delay max -nworst 3 > sensorCondition_max_timing.txt
-report_timing -path full -delay min -nworst 3 > sensorCondition_min_timing.txt
+report_timing -path full -delay max -nworst 3 > eBike_max_timing.txt
+report_timing -path full -delay min -nworst 3 > eBike_min_timing.txt
 
 # net list
-write -format verilog sensorCondition -output sensorCondition.vg
+write -format verilog eBike -output eBike.vg

@@ -1,8 +1,8 @@
 # Read all files
-read_file -format sverilog {sensorCondition.sv desiredDrive.sv cadence_filt.sv cadence_meas.sv cadence_LU.sv telemetry.sv UART_tx.sv}
+read_file -format sverilog {PB_intf.sv}
 
-# Set current design to telemetry (top module)
-current_design sensorCondition
+# Set current design to PB_intf (top module)
+current_design PB_intf
 
 # create clock of 400 MHz
 create_clock -name "clk" -period 2.5 -waveform {0 1} clk
@@ -36,15 +36,15 @@ set_fix_hold clk
 
 ungroup -all -flatten
 
-compile -map_effort high
+compile
 
 check_design
 
-report_area > sensorCondition_area.txt
+report_area > PB_intf_area.txt
 
 # min and max timing reports
-report_timing -path full -delay max -nworst 3 > sensorCondition_max_timing.txt
-report_timing -path full -delay min -nworst 3 > sensorCondition_min_timing.txt
+report_timing -path full -delay max -nworst 3 > PB_intf_max_timing.txt
+report_timing -path full -delay min -nworst 3 > PB_intf_min_timing.txt
 
 # net list
-write -format verilog sensorCondition -output sensorCondition.vg
+write -format verilog PB_intf -output PB_intf.vg
