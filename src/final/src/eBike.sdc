@@ -5,7 +5,7 @@ read_file -format sverilog {A2D_intf.sv brushless.sv cadence_filt.sv cadence_LU.
 current_design eBike
 
 # create clock of 400 MHz
-create_clock -name "clk" -period 2.5 -waveform {0 1} clk
+create_clock -name "clk" -period 2.5 -waveform {0 1.25} clk
 
 # Don't touch clk, else synopsys will buffer it
 set_dont_touch_network [find port clk]
@@ -36,7 +36,7 @@ set_fix_hold clk
 
 ungroup -all -flatten
 
-compile
+compile -map_effort high
 
 check_design
 

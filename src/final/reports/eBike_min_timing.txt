@@ -7,7 +7,7 @@ Report : timing
         -max_paths 3
 Design : eBike
 Version: S-2021.06
-Date   : Tue Apr 26 20:58:04 2022
+Date   : Thu Apr 28 18:35:03 2022
 ****************************************
 
 Operating Conditions: tt0p85v25c   Library: saed32lvt_tt0p85v25c
@@ -30,7 +30,7 @@ Wire Load Model Mode: enclosed
   clock network delay (ideal)                             0.00       0.00
   A2D_intf/SPI_DUT/resp_reg[8]/CLK (DFFARX1_LVT)          0.00       0.00 r
   A2D_intf/SPI_DUT/resp_reg[8]/Q (DFFARX1_LVT)            0.09       0.09 f
-  U756/Y (AO22X1_LVT)                                     0.04       0.13 f
+  U741/Y (AO22X1_LVT)                                     0.04       0.13 f
   A2D_intf/curr_reg[8]/D (DFFARX1_LVT)                    0.01       0.14 f
   data arrival time                                                  0.14
 
@@ -64,7 +64,7 @@ Wire Load Model Mode: enclosed
   clock network delay (ideal)                             0.00       0.00
   A2D_intf/SPI_DUT/resp_reg[9]/CLK (DFFARX1_LVT)          0.00       0.00 r
   A2D_intf/SPI_DUT/resp_reg[9]/Q (DFFARX1_LVT)            0.09       0.09 f
-  U749/Y (AO22X1_LVT)                                     0.04       0.13 f
+  U734/Y (AO22X1_LVT)                                     0.04       0.13 f
   A2D_intf/curr_reg[9]/D (DFFARX1_LVT)                    0.01       0.14 f
   data arrival time                                                  0.14
 
@@ -98,7 +98,7 @@ Wire Load Model Mode: enclosed
   clock network delay (ideal)                             0.00       0.00
   A2D_intf/SPI_DUT/resp_reg[10]/CLK (DFFARX1_LVT)         0.00       0.00 r
   A2D_intf/SPI_DUT/resp_reg[10]/Q (DFFARX1_LVT)           0.09       0.09 f
-  U742/Y (AO22X1_LVT)                                     0.04       0.13 f
+  U727/Y (AO22X1_LVT)                                     0.04       0.13 f
   A2D_intf/curr_reg[10]/D (DFFARX1_LVT)                   0.01       0.14 f
   data arrival time                                                  0.14
 

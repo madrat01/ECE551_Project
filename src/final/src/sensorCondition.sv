@@ -34,8 +34,8 @@ logic [16:0]    avg_torque_accum;
 logic           cadence_rise;
 logic           cadence_filt_dly;
 
-desiredDrive desiredDrive(.avg_torque(avg_torque), .cadence(cadence), .not_pedaling(not_pedaling), .incline(incline), .scale(scale), .target_curr(target_curr));
-//desiredDrive_pipe desiredDrive (.clk (clk), .avg_torque(avg_torque), .cadence(cadence), .not_pedaling(not_pedaling), .incline(incline), .scale(scale), .target_curr(target_curr));
+//desiredDrive desiredDrive(.avg_torque(avg_torque), .cadence(cadence), .not_pedaling(not_pedaling), .incline(incline), .scale(scale), .target_curr(target_curr));
+desiredDrive desiredDrive (.clk (clk), .avg_torque(avg_torque), .cadence(cadence), .not_pedaling(not_pedaling), .incline(incline), .scale(scale), .target_curr(target_curr));
 
 cadence_filt #(.FAST_SIM(FAST_SIM)) cadence_f (.clk (clk), .rst_n(rst_n), .cadence(cadence_raw), .cadence_filt(cadence_filt), .cadence_rise(cadence_rise));
 

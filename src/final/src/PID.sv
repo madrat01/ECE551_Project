@@ -1,4 +1,4 @@
-module PID 
+module PID
 #(parameter FAST_SIM = 0)
 (
     input logic                 clk,
@@ -11,6 +11,9 @@ module PID
 logic signed [13:0]     P_term;
 logic signed [11:0]     I_term;
 logic signed [9:0]      D_term;
+logic signed [13:0]     P_term_dly;
+logic signed [11:0]     I_term_dly;
+logic signed [9:0]      D_term_dly;
 logic signed [13:0]     PID;
 logic signed [12:0]     error_d2, error_d3, prev_err; 
 logic signed [12:0]     D_diff;
@@ -96,8 +99,14 @@ assign D_diff_sat = (~D_diff[12] & |D_diff[11:8]) ? 9'h0FF :
 // D term is Signed multiply of the derivative by 2
 assign D_term = {D_diff_sat, 1'b0};
 
+always_ff @ (posedge clk) begin
+    P_term_dly <= P_term;
+    I_term_dly <= I_term;
+    D_term_dly <= D_term;
+end
+
 //Computer PID
-assign PID = P_term + {2'b00, I_term} + {{4{D_term[9]}}, D_term};
+assign PID = P_term_dly + {2'b00, I_term_dly} + {{4{D_term_dly[9]}}, D_term_dly};
 
 //Saturating PID to 0xFFF if it exceeds 0xFFF
 assign drv_mag_pre = PID[12] ? 12'hFFF : PID[11:0];

@@ -71,8 +71,8 @@ sensorCondition #(.FAST_SIM(1)) sensorCondition (.*, .cadence_raw(cadence));
 ///////////////////////////////////////////////////
 // Instantiate PID to determine drive magnitude //
 /////////////////////////////////////////////////		   
+//PID #(.FAST_SIM(1)) pid (.*);
 PID #(.FAST_SIM(1)) pid (.*);
-//PID_pipe #(.FAST_SIM(1)) pid (.*);
 
 ////////////////////////////////////////////////
 // Instantiate brushless DC motor controller //
