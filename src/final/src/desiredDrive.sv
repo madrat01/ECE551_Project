@@ -17,6 +17,7 @@ logic [29:0]		assist_prod;
 logic [29:0]		assist_prod_dly;
 logic [14:0]		mult_out_p1;
 logic [14:0]		mult_out_p2;
+logic [29:0]		mult_out_p3;
 logic [5:0]			cadence_factor;
 
 localparam TORQUE_MIN = 12'h380;
@@ -40,9 +41,10 @@ assign torque_pos = torque_off[12] ? 12'b0 : torque_off[11:0];
 always_ff @ (posedge clk) begin
 	mult_out_p1 <= torque_pos * scale;
 	mult_out_p2 <= incline_lim * cadence_factor;
+	mult_out_p3 <= mult_out_p1 * mult_out_p2;
 end
 
-assign assist_prod = ~not_pedaling ? mult_out_p1 * mult_out_p2 : 30'b0 ;
+assign assist_prod = ~not_pedaling ? mult_out_p3 : 30'b0 ;
 
 always_ff @ (posedge clk)
 	assist_prod_dly <= assist_prod;

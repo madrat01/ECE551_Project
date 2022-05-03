@@ -1,3 +1,5 @@
+`timescale 1ns/1ps
+
 module eBike_tb();
  
 // include or import tasks?

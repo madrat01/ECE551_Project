@@ -7,15 +7,15 @@ Report : timing
         -max_paths 3
 Design : eBike
 Version: S-2021.06
-Date   : Sat Apr 30 18:06:46 2022
+Date   : Mon May  2 11:17:13 2022
 ****************************************
 
 Operating Conditions: tt0p85v25c   Library: saed32lvt_tt0p85v25c
 Wire Load Model Mode: enclosed
 
-  Startpoint: sensorCondition/desiredDrive/mult_out_p1_reg[1]
+  Startpoint: sensorCondition/avg_torque_accum_reg[1]
               (rising edge-triggered flip-flop clocked by clk)
-  Endpoint: sensorCondition/desiredDrive/assist_prod_dly_reg[29]
+  Endpoint: sensorCondition/avg_torque_accum_reg[16]
             (rising edge-triggered flip-flop clocked by clk)
   Path Group: clk
   Path Type: max
@@ -23,108 +23,68 @@ Wire Load Model Mode: enclosed
   Des/Clust/Port     Wire Load Model       Library
   ------------------------------------------------
   eBike              16000                 saed32lvt_tt0p85v25c
-  eBike_DW02_mult_1  8000                  saed32lvt_tt0p85v25c
-  eBike_DW01_add_8   8000                  saed32lvt_tt0p85v25c
+  eBike_DW02_mult_0  8000                  saed32lvt_tt0p85v25c
 
   Point                                                   Incr       Path
   --------------------------------------------------------------------------
   clock clk (rise edge)                                   0.00       0.00
   clock network delay (ideal)                             0.00       0.00
-  sensorCondition/desiredDrive/mult_out_p1_reg[1]/CLK (DFFX2_LVT)
+  sensorCondition/avg_torque_accum_reg[1]/CLK (DFFARX2_LVT)
                                                           0.00       0.00 r
-  sensorCondition/desiredDrive/mult_out_p1_reg[1]/Q (DFFX2_LVT)
-                                                          0.10       0.10 f
-  sensorCondition/desiredDrive/mult_45/A[1] (eBike_DW02_mult_1)
-                                                          0.00       0.10 f
-  sensorCondition/desiredDrive/mult_45/U409/Y (AND2X1_LVT)
-                                                          0.07       0.17 f
-  sensorCondition/desiredDrive/mult_45/U204/Y (XNOR2X1_LVT)
-                                                          0.09       0.26 f
-  sensorCondition/desiredDrive/mult_45/U205/Y (INVX0_LVT)
-                                                          0.04       0.30 r
-  sensorCondition/desiredDrive/mult_45/U276/Y (AO22X1_LVT)
-                                                          0.05       0.35 r
-  sensorCondition/desiredDrive/mult_45/U291/Y (OR2X1_LVT)
-                                                          0.05       0.40 r
-  sensorCondition/desiredDrive/mult_45/U284/Y (AO22X1_LVT)
-                                                          0.06       0.45 r
-  sensorCondition/desiredDrive/mult_45/U53/Y (XOR3X1_LVT)
-                                                          0.08       0.53 f
-  sensorCondition/desiredDrive/mult_45/U253/Y (XOR3X2_LVT)
-                                                          0.11       0.64 f
-  sensorCondition/desiredDrive/mult_45/U255/Y (AND2X1_LVT)
-                                                          0.05       0.69 f
-  sensorCondition/desiredDrive/mult_45/U256/Y (OA22X1_LVT)
-                                                          0.06       0.75 f
-  sensorCondition/desiredDrive/mult_45/S2_7_10/S (FADDX1_LVT)
-                                                          0.13       0.88 r
-  sensorCondition/desiredDrive/mult_45/U61/Y (XOR3X1_LVT)
-                                                          0.14       1.02 f
-  sensorCondition/desiredDrive/mult_45/S2_9_8/S (FADDX1_LVT)
-                                                          0.12       1.14 r
-  sensorCondition/desiredDrive/mult_45/U104/Y (NAND2X0_LVT)
-                                                          0.03       1.17 f
-  sensorCondition/desiredDrive/mult_45/U207/Y (NAND3X0_LVT)
-                                                          0.05       1.22 r
-  sensorCondition/desiredDrive/mult_45/S2_11_7/S (FADDX1_LVT)
-                                                          0.13       1.35 f
-  sensorCondition/desiredDrive/mult_45/U240/Y (NAND2X0_LVT)
-                                                          0.04       1.39 r
-  sensorCondition/desiredDrive/mult_45/U241/Y (NAND3X0_LVT)
-                                                          0.05       1.44 f
-  sensorCondition/desiredDrive/mult_45/S2_13_6/CO (FADDX1_LVT)
-                                                          0.10       1.54 f
-  sensorCondition/desiredDrive/mult_45/U12/Y (XOR3X2_LVT)
-                                                          0.12       1.66 r
-  sensorCondition/desiredDrive/mult_45/U11/Y (XOR2X1_LVT)
-                                                          0.09       1.75 f
-  sensorCondition/desiredDrive/mult_45/FS_1/A[18] (eBike_DW01_add_8)
-                                                          0.00       1.75 f
-  sensorCondition/desiredDrive/mult_45/FS_1/U67/Y (OR2X1_LVT)
-                                                          0.05       1.81 f
-  sensorCondition/desiredDrive/mult_45/FS_1/U55/Y (NAND2X0_LVT)
-                                                          0.04       1.85 r
-  sensorCondition/desiredDrive/mult_45/FS_1/U66/Y (NAND3X0_LVT)
-                                                          0.03       1.88 f
-  sensorCondition/desiredDrive/mult_45/FS_1/U75/Y (AND3X1_LVT)
-                                                          0.05       1.94 f
-  sensorCondition/desiredDrive/mult_45/FS_1/U28/Y (AOI21X1_LVT)
-                                                          0.07       2.01 r
-  sensorCondition/desiredDrive/mult_45/FS_1/U79/Y (OR2X1_LVT)
-                                                          0.05       2.06 r
-  sensorCondition/desiredDrive/mult_45/FS_1/U96/Y (AO21X1_LVT)
-                                                          0.05       2.11 r
-  sensorCondition/desiredDrive/mult_45/FS_1/U34/Y (NAND2X0_LVT)
-                                                          0.03       2.14 f
-  sensorCondition/desiredDrive/mult_45/FS_1/U115/Y (AO22X1_LVT)
-                                                          0.05       2.19 f
-  sensorCondition/desiredDrive/mult_45/FS_1/U81/Y (XOR2X1_LVT)
-                                                          0.08       2.27 r
-  sensorCondition/desiredDrive/mult_45/FS_1/SUM[27] (eBike_DW01_add_8)
-                                                          0.00       2.27 r
-  sensorCondition/desiredDrive/mult_45/PRODUCT[29] (eBike_DW02_mult_1)
-                                                          0.00       2.27 r
-  sensorCondition/desiredDrive/assist_prod_dly_reg[29]/RSTB (DFFSSRX1_LVT)
-                                                          0.02       2.29 r
-  data arrival time                                                  2.29
+  sensorCondition/avg_torque_accum_reg[1]/Q (DFFARX2_LVT)
+                                                          0.11       0.11 r
+  sensorCondition/mult_96/A[1] (eBike_DW02_mult_0)        0.00       0.11 r
+  sensorCondition/mult_96/U13/Y (AND2X4_LVT)              0.06       0.17 r
+  sensorCondition/mult_96/S3_2_3/CO (FADDX1_LVT)          0.10       0.27 r
+  sensorCondition/mult_96/S3_3_3/CO (FADDX1_LVT)          0.10       0.37 r
+  sensorCondition/mult_96/S3_4_3/CO (FADDX1_LVT)          0.10       0.47 r
+  sensorCondition/mult_96/S3_5_3/CO (FADDX1_LVT)          0.10       0.57 r
+  sensorCondition/mult_96/U4/Y (XOR3X1_LVT)               0.14       0.71 f
+  sensorCondition/mult_96/S2_7_2/S (FADDX1_LVT)           0.12       0.83 r
+  sensorCondition/mult_96/S2_8_1/CO (FADDX1_LVT)          0.09       0.92 r
+  sensorCondition/mult_96/S2_9_1/CO (FADDX1_LVT)          0.10       1.02 r
+  sensorCondition/mult_96/S2_10_1/CO (FADDX1_LVT)         0.10       1.12 r
+  sensorCondition/mult_96/S2_11_1/CO (FADDX1_LVT)         0.10       1.21 r
+  sensorCondition/mult_96/S2_12_1/CO (FADDX1_LVT)         0.10       1.31 r
+  sensorCondition/mult_96/S2_13_1/CO (FADDX1_LVT)         0.10       1.41 r
+  sensorCondition/mult_96/S2_14_1/CO (FADDX1_LVT)         0.10       1.51 r
+  sensorCondition/mult_96/S2_15_1/CO (FADDX1_LVT)         0.10       1.61 r
+  sensorCondition/mult_96/S4_1/CO (FADDX1_LVT)            0.10       1.71 r
+  sensorCondition/mult_96/U38/Y (XOR2X2_LVT)              0.09       1.80 f
+  sensorCondition/mult_96/U48/Y (NAND2X0_LVT)             0.06       1.86 r
+  sensorCondition/mult_96/U9/Y (INVX0_LVT)                0.02       1.88 f
+  sensorCondition/mult_96/U50/Y (AO22X1_LVT)              0.06       1.95 f
+  sensorCondition/mult_96/U11/Y (INVX0_LVT)               0.04       1.98 r
+  sensorCondition/mult_96/U52/Y (AND2X1_LVT)              0.04       2.02 r
+  sensorCondition/mult_96/U53/Y (OA22X1_LVT)              0.05       2.08 r
+  sensorCondition/mult_96/U7/Y (XNOR2X1_LVT)              0.09       2.17 r
+  sensorCondition/mult_96/PRODUCT[21] (eBike_DW02_mult_0)
+                                                          0.00       2.17 r
+  sensorCondition/add_96/A[16] (eBike_DW01_add_6)         0.00       2.17 r
+  sensorCondition/add_96/U1/Y (XNOR2X1_LVT)               0.08       2.25 r
+  sensorCondition/add_96/SUM[16] (eBike_DW01_add_6)       0.00       2.25 r
+  U202/Y (AO22X1_LVT)                                     0.05       2.31 r
+  sensorCondition/avg_torque_accum_reg[16]/D (DFFARX2_LVT)
+                                                          0.01       2.32 r
+  data arrival time                                                  2.32
 
   clock clk (rise edge)                                   2.50       2.50
   clock network delay (ideal)                             0.00       2.50
   clock uncertainty                                      -0.15       2.35
-  sensorCondition/desiredDrive/assist_prod_dly_reg[29]/CLK (DFFSSRX1_LVT)
+  sensorCondition/avg_torque_accum_reg[16]/CLK (DFFARX2_LVT)
                                                           0.00       2.35 r
-  library setup time                                     -0.06       2.29
-  data required time                                                 2.29
+  library setup time                                     -0.03       2.32
+  data required time                                                 2.32
   --------------------------------------------------------------------------
-  data required time                                                 2.29
-  data arrival time                                                 -2.29
+  data required time                                                 2.32
+  data arrival time                                                 -2.32
   --------------------------------------------------------------------------
   slack (MET)                                                        0.00
 
 
-  Startpoint: sensorCondition/desiredDrive/mult_out_p1_reg[1]
+  Startpoint: sensorCondition/desiredDrive/mult_out_p2_reg[10]
               (rising edge-triggered flip-flop clocked by clk)
-  Endpoint: sensorCondition/desiredDrive/assist_prod_dly_reg[29]
+  Endpoint: sensorCondition/desiredDrive/mult_out_p3_reg[29]
             (rising edge-triggered flip-flop clocked by clk)
   Path Group: clk
   Path Type: max
@@ -139,101 +99,99 @@ Wire Load Model Mode: enclosed
   --------------------------------------------------------------------------
   clock clk (rise edge)                                   0.00       0.00
   clock network delay (ideal)                             0.00       0.00
-  sensorCondition/desiredDrive/mult_out_p1_reg[1]/CLK (DFFX2_LVT)
+  sensorCondition/desiredDrive/mult_out_p2_reg[10]/CLK (DFFX2_LVT)
                                                           0.00       0.00 r
-  sensorCondition/desiredDrive/mult_out_p1_reg[1]/Q (DFFX2_LVT)
-                                                          0.10       0.10 f
-  sensorCondition/desiredDrive/mult_45/A[1] (eBike_DW02_mult_1)
-                                                          0.00       0.10 f
-  sensorCondition/desiredDrive/mult_45/U409/Y (AND2X1_LVT)
-                                                          0.07       0.17 f
-  sensorCondition/desiredDrive/mult_45/U204/Y (XNOR2X1_LVT)
-                                                          0.09       0.26 f
-  sensorCondition/desiredDrive/mult_45/U205/Y (INVX0_LVT)
-                                                          0.04       0.30 r
-  sensorCondition/desiredDrive/mult_45/U276/Y (AO22X1_LVT)
-                                                          0.05       0.35 r
-  sensorCondition/desiredDrive/mult_45/U291/Y (OR2X1_LVT)
-                                                          0.05       0.40 r
-  sensorCondition/desiredDrive/mult_45/U284/Y (AO22X1_LVT)
+  sensorCondition/desiredDrive/mult_out_p2_reg[10]/Q (DFFX2_LVT)
+                                                          0.11       0.11 f
+  sensorCondition/desiredDrive/mult_44/B[10] (eBike_DW02_mult_1)
+                                                          0.00       0.11 f
+  sensorCondition/desiredDrive/mult_44/U11/Y (NAND2X0_LVT)
+                                                          0.07       0.18 r
+  sensorCondition/desiredDrive/mult_44/U9/Y (XNOR2X1_LVT)
+                                                          0.09       0.27 f
+  sensorCondition/desiredDrive/mult_44/U7/Y (INVX0_LVT)
+                                                          0.04       0.31 r
+  sensorCondition/desiredDrive/mult_44/U3/Y (AOI22X1_LVT)
+                                                          0.06       0.36 f
+  sensorCondition/desiredDrive/mult_44/U8/Y (NAND2X0_LVT)
+                                                          0.03       0.40 r
+  sensorCondition/desiredDrive/mult_44/U24/Y (AO22X1_LVT)
                                                           0.06       0.45 r
-  sensorCondition/desiredDrive/mult_45/U53/Y (XOR3X1_LVT)
-                                                          0.08       0.53 f
-  sensorCondition/desiredDrive/mult_45/U253/Y (XOR3X2_LVT)
-                                                          0.11       0.64 f
-  sensorCondition/desiredDrive/mult_45/U255/Y (AND2X1_LVT)
-                                                          0.05       0.69 f
-  sensorCondition/desiredDrive/mult_45/U256/Y (OA22X1_LVT)
-                                                          0.06       0.75 f
-  sensorCondition/desiredDrive/mult_45/S2_7_10/S (FADDX1_LVT)
-                                                          0.13       0.88 r
-  sensorCondition/desiredDrive/mult_45/U61/Y (XOR3X1_LVT)
-                                                          0.14       1.02 f
-  sensorCondition/desiredDrive/mult_45/S2_9_8/S (FADDX1_LVT)
-                                                          0.12       1.14 r
-  sensorCondition/desiredDrive/mult_45/U104/Y (NAND2X0_LVT)
-                                                          0.03       1.17 f
-  sensorCondition/desiredDrive/mult_45/U207/Y (NAND3X0_LVT)
-                                                          0.05       1.22 r
-  sensorCondition/desiredDrive/mult_45/S2_11_7/S (FADDX1_LVT)
-                                                          0.13       1.35 f
-  sensorCondition/desiredDrive/mult_45/U240/Y (NAND2X0_LVT)
+  sensorCondition/desiredDrive/mult_44/U23/Y (XOR3X1_LVT)
+                                                          0.14       0.59 f
+  sensorCondition/desiredDrive/mult_44/S2_5_8/S (FADDX1_LVT)
+                                                          0.12       0.71 r
+  sensorCondition/desiredDrive/mult_44/S2_6_7/CO (FADDX1_LVT)
+                                                          0.09       0.80 r
+  sensorCondition/desiredDrive/mult_44/S2_7_7/CO (FADDX1_LVT)
+                                                          0.11       0.91 r
+  sensorCondition/desiredDrive/mult_44/U40/Y (XOR3X2_LVT)
+                                                          0.11       1.02 r
+  sensorCondition/desiredDrive/mult_44/U35/CO (FADDX2_LVT)
+                                                          0.10       1.12 r
+  sensorCondition/desiredDrive/mult_44/U32/Y (XOR3X2_LVT)
+                                                          0.13       1.25 f
+  sensorCondition/desiredDrive/mult_44/U30/Y (NAND2X0_LVT)
+                                                          0.04       1.30 r
+  sensorCondition/desiredDrive/mult_44/U33/Y (AOI22X1_LVT)
+                                                          0.06       1.35 f
+  sensorCondition/desiredDrive/mult_44/U90/Y (NAND2X0_LVT)
                                                           0.04       1.39 r
-  sensorCondition/desiredDrive/mult_45/U241/Y (NAND3X0_LVT)
-                                                          0.05       1.44 f
-  sensorCondition/desiredDrive/mult_45/S2_13_6/CO (FADDX1_LVT)
-                                                          0.10       1.54 f
-  sensorCondition/desiredDrive/mult_45/U12/Y (XOR3X2_LVT)
-                                                          0.12       1.66 r
-  sensorCondition/desiredDrive/mult_45/U11/Y (XOR2X1_LVT)
-                                                          0.09       1.75 f
-  sensorCondition/desiredDrive/mult_45/FS_1/A[18] (eBike_DW01_add_8)
-                                                          0.00       1.75 f
-  sensorCondition/desiredDrive/mult_45/FS_1/U67/Y (OR2X1_LVT)
-                                                          0.05       1.81 f
-  sensorCondition/desiredDrive/mult_45/FS_1/U55/Y (NAND2X0_LVT)
-                                                          0.04       1.85 r
-  sensorCondition/desiredDrive/mult_45/FS_1/U66/Y (NAND3X0_LVT)
-                                                          0.03       1.88 f
-  sensorCondition/desiredDrive/mult_45/FS_1/U75/Y (AND3X1_LVT)
-                                                          0.05       1.94 f
-  sensorCondition/desiredDrive/mult_45/FS_1/U28/Y (AOI21X1_LVT)
-                                                          0.07       2.01 r
-  sensorCondition/desiredDrive/mult_45/FS_1/U79/Y (OR2X1_LVT)
-                                                          0.05       2.06 r
-  sensorCondition/desiredDrive/mult_45/FS_1/U96/Y (AO21X1_LVT)
-                                                          0.05       2.11 r
-  sensorCondition/desiredDrive/mult_45/FS_1/U87/Y (INVX0_LVT)
-                                                          0.03       2.14 f
-  sensorCondition/desiredDrive/mult_45/FS_1/U115/Y (AO22X1_LVT)
-                                                          0.05       2.19 f
-  sensorCondition/desiredDrive/mult_45/FS_1/U81/Y (XOR2X1_LVT)
-                                                          0.08       2.27 r
-  sensorCondition/desiredDrive/mult_45/FS_1/SUM[27] (eBike_DW01_add_8)
-                                                          0.00       2.27 r
-  sensorCondition/desiredDrive/mult_45/PRODUCT[29] (eBike_DW02_mult_1)
-                                                          0.00       2.27 r
-  sensorCondition/desiredDrive/assist_prod_dly_reg[29]/RSTB (DFFSSRX1_LVT)
-                                                          0.02       2.29 r
-  data arrival time                                                  2.29
+  sensorCondition/desiredDrive/mult_44/U87/Y (AO22X1_LVT)
+                                                          0.05       1.44 r
+  sensorCondition/desiredDrive/mult_44/U83/Y (XOR3X1_LVT)
+                                                          0.13       1.57 f
+  sensorCondition/desiredDrive/mult_44/U81/Y (XOR3X2_LVT)
+                                                          0.12       1.69 f
+  sensorCondition/desiredDrive/mult_44/U80/Y (XOR2X1_LVT)
+                                                          0.09       1.78 r
+  sensorCondition/desiredDrive/mult_44/FS_1/A[16] (eBike_DW01_add_8)
+                                                          0.00       1.78 r
+  sensorCondition/desiredDrive/mult_44/FS_1/U3/Y (OR2X1_LVT)
+                                                          0.05       1.83 r
+  sensorCondition/desiredDrive/mult_44/FS_1/U2/Y (OA21X1_LVT)
+                                                          0.04       1.87 r
+  sensorCondition/desiredDrive/mult_44/FS_1/U4/Y (AO21X1_LVT)
+                                                          0.05       1.92 r
+  sensorCondition/desiredDrive/mult_44/FS_1/U7/Y (AO21X1_LVT)
+                                                          0.05       1.98 r
+  sensorCondition/desiredDrive/mult_44/FS_1/U13/Y (NAND2X0_LVT)
+                                                          0.03       2.01 f
+  sensorCondition/desiredDrive/mult_44/FS_1/U16/Y (AO21X1_LVT)
+                                                          0.06       2.06 f
+  sensorCondition/desiredDrive/mult_44/FS_1/U15/Y (AO21X1_LVT)
+                                                          0.06       2.12 f
+  sensorCondition/desiredDrive/mult_44/FS_1/U19/Y (OA21X1_LVT)
+                                                          0.05       2.17 f
+  sensorCondition/desiredDrive/mult_44/FS_1/U31/Y (OA22X1_LVT)
+                                                          0.05       2.22 f
+  sensorCondition/desiredDrive/mult_44/FS_1/U30/Y (XOR2X1_LVT)
+                                                          0.08       2.31 r
+  sensorCondition/desiredDrive/mult_44/FS_1/SUM[27] (eBike_DW01_add_8)
+                                                          0.00       2.31 r
+  sensorCondition/desiredDrive/mult_44/PRODUCT[29] (eBike_DW02_mult_1)
+                                                          0.00       2.31 r
+  sensorCondition/desiredDrive/mult_out_p3_reg[29]/D (DFFX2_LVT)
+                                                          0.01       2.32 r
+  data arrival time                                                  2.32
 
   clock clk (rise edge)                                   2.50       2.50
   clock network delay (ideal)                             0.00       2.50
   clock uncertainty                                      -0.15       2.35
-  sensorCondition/desiredDrive/assist_prod_dly_reg[29]/CLK (DFFSSRX1_LVT)
+  sensorCondition/desiredDrive/mult_out_p3_reg[29]/CLK (DFFX2_LVT)
                                                           0.00       2.35 r
-  library setup time                                     -0.06       2.29
-  data required time                                                 2.29
+  library setup time                                     -0.03       2.32
+  data required time                                                 2.32
   --------------------------------------------------------------------------
-  data required time                                                 2.29
-  data arrival time                                                 -2.29
+  data required time                                                 2.32
+  data arrival time                                                 -2.32
   --------------------------------------------------------------------------
   slack (MET)                                                        0.00
 
 
-  Startpoint: sensorCondition/desiredDrive/mult_out_p1_reg[1]
+  Startpoint: sensorCondition/avg_torque_accum_reg[1]
               (rising edge-triggered flip-flop clocked by clk)
-  Endpoint: sensorCondition/desiredDrive/assist_prod_dly_reg[29]
+  Endpoint: sensorCondition/avg_torque_accum_reg[16]
             (rising edge-triggered flip-flop clocked by clk)
   Path Group: clk
   Path Type: max
@@ -241,101 +199,61 @@ Wire Load Model Mode: enclosed
   Des/Clust/Port     Wire Load Model       Library
   ------------------------------------------------
   eBike              16000                 saed32lvt_tt0p85v25c
-  eBike_DW02_mult_1  8000                  saed32lvt_tt0p85v25c
-  eBike_DW01_add_8   8000                  saed32lvt_tt0p85v25c
+  eBike_DW02_mult_0  8000                  saed32lvt_tt0p85v25c
 
   Point                                                   Incr       Path
   --------------------------------------------------------------------------
   clock clk (rise edge)                                   0.00       0.00
   clock network delay (ideal)                             0.00       0.00
-  sensorCondition/desiredDrive/mult_out_p1_reg[1]/CLK (DFFX2_LVT)
+  sensorCondition/avg_torque_accum_reg[1]/CLK (DFFARX2_LVT)
                                                           0.00       0.00 r
-  sensorCondition/desiredDrive/mult_out_p1_reg[1]/Q (DFFX2_LVT)
-                                                          0.10       0.10 f
-  sensorCondition/desiredDrive/mult_45/A[1] (eBike_DW02_mult_1)
-                                                          0.00       0.10 f
-  sensorCondition/desiredDrive/mult_45/U409/Y (AND2X1_LVT)
-                                                          0.07       0.17 f
-  sensorCondition/desiredDrive/mult_45/U204/Y (XNOR2X1_LVT)
-                                                          0.09       0.26 f
-  sensorCondition/desiredDrive/mult_45/U205/Y (INVX0_LVT)
-                                                          0.04       0.30 r
-  sensorCondition/desiredDrive/mult_45/U276/Y (AO22X1_LVT)
-                                                          0.05       0.35 r
-  sensorCondition/desiredDrive/mult_45/U291/Y (OR2X1_LVT)
-                                                          0.05       0.40 r
-  sensorCondition/desiredDrive/mult_45/U284/Y (AO22X1_LVT)
-                                                          0.06       0.45 r
-  sensorCondition/desiredDrive/mult_45/U53/Y (XOR3X1_LVT)
-                                                          0.08       0.53 f
-  sensorCondition/desiredDrive/mult_45/U253/Y (XOR3X2_LVT)
-                                                          0.11       0.64 f
-  sensorCondition/desiredDrive/mult_45/U255/Y (AND2X1_LVT)
-                                                          0.05       0.69 f
-  sensorCondition/desiredDrive/mult_45/U256/Y (OA22X1_LVT)
-                                                          0.06       0.75 f
-  sensorCondition/desiredDrive/mult_45/S2_7_10/S (FADDX1_LVT)
-                                                          0.13       0.88 r
-  sensorCondition/desiredDrive/mult_45/U61/Y (XOR3X1_LVT)
-                                                          0.14       1.02 f
-  sensorCondition/desiredDrive/mult_45/S2_9_8/S (FADDX1_LVT)
-                                                          0.12       1.14 r
-  sensorCondition/desiredDrive/mult_45/U206/Y (NAND2X0_LVT)
-                                                          0.03       1.17 f
-  sensorCondition/desiredDrive/mult_45/U207/Y (NAND3X0_LVT)
-                                                          0.05       1.22 r
-  sensorCondition/desiredDrive/mult_45/S2_11_7/S (FADDX1_LVT)
-                                                          0.13       1.35 f
-  sensorCondition/desiredDrive/mult_45/U240/Y (NAND2X0_LVT)
-                                                          0.04       1.39 r
-  sensorCondition/desiredDrive/mult_45/U241/Y (NAND3X0_LVT)
-                                                          0.05       1.44 f
-  sensorCondition/desiredDrive/mult_45/S2_13_6/CO (FADDX1_LVT)
-                                                          0.10       1.54 f
-  sensorCondition/desiredDrive/mult_45/U12/Y (XOR3X2_LVT)
-                                                          0.12       1.66 r
-  sensorCondition/desiredDrive/mult_45/U11/Y (XOR2X1_LVT)
-                                                          0.09       1.75 f
-  sensorCondition/desiredDrive/mult_45/FS_1/A[18] (eBike_DW01_add_8)
-                                                          0.00       1.75 f
-  sensorCondition/desiredDrive/mult_45/FS_1/U67/Y (OR2X1_LVT)
-                                                          0.05       1.81 f
-  sensorCondition/desiredDrive/mult_45/FS_1/U55/Y (NAND2X0_LVT)
-                                                          0.04       1.85 r
-  sensorCondition/desiredDrive/mult_45/FS_1/U66/Y (NAND3X0_LVT)
-                                                          0.03       1.88 f
-  sensorCondition/desiredDrive/mult_45/FS_1/U75/Y (AND3X1_LVT)
-                                                          0.05       1.94 f
-  sensorCondition/desiredDrive/mult_45/FS_1/U28/Y (AOI21X1_LVT)
-                                                          0.07       2.01 r
-  sensorCondition/desiredDrive/mult_45/FS_1/U79/Y (OR2X1_LVT)
-                                                          0.05       2.06 r
-  sensorCondition/desiredDrive/mult_45/FS_1/U96/Y (AO21X1_LVT)
-                                                          0.05       2.11 r
-  sensorCondition/desiredDrive/mult_45/FS_1/U34/Y (NAND2X0_LVT)
-                                                          0.03       2.14 f
-  sensorCondition/desiredDrive/mult_45/FS_1/U115/Y (AO22X1_LVT)
-                                                          0.05       2.19 f
-  sensorCondition/desiredDrive/mult_45/FS_1/U81/Y (XOR2X1_LVT)
-                                                          0.08       2.27 r
-  sensorCondition/desiredDrive/mult_45/FS_1/SUM[27] (eBike_DW01_add_8)
-                                                          0.00       2.27 r
-  sensorCondition/desiredDrive/mult_45/PRODUCT[29] (eBike_DW02_mult_1)
-                                                          0.00       2.27 r
-  sensorCondition/desiredDrive/assist_prod_dly_reg[29]/RSTB (DFFSSRX1_LVT)
-                                                          0.02       2.29 r
-  data arrival time                                                  2.29
+  sensorCondition/avg_torque_accum_reg[1]/Q (DFFARX2_LVT)
+                                                          0.11       0.11 r
+  sensorCondition/mult_96/A[1] (eBike_DW02_mult_0)        0.00       0.11 r
+  sensorCondition/mult_96/U13/Y (AND2X4_LVT)              0.06       0.17 r
+  sensorCondition/mult_96/S3_2_3/CO (FADDX1_LVT)          0.10       0.27 r
+  sensorCondition/mult_96/S3_3_3/CO (FADDX1_LVT)          0.10       0.37 r
+  sensorCondition/mult_96/S3_4_3/CO (FADDX1_LVT)          0.10       0.47 r
+  sensorCondition/mult_96/S3_5_3/CO (FADDX1_LVT)          0.10       0.57 r
+  sensorCondition/mult_96/U4/Y (XOR3X1_LVT)               0.14       0.71 f
+  sensorCondition/mult_96/S2_7_2/S (FADDX1_LVT)           0.12       0.83 r
+  sensorCondition/mult_96/S2_8_1/CO (FADDX1_LVT)          0.09       0.92 r
+  sensorCondition/mult_96/S2_9_1/CO (FADDX1_LVT)          0.10       1.02 r
+  sensorCondition/mult_96/S2_10_1/CO (FADDX1_LVT)         0.10       1.12 r
+  sensorCondition/mult_96/S2_11_1/CO (FADDX1_LVT)         0.10       1.21 r
+  sensorCondition/mult_96/S2_12_1/CO (FADDX1_LVT)         0.10       1.31 r
+  sensorCondition/mult_96/S2_13_1/CO (FADDX1_LVT)         0.10       1.41 r
+  sensorCondition/mult_96/S2_14_1/CO (FADDX1_LVT)         0.10       1.51 r
+  sensorCondition/mult_96/S2_15_1/CO (FADDX1_LVT)         0.10       1.61 r
+  sensorCondition/mult_96/S4_1/CO (FADDX1_LVT)            0.10       1.71 r
+  sensorCondition/mult_96/U38/Y (XOR2X2_LVT)              0.09       1.80 f
+  sensorCondition/mult_96/U48/Y (NAND2X0_LVT)             0.06       1.86 r
+  sensorCondition/mult_96/U10/Y (NAND2X0_LVT)             0.03       1.89 f
+  sensorCondition/mult_96/U50/Y (AO22X1_LVT)              0.05       1.94 f
+  sensorCondition/mult_96/U11/Y (INVX0_LVT)               0.04       1.98 r
+  sensorCondition/mult_96/U52/Y (AND2X1_LVT)              0.04       2.02 r
+  sensorCondition/mult_96/U53/Y (OA22X1_LVT)              0.05       2.08 r
+  sensorCondition/mult_96/U7/Y (XNOR2X1_LVT)              0.09       2.17 r
+  sensorCondition/mult_96/PRODUCT[21] (eBike_DW02_mult_0)
+                                                          0.00       2.17 r
+  sensorCondition/add_96/A[16] (eBike_DW01_add_6)         0.00       2.17 r
+  sensorCondition/add_96/U1/Y (XNOR2X1_LVT)               0.08       2.25 r
+  sensorCondition/add_96/SUM[16] (eBike_DW01_add_6)       0.00       2.25 r
+  U202/Y (AO22X1_LVT)                                     0.05       2.30 r
+  sensorCondition/avg_torque_accum_reg[16]/D (DFFARX2_LVT)
+                                                          0.01       2.32 r
+  data arrival time                                                  2.32
 
   clock clk (rise edge)                                   2.50       2.50
   clock network delay (ideal)                             0.00       2.50
   clock uncertainty                                      -0.15       2.35
-  sensorCondition/desiredDrive/assist_prod_dly_reg[29]/CLK (DFFSSRX1_LVT)
+  sensorCondition/avg_torque_accum_reg[16]/CLK (DFFARX2_LVT)
                                                           0.00       2.35 r
-  library setup time                                     -0.06       2.29
-  data required time                                                 2.29
+  library setup time                                     -0.03       2.32
+  data required time                                                 2.32
   --------------------------------------------------------------------------
-  data required time                                                 2.29
-  data arrival time                                                 -2.29
+  data required time                                                 2.32
+  data arrival time                                                 -2.32
   --------------------------------------------------------------------------
   slack (MET)                                                        0.00
 

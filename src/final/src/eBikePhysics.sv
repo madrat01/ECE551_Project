@@ -1,3 +1,5 @@
+`timescale 1ns/1ps
+
 module eBikePhysics(clk,RST_n,SS_n,SCLK,MISO,MOSI,INT,yaw_rt,
 	            highGrn,lowGrn,highYlw,lowYlw,highBlu,
 		    lowBlu,hallGrn,hallYlw,hallBlu,avg_curr);
